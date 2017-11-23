@@ -8,5 +8,6 @@ namespace Cnema.Anwendung
 {
     class Test1
     {
+        "Hallo World"
     }
 }
