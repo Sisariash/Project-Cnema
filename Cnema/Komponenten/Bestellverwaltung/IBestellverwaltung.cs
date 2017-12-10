@@ -8,5 +8,8 @@ namespace Komponenten.Bestellverwaltung
 {
     public interface IBestellverwaltung
     {
+        IList<ET.Vorstellung> ProgrammAnzeigen();
+        IList<ET.Vorstellung> ProgrammFiltern(String kriterium);
+        bool Reservieren(Kunde kunde, ET.Vorstellung vorstellung);
     }
 }
