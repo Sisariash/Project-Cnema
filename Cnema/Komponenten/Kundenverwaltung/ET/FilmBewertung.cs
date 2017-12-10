@@ -42,7 +42,7 @@ namespace Komponenten.Kundenverwaltung.ET
 
         public override int GetHashCode()
         {
-            return FilmBewertungId * 31;
+            return FilmBewertungId * 41;
         }
     }
 }

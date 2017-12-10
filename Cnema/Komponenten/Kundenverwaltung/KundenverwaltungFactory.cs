@@ -10,11 +10,11 @@ namespace Komponenten.Kundenverwaltung
 {
     public class KundenverwaltungFactory
     {
-        private Impl.Kundenverwaltung kv;
+        private Kundenverwaltung kv;
 
         public KundenverwaltungFactory()
         {
-            kv = new Impl.Kundenverwaltung();
+            kv = new Kundenverwaltung();
         }
 
         public IKundenverwaltung GetKundenverwaltung()
