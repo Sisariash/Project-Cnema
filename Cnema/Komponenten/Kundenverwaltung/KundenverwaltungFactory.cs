@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Komponenten.Kundenverwaltung
 {
     public class KundenverwaltungFactory
     {
-        private Kundenverwaltung kv;
+        private Impl.Kundenverwaltung kv;
 
         public KundenverwaltungFactory()
         {
-            kv = new Kundenverwaltung();
+            kv = new Impl.Kundenverwaltung();
         }
 
         public IKundenverwaltung GetKundenverwaltung()

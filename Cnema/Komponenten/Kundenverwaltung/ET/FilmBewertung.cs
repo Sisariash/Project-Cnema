@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Komponenten.Kinoprogrammverwaltung.ET;
 
 namespace Komponenten.Kundenverwaltung.ET
 {
@@ -41,7 +42,7 @@ namespace Komponenten.Kundenverwaltung.ET
 
         public override int GetHashCode()
         {
-            return FilmBewertungId * 41;
+            return FilmBewertungId * 31;
         }
     }
 }
