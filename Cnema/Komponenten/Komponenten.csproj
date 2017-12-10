@@ -53,6 +53,8 @@
     <Compile Include="Bestellverwaltung\IBestellverwaltung.cs" />
     <Compile Include="Bestellverwaltung\Impl\Bestellverwaltung.cs" />
     <Compile Include="Datenbank\CnemaContext.cs" />
+    <Compile Include="Kinoprogrammverwaltung\ET\Film.cs" />
+    <Compile Include="Kinoprogrammverwaltung\ET\Saal.cs" />
     <Compile Include="Kinoprogrammverwaltung\IKinoprogrammverwaltung.cs" />
     <Compile Include="Kinoprogrammverwaltung\Impl\Kinoprogrammverwaltung.cs" />
     <Compile Include="Kinoprogrammverwaltung\KinoprogrammverwaltungFactory.cs" />
