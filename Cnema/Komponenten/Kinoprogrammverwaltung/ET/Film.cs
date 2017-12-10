@@ -10,32 +10,32 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
     public class Film
     {
         [Key]
-        public int filmId { get; set; }
-        public string titel { get; set; }
-        public int jahr { get; set; }
-        public string genre { get; set; }
-        public int laenge { get; set; }
-        public string sprache { get; set; }
-        public bool is3D { get; set; }
-        public double bewertungAvg { get; set; }
-        public int fsk { get; set; }
+        public int FilmId { get; set; }
+        public string Titel { get; set; }
+        public int Jahr { get; set; }
+        public string Genre { get; set; }
+        public int Laenge { get; set; }
+        public string Sprache { get; set; }
+        public bool Is3D { get; set; }
+        public double BewertungAvg { get; set; }
+        public int Fsk { get; set; }
         private static int nextId = 0;
 
         public Film()
         {
-            this.filmId = nextId++;
+            this.FilmId = nextId++;
         }
 
         public Film(string titel, int jahr, string genre, int laenge, string sprache, bool is3D, double bewertungAvg, int fsk)
         {
-            this.titel = titel;
-            this.jahr = jahr;
-            this.genre = genre;
-            this.laenge = laenge;
-            this.sprache = sprache;
-            this.is3D = is3D;
-            this.bewertungAvg = bewertungAvg;
-            this.fsk = fsk;
+            this.Titel = titel;
+            this.Jahr = jahr;
+            this.Genre = genre;
+            this.Laenge = laenge;
+            this.Sprache = sprache;
+            this.Is3D = is3D;
+            this.BewertungAvg = bewertungAvg;
+            this.Fsk = fsk;
         }
 
         public override bool Equals(object obj)
@@ -45,14 +45,14 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
 
             Film other = (Film)obj;
 
-            if (!this.filmId.Equals(other.filmId)) return false;
+            if (!this.FilmId.Equals(other.FilmId)) return false;
 
             return true;
         }
 
         public override int GetHashCode()
         {
-            return filmId;
+            return FilmId;
 
         }
     }

@@ -11,15 +11,15 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
     {
 
         [Key]
-        public string saalName { get; set; }
-        public int anzahlSitze { get; set; }
+        public string SaalName { get; set; }
+        public int AnzahlSitze { get; set; }
 
 
-        public Saal (string saalName, int anzahlSitze)
+        public Saal(string saalName, int anzahlSitze)
         {
 
-            this.saalName = saalName;
-            this.anzahlSitze = anzahlSitze;
+            this.SaalName = saalName;
+            this.AnzahlSitze = anzahlSitze;
         }
 
         public override bool Equals(object obj)
@@ -29,16 +29,17 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
 
             Saal other = (Saal)obj;
 
-            if (!this.saalName.Equals(other.saalName)) return false;
-            if (!this.anzahlSitze.Equals(other.anzahlSitze)) return false;
+            if (!this.SaalName.Equals(other.SaalName)) return false;
+            if (!this.AnzahlSitze.Equals(other.AnzahlSitze)) return false;
 
             return true;
         }
 
         public override int GetHashCode()
         {
-            return anzahlSitze;
+            return AnzahlSitze;
 
 
         }
+    }
 }
