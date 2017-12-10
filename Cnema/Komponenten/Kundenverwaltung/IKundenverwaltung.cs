@@ -8,5 +8,8 @@ namespace Komponenten.Kundenverwaltung
 {
     public interface IKundenverwaltung
     {
+        bool Registrieren(Kunde kunde);
+        bool Login(int Id, String passwort);
+        void FilmBewerten(int bewertung);
     }
 }

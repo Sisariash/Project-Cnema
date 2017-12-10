@@ -4,13 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Komponenten.Kundenverwaltung.ET;
 
 namespace Komponenten.Bestellverwaltung.ET
 {
     public class Bestellung
     {
         [Key]
-        public int BestellId { get; set; }
+        public int BestellId { get; private set; }
         public virtual Vorstellung Vorstellung { get; set; }
         public virtual Kunde Kunde { get; set; }
         public double Preis { get; set; }

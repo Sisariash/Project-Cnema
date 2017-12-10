@@ -8,5 +8,16 @@ namespace Komponenten.Kundenverwaltung
 {
     public class KundenverwaltungFactory
     {
+        private Kundenverwaltung kv;
+
+        public KundenverwaltungFactory()
+        {
+            kv = new Kundenverwaltung();
+        }
+
+        public IKundenverwaltung GetKundenverwaltung()
+        {
+            return kv;
+        }
     }
 }

@@ -56,6 +56,9 @@
     <Compile Include="Kinoprogrammverwaltung\IKinoprogrammverwaltung.cs" />
     <Compile Include="Kinoprogrammverwaltung\Impl\Kinoprogrammverwaltung.cs" />
     <Compile Include="Kinoprogrammverwaltung\KinoprogrammverwaltungFactory.cs" />
+    <Compile Include="Kundenverwaltung\ET\Admin.cs" />
+    <Compile Include="Kundenverwaltung\ET\FilmBewertung.cs" />
+    <Compile Include="Kundenverwaltung\ET\Kunde.cs" />
     <Compile Include="Kundenverwaltung\IKundenverwaltung.cs" />
     <Compile Include="Kundenverwaltung\Impl\Kundenverwaltung.cs" />
     <Compile Include="Kundenverwaltung\KundenverwaltungFactory.cs" />

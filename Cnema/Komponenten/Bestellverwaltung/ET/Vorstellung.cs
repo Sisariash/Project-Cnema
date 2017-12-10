@@ -10,7 +10,7 @@ namespace Komponenten.Bestellverwaltung.ET
     public class Vorstellung
     {
         [Key]
-        public int VorstellungId { get; set; }
+        public int VorstellungId { get; private set; }
         public virtual Film Film { get; set; }
         public virtual Saal Saal { get; set; }
         public DateTime DateTime { get; set; }
