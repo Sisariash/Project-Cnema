@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Komponenten.Kinoprogrammverwaltung.ET;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Komponenten.Kundenverwaltung.ET
 {
     public class FilmBewertung
     {
-        private static int nextId = 1000;
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FilmBewertungId {get; private set; }
         [Required]
         public int Bewertung { get; set; }
@@ -21,11 +22,9 @@ namespace Komponenten.Kundenverwaltung.ET
         
         public FilmBewertung()
         {
-            FilmBewertungId = nextId++;
         }
         public FilmBewertung(int bewertung, Kunde kunde, Film film)
         {
-            FilmBewertungId = nextId++;
             Bewertung = bewertung;
             Kunde = kunde;
             Film = film;

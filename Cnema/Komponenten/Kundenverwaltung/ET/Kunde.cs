@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Komponenten.Bestellverwaltung.ET;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Komponenten.Kundenverwaltung.ET
 {
     public class Kunde
     {
-        private static int nextId = 1000;
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KundenId { get; private set; }
         [Required]
         public String Passwort { get; private set; }
@@ -28,12 +28,10 @@ namespace Komponenten.Kundenverwaltung.ET
 
         public Kunde()
         {
-            KundenId = nextId++;
         }
 
         public Kunde (String passwort, String vorname, String name, DateTime geburtsdatum)
         {
-            KundenId = nextId++;
             Passwort = passwort;
             Vorname = vorname;
             Name = name;

@@ -64,11 +64,21 @@
     <Compile Include="Kundenverwaltung\IKundenverwaltung.cs" />
     <Compile Include="Kundenverwaltung\Impl\Kundenverwaltung.cs" />
     <Compile Include="Kundenverwaltung\KundenverwaltungFactory.cs" />
+    <Compile Include="Migrations\201712111302467_create.cs" />
+    <Compile Include="Migrations\201712111302467_create.Designer.cs">
+      <DependentUpon>201712111302467_create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712111302467_create.resx">
+      <DependentUpon>201712111302467_create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

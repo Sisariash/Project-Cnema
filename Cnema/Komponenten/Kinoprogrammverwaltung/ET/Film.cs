@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Komponenten.Bestellverwaltung.ET;
 using Komponenten.Kundenverwaltung.ET;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Komponenten.Kinoprogrammverwaltung.ET
 {
     public class Film
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FilmId { get; set; }
         public string Titel { get; set; }
         public int Jahr { get; set; }
@@ -21,13 +23,11 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
         public bool Is3D { get; set; }
         public double BewertungAvg { get; set; }
         public int Fsk { get; set; }
-        private static int nextId = 0;
         public virtual List<Vorstellung> Vorstellungen { get; set; }
         public virtual List<FilmBewertung> FilmBewertungen { get; set; }
 
         public Film()
         {
-            this.FilmId = nextId++;
         }
 
         public Film(string titel, int jahr, string genre, int laenge, string sprache, bool is3D, double bewertungAvg, int fsk)

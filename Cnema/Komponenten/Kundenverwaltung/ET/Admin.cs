@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,9 @@ namespace Komponenten.Kundenverwaltung.ET
 {
     public class Admin
     {
-        private static int nextId = 0 ;
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AdminId { get; private set; }
         [Required]
         public String Passwort { get; private set; }
@@ -20,12 +21,10 @@ namespace Komponenten.Kundenverwaltung.ET
 
         public Admin()
         {
-            AdminId = nextId++;
         }
 
         public Admin(String passwort, String name)
         {
-            AdminId = nextId++;
             Passwort = passwort;
             Name = name;
         }

@@ -10,16 +10,16 @@ namespace Komponenten.Kundenverwaltung
 {
     public class KundenverwaltungFactory
     {
-        private Kundenverwaltung kv;
+        //private Impl.Kundenverwaltung kv;
 
-        public KundenverwaltungFactory()
-        {
-            kv = new Kundenverwaltung();
-        }
+        //public KundenverwaltungFactory()
+        //{
+        //    kv = new Impl.Kundenverwaltung();
+        //}
 
-        public IKundenverwaltung GetKundenverwaltung()
-        {
-            return kv;
-        }
+        //public IKundenverwaltung GetKundenverwaltung()
+        //{
+        //    return kv;
+        //}
     }
 }

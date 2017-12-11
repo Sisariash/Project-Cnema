@@ -5,26 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Komponenten.Kinoprogrammverwaltung.ET;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Komponenten.Bestellverwaltung.ET
 {
     public class Vorstellung
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VorstellungId { get; private set; }
         public virtual Film Film { get; set; }
         public virtual Saal Saal { get; set; }
         public DateTime DateTime { get; set; }
-        private static int nextId = 0;
         public virtual List<Bestellung> Bestellungen { get; set; }
 
         public Vorstellung()
         {
-            this.VorstellungId = nextId++;
         }
         public Vorstellung(Film film, Saal saal, DateTime dateTime)
         {
-            this.VorstellungId = nextId++;
             Film = film;
             Saal = saal;
             DateTime = dateTime;
