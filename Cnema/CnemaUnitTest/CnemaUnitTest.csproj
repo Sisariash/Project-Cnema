@@ -55,12 +55,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <Compile Include="BestellverwaltungTest.cs" />
     <Compile Include="KinoprogrammverwaltungTest.cs" />
     <Compile Include="KundenverwaltungTest.cs" />
->>>>>>> 13625bb5e9668ad34d91c899ea8d1c84d5d7bcf7
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KundenverwaltungTest.cs" />
     <Compile Include="KinoprogrammverwaltungTest.cs" />
