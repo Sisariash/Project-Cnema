@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Komponenten.Bestellverwaltung.ET;
+using Komponenten.Kundenverwaltung.ET;
 
 namespace Komponenten.Kinoprogrammverwaltung.ET
 {
@@ -20,6 +22,8 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
         public double BewertungAvg { get; set; }
         public int Fsk { get; set; }
         private static int nextId = 0;
+        public virtual List<Vorstellung> Vorstellungen { get; set; }
+        public virtual List<FilmBewertung> FilmBewertungen { get; set; }
 
         public Film()
         {

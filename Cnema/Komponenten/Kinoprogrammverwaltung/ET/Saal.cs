@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Komponenten.Bestellverwaltung.ET;
 
 namespace Komponenten.Kinoprogrammverwaltung.ET
 {
@@ -13,6 +14,7 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
         [Key]
         public string SaalName { get; set; }
         public int AnzahlSitze { get; set; }
+        public virtual List<Vorstellung> Vorstellungen { get; set; }
 
 
         public Saal(string saalName, int anzahlSitze)

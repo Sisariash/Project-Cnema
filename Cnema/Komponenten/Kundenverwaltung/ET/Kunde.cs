@@ -23,8 +23,8 @@ namespace Komponenten.Kundenverwaltung.ET
         public String Name { get; set; }
         [Required]
         public DateTime Geburtsdatum { get; set; }
-        public virtual SortedList<int, Bestellung> Bestellungen { get; set; }
-        public virtual SortedList<int, FilmBewertung> FilmBewertungen { get; set; }
+        public virtual List<Bestellung> Bestellungen { get; set; }
+        public virtual List<FilmBewertung> FilmBewertungen { get; set; }
 
         public Kunde()
         {

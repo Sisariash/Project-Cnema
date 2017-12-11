@@ -16,6 +16,7 @@ namespace Komponenten.Bestellverwaltung.ET
         public virtual Saal Saal { get; set; }
         public DateTime DateTime { get; set; }
         private static int nextId = 0;
+        public virtual List<Bestellung> Bestellungen { get; set; }
 
         public Vorstellung()
         {
