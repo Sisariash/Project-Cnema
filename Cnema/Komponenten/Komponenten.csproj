@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,6 +56,9 @@
     <Compile Include="Bestellverwaltung\IBestellverwaltung.cs" />
     <Compile Include="Bestellverwaltung\Impl\Bestellverwaltung.cs" />
     <Compile Include="Datenbank\CnemaContext.cs" />
+    <Compile Include="Datenbank\IDatenbankManager.cs" />
+    <Compile Include="Datenbank\Impl\DatenbankManager.cs" />
+    <Compile Include="Datenbank\Utils.cs" />
     <Compile Include="Kinoprogrammverwaltung\ET\Film.cs" />
     <Compile Include="Kinoprogrammverwaltung\ET\Saal.cs" />
     <Compile Include="Kinoprogrammverwaltung\IKinoprogrammverwaltung.cs" />
@@ -68,6 +74,10 @@
     <Compile Include="Migrations\201712111302467_create.Designer.cs">
       <DependentUpon>201712111302467_create.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712111750088_name.cs" />
+    <Compile Include="Migrations\201712111750088_name.Designer.cs">
+      <DependentUpon>201712111750088_name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +88,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712111302467_create.resx">
       <DependentUpon>201712111302467_create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712111750088_name.resx">
+      <DependentUpon>201712111750088_name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

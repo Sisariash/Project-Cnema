@@ -4,34 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Komponenten.Kinoprogrammverwaltung.ET;
+using Komponenten.Datenbank;
+using Komponenten.Datenbank.Impl;
+using Komponenten.Bestellverwaltung.ET;
 
 namespace Komponenten.Kinoprogrammverwaltung.Impl
 {
     public class Kinoprogrammverwaltung : IKinoprogrammverwaltung
     {
-        public Film Aendern(Film film)
+        private IDatenbankManager datenbankManager = new DatenbankManager();
+
+        // Film Logik
+        public Film FilmLesen(int id)
         {
-            throw new NotImplementedException();
+            return datenbankManager.FilmLesen(id);
         }
 
-        public bool Hinzufuegen(Film film)
+        public List<Film> AlleFilmLesen()
         {
-            throw new NotImplementedException();
+            return datenbankManager.AlleFilmeLesen();
         }
 
-        public bool Loeschen(Film film)
+        public Film FilmAendern(Film film)
         {
-            throw new NotImplementedException();
+            return datenbankManager.FilmAendern(film);
         }
 
-        public void VorstellungEntfernen(string vorstellungId)
+        public bool FilmHinzufuegen(Film film)
         {
-            throw new NotImplementedException();
+            datenbankManager.FilmHinzufuegen(film);
+            return true;
         }
 
-        public bool VorstellungErzeugen(Film film, Saal saal, DateTime Zeitpunkt)
+        public bool FilmLoeschen(Film film)
         {
-            throw new NotImplementedException();
+            datenbankManager.FilmLoeschen(film);
+            return true;
+        }
+
+
+        // Vorstellungen Logik
+
+        public bool VorstellungHinzufuegen(DateTime zeitpunkt, Saal saal, Film film)
+        {
+            Vorstellung vorstellung = new Vorstellung();
+            vorstellung.DateTime    = zeitpunkt;
+            vorstellung.Film        = film;
+            vorstellung.Saal        = saal;
+
+            datenbankManager.VorstellungHinzufuegen(vorstellung);
+            return true;
+        }
+
+        public bool VorstellungLoeschen(Vorstellung vorstellung)
+        {
+            datenbankManager.VorstellungLoeschen(vorstellung);
+            return true;
         }
     }
 }
