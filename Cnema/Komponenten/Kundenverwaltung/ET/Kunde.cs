@@ -15,13 +15,9 @@ namespace Komponenten.Kundenverwaltung.ET
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KundenId { get; private set; }
-        [Required]
         public String Passwort { get; private set; }
-        [Required]
         public String Vorname { get; set; }
-        [Required]
         public String Name { get; set; }
-        [Required]
         public DateTime Geburtsdatum { get; set; }
         public virtual List<Bestellung> Bestellungen { get; set; }
         public virtual List<FilmBewertung> FilmBewertungen { get; set; }

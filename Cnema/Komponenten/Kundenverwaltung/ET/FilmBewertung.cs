@@ -15,7 +15,6 @@ namespace Komponenten.Kundenverwaltung.ET
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FilmBewertungId {get; private set; }
-        [Required]
         public int Bewertung { get; set; }
         public virtual Kunde Kunde { get; set; }
         public virtual Film Film { get; set; }

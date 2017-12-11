@@ -14,9 +14,7 @@ namespace Komponenten.Kundenverwaltung.ET
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AdminId { get; private set; }
-        [Required]
         public String Passwort { get; private set; }
-        [Required]
         public String Name { get; set; }
 
         public Admin()
