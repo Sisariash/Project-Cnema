@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Komponenten.Datenbank
 {
-    class CnemaContext : DbContext
+    public class CnemaContext : DbContext
     {
         public DbSet<Vorstellung> Vorstellungen { get; set; }
         public DbSet<Bestellung> Bestellungen { get; set; }
