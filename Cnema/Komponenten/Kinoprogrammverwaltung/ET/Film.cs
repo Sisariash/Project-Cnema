@@ -32,14 +32,14 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
 
         public Film(string titel, int jahr, string genre, int laenge, string sprache, bool is3D, double bewertungAvg, int fsk)
         {
-            this.Titel = titel;
-            this.Jahr = jahr;
-            this.Genre = genre;
-            this.Laenge = laenge;
-            this.Sprache = sprache;
-            this.Is3D = is3D;
-            this.BewertungAvg = bewertungAvg;
-            this.Fsk = fsk;
+            Titel = titel;
+            Jahr = jahr;
+            Genre = genre;
+            Laenge = laenge;
+            Sprache = sprache;
+            Is3D = is3D;
+            BewertungAvg = bewertungAvg;
+            Fsk = fsk;
         }
 
         public override bool Equals(object obj)

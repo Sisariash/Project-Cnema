@@ -20,8 +20,8 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
         public Saal(string saalName, int anzahlSitze)
         {
 
-            this.SaalName = saalName;
-            this.AnzahlSitze = anzahlSitze;
+            SaalName = saalName;
+            AnzahlSitze = anzahlSitze;
         }
 
         public override bool Equals(object obj)
