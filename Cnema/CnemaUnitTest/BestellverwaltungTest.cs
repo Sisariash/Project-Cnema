@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CnemaUnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest4
     {
         [TestMethod]
         public void TestMethod1()
