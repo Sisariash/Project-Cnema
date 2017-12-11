@@ -23,6 +23,7 @@ namespace Komponenten.Kinoprogrammverwaltung.ET
             SaalName = saalName;
             AnzahlSitze = anzahlSitze;
         }
+        public Saal() { }
 
         public override bool Equals(object obj)
         {
