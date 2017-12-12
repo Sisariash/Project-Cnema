@@ -26,7 +26,7 @@ namespace CnemaUnitTest
             // Set other attributes
 
             // Method to test
-            Film geanderterFilm = kinoprogrammverwaltung.FilmAendern(film);
+            Film geanderterFilm = kinoprogrammverwaltung.FilmLesen(film.FilmId);
 
             // Check conditions
             Assert.AreEqual(geanderterFilm.FilmId, film.FilmId);
