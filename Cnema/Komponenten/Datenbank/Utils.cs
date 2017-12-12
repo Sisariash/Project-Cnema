@@ -8,8 +8,8 @@ namespace Komponenten.Datenbank
     public class Utils
     {
 
-        // Password Hashing
-        
+        // Password Hashing gemäß RFC 2898
+
         public static string HashPassword(string password)
         {
             PasswordHasher passwordHasher = new PasswordHasher();

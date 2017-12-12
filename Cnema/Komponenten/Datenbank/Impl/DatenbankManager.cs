@@ -26,7 +26,7 @@ namespace Komponenten.Datenbank.Impl
             return cnemaContext.Filme.ToList();
         }
 
-        public bool FilmAendern(Film film)
+        public bool FilmAendern()
         {
             try
             {
@@ -84,7 +84,7 @@ namespace Komponenten.Datenbank.Impl
             catch { return false; }
         }
 
-        public bool VorstellungAendern(Vorstellung vorstellung)
+        public bool VorstellungAendern()
         {
             try
             {
@@ -130,6 +130,19 @@ namespace Komponenten.Datenbank.Impl
             }
         }
 
+        public bool BestellungAendern()
+        {
+            try
+            {
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool BestellungLoeschen(Bestellung bestellung)
         {
             try
@@ -166,7 +179,7 @@ namespace Komponenten.Datenbank.Impl
             }
         }
 
-        public bool KundeAendern(Kunde kunde)
+        public bool KundeAendern()
         {
             try
             {
@@ -218,7 +231,7 @@ namespace Komponenten.Datenbank.Impl
             }
         }
 
-        public bool AdminAendern(Admin admin)
+        public bool AdminAendern()
         {
             try
             {
