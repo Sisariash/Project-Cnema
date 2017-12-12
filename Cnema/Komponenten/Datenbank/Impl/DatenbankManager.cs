@@ -28,22 +28,37 @@ namespace Komponenten.Datenbank.Impl
 
         public bool FilmAendern(Film film)
         {
-            cnemaContext.SaveChanges();
-            return true;
+            try
+            {
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
 
         public bool FilmHinzufuegen(Film film)
         {
-            cnemaContext.Filme.Add(film);
-            cnemaContext.SaveChanges();
-            return true;
+            try
+            {
+                cnemaContext.Filme.Add(film);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
 
         public bool FilmLoeschen(Film film)
         {
-            cnemaContext.Filme.Remove(film);
-            cnemaContext.SaveChanges();
-            return true;
+            try
+            {
+                cnemaContext.Filme.Remove(film);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         // Vorstellung
@@ -60,22 +75,70 @@ namespace Komponenten.Datenbank.Impl
 
         public bool VorstellungHinzufuegen(Vorstellung vorstellung)
         {
-            cnemaContext.Vorstellungen.Add(vorstellung);
-            cnemaContext.SaveChanges();
-            return true;
+            try
+            {
+                cnemaContext.Vorstellungen.Add(vorstellung);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
 
         public bool VorstellungAendern(Vorstellung vorstellung)
         {
-            cnemaContext.SaveChanges();
-            return true;
+            try
+            {
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
 
         public bool VorstellungLoeschen(Vorstellung vorstellung)
         {
-            cnemaContext.Vorstellungen.Remove(vorstellung);
-            cnemaContext.SaveChanges();
-            return true;
+            try
+            {
+                cnemaContext.Vorstellungen.Remove(vorstellung);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        //Bestellung
+        public Bestellung BestellungLesen(int id)
+        {
+            return cnemaContext.Bestellungen.Find(id);
+        }
+
+        public List<Bestellung> AlleBestellungenLesen()
+        {
+            return cnemaContext.Bestellungen.ToList();
+        }
+
+        public bool BestellungHinzufügen(Bestellung bestellung)
+        {
+            try
+            {
+                cnemaContext.Bestellungen.Add(bestellung);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool BestellungLoeschen(Bestellung bestellung)
+        {
+            try
+            {
+                cnemaContext.Bestellungen.Remove(bestellung);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
 
     }

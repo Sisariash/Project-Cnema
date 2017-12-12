@@ -40,6 +40,11 @@ namespace Komponenten.Datenbank
         bool BenutzerAendern(Benutzer benutzer);
         bool BenutzerLoeschen(Benutzer benutzer);
         */
-     
+
+        //Bestellung
+        Bestellung BestellungLesen(int id);
+        List<Bestellung> AlleBestellungenLesen();
+        bool BestellungHinzufügen(Bestellung bestellung);
+        bool BestellungLoeschen(Bestellung bestellung);
     }
 }
