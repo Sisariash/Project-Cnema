@@ -83,10 +83,6 @@
     <Compile Include="Migrations\201712121245079_neu.Designer.cs">
       <DependentUpon>201712121245079_neu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712121550259_BenutzerKundeAdmin.cs" />
-    <Compile Include="Migrations\201712121550259_BenutzerKundeAdmin.Designer.cs">
-      <DependentUpon>201712121550259_BenutzerKundeAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,9 +99,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712121245079_neu.resx">
       <DependentUpon>201712121245079_neu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712121550259_BenutzerKundeAdmin.resx">
-      <DependentUpon>201712121550259_BenutzerKundeAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

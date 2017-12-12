@@ -7,6 +7,7 @@ namespace Komponenten.Datenbank
 {
     public class Utils
     {
+
         // Password Hashing
         
         public static string HashPassword(string password)
