@@ -45,8 +45,8 @@ namespace CnemaUnitTest
             Assert.IsTrue(kpv.FilmHinzufuegen(f3));*/
 
             //kv.FilmBewerten(5, kpv.FilmLesen(9), kv.dbManager.KundeLesen(15));
-            kv.FilmBewerten(5, kpv.FilmLesen(9), kv.dbManager.KundeLesen(16));
-            //kv.FilmBewerten(3, kpv.FilmLesen(10), kv.dbManager.KundeLesen(17));
+            //kv.FilmBewerten(5, kpv.FilmLesen(9), kv.dbManager.KundeLesen(16));
+            kv.FilmBewerten(3, kpv.FilmLesen(10), kv.dbManager.KundeLesen(17));
             //kv.FilmBewerten(4, kpv.FilmLesen(11), kv.dbManager.KundeLesen(15));
             //kv.FilmBewerten(4, kpv.FilmLesen(11), kv.dbManager.KundeLesen(16));
         }

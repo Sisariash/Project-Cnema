@@ -32,6 +32,7 @@ namespace Komponenten.Kundenverwaltung.Impl
                 // Bewertung zu den beiden n-Seiten hinzufügen
                 film.FilmBewertungen.Add(fbw);
                 kunde.FilmBewertungen.Add(fbw);
+                db.SaveChanges();
             }
         }
 
