@@ -30,8 +30,15 @@ namespace Komponenten.Kundenverwaltung.Impl
                 FilmBewertung fbw = new FilmBewertung(bewertung);
                 db.FilmBewertungen.Add(fbw);
                 // Bewertung zu den beiden n-Seiten hinzufügen
+<<<<<<< HEAD
                 film.FilmBewertungen.Add(fbw);
                 kunde.FilmBewertungen.Add(fbw);
+=======
+                //film.FilmBewertungen.Add(fbw);
+                //kunde.FilmBewertungen.Add(fbw);
+                fbw.Film = db.Filme.Find(film.FilmId);
+                fbw.Kunde = db.Kunden.Find(kunde.BenutzerId);
+>>>>>>> 54a508f1b8feaa6c49ae1aa74f99bf56e5598e00
                 db.SaveChanges();
             }
         }
