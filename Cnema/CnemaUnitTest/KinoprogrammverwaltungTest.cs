@@ -60,7 +60,7 @@ namespace CnemaUnitTest
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void TestHashing()
         {
             // Hashwert ist immer unterschiedlich, die Prüfung auf Korrektheit stimmt trotzdem immer überein
             // User user = new User();
