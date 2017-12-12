@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace Komponenten.Datenbank.Impl
 {
-    class DatenbankManager: IDatenbankManager
+    class DatenbankManager : IDatenbankManager
     {
 
         private CnemaContext cnemaContext = new CnemaContext();
@@ -141,5 +141,108 @@ namespace Komponenten.Datenbank.Impl
             catch { return false; }
         }
 
+        //Benutzer: Kunde
+        public Kunde KundeLesen(int id)
+        {
+            return cnemaContext.Kunden.Find(id);
+        }
+
+        public List<Kunde> AlleKundenLesen()
+        {
+            return cnemaContext.Kunden.ToList();
+        }
+
+        public bool KundeHinzufuegen(Kunde kunde)
+        {
+            try
+            {
+                cnemaContext.Kunden.Add(kunde);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool KundeAendern(Kunde kunde)
+        {
+            try
+            {
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool KundeLoeschen(Kunde kunde)
+        {
+            try
+            {
+                cnemaContext.Kunden.Remove(kunde);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //Benutzer: Admin
+        public Admin AdminLesen(int id)
+        {
+            return cnemaContext.Admins.Find(id);
+        }
+
+        public List<Admin> AlleAdminsLesen()
+        {
+            return cnemaContext.Admins.ToList();
+        }
+
+        public bool AdminHinzufuegen(Admin admin)
+        {
+            try
+            {
+                cnemaContext.Admins.Add(admin);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool AdminAendern(Admin admin)
+        {
+            try
+            {
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool AdminLoeschen(Admin admin)
+        {
+            try
+            {
+                cnemaContext.Admins.Remove(admin);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

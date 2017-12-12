@@ -34,12 +34,18 @@ namespace Komponenten.Datenbank
         bool VorstellungLoeschen(Vorstellung vorstellung);
 
         // Benutzer: Kunde
-        /*Benutzer BenutzerLesen(int id);
-        List<Benutzer> AlleBenutzerLesen();
-        bool BenutzerHinzufuegen(Benutzer benutzer);
-        bool BenutzerAendern(Benutzer benutzer);
-        bool BenutzerLoeschen(Benutzer benutzer);
-        */
+        Kunde KundeLesen(int id);
+        List<Kunde> AlleKundenLesen();
+        bool KundeHinzufuegen(Kunde kunde);
+        bool KundeAendern(Kunde kunde);
+        bool KundeLoeschen(Kunde kunde);
+
+        // Benutzer: Admin
+        Admin AdminLesen(int id);
+        List<Admin> AlleAdminsLesen();
+        bool AdminHinzufuegen(Admin admin);
+        bool AdminAendern(Admin admin);
+        bool AdminLoeschen(Admin admin);
 
         //Bestellung
         Bestellung BestellungLesen(int id);
