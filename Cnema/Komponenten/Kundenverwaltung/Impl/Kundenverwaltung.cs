@@ -4,30 +4,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Komponenten.ET;
+using Komponenten.Datenbank;
+using Komponenten.Datenbank.Impl;
 
 
 namespace Komponenten.Kundenverwaltung.Impl
 {
     public class Kundenverwaltung : IKundenverwaltung
     {
+        public IDatenbankManager dbManager;
+
+        public Kundenverwaltung(IDatenbankManager datenbankManager)
+        {
+            dbManager = datenbankManager;
+        }
         public Kundenverwaltung()
         {
-
+            dbManager = new DatenbankManager();
         }
 
-        public void FilmBewerten(int bewertung)
+        public void FilmBewerten(int bewertung, Film film, Kunde kunde)
         {
-            throw new NotImplementedException();
+            using (CnemaContext db = new CnemaContext())
+            {
+                FilmBewertung fbw = new FilmBewertung(bewertung);
+                db.FilmBewertungen.Add(fbw);
+                // Bewertung zu den beiden n-Seiten hinzufügen
+                film.FilmBewertungen.Add(fbw);
+                kunde.FilmBewertungen.Add(fbw);
+            }
         }
 
-        public bool Login(int Id, string passwort)
+        public bool KundeLogin(int id, string passwort)
         {
-            throw new NotImplementedException();
+            Kunde k;
+            if (dbManager.KundeLesen(id) != null)
+            {
+                k = dbManager.KundeLesen(id);
+                return Utils.VerifyPassword(k.Passwort, passwort);
+            }
+            else
+                return false;
         }
 
-        public bool Registrieren(Kunde kunde)
+        public bool AdminLogin(string passwort)
         {
-            throw new NotImplementedException();
+            List<Admin> admins = dbManager.AlleAdminsLesen();
+            foreach (Admin a in admins)
+            {
+                if (Utils.VerifyPassword(a.Passwort, passwort))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool KundeRegistrieren(Kunde kunde)
+        {
+            return dbManager.KundeHinzufuegen(kunde);
+        }
+
+        public bool AdminRegistrieren(Admin admin)
+        {
+            return dbManager.AdminHinzufuegen(admin);
         }
     }
 }

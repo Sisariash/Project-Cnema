@@ -9,8 +9,10 @@ namespace Komponenten.Kundenverwaltung
 {
     public interface IKundenverwaltung
     {
-        bool Registrieren(Kunde kunde);
-        bool Login(int Id, String passwort);
-        void FilmBewerten(int bewertung);
+        bool KundeRegistrieren(Kunde kunde);
+        bool AdminRegistrieren(Admin admin);
+        bool KundeLogin(int id, String passwort);
+        bool AdminLogin(String passwort);
+        void FilmBewerten(int bewertung, Film film, Kunde kunde);
     }
 }

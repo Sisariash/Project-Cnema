@@ -21,11 +21,9 @@ namespace Komponenten.ET
         public FilmBewertung()
         {
         }
-        public FilmBewertung(int bewertung, Kunde kunde, Film film)
+        public FilmBewertung(int bewertung)
         {
             Bewertung = bewertung;
-            Kunde = kunde;
-            Film = film;
         }
 
         public override bool Equals(object obj)

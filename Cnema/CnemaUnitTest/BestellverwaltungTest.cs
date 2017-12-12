@@ -16,7 +16,7 @@ namespace CnemaUnitTest
             Bestellverwaltung bestellverwaltung = new Bestellverwaltung();
             Kundenverwaltung kundenverwaltung = new Kundenverwaltung();
             Kunde testKunde = new Kunde();
-            kundenverwaltung.Registrieren(testKunde);
+            kundenverwaltung.KundeRegistrieren(testKunde);
             Vorstellung testVorstellung = new Vorstellung();
             bestellverwaltung.Reservieren(testKunde, testVorstellung);
         }
