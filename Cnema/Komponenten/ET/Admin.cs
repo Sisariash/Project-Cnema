@@ -8,37 +8,17 @@ using System.Threading.Tasks;
 
 namespace Komponenten.ET
 {
-    public class Admin
+    public class Admin : Benutzer
     {
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AdminId { get; private set; }
-        public String Passwort { get; private set; }
         public String Name { get; set; }
 
-        public Admin()
+        public Admin(String passwort, String name) : base(passwort)
         {
-        }
-
-        public Admin(String passwort, String name)
-        {
-            Passwort = passwort;
             Name = name;
         }
 
-        public override bool Equals(object obj)
-        {
-            if (this == obj) return true;
-            if (this.GetType() != obj.GetType() || obj == null) return false;
-            Admin other = (Admin)obj;
-            if (!this.AdminId.Equals(other.AdminId)) return false;
-            return true;
-        }
+        public Admin()
+        { }
 
-        public override int GetHashCode()
-        {
-            return AdminId;
-        }
     }
 }

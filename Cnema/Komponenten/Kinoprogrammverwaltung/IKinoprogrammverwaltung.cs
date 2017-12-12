@@ -8,13 +8,13 @@ using Komponenten.ET;
 namespace Komponenten.Kinoprogrammverwaltung
 {
     public interface IKinoprogrammverwaltung
-    { 
-   
+    {
+
         // Filme
         ET.Film FilmLesen(int id);
         List<ET.Film> AlleFilmLesen();
         bool FilmHinzufuegen(ET.Film film);
-        ET.Film FilmAendern(ET.Film film);
+        bool FilmAendern(ET.Film film);
         bool FilmLoeschen(ET.Film film);
 
         // Vorstellung

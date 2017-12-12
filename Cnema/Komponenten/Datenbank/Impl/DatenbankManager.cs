@@ -26,10 +26,10 @@ namespace Komponenten.Datenbank.Impl
             return cnemaContext.Filme.ToList();
         }
 
-        public Film FilmAendern(Film film)
+        public bool FilmAendern(Film film)
         {
             cnemaContext.SaveChanges();
-            return film;
+            return true;
         }
 
         public bool FilmHinzufuegen(Film film)
@@ -65,10 +65,10 @@ namespace Komponenten.Datenbank.Impl
             return true;
         }
 
-        public Vorstellung VorstellungAendern(Vorstellung vorstellung)
+        public bool VorstellungAendern(Vorstellung vorstellung)
         {
             cnemaContext.SaveChanges();
-            return vorstellung;
+            return true;
         }
 
         public bool VorstellungLoeschen(Vorstellung vorstellung)

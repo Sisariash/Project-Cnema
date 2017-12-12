@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bestellverwaltung\BestellverwaltungFactory.cs" />
+    <Compile Include="ET\Benutzer.cs" />
     <Compile Include="ET\Bestellung.cs" />
     <Compile Include="ET\Vorstellung.cs" />
     <Compile Include="Bestellverwaltung\IBestellverwaltung.cs" />

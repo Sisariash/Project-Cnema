@@ -23,14 +23,23 @@ namespace Komponenten.Datenbank
         Film FilmLesen(int id);
         List<Film> AlleFilmeLesen();
         bool FilmHinzufuegen(Film film);
-        Film FilmAendern(Film film);
+        bool FilmAendern(Film film);
         bool FilmLoeschen(Film film);
 
         // Vorstellung
         Vorstellung VorstellungLesen(int id);
         List<Vorstellung> AlleVorstellungenLesen();
         bool VorstellungHinzufuegen(Vorstellung vorstellung);
-        Vorstellung VorstellungAendern(Vorstellung vorstellung);
+        bool VorstellungAendern(Vorstellung vorstellung);
         bool VorstellungLoeschen(Vorstellung vorstellung);
+
+        // Benutzer: Kunde
+        /*Benutzer BenutzerLesen(int id);
+        List<Benutzer> AlleBenutzerLesen();
+        bool BenutzerHinzufuegen(Benutzer benutzer);
+        bool BenutzerAendern(Benutzer benutzer);
+        bool BenutzerLoeschen(Benutzer benutzer);
+        */
+     
     }
 }

@@ -24,7 +24,7 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
             return datenbankManager.AlleFilmeLesen();
         }
 
-        public Film FilmAendern(Film film)
+        public bool FilmAendern(Film film)
         {
             return datenbankManager.FilmAendern(film);
         }
