@@ -12,5 +12,6 @@ namespace Komponenten.Bestellverwaltung
         IList<ET.Vorstellung> ProgrammAnzeigen();
         IList<ET.Vorstellung> ProgrammFiltern(String kriterium);
         bool Reservieren(Kunde kunde, ET.Vorstellung vorstellung);
+        bool Reservieren(Kunde kunde, ET.Vorstellung vorstellung, double preis);
     }
 }

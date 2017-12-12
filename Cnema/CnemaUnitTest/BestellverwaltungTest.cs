@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Komponenten.Datenbank;
 using Komponenten.ET;
-
+using Komponenten.Bestellverwaltung.Impl;
+using Komponenten.Kundenverwaltung.Impl;
 
 namespace CnemaUnitTest
 {
@@ -10,14 +11,14 @@ namespace CnemaUnitTest
     public class BestellverwaltungTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestReservierung()
         {
-            CnemaContext context = new CnemaContext();
-            //Saal saal1 = new Saal("Saal1", 100);
-            //context.Säle.Add(saal1);
-            context.SaveChanges();
-            Saal saal2 = context.Säle.Find("Saal1");
-            Assert.IsNotNull(saal2);
+            Bestellverwaltung bestellverwaltung = new Bestellverwaltung();
+            Kundenverwaltung kundenverwaltung = new Kundenverwaltung();
+            Kunde testKunde = new Kunde();
+            kundenverwaltung.Registrieren(testKunde);
+            Vorstellung testVorstellung = new Vorstellung();
+            bestellverwaltung.Reservieren(testKunde, testVorstellung);
         }
     }
 }
