@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using Komponenten.Bestellverwaltung.ET;
-using Komponenten.Kundenverwaltung.ET;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Komponenten.Kinoprogrammverwaltung.ET
+namespace Komponenten.ET
 {
     public class Film
     {

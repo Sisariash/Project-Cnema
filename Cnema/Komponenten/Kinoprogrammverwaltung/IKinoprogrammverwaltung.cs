@@ -3,9 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System;
-
-using Komponenten.Bestellverwaltung.ET;
-using Komponenten.Kinoprogrammverwaltung.ET;
+using Komponenten.ET;
 
 namespace Komponenten.Kinoprogrammverwaltung
 {

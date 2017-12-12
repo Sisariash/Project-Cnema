@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Komponenten.Kinoprogrammverwaltung.ET;
 using Komponenten.Datenbank;
 using Komponenten.Datenbank.Impl;
-using Komponenten.Bestellverwaltung.ET;
+using Komponenten.ET;
 
 namespace Komponenten.Kinoprogrammverwaltung.Impl
 {

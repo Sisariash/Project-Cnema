@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Komponenten.Kundenverwaltung.ET;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Komponenten.Bestellverwaltung.ET
+namespace Komponenten.ET
 {
     public class Bestellung
     {

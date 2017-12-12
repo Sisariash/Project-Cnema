@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Komponenten.Datenbank;
-using Komponenten.Kinoprogrammverwaltung.ET;
+using Komponenten.ET;
+
 
 namespace CnemaUnitTest
 {
     [TestClass]
-    public class UnitTest4
+    public class BestellverwaltungTest
     {
         [TestMethod]
         public void TestMethod1()

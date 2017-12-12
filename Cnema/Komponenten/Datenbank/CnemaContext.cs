@@ -1,12 +1,10 @@
-﻿using Komponenten.Bestellverwaltung.ET;
-using Komponenten.Kinoprogrammverwaltung.ET;
-using Komponenten.Kundenverwaltung.ET;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Komponenten.ET;
 
 namespace Komponenten.Datenbank
 {

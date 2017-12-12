@@ -51,22 +51,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bestellverwaltung\BestellverwaltungFactory.cs" />
-    <Compile Include="Bestellverwaltung\ET\Bestellung.cs" />
-    <Compile Include="Bestellverwaltung\ET\Vorstellung.cs" />
+    <Compile Include="ET\Bestellung.cs" />
+    <Compile Include="ET\Vorstellung.cs" />
     <Compile Include="Bestellverwaltung\IBestellverwaltung.cs" />
     <Compile Include="Bestellverwaltung\Impl\Bestellverwaltung.cs" />
     <Compile Include="Datenbank\CnemaContext.cs" />
     <Compile Include="Datenbank\IDatenbankManager.cs" />
     <Compile Include="Datenbank\Impl\DatenbankManager.cs" />
     <Compile Include="Datenbank\Utils.cs" />
-    <Compile Include="Kinoprogrammverwaltung\ET\Film.cs" />
-    <Compile Include="Kinoprogrammverwaltung\ET\Saal.cs" />
+    <Compile Include="ET\Film.cs" />
+    <Compile Include="ET\Saal.cs" />
     <Compile Include="Kinoprogrammverwaltung\IKinoprogrammverwaltung.cs" />
     <Compile Include="Kinoprogrammverwaltung\Impl\Kinoprogrammverwaltung.cs" />
     <Compile Include="Kinoprogrammverwaltung\KinoprogrammverwaltungFactory.cs" />
-    <Compile Include="Kundenverwaltung\ET\Admin.cs" />
-    <Compile Include="Kundenverwaltung\ET\FilmBewertung.cs" />
-    <Compile Include="Kundenverwaltung\ET\Kunde.cs" />
+    <Compile Include="ET\Admin.cs" />
+    <Compile Include="ET\FilmBewertung.cs" />
+    <Compile Include="ET\Kunde.cs" />
     <Compile Include="Kundenverwaltung\IKundenverwaltung.cs" />
     <Compile Include="Kundenverwaltung\Impl\Kundenverwaltung.cs" />
     <Compile Include="Kundenverwaltung\KundenverwaltungFactory.cs" />
@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201712111750088_name.cs" />
     <Compile Include="Migrations\201712111750088_name.Designer.cs">
       <DependentUpon>201712111750088_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121245079_neu.cs" />
+    <Compile Include="Migrations\201712121245079_neu.Designer.cs">
+      <DependentUpon>201712121245079_neu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +96,10 @@
     <EmbeddedResource Include="Migrations\201712111750088_name.resx">
       <DependentUpon>201712111750088_name.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121245079_neu.resx">
+      <DependentUpon>201712121245079_neu.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

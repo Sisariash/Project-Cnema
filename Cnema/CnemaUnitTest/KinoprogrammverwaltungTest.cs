@@ -1,16 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Komponenten.Kinoprogrammverwaltung.ET;
 using Komponenten.Kinoprogrammverwaltung;
 using Komponenten.Kinoprogrammverwaltung.Impl;
 
 using Komponenten.Datenbank;
 using Microsoft.AspNet.Identity;
+using Komponenten.ET;
 
 namespace CnemaUnitTest
 {
     [TestClass]
-    public class UnitTest3
+    public class KinoprogrammverwaltungTest
     {
         [TestMethod]
         public void TestMethod1()
@@ -19,10 +19,10 @@ namespace CnemaUnitTest
             IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
 
             // Init film
-            Film film = new Film();
-            film.FilmId = 123;
-            film.Titel  = "Harry Potter";
-            film.Jahr = 1999;
+            Film film = kinoprogrammverwaltung.FilmLesen(1);
+            //film.FilmId = 123;
+            film.Titel  = "Harry fslkdjasdfjlk";
+            film.Jahr = 1998;
             // Set other attributes
 
             // Method to test

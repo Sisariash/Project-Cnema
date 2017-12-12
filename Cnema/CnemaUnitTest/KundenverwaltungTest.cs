@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Komponenten.Kundenverwaltung.ET;
 using System.Data.Entity;
 using Komponenten.Datenbank;
+using Komponenten.ET;
+
 
 namespace CnemaUnitTest
 {

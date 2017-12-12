@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Komponenten.Bestellverwaltung.ET;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Komponenten.Kundenverwaltung.ET
+namespace Komponenten.ET
 {
     public class Kunde
     {
