@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace Komponenten.Datenbank.Impl
 {
-    class DatenbankManager : IDatenbankManager
+    public class DatenbankManager : IDatenbankManager
     {
 
         private CnemaContext cnemaContext = new CnemaContext();
