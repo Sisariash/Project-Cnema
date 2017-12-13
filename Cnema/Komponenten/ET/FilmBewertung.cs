@@ -13,11 +13,11 @@ namespace Komponenten.ET
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int FilmBewertungId {get; private set; }
+        public int FilmBewertungId { get; private set; }
         public int Bewertung { get; set; }
         public virtual Kunde Kunde { get; set; }
         public virtual Film Film { get; set; }
-        
+
         public FilmBewertung()
         {
         }
