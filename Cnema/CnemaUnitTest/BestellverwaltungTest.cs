@@ -4,6 +4,7 @@ using Komponenten.Datenbank;
 using Komponenten.ET;
 using Komponenten.Bestellverwaltung.Impl;
 using Komponenten.Kundenverwaltung.Impl;
+using Komponenten.Datenbank.Impl;
 
 namespace CnemaUnitTest
 {
@@ -13,11 +14,11 @@ namespace CnemaUnitTest
         [TestMethod]
         public void TestReservierung()
         {
-            Bestellverwaltung bestellverwaltung = new Bestellverwaltung();
-            Kundenverwaltung kundenverwaltung = new Kundenverwaltung();
-            Kunde testKunde = new Kunde();
-            kundenverwaltung.KundeRegistrieren(testKunde);
-            Vorstellung testVorstellung = new Vorstellung();
+            DatenbankManager dbm = new DatenbankManager();
+            Bestellverwaltung bestellverwaltung = new Bestellverwaltung(dbm);
+            Kundenverwaltung kundenverwaltung = new Kundenverwaltung(dbm);
+            Kunde testKunde = dbm.KundeLesen(3);
+            Vorstellung testVorstellung = dbm.VorstellungLesen(1);
             bestellverwaltung.Reservieren(testKunde, testVorstellung);
         }
     }

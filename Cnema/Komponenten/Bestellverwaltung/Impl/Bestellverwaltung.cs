@@ -39,16 +39,30 @@ namespace Komponenten.Bestellverwaltung.Impl
         }
 
         //Bestellung mit Standardpreis 10
-        public bool Reservieren(Kunde kunde, Vorstellung vorstellung)
+        public Bestellung Reservieren(Kunde kunde, Vorstellung vorstellung)
         {
             Bestellung bestellung = new Bestellung(vorstellung, kunde, 10);
-            return datenbank.BestellungHinzufügen(bestellung);
+            if (datenbank.BestellungHinzufügen(bestellung))
+            {
+                return bestellung;
+            }
+            else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
+            
         }
         //Bestellung mit übergebenem Preis
-        public bool Reservieren(Kunde kunde, Vorstellung vorstellung, double preis)
+        public Bestellung Reservieren(Kunde kunde, Vorstellung vorstellung, double preis)
         {
             Bestellung bestellung = new Bestellung(vorstellung, kunde, preis);
-            return datenbank.BestellungHinzufügen(bestellung);
+            if (datenbank.BestellungHinzufügen(bestellung))
+            {
+                return bestellung;
+            }
+            else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
+        }
+
+        public void BestellungStornieren(Bestellung bestellung)
+        {
+            datenbank.BestellungLoeschen(bestellung);
         }
     }
 }
