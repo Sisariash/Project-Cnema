@@ -18,6 +18,8 @@ namespace Komponenten.Datenbank
      */
     public interface IDatenbankManager
     {
+        //Allgemeine Update Methode zum Speichern von Änderungen an Objekten
+        bool Update();
     
         // Filme
         Film FilmLesen(int id);
@@ -53,5 +55,11 @@ namespace Komponenten.Datenbank
         bool BestellungHinzufügen(Bestellung bestellung);
         bool BestellungAendern();
         bool BestellungLoeschen(Bestellung bestellung);
+
+        //Saal
+        Saal SaalLesen(int id);
+        List<Saal> AlleSaeleLesen();
+        bool SaalHinzufügen(Saal saal);
+        bool SaalLoeschen(Saal saal);
     }
 }

@@ -14,6 +14,19 @@ namespace Komponenten.Datenbank.Impl
 
         private CnemaContext cnemaContext = new CnemaContext();
 
+        public bool Update()
+        {
+            try
+            {
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         // Filme
         public Film FilmLesen(int id)
         {
@@ -257,8 +270,44 @@ namespace Komponenten.Datenbank.Impl
                 return false;
             }
         }
+
+        //Saal
+        public Saal SaalLesen(int id)
+        {
+            return cnemaContext.Säle.Find(id);
+        }
+
+        public List<Saal> AlleSaeleLesen()
+        {
+            return cnemaContext.Säle.ToList();
+        }
+
+        public bool SaalHinzufügen(Saal saal)
+        {
+            try
+            {
+                cnemaContext.Säle.Add(saal);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public bool SaalLoeschen(Saal saal)
+        {
+            try
+            {
+                cnemaContext.Säle.Remove(saal);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         //TODO: FilmBewertung
 
-        //TODO: Saal
+
     }
 }
