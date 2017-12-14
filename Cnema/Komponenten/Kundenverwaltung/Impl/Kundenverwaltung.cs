@@ -23,17 +23,16 @@ namespace Komponenten.Kundenverwaltung.Impl
             dbManager = new DatenbankManager();
         }
 
-        public void FilmBewerten(int bewertung, Film film, Kunde kunde)
+        public FilmBewertung FilmBewerten(int bewertung, Film film, Kunde kunde)
         {
-            //TODO: DB-Zugriff über DBManager implementieren
-            using (CnemaContext db = new CnemaContext())
+            FilmBewertung filmBewertung = new FilmBewertung(bewertung);
+            filmBewertung.Film = film;
+            filmBewertung.Kunde = kunde;
+            if (!dbManager.FilmBewertungHinzufügen(filmBewertung))
             {
-                FilmBewertung fbw = new FilmBewertung(bewertung);
-                db.FilmBewertungen.Add(fbw);
-                fbw.Film = db.Filme.Find(film.FilmId);
-                fbw.Kunde = db.Kunden.Find(kunde.BenutzerId);
-                db.SaveChanges();
+                throw new Exception("Bewertung konnte nicht hinzugefügt werden.");
             }
+            return filmBewertung;
         }
 
         public bool KundeLogin(int id, string passwort)

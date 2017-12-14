@@ -13,6 +13,13 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
     {
         private IDatenbankManager datenbankManager = new DatenbankManager();
 
+        public Kinoprogrammverwaltung(IDatenbankManager datenbankManager)
+        {
+            this.datenbankManager = datenbankManager;
+        }
+
+        public Kinoprogrammverwaltung() { }
+
         // Film Logik
         public Film FilmLesen(int id)
         {

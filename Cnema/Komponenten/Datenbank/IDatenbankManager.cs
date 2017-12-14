@@ -61,5 +61,11 @@ namespace Komponenten.Datenbank
         List<Saal> AlleSaeleLesen();
         bool SaalHinzufügen(Saal saal);
         bool SaalLoeschen(Saal saal);
+
+        //FilmBewertung
+        FilmBewertung FilmBewertungLesen(int id);
+        List<FilmBewertung> AlleFilmBewertungenLesen();
+        bool FilmBewertungHinzufügen(FilmBewertung filmBewertung);
+        bool FilmBewertungLöschen(FilmBewertung filmBewertung);
     }
 }

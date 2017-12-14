@@ -6,14 +6,17 @@ using Komponenten.ET;
 using Komponenten.Kundenverwaltung;
 using Komponenten.Kundenverwaltung.Impl;
 using Komponenten.Kinoprogrammverwaltung.Impl;
+using System.Collections.Generic;
+using Komponenten.Datenbank.Impl;
 
 namespace CnemaUnitTest
 {
     [TestClass]
     public class KundenverwaltungTest
     {
-        Kundenverwaltung kv = new Kundenverwaltung();
-        Kinoprogrammverwaltung kpv = new Kinoprogrammverwaltung();
+        static DatenbankManager dbm = new DatenbankManager();
+        Kundenverwaltung kv = new Kundenverwaltung(dbm);
+        Kinoprogrammverwaltung kpv = new Kinoprogrammverwaltung(dbm);
 
 
         /*Kunde k1 = new Kunde(Utils.HashPassword("geheim"), "Herzog", "Charly", new DateTime(1986, 10, 6));
@@ -93,6 +96,26 @@ namespace CnemaUnitTest
 
             // Wrong password
             Assert.IsFalse(Utils.VerifyPassword(passwordOfUserInDB, "password345"));
+        }
+
+        [TestMethod]
+        public void FilmBewertenTest()
+        {
+            //Alle bestehenden Bewertungen löschen
+            List<FilmBewertung> bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
+            foreach (FilmBewertung fb in bewertungen) { kv.dbManager.FilmBewertungLöschen(fb); }
+
+            Film film = kpv.FilmLesen(1);
+            Kunde kunde = kv.dbManager.KundeLesen(1);
+            FilmBewertung bewertung = kv.FilmBewerten(10, film, kunde);
+            Assert.IsNotNull(bewertung);
+            bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
+            Assert.AreEqual(1, bewertungen.Count);
+            Assert.AreEqual(kunde, bewertung.Kunde);
+            Assert.AreEqual(film, bewertung.Film);
+            kv.dbManager.FilmBewertungLöschen(bewertung);
+            bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
+            Assert.AreEqual(0, bewertungen.Count);
         }
     }
 }

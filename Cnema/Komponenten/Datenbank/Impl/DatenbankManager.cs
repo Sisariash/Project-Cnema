@@ -306,8 +306,38 @@ namespace Komponenten.Datenbank.Impl
                 return false;
             }
         }
-        //TODO: FilmBewertung
 
+        //FilmBewertung
+        public FilmBewertung FilmBewertungLesen(int id)
+        {
+            return cnemaContext.FilmBewertungen.Find(id);
+        }
 
+        public List<FilmBewertung> AlleFilmBewertungenLesen()
+        {
+            return cnemaContext.FilmBewertungen.ToList();
+        }
+
+        public bool FilmBewertungHinzufügen(FilmBewertung filmBewertung)
+        {
+            try
+            {
+                cnemaContext.FilmBewertungen.Add(filmBewertung);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public bool FilmBewertungLöschen(FilmBewertung filmBewertung)
+        {
+            try
+            {
+                cnemaContext.FilmBewertungen.Remove(filmBewertung);
+                cnemaContext.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
     }
 }
