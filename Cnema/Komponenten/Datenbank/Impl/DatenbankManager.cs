@@ -272,9 +272,9 @@ namespace Komponenten.Datenbank.Impl
         }
 
         //Saal
-        public Saal SaalLesen(int id)
+        public Saal SaalLesen(String saalname)
         {
-            return cnemaContext.Säle.Find(id);
+            return cnemaContext.Säle.Find(saalname);
         }
 
         public List<Saal> AlleSaeleLesen()

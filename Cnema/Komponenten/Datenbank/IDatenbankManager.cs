@@ -57,7 +57,7 @@ namespace Komponenten.Datenbank
         bool BestellungLoeschen(Bestellung bestellung);
 
         //Saal
-        Saal SaalLesen(int id);
+        Saal SaalLesen(String saalname);
         List<Saal> AlleSaeleLesen();
         bool SaalHinzufügen(Saal saal);
         bool SaalLoeschen(Saal saal);
