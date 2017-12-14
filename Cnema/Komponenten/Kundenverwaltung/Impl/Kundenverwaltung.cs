@@ -25,6 +25,7 @@ namespace Komponenten.Kundenverwaltung.Impl
 
         public void FilmBewerten(int bewertung, Film film, Kunde kunde)
         {
+            //TODO: DB-Zugriff über DBManager implementieren
             using (CnemaContext db = new CnemaContext())
             {
                 FilmBewertung fbw = new FilmBewertung(bewertung);
