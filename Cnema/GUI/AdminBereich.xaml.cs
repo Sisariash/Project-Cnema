@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für AdminBereich.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class AdminBereich : Page
     {
-        public MainWindow()
+        public AdminBereich()
         {
             InitializeComponent();
         }
