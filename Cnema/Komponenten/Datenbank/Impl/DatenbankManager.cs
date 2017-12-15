@@ -64,24 +64,24 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
-            if (film.Vorstellungen != null)
-            {
-                Vorstellung[] vs = new Vorstellung[film.Vorstellungen.Count];
-                film.Vorstellungen.CopyTo(vs);
-                foreach (Vorstellung v in vs)
+                if (film.Vorstellungen != null)
                 {
-                    if (v != null) VorstellungLoeschen(v);
+                    Vorstellung[] vs = new Vorstellung[film.Vorstellungen.Count];
+                    film.Vorstellungen.CopyTo(vs);
+                    foreach (Vorstellung v in vs)
+                    {
+                        if (v != null) VorstellungLoeschen(v);
+                    }
                 }
-            }
-            if (film.FilmBewertungen != null)
-            {
-                FilmBewertung[] fbs = new FilmBewertung[film.FilmBewertungen.Count];
-                film.FilmBewertungen.CopyTo(fbs);
-                foreach (FilmBewertung fb in fbs)
+                if (film.FilmBewertungen != null)
                 {
-                    if (fb != null) FilmBewertungLöschen(fb);
+                    FilmBewertung[] fbs = new FilmBewertung[film.FilmBewertungen.Count];
+                    film.FilmBewertungen.CopyTo(fbs);
+                    foreach (FilmBewertung fb in fbs)
+                    {
+                        if (fb != null) FilmBewertungLöschen(fb);
+                    }
                 }
-            }
                 cnemaContext.Filme.Remove(film);
                 cnemaContext.SaveChanges();
                 return true;
