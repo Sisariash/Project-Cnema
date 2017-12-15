@@ -64,6 +64,24 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
+            if (film.Vorstellungen != null)
+            {
+                Vorstellung[] vs = new Vorstellung[film.Vorstellungen.Count];
+                film.Vorstellungen.CopyTo(vs);
+                foreach (Vorstellung v in vs)
+                {
+                    if (v != null) VorstellungLoeschen(v);
+                }
+            }
+            if (film.FilmBewertungen != null)
+            {
+                FilmBewertung[] fbs = new FilmBewertung[film.FilmBewertungen.Count];
+                film.FilmBewertungen.CopyTo(fbs);
+                foreach (FilmBewertung fb in fbs)
+                {
+                    if (fb != null) FilmBewertungLöschen(fb);
+                }
+            }
                 cnemaContext.Filme.Remove(film);
                 cnemaContext.SaveChanges();
                 return true;
@@ -111,6 +129,15 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
+                if (vorstellung.Bestellungen != null)
+                {
+                    Bestellung[] bs = new Bestellung[vorstellung.Bestellungen.Count];
+                    vorstellung.Bestellungen.CopyTo(bs);
+                    foreach (Bestellung b in bs)
+                    {
+                        if (b != null) BestellungLoeschen(b);
+                    }
+                }
                 cnemaContext.Vorstellungen.Remove(vorstellung);
                 cnemaContext.SaveChanges();
                 return true;
@@ -209,6 +236,24 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
+                if (kunde.Bestellungen != null)
+                {
+                    Bestellung[] bs = new Bestellung[kunde.Bestellungen.Count];
+                    kunde.Bestellungen.CopyTo(bs);
+                    foreach (Bestellung b in bs)
+                    {
+                        if (b != null) BestellungLoeschen(b);
+                    }
+                }
+                if (kunde.FilmBewertungen != null)
+                {
+                    FilmBewertung[] fbs = new FilmBewertung[kunde.FilmBewertungen.Count];
+                    kunde.FilmBewertungen.CopyTo(fbs);
+                    foreach (FilmBewertung fb in fbs)
+                    {
+                        if (fb != null) FilmBewertungLöschen(fb);
+                    }
+                }
                 cnemaContext.Kunden.Remove(kunde);
                 cnemaContext.SaveChanges();
                 return true;
@@ -297,6 +342,15 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
+                if (saal.Vorstellungen != null)
+                {
+                    Vorstellung[] vs = new Vorstellung[saal.Vorstellungen.Count];
+                    saal.Vorstellungen.CopyTo(vs);
+                    foreach (Vorstellung v in vs)
+                    {
+                        if (v != null) VorstellungLoeschen(v);
+                    }
+                }
                 cnemaContext.Säle.Remove(saal);
                 cnemaContext.SaveChanges();
                 return true;

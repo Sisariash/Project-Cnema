@@ -15,10 +15,24 @@ namespace CnemaUnitTest
     public class KinoprogrammverwaltungTest
     {
 
-        IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
-        IDatenbankManager datenbankManager = new DatenbankManager();
+        
+        static IDatenbankManager datenbankManager = new DatenbankManager();
+        IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung(datenbankManager);
 
         //FilmTests
+        [TestMethod]
+        public void FilmTest()
+        {
+            datenbankManager.SaalLoeschen(datenbankManager.SaalLesen("Testsaal"));
+            Film film = new Film("Test", 1996, "Action", 130, "Deutsch", false, 0.0, 18);
+            Assert.IsTrue(kinoprogrammverwaltung.FilmHinzufuegen(film));
+            Saal saal = new Saal("Testsaal", 80);
+            Assert.IsTrue(datenbankManager.SaalHinzufügen(saal));
+            Vorstellung vorstellung = kinoprogrammverwaltung.VorstellungHinzufuegen(DateTime.Now, saal, film);
+            Assert.IsTrue(kinoprogrammverwaltung.FilmLoeschen(film));
+            Assert.IsTrue(datenbankManager.SaalLoeschen(saal));
+        }
+
 
         [TestMethod]
 

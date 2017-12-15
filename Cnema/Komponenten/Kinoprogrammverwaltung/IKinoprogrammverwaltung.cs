@@ -18,7 +18,7 @@ namespace Komponenten.Kinoprogrammverwaltung
         bool FilmLoeschen(ET.Film film);
 
         // Vorstellung
-        bool VorstellungHinzufuegen(DateTime zeitpunkt, Saal saal, Film film);
+        Vorstellung VorstellungHinzufuegen(DateTime zeitpunkt, Saal saal, Film film);
         bool VorstellungLoeschen(Vorstellung vorstellung);
     }
 }

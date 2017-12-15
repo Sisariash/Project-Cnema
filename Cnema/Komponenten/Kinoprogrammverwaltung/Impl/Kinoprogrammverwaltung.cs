@@ -44,14 +44,13 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
 
         public bool FilmLoeschen(Film film)
         {
-            datenbankManager.FilmLoeschen(film);
-            return true;
+            return datenbankManager.FilmLoeschen(film);
         }
 
 
         // Vorstellungen Logik
 
-        public bool VorstellungHinzufuegen(DateTime zeitpunkt, Saal saal, Film film)
+        public Vorstellung VorstellungHinzufuegen(DateTime zeitpunkt, Saal saal, Film film)
         {
             Vorstellung vorstellung = new Vorstellung();
             vorstellung.DateTime    = zeitpunkt;
@@ -59,7 +58,7 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
             vorstellung.Saal        = saal;
 
             datenbankManager.VorstellungHinzufuegen(vorstellung);
-            return true;
+            return vorstellung;
         }
 
         public bool VorstellungLoeschen(Vorstellung vorstellung)
