@@ -72,6 +72,12 @@
     <Compile Include="FilmHinzufuegen.xaml.cs">
       <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KinoprogrammHinzufuegen.xaml.cs">
+      <DependentUpon>KinoprogrammHinzufuegen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KinoprogrammLoeschen.xaml.cs">
+      <DependentUpon>KinoprogrammLoeschen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StartBildschirm.xaml.cs">
       <DependentUpon>StartBildschirm.xaml</DependentUpon>
     </Compile>
@@ -88,6 +94,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmHinzufuegen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KinoprogrammHinzufuegen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KinoprogrammLoeschen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,10 +25,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void Filme_ComboBox(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+       
 
         private void Fertig_Button(object sender, RoutedEventArgs e)
         {
@@ -111,6 +108,11 @@ namespace GUI
         }
 
         private void Sonntag_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Filme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

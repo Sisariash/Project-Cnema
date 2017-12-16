@@ -26,7 +26,6 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <ComboBox x:Name="Filme" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="126" Height="22" SelectionChanged="Filme_ComboBox"/>
         <Label Content="           Filme: " HorizontalAlignment="Left" Margin="20,74,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="126" FontWeight="Bold" Height="26"/>
         <Button Content="Fertig" HorizontalAlignment="Left" Margin="199,293,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Fertig_Button"/>
         <Label Content="Saal:" HorizontalAlignment="Left" Margin="177,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="39" FontWeight="Bold"/>
@@ -48,6 +47,13 @@
         <CheckBox Content="Freitag" HorizontalAlignment="Left" Margin="325,231,0,0" VerticalAlignment="Top" Checked="Freitag_Checked" Foreground="White"/>
         <CheckBox Content="Samstag" HorizontalAlignment="Left" Margin="415,231,0,0" VerticalAlignment="Top" Checked="Samstag_Checked" Background="White" Foreground="White"/>
         <CheckBox Content="Sonntag" HorizontalAlignment="Left" Margin="241,259,0,0" VerticalAlignment="Top" Checked="Sonntag_Checked" Foreground="White"/>
+        <ListView HorizontalAlignment="Left" Height="100" Margin="36,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Filme_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Page>
