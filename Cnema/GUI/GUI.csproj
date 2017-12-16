@@ -63,10 +63,31 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="FilmeBearbeiten.xaml.cs">
+      <DependentUpon>FilmeBearbeiten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilmeLoeschen.xaml.cs">
+      <DependentUpon>FilmeLoeschen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilmHinzufuegen.xaml.cs">
+      <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StartBildschirm.xaml.cs">
       <DependentUpon>StartBildschirm.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminBereich.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmeBearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmeLoeschen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmHinzufuegen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Kino1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Admin.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,8 +32,8 @@
         <Button  x:Name="Registrieren" Content="Registrieren" HorizontalAlignment="Left" Margin="312,196,0,0" VerticalAlignment="Top" Width="96" Click="Registrieren_TextBox"/>
         <Button x:Name="AdminLogin" Content="Admin-Login" HorizontalAlignment="Left" Margin="110,261,0,0" VerticalAlignment="Top" Width="103" Height="35" Click="Admin_Login"/>
         <Label Content="Passwort:" HorizontalAlignment="Left" Margin="232,266,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
-        <PasswordBox x:Name="AdminPasswort_txt" HorizontalAlignment="Left" Margin="307,266,0,0" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*"/>
-        <PasswordBox x:Name="KundenPasswort_txt" HorizontalAlignment="Left" Margin="307,147,0,0" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*"/>
+        <PasswordBox x:Name="AdminPasswort_txt" HorizontalAlignment="Left" Margin="307,266,0,0" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
+        <PasswordBox x:Name="KundenPasswort_txt" HorizontalAlignment="Left" Margin="307,147,0,0" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
 
 
     </Grid>

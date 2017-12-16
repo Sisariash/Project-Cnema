@@ -16,21 +16,21 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaktionslogik für AdminBereich.xaml
+    /// Interaktionslogik für FilmeLoeschen.xaml
     /// </summary>
-    public partial class AdminBereich : Page
+    public partial class FilmeLoeschen : Page
     {
-        public AdminBereich()
+        public FilmeLoeschen()
         {
             InitializeComponent();
         }
 
-        private void FilmVerwalten_ComboBox(object sender, SelectionChangedEventArgs e)
+        private void FilmeLoeschen_ComboBox(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void KinoProgrammVerwalten_ComboBox(object sender, SelectionChangedEventArgs e)
+        private void Loeschen_Button(object sender, RoutedEventArgs e)
         {
 
         }
