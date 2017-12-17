@@ -37,7 +37,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="318,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="Laenge_TextBox"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="318,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="FSK_TextBox"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="318,173,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="FSK_TextBox"/>
-        <CheckBox Content="3D" HorizontalAlignment="Left" Margin="318,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Checked="CheckBox_Checked" Width="51" Height="22" RenderTransformOrigin="0.914,0.456"/>
+        <CheckBox Content="3D" HorizontalAlignment="Left" Margin="318,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Checked="CheckBox_3D" Width="51" Height="22" RenderTransformOrigin="0.914,0.456"/>
         <Button Content="Hinzufügen" HorizontalAlignment="Left" Margin="186,272,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Hinzufuegen_Button"/>
 
     </Grid>
