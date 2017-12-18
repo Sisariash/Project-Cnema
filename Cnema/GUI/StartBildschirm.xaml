@@ -27,7 +27,7 @@
         <Button x:Name="KundenLogin" Content="Kunden-Login" HorizontalAlignment="Left" Margin="110,124,0,0" VerticalAlignment="Top" Width="103" Height="35" Click="Kunden_Login"/>
         <Label Content="Kunden-ID:" HorizontalAlignment="Left" Margin="232,115,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
         <Label Content="Passwort:" HorizontalAlignment="Left" Margin="232,144,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="307,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="KundenID_TextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="307,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="KundenID_TextBox"/>
         <Label Content="Noch kein Kunde?" HorizontalAlignment="Left" Margin="196,194,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="111"/>
         <Button  x:Name="Registrieren" Content="Registrieren" HorizontalAlignment="Left" Margin="312,196,0,0" VerticalAlignment="Top" Width="96" Click="Registrieren_TextBox"/>
         <Button x:Name="AdminLogin" Content="Admin-Login" HorizontalAlignment="Left" Margin="110,261,0,0" VerticalAlignment="Top" Width="103" Height="35" Click="Admin_Login"/>
