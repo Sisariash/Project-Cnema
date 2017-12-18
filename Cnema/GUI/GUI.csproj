@@ -63,6 +63,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="BestaetigungDerRegistrierung.xaml.cs">
+      <DependentUpon>BestaetigungDerRegistrierung.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FilmeBearbeiten.xaml.cs">
       <DependentUpon>FilmeBearbeiten.xaml</DependentUpon>
     </Compile>
@@ -72,16 +75,26 @@
     <Compile Include="FilmHinzufuegen.xaml.cs">
       <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Kinoprogramm.xaml.cs">
+      <DependentUpon>Kinoprogramm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KinoprogrammHinzufuegen.xaml.cs">
       <DependentUpon>KinoprogrammHinzufuegen.xaml</DependentUpon>
     </Compile>
     <Compile Include="KinoprogrammLoeschen.xaml.cs">
       <DependentUpon>KinoprogrammLoeschen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KundenRegistrierung.xaml.cs">
+      <DependentUpon>KundenRegistrierung.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StartBildschirm.xaml.cs">
       <DependentUpon>StartBildschirm.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminBereich.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BestaetigungDerRegistrierung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,11 +110,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Kinoprogramm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KinoprogrammHinzufuegen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KinoprogrammLoeschen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KundenRegistrierung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
