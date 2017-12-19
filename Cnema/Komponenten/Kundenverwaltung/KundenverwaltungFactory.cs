@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Komponenten.Kundenverwaltung;
-
-
+using Komponenten.Datenbank;
 
 namespace Komponenten.Kundenverwaltung
 {
@@ -13,9 +11,9 @@ namespace Komponenten.Kundenverwaltung
     {
         private Impl.Kundenverwaltung kv;
 
-        public KundenverwaltungFactory()
+        public KundenverwaltungFactory(IDatenbankManager db)
         {
-            kv = new Impl.Kundenverwaltung();
+            kv = new Impl.Kundenverwaltung(db);
         }
 
         public IKundenverwaltung GetKundenverwaltung()

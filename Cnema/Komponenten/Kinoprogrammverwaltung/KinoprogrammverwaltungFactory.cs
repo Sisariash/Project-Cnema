@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komponenten.Datenbank;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,16 @@ namespace Komponenten.Kinoprogrammverwaltung
 {
     public class KinoprogrammverwaltungFactory
     {
+        private Impl.Kinoprogrammverwaltung kpv;
+
+        public KinoprogrammverwaltungFactory(IDatenbankManager db)
+        {
+            kpv = new Impl.Kinoprogrammverwaltung(db);
+        }
+
+        public IKinoprogrammverwaltung GetKinoprogrammverwaltung()
+        {
+            return kpv;
+        }
     }
 }
