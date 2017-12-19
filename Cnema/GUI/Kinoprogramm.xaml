@@ -41,7 +41,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="ListView_SelectionChanged">
+        <ListView HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
