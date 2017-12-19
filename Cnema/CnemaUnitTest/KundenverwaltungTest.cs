@@ -1,13 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.Entity;
-using Komponenten.Datenbank;
+using Komponenten.Util;
 using Komponenten.ET;
 using Komponenten.Kundenverwaltung;
 using Komponenten.Kundenverwaltung.Impl;
 using Komponenten.Kinoprogrammverwaltung.Impl;
 using System.Collections.Generic;
-using Komponenten.Datenbank.Impl;
+using Komponenten.Util.Impl;
 
 namespace CnemaUnitTest
 {

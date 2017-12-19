@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Komponenten.ET;
-using Komponenten.Datenbank;
-using Komponenten.Datenbank.Impl;
+using Komponenten.Util;
+using Komponenten.Util.Impl;
 
 
 namespace Komponenten.Kundenverwaltung.Impl
@@ -58,8 +58,9 @@ namespace Komponenten.Kundenverwaltung.Impl
             return false;
         }
 
-        public bool KundeRegistrieren(Kunde kunde)
+        public bool KundeRegistrieren(String passwort, String name, String vorname, DateTime geburtsdatum)
         {
+            Kunde kunde = new Kunde(passwort, name, vorname, geburtsdatum);
             return dbManager.KundeHinzufuegen(kunde);
         }
 

@@ -179,5 +179,11 @@
   <ItemGroup>
     <Resource Include="Image\Admin.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Komponenten\Komponenten.csproj">
+      <Project>{c0dcb93e-474f-4874-b9cc-b11cf2f6f086}</Project>
+      <Name>Komponenten</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

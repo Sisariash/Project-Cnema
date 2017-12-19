@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 using Microsoft.AspNet.Identity;
 
-namespace Komponenten.Datenbank
+namespace Komponenten.Util
 {
     public class Utils
     {

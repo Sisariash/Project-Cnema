@@ -49,9 +49,10 @@ namespace GUI
 
 
 
-        private void Registrieren_TextBox(object sender, RoutedEventArgs e)
+        private void Registrieren_Button(object sender, RoutedEventArgs e)
         {
-
+            KundenRegistrierung kundenRegistrierung = new KundenRegistrierung();
+            this.NavigationService.Navigate(kundenRegistrierung);
         }
 
         private void Admin_Login(object sender, RoutedEventArgs e)

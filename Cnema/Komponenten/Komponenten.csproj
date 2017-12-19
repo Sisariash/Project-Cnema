@@ -59,7 +59,7 @@
     <Compile Include="Datenbank\CnemaContext.cs" />
     <Compile Include="Datenbank\IDatenbankManager.cs" />
     <Compile Include="Datenbank\Impl\DatenbankManager.cs" />
-    <Compile Include="Datenbank\Utils.cs" />
+    <Compile Include="Util\Utils.cs" />
     <Compile Include="ET\Film.cs" />
     <Compile Include="ET\Saal.cs" />
     <Compile Include="Kinoprogrammverwaltung\IKinoprogrammverwaltung.cs" />

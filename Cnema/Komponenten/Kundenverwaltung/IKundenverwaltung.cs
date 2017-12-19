@@ -9,7 +9,7 @@ namespace Komponenten.Kundenverwaltung
 {
     public interface IKundenverwaltung
     {
-        bool KundeRegistrieren(Kunde kunde);
+        bool KundeRegistrieren(String passwort, String name, String vorname, DateTime geburtsdatum);
         bool AdminRegistrieren(Admin admin);
         bool KundeLogin(int id, String passwort);
         bool AdminLogin(String passwort);

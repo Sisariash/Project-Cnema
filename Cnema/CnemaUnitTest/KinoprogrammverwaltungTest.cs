@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Komponenten.Kinoprogrammverwaltung;
 using Komponenten.Kinoprogrammverwaltung.Impl;
 
-using Komponenten.Datenbank;
+using Komponenten.Util;
 using Microsoft.AspNet.Identity;
 using Komponenten.ET;
-using Komponenten.Datenbank.Impl;
+using Komponenten.Util.Impl;
 
 
 namespace CnemaUnitTest
