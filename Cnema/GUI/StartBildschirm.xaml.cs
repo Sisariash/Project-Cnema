@@ -53,12 +53,20 @@ namespace GUI
                 Application.Current.Properties["aktuellerBenutzer"] = kunde;
                 Kinoprogramm kinoprogramm = new Kinoprogramm();
                 this.NavigationService.Navigate(kinoprogramm);
+                
+                /* Nur zu Testzwecken
+                Kunde k = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
+                MessageBox.Show(k.Name); */
             }
             else if (admin != null && isAdmin == true)
             {
                 Application.Current.Properties["aktuellerBenutzer"] = admin;
                 AdminBereich adminbereich = new AdminBereich();
                 this.NavigationService.Navigate(adminbereich);
+
+                /*Nur zu Testzwecken
+                Admin a = (Admin)Application.Current.Properties["aktuellerBenutzer"];
+                MessageBox.Show(a.Name); */
             }
             else
                 Login_Fehler.Content = "Anmeldedaten falsch";

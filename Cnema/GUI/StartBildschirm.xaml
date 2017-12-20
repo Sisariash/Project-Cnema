@@ -31,7 +31,7 @@
         <Button  x:Name="Registrieren" Content="Registrieren" HorizontalAlignment="Left" Margin="318,233,0,0" VerticalAlignment="Top" Width="96" Click="Registrieren_Button"/>
         <PasswordBox x:Name="Passwort_Box" HorizontalAlignment="Left" Margin="306,174,0,0" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
         <Button x:Name="Benutzer_Login" Content="Benutzer-Login" HorizontalAlignment="Left" Height="42" Margin="103,149,0,0" VerticalAlignment="Top" Width="110" Click="Benutzer_Login_Click"/>
-        <Label x:Name="Login_Fehler" Content="" HorizontalAlignment="Left" Margin="306,204,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" Foreground="#FFF73E3E"/>
+        <Label x:Name="Login_Fehler" Content="" HorizontalAlignment="Left" Margin="307,204,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#FFF73E3E"/>
 
 
     </Grid>
