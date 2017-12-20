@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Komponenten.ET;
+using Komponenten.Kundenverwaltung;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,31 +26,7 @@ namespace GUI
         public StartBildschirm()
         {
             InitializeComponent();
-            //txtBox_Passwort.PasswordChar = '*';
         }
-
-        private void Kunden_Login(object sender, RoutedEventArgs e)
-        {
-            Kinoprogramm kinoprogramm = new Kinoprogramm();
-            this.NavigationService.Navigate(kinoprogramm);
-
-        }
-
-        private void KundenID_TextBox(object sender, TextChangedEventArgs e)
-        {
-
-   
-
-        }
-        // !!!ACHTUNG!!! Selber geschrieben die Methode ging nicht mit Doppelklick erzeugen
-        private void KundenPasswort_PasswortBox(object sender, TextChangedEventArgs e)
-        {
-            //AdmunPasswort_txt (So habe ich die Box Manuell genannt)
-
-        }
-
-
-
 
 
         private void Registrieren_Button(object sender, RoutedEventArgs e)
@@ -57,20 +35,39 @@ namespace GUI
             this.NavigationService.Navigate(kundenRegistrierung);
         }
 
-        private void Admin_Login(object sender, RoutedEventArgs e)
-        {
-           AdminBereich adminBereich = new AdminBereich();
-            this.NavigationService.Navigate(adminBereich);
 
+        private void Benutzer_Login_Click(object sender, RoutedEventArgs e)
+        {
+            IKundenverwaltung kv = (IKundenverwaltung)Application.Current.Properties["kunde"];
+            int id = -1;
+            bool idKorrekt = Int32.TryParse(ID_Box.Text, out id);
+            String passwort = Passwort_Box.Password;
+
+            Kunde kunde;
+            bool isKunde = kv.KundeLogin(id, passwort, out kunde);
+            Admin admin;
+            bool isAdmin = kv.AdminLogin(id, passwort, out admin);
+
+            if (kunde != null && isKunde == true)
+            {
+                Application.Current.Properties["aktuellerBenutzer"] = kunde;
+                Kinoprogramm kinoprogramm = new Kinoprogramm();
+                this.NavigationService.Navigate(kinoprogramm);
+            }
+            else if (admin != null && isAdmin == true)
+            {
+                Application.Current.Properties["aktuellerBenutzer"] = admin;
+                AdminBereich adminbereich = new AdminBereich();
+                this.NavigationService.Navigate(adminbereich);
+            }
+            else
+                Login_Fehler.Content = "Anmeldedaten falsch";
         }
 
-        // !!!ACHTUNG!!! Selber geschrieben die Methode ging nicht mit Doppelklick erzeugen
-        private void AdminPasswort_PasswortBox(object sender, TextChangedEventArgs e)
+        private void ID_Box_TextBox(object sender, TextChangedEventArgs e)
         {
-            //AdmunPasswort_txt (So habe ich die Box Manuell genannt)
 
         }
-
-        
     }
 }
+

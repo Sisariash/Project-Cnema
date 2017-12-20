@@ -35,27 +35,28 @@ namespace Komponenten.Kundenverwaltung.Impl
             return filmBewertung;
         }
 
-        public bool KundeLogin(int id, string passwort)
+        public bool KundeLogin(int id, string passwort, out Kunde k)
         {
-            Kunde k;
+            k = null;
             if (dbManager.KundeLesen(id) != null)
             {
                 k = dbManager.KundeLesen(id);
                 return Utils.VerifyPassword(k.Passwort, passwort);
             }
-            else
+            else           
                 return false;
         }
 
-        public bool AdminLogin(string passwort)
+        public bool AdminLogin(int id, string passwort, out Admin a)
         {
-            List<Admin> admins = dbManager.AlleAdminsLesen();
-            foreach (Admin a in admins)
+            a = null;
+            if (dbManager.AdminLesen(id) != null)
             {
-                if (Utils.VerifyPassword(a.Passwort, passwort))
-                    return true;
+                a = dbManager.AdminLesen(id);
+                return Utils.VerifyPassword(a.Passwort, passwort);
             }
-            return false;
+            else
+                return false;
         }
 
         public bool KundeRegistrieren(String passwort, String name, String vorname, DateTime geburtsdatum)
