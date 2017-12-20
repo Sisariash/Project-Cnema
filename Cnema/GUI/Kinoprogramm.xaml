@@ -27,31 +27,31 @@
         <Label Content="Tag Auswählen: " HorizontalAlignment="Left" Margin="87,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
         <Label Content="Film Auswählen: " HorizontalAlignment="Left" Margin="207,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
         <Label Content="Uhrzeit Auswählen: " HorizontalAlignment="Left" Margin="330,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="87,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
+        <ListView x:Name="Tag" HorizontalAlignment="Left" Height="100" Margin="87,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="210,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
+        <ListView x:Name="Film" HorizontalAlignment="Left" Height="100" Margin="210,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
+        <ListView x:Name="Uhrzeit" HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Buchung" HorizontalAlignment="Left" Margin="200,240,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="Buchung_Button"/>
+        <Button x:Name="Buchung" Content="Buchung" HorizontalAlignment="Left" Margin="200,240,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="Buchung_Button"/>
         <Label Content="Weitere Funktionen:" HorizontalAlignment="Left" Margin="67,310,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="125" FontWeight="Bold" Height="26"/>
-        <Button Content="Filme &#xD;&#xA;bewerten" HorizontalAlignment="Left" Margin="195,303,0,0" VerticalAlignment="Top" Width="70" Click="FilmeBewerten_Button"/>
-        <Button Content="Filmdetails &#xD;&#xA;anzeigen" HorizontalAlignment="Left" Margin="280,303,0,0" VerticalAlignment="Top" Width="71" Click="FilmDetails_Button"/>
-        <Button Content="Filme&#xD;&#xA;bewerten" HorizontalAlignment="Left" Margin="368,303,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="FilmBewerten" Content="Filme &#xD;&#xA;bewerten" HorizontalAlignment="Left" Margin="195,303,0,0" VerticalAlignment="Top" Width="70" Click="FilmeBewerten_Button"/>
+        <Button x:Name="FilmdetailsAnzeigen" Content="Filmdetails &#xD;&#xA;anzeigen" HorizontalAlignment="Left" Margin="280,303,0,0" VerticalAlignment="Top" Width="71" Click="FilmDetails_Button"/>
+        <Button x:Name="FilmeFiltern" Content="Filme&#xA;filtern&#xD;&#xA;" HorizontalAlignment="Left" Margin="368,303,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="FilmeFiltern_Click"/>
     </Grid>
 </Page>

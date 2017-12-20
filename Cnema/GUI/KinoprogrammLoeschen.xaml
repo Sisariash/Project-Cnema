@@ -17,14 +17,14 @@
     <Grid>
 
         <Label Content="Tag Auswählen: " HorizontalAlignment="Left" Margin="20,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="23,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
+        <ListView x:Name="Tag" HorizontalAlignment="Left" Height="100" Margin="23,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Kinoprogramm Löschen" HorizontalAlignment="Left" Margin="34,10,0,0" VerticalAlignment="Top" FontSize="18" Height="40" Width="450" FontFamily="Wide Latin" FontWeight="Bold" FontStyle="Italic" >
+        <Label Content="Kinoprogramm Löschen" HorizontalAlignment="Left" Margin="51,10,0,0" VerticalAlignment="Top" FontSize="18" Height="40" Width="450" FontFamily="Wide Latin" FontWeight="Bold" FontStyle="Italic" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -38,22 +38,22 @@
         <Label Content="Film Auswählen: " HorizontalAlignment="Left" Margin="143,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
         <Label Content="Uhrzeit Auswählen: " HorizontalAlignment="Left" Margin="259,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
         <Label Content="Saal Auswählen:" HorizontalAlignment="Left" Margin="387,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="146,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
+        <ListView x:Name="Film" HorizontalAlignment="Left" Height="100" Margin="146,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Löschen" HorizontalAlignment="Left" Margin="194,246,0,0" VerticalAlignment="Top" Width="119" Height="35" Click="Loeschen_Button"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="390,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Saal_ListView">
+        <Button x:Name="Loeschen" Content="Löschen" HorizontalAlignment="Left" Margin="194,246,0,0" VerticalAlignment="Top" Width="119" Height="35" Click="Loeschen_Button"/>
+        <ListView x:Name="Saal" HorizontalAlignment="Left" Height="100" Margin="390,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Saal_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="267,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
+        <ListView x:Name="Uhrzeit" HorizontalAlignment="Left" Height="100" Margin="267,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

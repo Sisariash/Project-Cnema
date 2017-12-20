@@ -26,10 +26,14 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <ComboBox x:Name="FilmeVerwalten" HorizontalAlignment="Left" Margin="51,135,0,0" VerticalAlignment="Top" Width="157" Height="22" SelectionChanged="FilmVerwalten_ComboBox"/>
-        <ComboBox x:Name="KinoProgrammVerwalten" HorizontalAlignment="Left" Margin="298,135,0,0" VerticalAlignment="Top" Width="157" Height="22" SelectionChanged="KinoProgrammVerwalten_ComboBox"/>
         <Label Content="        Filme Verwalten" HorizontalAlignment="Left" Margin="51,109,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="157" FontWeight="Bold"/>
         <Label Content="Kinoprogramm Verwalten" HorizontalAlignment="Left" Margin="298,109,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="157" FontWeight="Bold"/>
+        <Button x:Name="FilmeHinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="80,137,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="FilmeHinzufuegen_Button"/>
+        <Button x:Name="FilmeLoeschen" Content="Löschen" HorizontalAlignment="Left" Margin="80,175,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="FilmeLoeschen_Button"/>
+        <Button x:Name="FilmeBearbeiten" Content="Bearbeiten" HorizontalAlignment="Left" Margin="80,215,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="FilmeBearbeiten_Button"/>
+        <Button x:Name="KinoprogrammHinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="334,138,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammHinzufuegen_Button"/>
+        <Button x:Name="KinoprogrammLoeschen" Content="Löschen" HorizontalAlignment="Left" Margin="335,175,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammLoeschen_Button"/>
+        <Button x:Name="KinoprogrammBearbeiten" Content="Bearbeiten" HorizontalAlignment="Left" Margin="335,215,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammBearbeiten_Button"/>
 
     </Grid>
 </Page>

@@ -29,6 +29,8 @@ namespace GUI
 
         private void Kunden_Login(object sender, RoutedEventArgs e)
         {
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
 
         }
 
@@ -57,7 +59,8 @@ namespace GUI
 
         private void Admin_Login(object sender, RoutedEventArgs e)
         {
-
+           AdminBereich adminBereich = new AdminBereich();
+            this.NavigationService.Navigate(adminBereich);
 
         }
 

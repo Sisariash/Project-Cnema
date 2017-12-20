@@ -25,12 +25,14 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void FilmeLoeschen_ComboBox(object sender, SelectionChangedEventArgs e)
+        
+
+        private void Loeschen_Button(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Loeschen_Button(object sender, RoutedEventArgs e)
+        private void Filme_ListView(object sender, SelectionChangedEventArgs e)
         {
 
         }

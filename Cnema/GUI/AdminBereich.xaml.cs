@@ -25,13 +25,45 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void FilmVerwalten_ComboBox(object sender, SelectionChangedEventArgs e)
+        private void FilmeHinzufuegen_Button(object sender, RoutedEventArgs e)
         {
+            FilmHinzufuegen filmHinzufuegen = new FilmHinzufuegen();
+            this.NavigationService.Navigate(filmHinzufuegen);
+        }
+
+        private void FilmeLoeschen_Button(object sender, RoutedEventArgs e)
+        {
+            FilmeLoeschen filmeLoeschen = new FilmeLoeschen();
+            this.NavigationService.Navigate(filmeLoeschen);
+        }
+
+        private void FilmeBearbeiten_Button(object sender, RoutedEventArgs e)
+        {
+            FilmeBearbeiten filmeBearbeiten = new FilmeBearbeiten();
+            this.NavigationService.Navigate(filmeBearbeiten);
+
 
         }
 
-        private void KinoProgrammVerwalten_ComboBox(object sender, SelectionChangedEventArgs e)
+        private void KinoprogrammHinzufuegen_Button(object sender, RoutedEventArgs e)
         {
+            KinoprogrammHinzufuegen kinoprogrammHinzufuegen = new KinoprogrammHinzufuegen();
+            this.NavigationService.Navigate(kinoprogrammHinzufuegen);
+
+        }
+
+
+
+        private void KinoprogrammBearbeiten_Button(object sender, RoutedEventArgs e)
+        {
+            //Lassen wir evtl. weg 
+
+        }
+
+        private void KinoprogrammLoeschen_Button(object sender, RoutedEventArgs e)
+        {
+            KinoprogrammLoeschen kinoprogrammLoeschen = new KinoprogrammLoeschen();
+            this.NavigationService.Navigate(kinoprogrammLoeschen);
 
         }
     }

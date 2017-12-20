@@ -26,9 +26,15 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <ComboBox x:Name="FilmeLoeschenAuswahl" HorizontalAlignment="Left" Margin="186,119,0,0" VerticalAlignment="Top" Width="157" Height="22" SelectionChanged="FilmeLoeschen_ComboBox"/>
-        <Label Content="        Filme Löschen " HorizontalAlignment="Left" Margin="186,88,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="157" FontWeight="Bold"/>
-        <Button Content="Löschen" HorizontalAlignment="Left" Margin="186,258,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Loeschen_Button"/>
+        <Label Content="        Filme Löschen " HorizontalAlignment="Left" Margin="188,85,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="157" FontWeight="Bold"/>
+        <Button x:Name="Loeschen" Content="Löschen" HorizontalAlignment="Left" Margin="186,258,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Loeschen_Button"/>
+        <ListView x:Name="Filme" HorizontalAlignment="Left" Height="100" Margin="210,110,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="ListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Page>

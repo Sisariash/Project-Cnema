@@ -54,5 +54,10 @@ namespace GUI
         {
 
         }
+
+        private void FilmeFiltern_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

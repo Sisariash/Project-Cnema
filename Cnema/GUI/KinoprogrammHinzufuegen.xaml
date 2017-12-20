@@ -17,7 +17,7 @@
     <Grid>
 
         <Label Content="Tag Auswählen: " HorizontalAlignment="Left" Margin="20,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="23,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
+        <ListView x:Name="Tag" HorizontalAlignment="Left" Height="100" Margin="23,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
@@ -38,22 +38,22 @@
         <Label Content="Film Auswählen: " HorizontalAlignment="Left" Margin="143,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
         <Label Content="Uhrzeit Auswählen: " HorizontalAlignment="Left" Margin="259,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
         <Label Content="Saal Auswählen:" HorizontalAlignment="Left" Margin="387,79,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="146,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
+        <ListView x:Name="Film" HorizontalAlignment="Left" Height="100" Margin="146,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Hinzufügen" HorizontalAlignment="Left" Margin="194,246,0,0" VerticalAlignment="Top" Width="119" Height="35" Click="Hinzufuegen_Button"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="268,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Saal_ListView">
+        <Button x:Name="Hinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="194,246,0,0" VerticalAlignment="Top" Width="119" Height="35" Click="Hinzufuegen_Button"/>
+        <ListView x:Name="Uhrzeit" HorizontalAlignment="Left" Height="100" Margin="268,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Saal_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="390,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Saal_ListView">
+        <ListView x:Name="Saal" HorizontalAlignment="Left" Height="100" Margin="390,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Saal_ListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

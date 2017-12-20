@@ -27,27 +27,27 @@
             </Label.Foreground>
         </Label>
         <Label Content="           Filme: " HorizontalAlignment="Left" Margin="20,74,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="126" FontWeight="Bold" Height="26"/>
-        <Button Content="Fertig" HorizontalAlignment="Left" Margin="199,293,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Fertig_Button"/>
+        <Button x:Name="Fertig" Content="Fertig" HorizontalAlignment="Left" Margin="199,293,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Fertig_Button"/>
         <Label Content="Saal:" HorizontalAlignment="Left" Margin="177,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="39" FontWeight="Bold"/>
         <Label Content="Uhrzeit:" HorizontalAlignment="Left" Margin="177,137,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="60" FontWeight="Bold"/>
         <Label Content="Tag:" HorizontalAlignment="Left" Margin="177,196,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="39" FontWeight="Bold"/>
-        <CheckBox Content="Saal 1" HorizontalAlignment="Left" Margin="241,100,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <CheckBox Content="Saal 2" HorizontalAlignment="Left" Margin="324,100,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1700_Checked"/>
-        <CheckBox Content="Saal 3" HorizontalAlignment="Left" Margin="415,100,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1700_Checked"/>
-        <CheckBox Content="17:00 Uhr" HorizontalAlignment="Left" Margin="241,170,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1700_Checked"/>
-        <CheckBox Content="20:00 Uhr" HorizontalAlignment="Left" Margin="324,142,0,0" VerticalAlignment="Top" Checked="Uhrzeit2000_Checked" Foreground="White"/>
-        <CheckBox Content="22:00 Uhr" HorizontalAlignment="Left" Margin="415,142,0,0" VerticalAlignment="Top" Checked="Uhrzeit2200_Checked" Foreground="White"/>
-        <CheckBox Content="19:30 Uhr" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="Uhrzeit1930_Checked" Margin="241,142,0,0" Background="White" Foreground="White"/>
-        <CheckBox Content="13:00 Uhr" HorizontalAlignment="Left" Margin="324,170,0,0" VerticalAlignment="Top" Checked="Uhrzeit1300_Checked" Foreground="White"/>
-        <CheckBox Content="11:00 Uhr" HorizontalAlignment="Left" Margin="415,170,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1100_Checked"/>
-        <CheckBox Content="Montag" HorizontalAlignment="Left" Margin="241,201,0,0" VerticalAlignment="Top" Checked="Montag_Checked" Background="White" Foreground="White"/>
-        <CheckBox Content="Dienstag" HorizontalAlignment="Left" Margin="324,201,0,0" VerticalAlignment="Top" Checked="Dienstag_Checked" Foreground="White"/>
-        <CheckBox Content="Mittwoch" HorizontalAlignment="Left" Margin="415,201,0,0" VerticalAlignment="Top" Checked="Mittwoch_Checked" Foreground="White"/>
-        <CheckBox Content="Donnerstag" HorizontalAlignment="Left" Margin="241,231,0,0" VerticalAlignment="Top" Checked="Donnerstag_Checked" Background="White" Foreground="White"/>
-        <CheckBox Content="Freitag" HorizontalAlignment="Left" Margin="325,231,0,0" VerticalAlignment="Top" Checked="Freitag_Checked" Foreground="White"/>
-        <CheckBox Content="Samstag" HorizontalAlignment="Left" Margin="415,231,0,0" VerticalAlignment="Top" Checked="Samstag_Checked" Background="White" Foreground="White"/>
-        <CheckBox Content="Sonntag" HorizontalAlignment="Left" Margin="241,259,0,0" VerticalAlignment="Top" Checked="Sonntag_Checked" Foreground="White"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="36,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Filme_SelectionChanged">
+        <CheckBox x:Name="Saal1" Content="Saal 1" HorizontalAlignment="Left" Margin="241,100,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <CheckBox x:Name="Saal2" Content="Saal 2" HorizontalAlignment="Left" Margin="324,100,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1700_Checked"/>
+        <CheckBox x:Name="Saal3" Content="Saal 3" HorizontalAlignment="Left" Margin="415,100,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1700_Checked"/>
+        <CheckBox x:Name="Uhr1700" Content="17:00 Uhr" HorizontalAlignment="Left" Margin="241,170,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1700_Checked"/>
+        <CheckBox x:Name="Uhr2000" Content="20:00 Uhr" HorizontalAlignment="Left" Margin="324,142,0,0" VerticalAlignment="Top" Checked="Uhrzeit2000_Checked" Foreground="White"/>
+        <CheckBox x:Name="Uhr2200" Content="22:00 Uhr" HorizontalAlignment="Left" Margin="415,142,0,0" VerticalAlignment="Top" Checked="Uhrzeit2200_Checked" Foreground="White"/>
+        <CheckBox x:Name="Uhr1930" Content="19:30 Uhr" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="Uhrzeit1930_Checked" Margin="241,142,0,0" Background="White" Foreground="White"/>
+        <CheckBox x:Name="Uhr1300" Content="13:00 Uhr" HorizontalAlignment="Left" Margin="324,170,0,0" VerticalAlignment="Top" Checked="Uhrzeit1300_Checked" Foreground="White"/>
+        <CheckBox x:Name="Uhr1100" Content="11:00 Uhr" HorizontalAlignment="Left" Margin="415,170,0,0" VerticalAlignment="Top" Foreground="White" Checked="Uhrzeit1100_Checked"/>
+        <CheckBox x:Name="Montag" Content="Montag" HorizontalAlignment="Left" Margin="241,201,0,0" VerticalAlignment="Top" Checked="Montag_Checked" Background="White" Foreground="White"/>
+        <CheckBox x:Name="Dienstag" Content="Dienstag" HorizontalAlignment="Left" Margin="324,201,0,0" VerticalAlignment="Top" Checked="Dienstag_Checked" Foreground="White"/>
+        <CheckBox x:Name="Mittwoch" Content="Mittwoch" HorizontalAlignment="Left" Margin="415,201,0,0" VerticalAlignment="Top" Checked="Mittwoch_Checked" Foreground="White"/>
+        <CheckBox x:Name="Donnerstag" Content="Donnerstag" HorizontalAlignment="Left" Margin="241,231,0,0" VerticalAlignment="Top" Checked="Donnerstag_Checked" Background="White" Foreground="White"/>
+        <CheckBox x:Name="Freitag" Content="Freitag" HorizontalAlignment="Left" Margin="325,231,0,0" VerticalAlignment="Top" Checked="Freitag_Checked" Foreground="White"/>
+        <CheckBox x:Name="Samstag" Content="Samstag" HorizontalAlignment="Left" Margin="415,231,0,0" VerticalAlignment="Top" Checked="Samstag_Checked" Background="White" Foreground="White"/>
+        <CheckBox x:Name="Sonntag" Content="Sonntag" HorizontalAlignment="Left" Margin="241,259,0,0" VerticalAlignment="Top" Checked="Sonntag_Checked" Foreground="White"/>
+        <ListView x:Name="Filme" HorizontalAlignment="Left" Height="100" Margin="36,105,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Filme_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
