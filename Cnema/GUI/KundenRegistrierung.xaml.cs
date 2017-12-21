@@ -1,4 +1,5 @@
-﻿using Komponenten.Kundenverwaltung;
+﻿using Komponenten.ET;
+using Komponenten.Kundenverwaltung;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,14 +45,14 @@ namespace GUI
         // !!!ACHTUNG!!! Selber geschrieben die Methode ging nicht mit Doppelklick erzeugen
         private void WaehlePasswort_PasswortBox(object sender, TextChangedEventArgs e)
         {
-            
+
 
         }
 
         // !!!ACHTUNG!!! Selber geschrieben die Methode ging nicht mit Doppelklick erzeugen
         private void WiederholePasswort_PasswortBox(object sender, TextChangedEventArgs e)
         {
-            
+
 
         }
 
@@ -68,11 +69,13 @@ namespace GUI
             }
             else
             {
-                
                 String passwort = Komponenten.Util.Utils.HashPassword(this.Passwort.Password);
                 IKundenverwaltung kv = (IKundenverwaltung)Application.Current.Properties["kunde"];
-                if (kv.KundeRegistrieren(passwort, nachname, vorname, geburtsdatum))
+
+                Kunde kunde;
+                if (kv.KundeRegistrieren(passwort, nachname, vorname, geburtsdatum, out kunde))
                 {
+                    Application.Current.Properties["neuRegistriert"] = kunde;
                     BestaetigungDerRegistrierung bestaetigungDerRegistrierung = new BestaetigungDerRegistrierung();
                     this.NavigationService.Navigate(bestaetigungDerRegistrierung);
                 }

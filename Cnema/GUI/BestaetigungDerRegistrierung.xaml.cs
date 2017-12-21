@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,10 @@ namespace GUI
         public BestaetigungDerRegistrierung()
         {
             InitializeComponent();
+
+            Kunde kunde = (Kunde)Application.Current.Properties["neuRegistriert"];
+            Ausgabe.Content = kunde.BenutzerId;
         }
+       
     }
 }

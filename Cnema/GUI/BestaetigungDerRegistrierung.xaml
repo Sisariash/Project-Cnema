@@ -28,6 +28,7 @@
         <Label Content="Vielen Dank!" HorizontalAlignment="Left" Margin="208,106,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="115" FontWeight="Bold" FontSize="14"/>
         <Label Content="Sie wurden erfolgreich registriert!" HorizontalAlignment="Left" Margin="142,136,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="240" FontWeight="Bold" FontSize="14"/>
         <Label Content="Ihre Kunden-ID lautet:" HorizontalAlignment="Left" Margin="177,170,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="175" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="Ausgabe" Content="" HorizontalAlignment="Left" Margin="216,214,0,0" VerticalAlignment="Top" Height="60" Width="91" Foreground="#FFF74040" FontSize="22"/>
 
     </Grid>
 </Page>

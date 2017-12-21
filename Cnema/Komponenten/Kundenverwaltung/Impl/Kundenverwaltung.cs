@@ -59,10 +59,10 @@ namespace Komponenten.Kundenverwaltung.Impl
                 return false;
         }
 
-        public bool KundeRegistrieren(String passwort, String name, String vorname, DateTime geburtsdatum)
+        public bool KundeRegistrieren(String passwort, String name, String vorname, DateTime geburtsdatum, out Kunde k)
         {
-            Kunde kunde = new Kunde(passwort, name, vorname, geburtsdatum);
-            return dbManager.KundeHinzufuegen(kunde);
+            k = new Kunde(passwort, name, vorname, geburtsdatum);
+            return dbManager.KundeHinzufuegen(k);
         }
 
         public bool AdminRegistrieren(Admin admin)
