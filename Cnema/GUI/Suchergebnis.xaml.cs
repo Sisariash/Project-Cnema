@@ -32,7 +32,8 @@ namespace GUI
 
         private void zurueck_Button(object sender, RoutedEventArgs e)
         {
-
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
         }
     }
 }
