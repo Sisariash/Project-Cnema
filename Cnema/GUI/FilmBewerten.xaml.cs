@@ -25,10 +25,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void Ein_CheckBox(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void Zwei_CheckBox(object sender, RoutedEventArgs e)
         {
@@ -45,12 +42,26 @@ namespace GUI
 
         }
 
+
+        private void Bewertung_Button(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BewertungButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilmBewertenabgeschlossen filmBewertenabgeschlossen = new FilmBewertenabgeschlossen();
+            this.NavigationService.Navigate(filmBewertenabgeschlossen);
+        }
+
+
+
         private void Fuenf_CheckBox(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Bewertung_Button(object sender, RoutedEventArgs e)
+        private void Eins_CheckBox(object sender, RoutedEventArgs e)
         {
 
         }

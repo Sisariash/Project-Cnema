@@ -16,19 +16,18 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaktionslogik für BestellungBestaetigung.xaml
+    /// Interaktionslogik für FilmBewertenabgeschlossen.xaml
     /// </summary>
-    public partial class BestellungBestaetigung : Page
+    public partial class FilmBewertenabgeschlossen : Page
     {
-        public BestellungBestaetigung()
+        public FilmBewertenabgeschlossen()
         {
             InitializeComponent();
         }
 
-        private void Bestaetigen_Button(object sender, RoutedEventArgs e)
+        private void ZumKinoprogramm_Button(object sender, RoutedEventArgs e)
         {
-            IhreBestellung ihrebestellung = new IhreBestellung();
-            this.NavigationService.Navigate(ihrebestellung);
+
         }
     }
 }

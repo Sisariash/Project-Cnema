@@ -62,7 +62,8 @@ namespace GUI
 
         private void Hinzufuegen_Button(object sender, RoutedEventArgs e)
         {
-
+            AdminBereich adminBereich = new AdminBereich();
+            this.NavigationService.Navigate(adminBereich);
         }
     }
 }

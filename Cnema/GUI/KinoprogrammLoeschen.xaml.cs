@@ -49,7 +49,8 @@ namespace GUI
 
         private void Loeschen_Button(object sender, RoutedEventArgs e)
         {
-
+            AdminBereich adminBereich = new AdminBereich();
+            this.NavigationService.Navigate(adminBereich);
         }
 
     }

@@ -29,7 +29,8 @@ namespace GUI
 
         private void Loeschen_Button(object sender, RoutedEventArgs e)
         {
-
+            AdminBereich adminBereich = new AdminBereich();
+            this.NavigationService.Navigate(adminBereich);
         }
 
         private void Filme_ListView(object sender, SelectionChangedEventArgs e)

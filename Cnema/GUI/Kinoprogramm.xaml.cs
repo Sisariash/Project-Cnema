@@ -42,22 +42,26 @@ namespace GUI
 
         private void Buchung_Button(object sender, RoutedEventArgs e)
         {
-
+            Bestellung bestellung = new Bestellung();
+            this.NavigationService.Navigate(bestellung);
         }
 
         private void FilmeBewerten_Button(object sender, RoutedEventArgs e)
         {
-
+            FilmfuerBewertungAuswaehlen filmfuerBewertungAuswaehlen = new FilmfuerBewertungAuswaehlen();
+            this.NavigationService.Navigate(filmfuerBewertungAuswaehlen);
         }
 
         private void FilmDetails_Button(object sender, RoutedEventArgs e)
         {
-
+            FilmDetails filmDetails = new FilmDetails();
+            this.NavigationService.Navigate(filmDetails);
         }
 
         private void FilmeFiltern_Click(object sender, RoutedEventArgs e)
         {
-
+            FilmeFiltern filmeFiltern = new FilmeFiltern();
+            this.NavigationService.Navigate(filmeFiltern);
         }
     }
 }

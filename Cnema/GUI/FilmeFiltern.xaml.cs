@@ -152,7 +152,8 @@ namespace GUI
 
         private void Suchen_Button(object sender, RoutedEventArgs e)
         {
-
+            Suchergebnis suchergebnis = new Suchergebnis();
+            this.NavigationService.Navigate(suchergebnis);
         }
     }
 }

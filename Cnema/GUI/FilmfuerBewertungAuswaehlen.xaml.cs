@@ -16,19 +16,24 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaktionslogik für BestellungBestaetigung.xaml
+    /// Interaktionslogik für FilmfuerBewertungAuswaehlen.xaml
     /// </summary>
-    public partial class BestellungBestaetigung : Page
+    public partial class FilmfuerBewertungAuswaehlen : Page
     {
-        public BestellungBestaetigung()
+        public FilmfuerBewertungAuswaehlen()
         {
             InitializeComponent();
         }
 
-        private void Bestaetigen_Button(object sender, RoutedEventArgs e)
+        private void Filme_ListView(object sender, SelectionChangedEventArgs e)
         {
-            IhreBestellung ihrebestellung = new IhreBestellung();
-            this.NavigationService.Navigate(ihrebestellung);
+
+        }
+
+        private void Bewertung_Button(object sender, RoutedEventArgs e)
+        {
+            FilmBewerten filmBewerten = new FilmBewerten();
+            this.NavigationService.Navigate(filmBewerten);
         }
     }
 }

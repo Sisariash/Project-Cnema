@@ -29,7 +29,8 @@ namespace GUI
 
         private void Fertig_Button(object sender, RoutedEventArgs e)
         {
-
+            AdminBereich adminBereich = new AdminBereich();
+            this.NavigationService.Navigate(adminBereich);
         }
 
         private void Saal1_Checked(object sender, RoutedEventArgs e)

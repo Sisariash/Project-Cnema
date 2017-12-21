@@ -79,6 +79,9 @@
     <Compile Include="FilmBewerten.xaml.cs">
       <DependentUpon>FilmBewerten.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FilmBewertenabgeschlossen.xaml.cs">
+      <DependentUpon>FilmBewertenabgeschlossen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FilmDetails.xaml.cs">
       <DependentUpon>FilmDetails.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,9 @@
     </Compile>
     <Compile Include="FilmeLoeschen.xaml.cs">
       <DependentUpon>FilmeLoeschen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilmfuerBewertungAuswaehlen.xaml.cs">
+      <DependentUpon>FilmfuerBewertungAuswaehlen.xaml</DependentUpon>
     </Compile>
     <Compile Include="FilmHinzufuegen.xaml.cs">
       <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
@@ -135,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FilmBewertenabgeschlossen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FilmDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmeLoeschen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmfuerBewertungAuswaehlen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

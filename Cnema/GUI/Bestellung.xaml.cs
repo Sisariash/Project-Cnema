@@ -23,11 +23,67 @@ namespace GUI
         public Bestellung()
         {
             InitializeComponent();
+            txtNumErwachsene.Text = _numValue.ToString();
+        }
+
+        private int _numValue = 0;
+
+        public int NumValue
+        {
+            get { return _numValue; }
+            set
+            {
+                _numValue = value;
+                txtNumErwachsene.Text = value.ToString();
+            }
         }
 
         private void BestellungBestaetigen_Button(object sender, RoutedEventArgs e)
         {
+            BestellungBestaetigung bestellungbestaetigung = new BestellungBestaetigung();
+            this.NavigationService.Navigate(bestellungbestaetigung);
+        }
 
+        private void TxtNumErwachsene_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtNumErwachsene == null)
+            {
+                return;
+            }
+
+            if (!int.TryParse(txtNumErwachsene.Text, out _numValue))
+                txtNumErwachsene.Text = _numValue.ToString();
+        }
+
+        private void CmdUpErwachsene_Click(object sender, RoutedEventArgs e)
+        {
+            NumValue++;
+        }
+
+        private void CmdDownErwachsene_Click(object sender, RoutedEventArgs e)
+        {
+            NumValue--;
+        }
+
+        private void TxtNumKinder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtNumErwachsene == null)
+            {
+                return;
+            }
+
+            if (!int.TryParse(txtNumErwachsene.Text, out _numValue))
+                txtNumErwachsene.Text = _numValue.ToString();
+        }
+
+        private void CmdDownKinder_Click(object sender, RoutedEventArgs e)
+        {
+            NumValue--;
+        }
+
+        private void CmdUpKinder_Click(object sender, RoutedEventArgs e)
+        {
+            NumValue++;
         }
     }
 }

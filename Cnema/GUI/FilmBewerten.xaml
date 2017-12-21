@@ -26,12 +26,12 @@
             </Label.Foreground>
         </Label>
         <Label Content="Bisherige Bewertung für:" HorizontalAlignment="Left" Margin="99,100,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="174" FontWeight="Bold" FontSize="14"/>
-        <CheckBox x:Name="ein" Content="1 *" HorizontalAlignment="Left" Margin="120,229,0,0" VerticalAlignment="Top" Foreground="White" Width="48" FontWeight="Bold" Checked="CheckBox_Checked"/>
         <CheckBox x:Name="zwei" Content="2 *" HorizontalAlignment="Left" Margin="180,229,0,0" VerticalAlignment="Top" Foreground="White" Width="48" FontWeight="Bold" Checked="Zwei_CheckBox"/>
         <CheckBox x:Name="drei" Content="3 *" HorizontalAlignment="Left" Margin="240,229,0,0" VerticalAlignment="Top" Foreground="White" Width="48" FontWeight="Bold" Checked="Drei_CheckBox"/>
         <CheckBox x:Name="vier" Content="4 *" HorizontalAlignment="Left" Margin="300,229,0,0" VerticalAlignment="Top" Foreground="White" Width="48" FontWeight="Bold" Checked="Vier_CheckBox"/>
-        <CheckBox x:Name="fuenf" Content="5 *" HorizontalAlignment="Left" Margin="360,229,0,0" VerticalAlignment="Top" Foreground="White" Width="48" FontWeight="Bold" Checked="fuenf_Checked"/>
+        <CheckBox x:Name="fuenf" Content="5 *" HorizontalAlignment="Left" Margin="360,229,0,0" VerticalAlignment="Top" Foreground="White" Width="48" FontWeight="Bold" Checked="Fuenf_CheckBox"/>
         <Button x:Name="BewertungButton" Content="Bewertung abgeben" HorizontalAlignment="Left" Margin="172,277,0,0" VerticalAlignment="Top" Width="146" Height="37" Click="BewertungButton_Click"/>
+        <CheckBox x:Name="Eins" Content="1 *" HorizontalAlignment="Left" Margin="120,229,0,0" VerticalAlignment="Top" Foreground="White" Width="40" FontWeight="Bold" Checked="Eins_CheckBox"/>
 
     </Grid>
 </Page>
