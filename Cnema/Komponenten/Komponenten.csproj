@@ -59,6 +59,10 @@
     <Compile Include="Datenbank\CnemaContext.cs" />
     <Compile Include="Datenbank\IDatenbankManager.cs" />
     <Compile Include="Datenbank\Impl\DatenbankManager.cs" />
+    <Compile Include="Migrations\201712210014074_Offset.cs" />
+    <Compile Include="Migrations\201712210014074_Offset.Designer.cs">
+      <DependentUpon>201712210014074_Offset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Utils.cs" />
     <Compile Include="ET\Film.cs" />
     <Compile Include="ET\Saal.cs" />
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712121912099_AddBenutzerKundeAdmin.resx">
       <DependentUpon>201712121912099_AddBenutzerKundeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712210014074_Offset.resx">
+      <DependentUpon>201712210014074_Offset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
