@@ -46,6 +46,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,9 +57,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -66,14 +70,32 @@
     <Compile Include="BestaetigungDerRegistrierung.xaml.cs">
       <DependentUpon>BestaetigungDerRegistrierung.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bestellung.xaml.cs">
+      <DependentUpon>Bestellung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BestellungBestaetigung.xaml.cs">
+      <DependentUpon>BestellungBestaetigung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilmBewerten.xaml.cs">
+      <DependentUpon>FilmBewerten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilmDetails.xaml.cs">
+      <DependentUpon>FilmDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FilmeBearbeiten.xaml.cs">
       <DependentUpon>FilmeBearbeiten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilmeFiltern.xaml.cs">
+      <DependentUpon>FilmeFiltern.xaml</DependentUpon>
     </Compile>
     <Compile Include="FilmeLoeschen.xaml.cs">
       <DependentUpon>FilmeLoeschen.xaml</DependentUpon>
     </Compile>
     <Compile Include="FilmHinzufuegen.xaml.cs">
       <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IhreBestellung.xaml.cs">
+      <DependentUpon>IhreBestellung.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kinoprogramm.xaml.cs">
       <DependentUpon>Kinoprogramm.xaml</DependentUpon>
@@ -90,6 +112,9 @@
     <Compile Include="StartBildschirm.xaml.cs">
       <DependentUpon>StartBildschirm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Suchergebnis.xaml.cs">
+      <DependentUpon>Suchergebnis.xaml</DependentUpon>
+    </Compile>
     <Page Include="AdminBereich.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,7 +123,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Bestellung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BestellungBestaetigung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmBewerten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FilmeBearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmeFiltern.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmHinzufuegen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IhreBestellung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +191,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="StartBildschirm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Suchergebnis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

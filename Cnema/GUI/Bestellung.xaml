@@ -1,0 +1,33 @@
+﻿<Page x:Class="GUI.Bestellung"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="525"
+      Title="Bestellung">
+    <Page.Background>
+
+        <ImageBrush ImageSource="Image/Kino1.jpg" />
+
+    </Page.Background>
+
+    <Grid>
+        <Label Content="Bestellung " HorizontalAlignment="Left" Margin="183,45,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="152" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFB6B6B6"/>
+                    <GradientStop Color="#FFD8D8D8"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Tickets kaufen :" HorizontalAlignment="Left" Margin="90,104,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="105" FontWeight="Bold" Height="26"/>
+        <TextBlock x:Name="Erwachsene" HorizontalAlignment="Left" Margin="245,140,0,0" TextWrapping="Wrap" Text="Erwachsene" VerticalAlignment="Top" Foreground="White" Width="70" FontWeight="Bold"/>
+        <TextBlock x:Name="Erwachsene_Copy" HorizontalAlignment="Left" Margin="245,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="185" FontWeight="Bold"><Run Text="Kinder/Azubi/Student/"/><Run Text="Senioren"/></TextBlock>
+        <Button x:Name="Bestaetigen" Content="Bestätigen" HorizontalAlignment="Left" Margin="230,250,0,0" VerticalAlignment="Top" Width="85" Height="35" Click="BestellungBestaetigen_Button"/>
+
+    </Grid>
+</Page>
