@@ -32,6 +32,8 @@
         <TextBlock x:Name="Erwachsene_Copy3" HorizontalAlignment="Left" Margin="250,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="185" FontWeight="Bold"><Run Text="Kinder/Azubi/Student/"/><Run Text="Senioren"/></TextBlock>
         <TextBlock x:Name="Erwachsene_Copy4" HorizontalAlignment="Left" Margin="105,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="160" FontWeight="Bold" Text="Ihre Bestellnummer lautet :"/>
         <TextBlock x:Name="Erwachsene_Copy5" HorizontalAlignment="Left" Margin="230,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="205" FontWeight="Bold" Text="Bitte stets bei Abholung angeben!"/>
+        <TextBox x:Name="txtNumKinder" x:FieldModifier="private" Margin="191,201,304,129" Text="0" TextChanged="TxtNumKinder_TextChanged" Height="20" />
+        <TextBox x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="191,171,304,159" Text="0" TextChanged="TxtNumErwachsene_TextChanged"  Height="20"/>
 
     </Grid>
 

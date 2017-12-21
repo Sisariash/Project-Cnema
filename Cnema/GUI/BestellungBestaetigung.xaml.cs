@@ -30,5 +30,15 @@ namespace GUI
             IhreBestellung ihrebestellung = new IhreBestellung();
             this.NavigationService.Navigate(ihrebestellung);
         }
+
+        private void TxtNumErwachsene_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TxtNumKinder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

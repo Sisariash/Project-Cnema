@@ -31,6 +31,8 @@
         <Label Content="und" HorizontalAlignment="Left" Margin="90,159,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="35" FontWeight="Bold" Height="26"/>
         <TextBlock x:Name="Erwachsene_Copy1" HorizontalAlignment="Left" Margin="90,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="150" FontWeight="Bold" Text="Die Kosten dafür betragen"/>
         <TextBlock x:Name="Erwachsene_Copy2" HorizontalAlignment="Left" Margin="300,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="35" FontWeight="Bold" Text="Euro"/>
+        <TextBox x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="175,121,320,209" Text="0" TextChanged="TxtNumErwachsene_TextChanged"  Height="20"/>
+        <TextBox x:Name="txtNumKinder" x:FieldModifier="private" Margin="175,159,320,171" Text="0" TextChanged="TxtNumKinder_TextChanged" Height="20" />
 
     </Grid>
 </Page>

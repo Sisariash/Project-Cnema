@@ -24,5 +24,15 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void TxtNumErwachsene_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TxtNumKinder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
