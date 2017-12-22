@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Komponenten.Util;
+using Komponenten.Datenbank;
 using Komponenten.ET;
 using Komponenten.Bestellverwaltung.Impl;
 using Komponenten.Kundenverwaltung.Impl;
-using Komponenten.Util.Impl;
+using Komponenten.Datenbank.Impl;
 
 namespace CnemaUnitTest
 {

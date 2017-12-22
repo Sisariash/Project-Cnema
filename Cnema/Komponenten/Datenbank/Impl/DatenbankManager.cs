@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Komponenten.Util;
+using Komponenten.Datenbank;
 using System.Xml.Linq;
 
-namespace Komponenten.Util.Impl
+namespace Komponenten.Datenbank.Impl
 {
     public class DatenbankManager : IDatenbankManager
     {

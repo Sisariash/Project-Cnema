@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Komponenten.ET;
 
-namespace Komponenten.Util
+namespace Komponenten.Datenbank
 {
     public class CnemaContext : DbContext
     {

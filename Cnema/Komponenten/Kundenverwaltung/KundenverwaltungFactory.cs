@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Komponenten.Util;
+using Komponenten.Datenbank;
 
 namespace Komponenten.Kundenverwaltung
 {

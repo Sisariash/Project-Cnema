@@ -1,6 +1,6 @@
 ﻿using Komponenten.Bestellverwaltung;
-using Komponenten.Util;
-using Komponenten.Util.Impl;
+using Komponenten.Datenbank;
+using Komponenten.Datenbank.Impl;
 using Komponenten.Kinoprogrammverwaltung;
 using Komponenten.Kundenverwaltung;
 using System;

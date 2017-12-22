@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Komponenten.Util
+namespace Komponenten.Datenbank
 {
     /*
      * DatenbankManager     - dient als Verbindung zwischen Datenbank und die Geschäftslogik (Bestellverwaltung, Kinoprogrammverwaltung, Kundenverwaltung)
