@@ -62,7 +62,7 @@ namespace GUI
 
         private void BestellungBestaetigen_Button(object sender, RoutedEventArgs e)
         {
-            if ((_anzahlErwachsen + _anzahlKinder) > 0)
+            if ((_anzahlErwachsen + _anzahlKinder) > 0 && (_anzahlErwachsen + _anzahlKinder) <= bv.FreiePlaetzeAnzeigen(vorstellung))
             {
                 BestellungBestaetigung bestellungbestaetigung = new BestellungBestaetigung(_anzahlErwachsen, _anzahlKinder, vorstellung);
                 this.NavigationService.Navigate(bestellungbestaetigung);
