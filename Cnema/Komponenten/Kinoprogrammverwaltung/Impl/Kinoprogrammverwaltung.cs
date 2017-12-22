@@ -66,5 +66,10 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
             datenbankManager.VorstellungLoeschen(vorstellung);
             return true;
         }
+
+        public List<Vorstellung> AlleVorstellungenLesen()
+        {
+            return datenbankManager.AlleVorstellungenLesen();
+        }
     }
 }

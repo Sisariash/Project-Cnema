@@ -28,7 +28,7 @@ namespace Komponenten.ET
         {
         }
 
-        public Film(string titel, int jahr, string genre, int laenge, string sprache, bool is3D, double bewertungAvg, int fsk)
+        public Film(string titel, int jahr, string genre, int laenge, string sprache, bool is3D, int fsk)
         {
             Titel = titel;
             Jahr = jahr;
@@ -36,7 +36,6 @@ namespace Komponenten.ET
             Laenge = laenge;
             Sprache = sprache;
             Is3D = is3D;
-            BewertungAvg = bewertungAvg;
             Fsk = fsk;
         }
 

@@ -28,18 +28,13 @@
         <Label Content="Film Auswählen: " HorizontalAlignment="Left" Margin="207,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
         <Label Content="Uhrzeit Auswählen: " HorizontalAlignment="Left" Margin="330,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
         <ListView x:Name="TagKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="87,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
         </ListView>
         <ListView x:Name="FilmKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="210,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Titel}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <ListView x:Name="UhrzeitKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
             <ListView.View>

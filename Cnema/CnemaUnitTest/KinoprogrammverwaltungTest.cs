@@ -24,7 +24,7 @@ namespace CnemaUnitTest
         public void FilmTest()
         {
             datenbankManager.SaalLoeschen(datenbankManager.SaalLesen("Testsaal"));
-            Film film = new Film("Test", 1996, "Action", 130, "Deutsch", false, 0.0, 18);
+            Film film = new Film("Test", 1996, "Action", 130, "Deutsch", false, 18);
             Assert.IsTrue(kinoprogrammverwaltung.FilmHinzufuegen(film));
             Saal saal = new Saal("Testsaal", 80);
             Assert.IsTrue(datenbankManager.SaalHinzufügen(saal));
@@ -40,16 +40,16 @@ namespace CnemaUnitTest
         {
 
 
-            Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 9.0, 16);
-            Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 8.8, 6);
-            Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 8.8, 6);
-            Film film4 = new Film("Cars3", 2017, "Animation", 110, "Deutsch", false, 7.6, 0);
-            Film film5 = new Film("Bad Moms 2", 2017, "Komödie", 105, "Deutsch", false, 7.0, 12);
-            Film film6 = new Film("Jigsaw", 2017, "Horror", 92, "Deutsch", false, 8.2, 18);
-            Film film7 = new Film("Der Pate", 1972, "Krimi", 175, "Deutsch", false, 9.2, 16);
-            Film film8 = new Film("Pulp Fiction", 1994, "Drama", 154, "Deutsch", false, 8.9, 16);
-            Film film9 = new Film("Yol Arkadasim", 2017, "Komödie", 115, "Türkisch", false, 7.0, 6);
-            Film film10 = new Film("Paddington 2", 2017, "Annimation", 104, "Detusch", false, 6.0, 0);
+            Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
+            Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 6);
+            Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 6);
+            Film film4 = new Film("Cars3", 2017, "Animation", 110, "Deutsch", false, 0);
+            Film film5 = new Film("Bad Moms 2", 2017, "Komödie", 105, "Deutsch", false, 12);
+            Film film6 = new Film("Jigsaw", 2017, "Horror", 92, "Deutsch", false, 18);
+            Film film7 = new Film("Der Pate", 1972, "Krimi", 175, "Deutsch", false, 16);
+            Film film8 = new Film("Pulp Fiction", 1994, "Drama", 154, "Deutsch", false, 16);
+            Film film9 = new Film("Yol Arkadasim", 2017, "Komödie", 115, "Türkisch", false, 6);
+            Film film10 = new Film("Paddington 2", 2017, "Annimation", 104, "Detusch", false, 0);
 
            
 
@@ -223,9 +223,9 @@ namespace CnemaUnitTest
             // Klappt nicht immer wieso? Fügt manchmal hinzu beim laufen lassen manchmal nicht 
             
 
-            Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 9.0, 16);
-            Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 8.8, 6);
-            Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 8.8, 6);
+            Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
+            Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 6);
+            Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 6);
 
             Saal saal1 = new Saal("Saal1", 150);
             Saal saal2 = new Saal("Saal2", 100);

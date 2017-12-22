@@ -20,5 +20,6 @@ namespace Komponenten.Kinoprogrammverwaltung
         // Vorstellung
         Vorstellung VorstellungHinzufuegen(DateTime zeitpunkt, Saal saal, Film film);
         bool VorstellungLoeschen(Vorstellung vorstellung);
+        List<Vorstellung> AlleVorstellungenLesen();
     }
 }
