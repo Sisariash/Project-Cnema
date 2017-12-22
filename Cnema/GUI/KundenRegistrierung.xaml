@@ -37,6 +37,7 @@
         <PasswordBox x:Name="PasswortWiederholt" HorizontalAlignment="Left" Margin="240,232,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Registrieren" HorizontalAlignment="Left" Margin="211,285,0,0" VerticalAlignment="Top" Width="130" Height="40" Click="Registrieren_Button"/>
         <TextBlock x:Name="Fehlermeldung" HorizontalAlignment="Left" Height="19" Margin="240,261,0,0" TextWrapping="Wrap" Text="Daten sind Fehlerhaft." VerticalAlignment="Top" Width="150" Visibility="Hidden" Foreground="#FFFF3B3B" FontWeight="Bold"/>
+        <Label Content="z.B. 11.08.1991" HorizontalAlignment="Left" Margin="365,169,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="95"/>
 
 
 

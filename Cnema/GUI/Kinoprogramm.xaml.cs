@@ -63,5 +63,11 @@ namespace GUI
             FilmeFiltern filmeFiltern = new FilmeFiltern();
             this.NavigationService.Navigate(filmeFiltern);
         }
+
+        private void Logout_Button(object sender, RoutedEventArgs e)
+        {
+            StartBildschirm startBildschirm = new StartBildschirm();
+            this.NavigationService.Navigate(startBildschirm);
+        }
     }
 }

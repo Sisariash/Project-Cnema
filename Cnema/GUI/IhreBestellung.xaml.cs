@@ -34,5 +34,11 @@ namespace GUI
         {
 
         }
+
+        private void ZumProgramm_Button(object sender, RoutedEventArgs e)
+        {
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
+        }
     }
 }

@@ -66,5 +66,11 @@ namespace GUI
             this.NavigationService.Navigate(kinoprogrammLoeschen);
 
         }
+
+        private void LogoutAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            StartBildschirm startBildschirm = new StartBildschirm();
+            this.NavigationService.Navigate(startBildschirm);
+        }
     }
 }

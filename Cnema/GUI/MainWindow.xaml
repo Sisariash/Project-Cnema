@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
                   Source="StartBildschirm.xaml"
-        Title="MainWindow" Height="400" Width="525" >
+        Title="MainWindow" Height="420" Width="525" >
 
 
 

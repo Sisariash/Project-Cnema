@@ -28,6 +28,11 @@ namespace GUI
             Kunde kunde = (Kunde)Application.Current.Properties["neuRegistriert"];
             Ausgabe.Content = kunde.BenutzerId;
         }
-       
+
+        private void ZumLogin_Click(object sender, RoutedEventArgs e)
+        {
+            StartBildschirm startBildschirm = new StartBildschirm();
+            this.NavigationService.Navigate(startBildschirm);
+        }
     }
 }

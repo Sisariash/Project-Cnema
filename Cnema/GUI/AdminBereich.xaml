@@ -34,6 +34,7 @@
         <Button x:Name="KinoprogrammHinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="334,138,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammHinzufuegen_Button"/>
         <Button x:Name="KinoprogrammLoeschen" Content="Löschen" HorizontalAlignment="Left" Margin="335,175,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammLoeschen_Button"/>
         <Button x:Name="KinoprogrammBearbeiten" Content="Bearbeiten" HorizontalAlignment="Left" Margin="335,215,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammBearbeiten_Button"/>
+        <Button x:Name="LogoutAdmin" Content="Logout" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="LogoutAdmin_Click"/>
 
     </Grid>
 </Page>
