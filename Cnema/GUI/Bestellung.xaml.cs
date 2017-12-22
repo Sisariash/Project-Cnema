@@ -23,18 +23,35 @@ namespace GUI
         public Bestellung()
         {
             InitializeComponent();
-            txtNumErwachsene.Text = _numValue.ToString();
+            txtNumErwachsene.Text = _anzahlErwachsen.ToString();
+            txtNumKinder.Text = _anzahlKinder.ToString();
         }
 
-        private int _numValue = 0;
+        private int _anzahlErwachsen = 0;
+        private int _anzahlKinder = 0;
 
-        public int NumValue
+        public int AnzahlErwachsen
         {
-            get { return _numValue; }
+            get { return _anzahlErwachsen; }
             set
             {
-                _numValue = value;
-                txtNumErwachsene.Text = value.ToString();
+                if (value >= 0)
+                {
+                    _anzahlErwachsen = value;
+                    txtNumErwachsene.Text = value.ToString();
+                }
+            }
+        }
+        public int AnzahlKinder
+        {
+            get { return _anzahlKinder; }
+            set
+            {
+                if (value >= 0)
+                {
+                    _anzahlKinder = value;
+                    txtNumKinder.Text = value.ToString();
+                }
             }
         }
 
@@ -51,39 +68,39 @@ namespace GUI
                 return;
             }
 
-            if (!int.TryParse(txtNumErwachsene.Text, out _numValue))
-                txtNumErwachsene.Text = _numValue.ToString();
+            if (!int.TryParse(txtNumErwachsene.Text, out _anzahlErwachsen))
+                txtNumErwachsene.Text = _anzahlErwachsen.ToString();
         }
 
         private void CmdUpErwachsene_Click(object sender, RoutedEventArgs e)
         {
-            NumValue++;
+            AnzahlErwachsen++;
         }
 
         private void CmdDownErwachsene_Click(object sender, RoutedEventArgs e)
         {
-            NumValue--;
+            AnzahlErwachsen--;
         }
 
         private void TxtNumKinder_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txtNumErwachsene == null)
+            if (txtNumKinder == null)
             {
                 return;
             }
 
-            if (!int.TryParse(txtNumErwachsene.Text, out _numValue))
-                txtNumErwachsene.Text = _numValue.ToString();
+            if (!int.TryParse(txtNumKinder.Text, out _anzahlKinder))
+                txtNumKinder.Text = _anzahlKinder.ToString();
         }
 
         private void CmdDownKinder_Click(object sender, RoutedEventArgs e)
         {
-            NumValue--;
+            AnzahlKinder--;
         }
 
         private void CmdUpKinder_Click(object sender, RoutedEventArgs e)
         {
-            NumValue++;
+            AnzahlKinder++;
         }
     }
 }
