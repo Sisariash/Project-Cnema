@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Komponenten.Bestellverwaltung;
+using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,14 @@ namespace GUI
     /// <summary>
     /// Interaktionslogik für Bestellung.xaml
     /// </summary>
-    public partial class Bestellung : Page
+    public partial class BestellungSeite : Page
     {
-        public Bestellung()
+        private IBestellverwaltung bv = (IBestellverwaltung)App.Current.Properties["bestellung"];
+        private Vorstellung vorstellung;
+        public BestellungSeite(Vorstellung v)
         {
             InitializeComponent();
+            vorstellung = v;
             txtNumErwachsene.Text = _anzahlErwachsen.ToString();
             txtNumKinder.Text = _anzahlKinder.ToString();
         }
@@ -35,7 +40,7 @@ namespace GUI
             get { return _anzahlErwachsen; }
             set
             {
-                if (value >= 0)
+                if (value >= 0 && (_anzahlKinder + value) <= bv.FreiePlaetzeAnzeigen(vorstellung))
                 {
                     _anzahlErwachsen = value;
                     txtNumErwachsene.Text = value.ToString();
@@ -47,7 +52,7 @@ namespace GUI
             get { return _anzahlKinder; }
             set
             {
-                if (value >= 0)
+                if (value >= 0 && (_anzahlErwachsen + value) <= bv.FreiePlaetzeAnzeigen(vorstellung))
                 {
                     _anzahlKinder = value;
                     txtNumKinder.Text = value.ToString();
@@ -57,8 +62,11 @@ namespace GUI
 
         private void BestellungBestaetigen_Button(object sender, RoutedEventArgs e)
         {
-            BestellungBestaetigung bestellungbestaetigung = new BestellungBestaetigung();
-            this.NavigationService.Navigate(bestellungbestaetigung);
+            if ((_anzahlErwachsen + _anzahlKinder) > 0)
+            {
+                BestellungBestaetigung bestellungbestaetigung = new BestellungBestaetigung(_anzahlErwachsen, _anzahlKinder, vorstellung);
+                this.NavigationService.Navigate(bestellungbestaetigung);
+            }
         }
 
         private void TxtNumErwachsene_TextChanged(object sender, TextChangedEventArgs e)

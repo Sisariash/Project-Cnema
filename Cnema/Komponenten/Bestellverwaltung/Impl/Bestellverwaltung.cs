@@ -11,6 +11,8 @@ namespace Komponenten.Bestellverwaltung.Impl
 {
     public class Bestellverwaltung : IBestellverwaltung
     {
+        private int standardpreis = 10;
+        private int ermaessigtpreis = 7;
         //Datenbankmanager wird entweder im Konstruktor übergeben, oder neu erzeugt
         IDatenbankManager datenbank;
         public Bestellverwaltung(IDatenbankManager datenbankManager)
@@ -41,13 +43,12 @@ namespace Komponenten.Bestellverwaltung.Impl
         //Bestellung mit Standardpreis 10
         public Bestellung Reservieren(Kunde kunde, Vorstellung vorstellung)
         {
-            Bestellung bestellung = new Bestellung(vorstellung, kunde, 10);
+            Bestellung bestellung = new Bestellung(vorstellung, kunde, standardpreis);
             if (datenbank.BestellungHinzufügen(bestellung))
             {
                 return bestellung;
             }
             else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
-            
         }
         //Bestellung mit übergebenem Preis
         public Bestellung Reservieren(Kunde kunde, Vorstellung vorstellung, double preis)
@@ -59,10 +60,36 @@ namespace Komponenten.Bestellverwaltung.Impl
             }
             else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
         }
+        //Bestellung mit ermäßigtem Standardpreis
+        public Bestellung ReservierenErmaessigt(Kunde kunde, Vorstellung vorstellung)
+        {
+            Bestellung bestellung = new Bestellung(vorstellung, kunde, ermaessigtpreis);
+            if (datenbank.BestellungHinzufügen(bestellung))
+            {
+                return bestellung;
+            }
+            else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
+        }
 
         public void BestellungStornieren(Bestellung bestellung)
         {
             datenbank.BestellungLoeschen(bestellung);
+        }
+
+        public int FreiePlaetzeAnzeigen(Vorstellung vorstellung)
+        {
+            int plaetzeFrei = vorstellung.Saal.AnzahlSitze - vorstellung.Bestellungen.Count;
+            return plaetzeFrei;
+        }
+
+        public int getStandardPreis()
+        {
+            return standardpreis;
+        }
+
+        public int getErmaessigtPreis()
+        {
+            return ermaessigtpreis;
         }
     }
 }

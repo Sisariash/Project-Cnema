@@ -41,6 +41,7 @@ namespace GUI
 
         private void Tag_ListView(object sender, SelectionChangedEventArgs e)
         {
+            FilmKinoprogramm.UnselectAll();
             String tagAuswahl = (String)TagKinoprogramm.SelectedItem;
             if (tagAuswahl != null)
             {
@@ -59,15 +60,16 @@ namespace GUI
 
         private void Film_ListView(object sender, SelectionChangedEventArgs e)
         {
-            List<String> zeiten = new List<String>();
+            UhrzeitKinoprogramm.UnselectAll();
+            List<Vorstellung> vorstellungen = new List<Vorstellung>();
             foreach (Vorstellung v in kv.AlleVorstellungenLesen())
             {
-                if (v != null && v.Film != null && FilmKinoprogramm.SelectedItem.Equals(v.Film))
+                if (v != null && FilmKinoprogramm.SelectedItem != null && v.Film != null && FilmKinoprogramm.SelectedItem.Equals(v.Film))
                 {
-                    zeiten.Add(v.DateTime.ToString("HH:mm"));
+                    vorstellungen.Add(v);
                 }
             }
-            UhrzeitKinoprogramm.ItemsSource = zeiten;
+            UhrzeitKinoprogramm.ItemsSource = vorstellungen;
         }
 
         private void Uhrzeit_ListView(object sender, SelectionChangedEventArgs e)
@@ -77,8 +79,11 @@ namespace GUI
 
         private void Buchung_Button(object sender, RoutedEventArgs e)
         {
-            Bestellung bestellung = new Bestellung();
-            this.NavigationService.Navigate(bestellung);
+            if (UhrzeitKinoprogramm.SelectedItem != null)
+            {
+                BestellungSeite bestellung = new BestellungSeite((Vorstellung)UhrzeitKinoprogramm.SelectedItem);
+                this.NavigationService.Navigate(bestellung);
+            }
         }
 
         private void FilmeBewerten_Button(object sender, RoutedEventArgs e)

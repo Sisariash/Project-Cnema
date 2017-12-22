@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,25 @@ namespace GUI
     /// </summary>
     public partial class IhreBestellung : Page
     {
-        public IhreBestellung()
+        private int standard;
+        private int ermaessigt;
+        private List<Bestellung> bestellungen;
+
+        public IhreBestellung(int st, int er, List<Bestellung> best)
         {
+            standard = st;
+            ermaessigt = er;
+            bestellungen = best;
+            StringBuilder nummern = new StringBuilder();
+            foreach (Bestellung b in bestellungen)
+            {
+                nummern.Append(b.BestellId.ToString() + ", ");
+            }
+            nummern.Remove(nummern.Length - 2, 2);
             InitializeComponent();
+            txtNumErwachsene.Text = standard.ToString();
+            txtNumKinder.Text = ermaessigt.ToString();
+            BestellnrTxt.Text = nummern.ToString();
         }
 
         private void TxtNumErwachsene_TextChanged(object sender, TextChangedEventArgs e)

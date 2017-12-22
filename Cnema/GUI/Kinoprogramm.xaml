@@ -37,11 +37,11 @@
             </ListView.ItemTemplate>
         </ListView>
         <ListView x:Name="UhrzeitKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding DateTime, StringFormat='HH:mm'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="Buchung" Content="Buchung" HorizontalAlignment="Left" Margin="200,240,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="Buchung_Button"/>
         <Label Content="Weitere Funktionen:" HorizontalAlignment="Left" Margin="67,310,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="125" FontWeight="Bold" Height="26"/>

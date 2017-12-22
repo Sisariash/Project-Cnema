@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Komponenten.Bestellverwaltung;
+using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,44 @@ namespace GUI
     /// </summary>
     public partial class BestellungBestaetigung : Page
     {
-        public BestellungBestaetigung()
+        private int Standard;
+        private int Ermaessigt;
+        private Vorstellung vorstellung;
+        private IBestellverwaltung bv = (IBestellverwaltung)App.Current.Properties["bestellung"];
+        
+        public BestellungBestaetigung(int standard, int ermaessigt, Vorstellung vorst)
         {
             InitializeComponent();
+            vorstellung = vorst;
+            Standard = standard;
+            Ermaessigt = ermaessigt;
+            txtNumErwachsene.Text = Standard.ToString();
+            txtNumKinder.Text = Ermaessigt.ToString();
+            double preis = 0;
+            for (int i = 0; i < Standard; i++)
+            {
+                preis += bv.getStandardPreis();
+            }
+            for (int j = 0; j < Ermaessigt; j++)
+            {
+                preis += bv.getErmaessigtPreis();
+            }
+            PreisTxt.Text = preis.ToString();
         }
 
         private void Bestaetigen_Button(object sender, RoutedEventArgs e)
         {
-            IhreBestellung ihrebestellung = new IhreBestellung();
+            Kunde kunde = (Kunde)App.Current.Properties["aktuellerBenutzer"];
+            List<Bestellung> bestellungen = new List<Bestellung>();
+            for (int erwachsen = 0; erwachsen < Standard; erwachsen++)
+            {
+                bestellungen.Add((Bestellung)bv.Reservieren(kunde, vorstellung));
+            }
+            for (int ermaessigt = 0; ermaessigt < Ermaessigt; ermaessigt++)
+            {
+                bestellungen.Add((Bestellung)bv.ReservierenErmaessigt(kunde, vorstellung));
+            }
+            IhreBestellung ihrebestellung = new IhreBestellung(Standard, Ermaessigt, bestellungen);
             this.NavigationService.Navigate(ihrebestellung);
         }
 

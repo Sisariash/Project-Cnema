@@ -70,8 +70,8 @@
     <Compile Include="BestaetigungDerRegistrierung.xaml.cs">
       <DependentUpon>BestaetigungDerRegistrierung.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Bestellung.xaml.cs">
-      <DependentUpon>Bestellung.xaml</DependentUpon>
+    <Compile Include="BestellungSeite.xaml.cs">
+      <DependentUpon>BestellungSeite.xaml</DependentUpon>
     </Compile>
     <Compile Include="BestellungBestaetigung.xaml.cs">
       <DependentUpon>BestellungBestaetigung.xaml</DependentUpon>
@@ -129,7 +129,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Bestellung.xaml">
+    <Page Include="BestellungSeite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
