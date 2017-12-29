@@ -79,78 +79,25 @@ namespace CnemaUnitTest
         public void FilmLoeschenTest()
         {
 
-
+            //Immer Aktuelle ID zum Löschen nehmen
             Film film1 = kinoprogrammverwaltung.FilmLesen(1);
             kinoprogrammverwaltung.FilmLoeschen(film1);
-
-            Film film2 = kinoprogrammverwaltung.FilmLesen(2);
-            kinoprogrammverwaltung.FilmLoeschen(film2);
-
-            Film film3 = kinoprogrammverwaltung.FilmLesen(3);
-            kinoprogrammverwaltung.FilmLoeschen(film3);
-
-            Film film4 = kinoprogrammverwaltung.FilmLesen(4);
-            kinoprogrammverwaltung.FilmLoeschen(film4);
-
-            Film film5 = kinoprogrammverwaltung.FilmLesen(5);
-            kinoprogrammverwaltung.FilmLoeschen(film5);
-
-            Film film6 = kinoprogrammverwaltung.FilmLesen(6);
-            kinoprogrammverwaltung.FilmLoeschen(film6);
-
-            Film film7 = kinoprogrammverwaltung.FilmLesen(7);
-            kinoprogrammverwaltung.FilmLoeschen(film7);
-
-            Film film8 = kinoprogrammverwaltung.FilmLesen(8);
-            kinoprogrammverwaltung.FilmLoeschen(film8);
-
-            Film film9 = kinoprogrammverwaltung.FilmLesen(9);
-            kinoprogrammverwaltung.FilmLoeschen(film9);
-
-            Film film10 = kinoprogrammverwaltung.FilmLesen(10);
-            kinoprogrammverwaltung.FilmLoeschen(film10);
 
 
             Film filmFromDb1 = kinoprogrammverwaltung.FilmLesen(1);
             Assert.IsNull(filmFromDb1);
 
-            Film filmFromDb2 = kinoprogrammverwaltung.FilmLesen(2);
-            Assert.IsNull(filmFromDb2);
-
-            Film filmFromDb3 = kinoprogrammverwaltung.FilmLesen(3);
-            Assert.IsNull(filmFromDb3);
-
-            Film filmFromDb4 = kinoprogrammverwaltung.FilmLesen(4);
-            Assert.IsNull(filmFromDb4);
-
-            Film filmFromDb5 = kinoprogrammverwaltung.FilmLesen(5);
-            Assert.IsNull(filmFromDb5);
-
-            Film filmFromDb6 = kinoprogrammverwaltung.FilmLesen(6);
-            Assert.IsNull(filmFromDb6);
-
-            Film filmFromDb7 = kinoprogrammverwaltung.FilmLesen(7);
-            Assert.IsNull(filmFromDb7);
-
-            Film filmFromDb8 = kinoprogrammverwaltung.FilmLesen(8);
-            Assert.IsNull(filmFromDb8);
-
-            Film filmFromDb9 = kinoprogrammverwaltung.FilmLesen(9);
-            Assert.IsNull(filmFromDb9);
-
-
-
-
-
+            
         }
 
         [TestMethod]
         public void FilmAendernTest()
         {
-            // Init Kinoprogramverwaltung
+
+            //Immer Aktuelle ID nehmen
             IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
 
-            // Init film
+            
             Film film = kinoprogrammverwaltung.FilmLesen(2);
             film.Titel = "Parry Hotter";
             film.Jahr = 1998;
@@ -177,9 +124,6 @@ namespace CnemaUnitTest
             Saal saal2 = new Saal("Saal2", 100);
             Saal saal3 = new Saal("Saal3", 75);
 
-
-
-
             datenbankManager.SaalHinzufügen(saal1);
             datenbankManager.SaalHinzufügen(saal2);
             datenbankManager.SaalHinzufügen(saal3);
@@ -195,25 +139,11 @@ namespace CnemaUnitTest
             Saal saal1 = datenbankManager.SaalLesen("saal1");
             datenbankManager.SaalLoeschen(saal1);
 
-            Saal saal2 = datenbankManager.SaalLesen("saal2");
-            datenbankManager.SaalLoeschen(saal2);
-
-            Saal saal3 = datenbankManager.SaalLesen("saal3");
-            datenbankManager.SaalLoeschen(saal3);
-
-
-
-
-
+        
             Saal saalFromDb1 = datenbankManager.SaalLesen("saal1");
             Assert.IsNull(saalFromDb1);
 
-            Saal saalFromDb2 = datenbankManager.SaalLesen("saal2");
-            Assert.IsNull(saalFromDb2);
-
-            Saal saalFromDb3 = datenbankManager.SaalLesen("saal3");
-            Assert.IsNull(saalFromDb3);
-
+        
         }
         //VorstellungTests
         [TestMethod]
@@ -248,28 +178,15 @@ namespace CnemaUnitTest
     public void VorstellungLoeschenTest()
     {
 
-
+        //Immer Aktuelle ID nehmen
         Vorstellung vorstellung1 = datenbankManager.VorstellungLesen(10);
         datenbankManager.VorstellungLoeschen(vorstellung1);
-
-        Vorstellung vorstellung2 = datenbankManager.VorstellungLesen(11);
-         datenbankManager.VorstellungLoeschen(vorstellung2);
-
-        Vorstellung vorstellung3 = datenbankManager.VorstellungLesen(12);
-        datenbankManager.VorstellungLoeschen(vorstellung3);
-
-
-
 
 
         Vorstellung saalFromDb1 = datenbankManager.VorstellungLesen(10);
         Assert.IsNull(saalFromDb1);
 
-        Vorstellung saalFromDb2 = datenbankManager.VorstellungLesen(11);
-        Assert.IsNull(saalFromDb2);
-
-        Vorstellung saalFromDb3 = datenbankManager.VorstellungLesen(12);
-        Assert.IsNull(saalFromDb3);
+     
 
     }
 
