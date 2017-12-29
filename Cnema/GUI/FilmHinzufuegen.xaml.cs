@@ -65,5 +65,11 @@ namespace GUI
             AdminBereich adminBereich = new AdminBereich();
             this.NavigationService.Navigate(adminBereich);
         }
+
+        private void Abbruch_Click(object sender, RoutedEventArgs e)
+        {
+            AdminBereich adminBereich = new AdminBereich();
+            this.NavigationService.Navigate(adminBereich);
+        }
     }
 }

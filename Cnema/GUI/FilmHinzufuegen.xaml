@@ -39,6 +39,7 @@
         <TextBox x:Name="FSK" HorizontalAlignment="Left" Height="23" Margin="318,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="FSK_TextBox"/>
         <CheckBox x:Name="_3D" Content="3D" HorizontalAlignment="Left" Margin="318,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Checked="CheckBox_3D" Width="51" Height="22" RenderTransformOrigin="0.914,0.456"/>
         <Button x:Name="Hinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="186,272,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Hinzufuegen_Button"/>
+        <Button x:Name="Abbruch" Content="Abbrechen" HorizontalAlignment="Left" Margin="31,287,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.395,-0.504" Foreground="Red" Click="Abbruch_Click"/>
 
     </Grid>
 </Page>

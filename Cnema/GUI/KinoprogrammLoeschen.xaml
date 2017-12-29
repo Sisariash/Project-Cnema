@@ -60,6 +60,16 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="Abbruch" Content="Abbrechen" HorizontalAlignment="Left" Margin="23,303,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Abbruch_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
 
 

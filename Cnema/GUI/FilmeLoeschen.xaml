@@ -35,6 +35,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="Abbruch" Content="Abbrechen" HorizontalAlignment="Left" Margin="22,306,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Abbruch_Click"/>
 
     </Grid>
 </Page>
