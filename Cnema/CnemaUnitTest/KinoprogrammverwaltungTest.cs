@@ -49,9 +49,10 @@ namespace CnemaUnitTest
             Film film7 = new Film("Der Pate", 1972, "Krimi", 175, "Deutsch", false, 16);
             Film film8 = new Film("Pulp Fiction", 1994, "Drama", 154, "Deutsch", false, 16);
             Film film9 = new Film("Yol Arkadasim", 2017, "Komödie", 115, "Türkisch", false, 6);
-            Film film10 = new Film("Paddington 2", 2017, "Annimation", 104, "Detusch", false, 0);
+            Film film10 = new Film("Paddington 2", 2017, "Animation", 104, "Detusch", false, 0);
+            Film film11 = new Film("Pokemon - Der Film", 1998, "Animation", 110, "Deutsch", false, 12);
 
-           
+
 
 
 
@@ -65,7 +66,7 @@ namespace CnemaUnitTest
             kinoprogrammverwaltung.FilmHinzufuegen(film8);
             kinoprogrammverwaltung.FilmHinzufuegen(film9);
             kinoprogrammverwaltung.FilmHinzufuegen(film10);
-
+            kinoprogrammverwaltung.FilmHinzufuegen(film11);
 
 
 

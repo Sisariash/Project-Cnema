@@ -39,12 +39,14 @@ namespace CnemaUnitTest
             Film film4 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Deutsch", false, 12);
             Film film5 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Englisch", false, 12);
             Film film6 = new Film("Jigsaw", 2017, "Horror", 92, "Deutsch", false, 18);
+            Film film7 = new Film("Pokemon - Der Film", 1998, "Animation", 110, "Deutsch", false, 12);
             db.FilmHinzufuegen(film1);
             db.FilmHinzufuegen(film2);
             db.FilmHinzufuegen(film3);
             db.FilmHinzufuegen(film4);
             db.FilmHinzufuegen(film5);
             db.FilmHinzufuegen(film6);
+            db.FilmHinzufuegen(film7);
             Vorstellung v1 = new Vorstellung(film1, saal1, new DateTime(2017, 12, 29, 18, 0, 0));
             Vorstellung v2 = new Vorstellung(film2, saal1, new DateTime(2017, 12, 29, 20, 30, 0));
             Vorstellung v3 = new Vorstellung(film3, saal2, new DateTime(2017, 12, 28, 20, 30, 0));
