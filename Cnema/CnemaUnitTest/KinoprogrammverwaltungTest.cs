@@ -41,7 +41,7 @@ namespace CnemaUnitTest
 
 
             Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
-            Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 6);
+            Film film2 = new Film("Star Wars 7 (3D)", 2017, "Action", 287, "Deutsch", true, 6);
             Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 6);
             Film film4 = new Film("Cars3", 2017, "Animation", 110, "Deutsch", false, 0);
             Film film5 = new Film("Bad Moms 2", 2017, "Komödie", 105, "Deutsch", false, 12);
@@ -49,7 +49,7 @@ namespace CnemaUnitTest
             Film film7 = new Film("Der Pate", 1972, "Krimi", 175, "Deutsch", false, 16);
             Film film8 = new Film("Pulp Fiction", 1994, "Drama", 154, "Deutsch", false, 16);
             Film film9 = new Film("Yol Arkadasim", 2017, "Komödie", 115, "Türkisch", false, 6);
-            Film film10 = new Film("Paddington 2", 2017, "Animation", 104, "Detusch", false, 0);
+            Film film10 = new Film("Paddington 2", 2017, "Animation", 104, "Deutsch", false, 0);
             Film film11 = new Film("Pokemon - Der Film", 1998, "Animation", 110, "Deutsch", false, 12);
 
 
@@ -152,7 +152,7 @@ namespace CnemaUnitTest
         {
 
             Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
-            Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 6);
+            Film film2 = new Film("Star Wars 7 (3D)", 2017, "Action", 287, "Deutsch", true, 6);
             Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 6);
 
             Saal saal1 = datenbankManager.SaalLesen("Saal1"); // new Saal("Saal1", 150);

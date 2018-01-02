@@ -33,11 +33,11 @@ namespace CnemaUnitTest
             db.SaalHinzufügen(saal1);
             db.SaalHinzufügen(saal2);
             db.SaalHinzufügen(saal3);
-            Film film1 = new Film("The Big Lebowski", 1998, "Comedy", 117, "Deutsch", false, 12);
-            Film film2 = new Film("Djumanji: Willkommen im Djungel", 2017, "Adventure", 119, "Deutsch", true, 12);
-            Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Adventure", 119, "Deutsch", false, 12);
+            Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
+            Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
+            Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
             Film film4 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Deutsch", false, 12);
-            Film film5 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Englisch", false, 12);
+            Film film5 = new Film("Star Wars: The Last Jedi", 2017, "Science-Fiction", 152, "Englisch", false, 12);
             Film film6 = new Film("Jigsaw", 2017, "Horror", 92, "Deutsch", false, 18);
             Film film7 = new Film("Pokemon - Der Film", 1998, "Animation", 110, "Deutsch", false, 12);
             db.FilmHinzufuegen(film1);
