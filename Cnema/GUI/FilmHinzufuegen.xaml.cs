@@ -58,14 +58,12 @@ namespace GUI
 
         }
 
-  
-
-        private void CheckBox_3D(object sender, RoutedEventArgs e)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void CheckBox_3D(object sender, RoutedEventArgs e)
         {
 
         }
