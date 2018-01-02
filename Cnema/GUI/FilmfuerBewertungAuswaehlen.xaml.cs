@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Komponenten.ET;
+using Komponenten.Kinoprogrammverwaltung;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,17 @@ namespace GUI
     /// </summary>
     public partial class FilmfuerBewertungAuswaehlen : Page
     {
+        IKinoprogrammverwaltung kv = (IKinoprogrammverwaltung)App.Current.Properties["programm"];
+
         public FilmfuerBewertungAuswaehlen()
         {
             InitializeComponent();
-        }
+            List<Film> filme = new List<Film>();
+            Programm.ItemsSource = filme;        }
 
-        private void Filme_ListView(object sender, SelectionChangedEventArgs e)
+        private void Programm_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+        
         }
 
         private void Bewertung_Button(object sender, RoutedEventArgs e)
@@ -35,5 +40,6 @@ namespace GUI
             FilmBewerten filmBewerten = new FilmBewerten();
             this.NavigationService.Navigate(filmBewerten);
         }
+
     }
 }
