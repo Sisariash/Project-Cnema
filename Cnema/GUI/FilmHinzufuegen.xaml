@@ -13,7 +13,7 @@
 
     </Page.Background>
 
-    <Grid x:Name="Sprache">
+    <Grid>
         <Label Content="Film Hinzufügen" HorizontalAlignment="Left" Margin="132,10,0,0" VerticalAlignment="Top" FontSize="18" Height="39" Width="280" FontFamily="Wide Latin" FontWeight="Bold" FontStyle="Italic" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -31,15 +31,14 @@
         <Label Content="Länge:" HorizontalAlignment="Left" Margin="259,80,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="59" FontWeight="Bold"/>
         <Label Content="Genre:" HorizontalAlignment="Left" Margin="259,124,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="51" FontWeight="Bold"/>
         <Label Content="FSK:" HorizontalAlignment="Left" Margin="259,170,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="39" FontWeight="Bold"/>
-        <TextBox x:Name="Titel" HorizontalAlignment="Left" Height="23" Margin="121,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Jahr_TextBox"/>
-        <TextBox x:Name="Jahr" HorizontalAlignment="Left" Height="23" Margin="121,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Jahr_TextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="121,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Jahr_TextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="121,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Jahr_TextBox"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="121,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Sprache_TextBox"/>
-        <TextBox x:Name="Laenge" HorizontalAlignment="Left" Height="23" Margin="318,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Laenge_TextBox"/>
-        <TextBox x:Name="Genre" HorizontalAlignment="Left" Height="23" Margin="318,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="FSK_TextBox"/>
-        <TextBox x:Name="FSK" HorizontalAlignment="Left" Height="23" Margin="318,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="FSK_TextBox"/>
-        <CheckBox x:Name="_3D" Content="3D" HorizontalAlignment="Left" Margin="318,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Checked="CheckBox_3D" Width="51" Height="22" RenderTransformOrigin="0.914,0.456"/>
-        <Button x:Name="Hinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="186,272,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Hinzufuegen_Button"/>
-        <Button x:Name="Abbruch" Content="Abbrechen" HorizontalAlignment="Left" Margin="31,287,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.395,-0.504" Foreground="Red" Click="Abbruch_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="318,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Laenge_TextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="318,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="FSK_TextBox"/>
+        <CheckBox Content="3D" HorizontalAlignment="Left" Margin="318,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Checked="CheckBox_3D" Width="51" Height="22" RenderTransformOrigin="0.914,0.456"/>
+        <Button Content="Hinzufügen" HorizontalAlignment="Left" Margin="186,272,0,0" VerticalAlignment="Top" Width="150" Height="37" Click="Hinzufuegen_Button"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="318,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
 
     </Grid>
 </Page>

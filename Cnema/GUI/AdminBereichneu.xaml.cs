@@ -29,19 +29,101 @@ namespace GUI
         {
             InitializeComponent();
             LadeFilme();
-        }
+            LadeVorstellungen();
+            LadeBestellungen();
+            LadeKunden();
+            LadeAdmins();        }
 
-        private void ListViewFilme_SelectionChanged(object sender, SelectionChangedEventArgs e)
+ 
+
+        public void LadeVorstellungen()
         {
-            
+            listViewVorstellung.ItemsSource = DatenbankManager.Instance.AlleVorstellungenLesen();
         }
 
+        public void LadeBestellungen()
+        {
+            listViewBestellungen.ItemsSource = DatenbankManager.Instance.AlleBestellungenLesen();
+        }
+        public void LadeKunden()
+        {
+            listViewKunden.ItemsSource = DatenbankManager.Instance.AlleKundenLesen();
+        }
+        public void LadeAdmins()
+        {
+            listViewAdmins.ItemsSource = DatenbankManager.Instance.AlleAdminsLesen();
+        }
         public void LadeFilme()
         {
             listViewFilme.ItemsSource = DatenbankManager.Instance.AlleFilmeLesen();
         }
 
         // Context Menu
+
+
+            private void ContextMenuListViewVorstellungEdit_OnClick(object sender, RoutedEventArgs e)
+        {
+            /**if (listViewVorstellung.SelectedIndex > -1)
+            {
+                Vorstellung selectedVorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
+                FilmHinzufuegenNeu filmHinzufuegenNeu = new FilmHinzufuegenNeu(selectedVorstellung, this);
+                filmHinzufuegenNeu.ShowDialog();
+            }
+            */
+        }
+
+        private void ContextMenuListViewVorstellungRemove_OnClick(object sender, ExecutedRoutedEventArgs e)
+        {
+           /** 
+             --> Das selectedVorstellung geht nicht
+            
+             if (listViewVorstellung.SelectedIndex > -1)
+            {
+                Vorstellung selectedVorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
+                DatenbankManager.Instance.FilmLoeschen(selectedVorstellung);
+
+                LadeVorstellungen();
+            }
+            */
+        }
+
+  
+        private void ContextMenuListViewBestellungEdit_OnClick(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void ContextMenuListViewBestellungRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void ContextMenuListViewKundeEdit_OnClick(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+      private void ContextMenuListViewKundeRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void ContextMenuListViewAdminEdit_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ContextMenuListViewAdminRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
         private void ContextMenuListViewFilmeEdit_OnClick(object sender, RoutedEventArgs e)
         {
             if (listViewFilme.SelectedIndex > -1)
@@ -72,6 +154,34 @@ namespace GUI
         }
 
         private void MenuItemVorstellungHinzufuegen_Click(object sender, RoutedEventArgs e)
+
+        {
+            //FilmHinzufuegenNeu filmHinzufuegenNeu = new FilmHinzufuegenNeu(null, this);
+            //filmHinzufuegenNeu.ShowDialog();
+        }
+        private void ListViewFilme_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+       
+
+        private void ListViewVorstellung_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListViewBestellungen_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListViewKunden_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListViewAdmin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
@@ -81,6 +191,7 @@ namespace GUI
             StartBildschirm startBildschirm = new StartBildschirm();
             this.NavigationService.Navigate(startBildschirm);
         }
+
 
     }
 }

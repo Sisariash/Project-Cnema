@@ -5,9 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GUI"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="525"
+      d:DesignHeight="350" d:DesignWidth="5825"
       Title="AdminBereich">
-
     <Page.Background>
 
         <ImageBrush ImageSource="Image/Admin.jpg" />
@@ -35,6 +34,6 @@
         <Button x:Name="KinoprogrammLoeschen" Content="Löschen" HorizontalAlignment="Left" Margin="335,175,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammLoeschen_Button"/>
         <Button x:Name="KinoprogrammBearbeiten" Content="Bearbeiten" HorizontalAlignment="Left" Margin="335,215,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="KinoprogrammBearbeiten_Button"/>
         <Button x:Name="LogoutAdmin" Content="Logout" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="LogoutAdmin_Click"/>
- 
+
     </Grid>
 </Page>

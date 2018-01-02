@@ -45,31 +45,29 @@ namespace GUI
 
         }
 
-        private void Genre_TextBox(object sender, TextChangedEventArgs e)
-        {
-
-        }
+      
 
         private void FSK_TextBox(object sender, TextChangedEventArgs e)
         {
 
         }
 
+ 
+        private void Hinzufuegen_Button(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+  
+
         private void CheckBox_3D(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Hinzufuegen_Button(object sender, RoutedEventArgs e)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            AdminBereich adminBereich = new AdminBereich();
-            this.NavigationService.Navigate(adminBereich);
-        }
 
-        private void Abbruch_Click(object sender, RoutedEventArgs e)
-        {
-            AdminBereich adminBereich = new AdminBereich();
-            this.NavigationService.Navigate(adminBereich);
         }
     }
 }

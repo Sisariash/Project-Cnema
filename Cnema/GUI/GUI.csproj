@@ -67,6 +67,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="AdminBereich.xaml.cs">
+      <DependentUpon>AdminBereich.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminBereichneu.xaml.cs">
       <DependentUpon>AdminBereichneu.xaml</DependentUpon>
     </Compile>
@@ -207,9 +210,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AdminBereich.xaml.cs">
-      <DependentUpon>AdminBereich.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

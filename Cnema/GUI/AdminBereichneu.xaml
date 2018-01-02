@@ -74,16 +74,129 @@
                 </TabItem>
                 <TabItem Header="Vorstellungen">
                     <Grid Background="#FFE5E5E5">
-                        <ListView>
+                        <ListView x:Name="listViewVorstellung" SelectionChanged="ListViewVorstellung_SelectionChanged">
+
+                            <!--context  Menu-->
+                            <ListView.ContextMenu>
+                                <ContextMenu Name="ZoneIformationList2" StaysOpen="true" Background="WhiteSmoke">
+                                    <ContextMenu.BitmapEffect>
+                                        <BitmapEffectGroup/>
+                                    </ContextMenu.BitmapEffect>
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewVorstellungEdit"  Click="ContextMenuListViewBestellungEdit_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewVorstellungRemove" Click="ContextMenuListViewBestellungRemove_OnClick"/>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn/>
+                                    <GridViewColumn Header="VorstellungId" Width="120" DisplayMemberBinding="{Binding VorstellungId}" />
+                                    <GridViewColumn Header="DateTime" Width="240" DisplayMemberBinding="{Binding DateTime}" />
+                                    <GridViewColumn Header="FilmId" Width="120" DisplayMemberBinding="{Binding Film.FilmId}" />
+                                    <GridViewColumn Header="Saal" Width="120" DisplayMemberBinding="{Binding Saal.SaalName}" />
+
+                                </GridView>
+                                </ListView.View>
+                            </ListView>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Bestellungen">
+                    <Grid Background="#FFE5E5E5">
+                        <ListView x:Name="listViewBestellungen" SelectionChanged="ListViewBestellungen_SelectionChanged">
+
+                            <!--context  Menu-->
+                            <ListView.ContextMenu>
+                                <ContextMenu Name="ZoneIformationList3" StaysOpen="true" Background="WhiteSmoke">
+                                    <ContextMenu.BitmapEffect>
+                                        <BitmapEffectGroup/>
+                                    </ContextMenu.BitmapEffect>
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewBestellungEdit"  Click="ContextMenuListViewBestellungEdit_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewBestellungRemove" Click="ContextMenuListViewBestellungRemove_OnClick"/>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="BestellId" Width="120" DisplayMemberBinding="{Binding BestellId}" />
+                                    <GridViewColumn Header="Preis" Width="120" DisplayMemberBinding="{Binding Preis}" />
+                                    <GridViewColumn Header="BenutzerId" Width="120" DisplayMemberBinding="{Binding Kunde.BenutzerId}" />
+                                    <GridViewColumn Header="VorstellungId" Width="120" DisplayMemberBinding="{Binding Vorstellung.VorstellungId}" />
+
                                 </GridView>
                             </ListView.View>
                         </ListView>
                     </Grid>
                 </TabItem>
+
+                <TabItem Header="Kunden">
+                    <Grid Background="#FFE5E5E5">
+                        <ListView x:Name="listViewKunden" SelectionChanged="ListViewKunden_SelectionChanged">
+
+                            <!--context  Menu-->
+                            <ListView.ContextMenu>
+                                <ContextMenu Name="ZoneIformationList4" StaysOpen="true" Background="WhiteSmoke">
+                                    <ContextMenu.BitmapEffect>
+                                        <BitmapEffectGroup/>
+                                    </ContextMenu.BitmapEffect>
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewKundeEdit"  Click="ContextMenuListViewKundeEdit_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewKundeRemove" Click="ContextMenuListViewKundeRemove_OnClick"/>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="BenutzerId" Width="120" DisplayMemberBinding="{Binding BenutzerId}" />
+                                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                    <GridViewColumn Header="Vorname" Width="120" DisplayMemberBinding="{Binding Vorname}" />
+                                    <GridViewColumn Header="Geburtsdatum" Width="150" DisplayMemberBinding="{Binding Geburtsdatum}" />
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Admins">
+                    <Grid Background="#FFE5E5E5">
+                        <ListView x:Name="listViewAdmins" SelectionChanged="ListViewAdmin_SelectionChanged">
+
+                            <!--context  Menu-->
+                            <ListView.ContextMenu>
+                                <ContextMenu Name="ZoneIformationList5" StaysOpen="true" Background="WhiteSmoke">
+                                    <ContextMenu.BitmapEffect>
+                                        <BitmapEffectGroup/>
+                                    </ContextMenu.BitmapEffect>
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewAdminEdit"  Click="ContextMenuListViewAdminEdit_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewAdminRemove" Click="ContextMenuListViewAdminRemove_OnClick"/>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="BenutzerId" Width="120" DisplayMemberBinding="{Binding BenutzerId}" />
+                                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
+
+
+
+
+
+
+
+
+
+
+
             </TabControl>
         </Grid>
     </Grid>
-</Page>
+    </Page>
+        
+                        
+                   
+               
+

@@ -72,10 +72,5 @@ namespace GUI
             StartBildschirm startBildschirm = new StartBildschirm();
             this.NavigationService.Navigate(startBildschirm);
         }
-
-        private void FilmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
