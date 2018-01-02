@@ -42,14 +42,14 @@ namespace GUI
 
         }
 
-        // !!!ACHTUNG!!! Selber geschrieben die Methode ging nicht mit Doppelklick erzeugen
+        
         private void WaehlePasswort_PasswortBox(object sender, TextChangedEventArgs e)
         {
 
 
         }
 
-        // !!!ACHTUNG!!! Selber geschrieben die Methode ging nicht mit Doppelklick erzeugen
+        
         private void WiederholePasswort_PasswortBox(object sender, TextChangedEventArgs e)
         {
 
@@ -63,7 +63,7 @@ namespace GUI
             DateTime geburtsdatum;
             bool geburtsdatumKorrekt = DateTime.TryParse(this.Geburtsdatum.Text, out geburtsdatum);
 
-            if (this.Passwort.Password == null || this.Passwort.Password.Length == 0 || !this.Passwort.Password.Equals(this.PasswortWiederholt.Password) || nachname == null || nachname.Length == 0 || vorname == null || vorname.Length == 0 || !geburtsdatumKorrekt)
+            if (this.Passwort.Password == null || this.Passwort.Password.Length == 0 || !this.Passwort.Password.Equals(this.PasswortWiederholt.Password) || nachname == null || nachname.Length == 0 || vorname == null || vorname.Length == 0 || !geburtsdatumKorrekt )
             {
                 Fehlermeldung.Visibility = Visibility.Visible;
             }

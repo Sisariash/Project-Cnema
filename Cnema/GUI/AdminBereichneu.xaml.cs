@@ -74,17 +74,16 @@ namespace GUI
 
         private void ContextMenuListViewVorstellungRemove_OnClick(object sender, ExecutedRoutedEventArgs e)
         {
-           /** 
-             --> Das selectedVorstellung geht nicht
-            
-             if (listViewVorstellung.SelectedIndex > -1)
+
+            // Wieso Löscht das nicht die Vorstellung????
+            if (listViewVorstellung.SelectedIndex > -1)
             {
-                Vorstellung selectedVorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
-                DatenbankManager.Instance.FilmLoeschen(selectedVorstellung);
+                Vorstellung selectedvorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
+                DatenbankManager.Instance.VorstellungLoeschen(selectedvorstellung);
 
                 LadeVorstellungen();
             }
-            */
+
         }
 
   
@@ -96,8 +95,15 @@ namespace GUI
 
         private void ContextMenuListViewBestellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
+            
+            if (listViewBestellungen.SelectedIndex > -1)
+            {
+                Bestellung selectedbestellung = (Bestellung)listViewBestellungen.SelectedItem; // casting the list view 
+                DatenbankManager.Instance.BestellungLoeschen(selectedbestellung);
 
-
+                LadeBestellungen();
+            }
+            
         }
 
         private void ContextMenuListViewKundeEdit_OnClick(object sender, RoutedEventArgs e)
@@ -109,6 +115,14 @@ namespace GUI
       private void ContextMenuListViewKundeRemove_OnClick(object sender, RoutedEventArgs e)
         {
 
+            if (listViewKunden.SelectedIndex > -1)
+            {
+                Kunde selectedKunde = (Kunde)listViewKunden.SelectedItem; // casting the list view 
+                DatenbankManager.Instance.KundeLoeschen(selectedKunde);
+
+                LadeKunden();
+            }
+
 
         }
 
@@ -119,7 +133,13 @@ namespace GUI
 
         private void ContextMenuListViewAdminRemove_OnClick(object sender, RoutedEventArgs e)
         {
+            if (listViewAdmins.SelectedIndex > -1)
+            {
+                Admin selectedAdmin = (Admin)listViewAdmins.SelectedItem; // casting the list view 
+                DatenbankManager.Instance.AdminLoeschen(selectedAdmin);
 
+                LadeAdmins();
+            }
         }
 
 
