@@ -20,13 +20,13 @@
                         <MenuItem Header="_Neu">
                             <MenuItem Header="Film" Click="MenuItemFilmHinzufuegen_Click">
                                 <MenuItem.Icon>
-                                    <Image Source="C:\Users\Osman\Documents\Cnema\Cnema\GUI\Image\Icons\film.png" MaxWidth="16" MaxHeight="16" />
+                                    <Image Source="Image\Icons\film.png" MaxWidth="16" MaxHeight="16" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem Header="Vorstellung" Click="MenuItemVorstellungHinzufuegen_Click" >
 
                                 <MenuItem.Icon>
-                                    <Image Source="C:\Users\Osman\Documents\Cnema\Cnema\GUI\Image\Icons\vorstellung.png" MaxWidth="20" MaxHeight="20" />
+                                    <Image Source="Image\Icons\vorstellung.png" MaxWidth="20" MaxHeight="20" />
                                 </MenuItem.Icon>
 
                             </MenuItem>
