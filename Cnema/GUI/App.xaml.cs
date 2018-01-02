@@ -20,7 +20,7 @@ namespace GUI
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            IDatenbankManager datenbankManager = new DatenbankManager();
+            IDatenbankManager datenbankManager = DatenbankManager.Instance;
             KinoprogrammverwaltungFactory kpvFactory = new KinoprogrammverwaltungFactory(datenbankManager);
             BestellverwaltungFactory bvFactory = new BestellverwaltungFactory(datenbankManager);
             KundenverwaltungFactory kvFactory = new KundenverwaltungFactory(datenbankManager);

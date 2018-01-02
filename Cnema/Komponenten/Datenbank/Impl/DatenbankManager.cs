@@ -39,10 +39,12 @@ namespace Komponenten.Datenbank.Impl
             return cnemaContext.Filme.ToList();
         }
 
-        public bool FilmAendern()
+        public bool FilmAendern(Film film)
         {
             try
             {
+                cnemaContext.Entry(film).State = System.Data.Entity.EntityState.Modified;
+                //cnemaContext.Filme.Attach(film);
                 cnemaContext.SaveChanges();
                 return true;
             }
@@ -99,6 +101,21 @@ namespace Komponenten.Datenbank.Impl
             return vorstellung;
         }
 
+        public Vorstellung VorstellungLesen(DateTime dateTime, Saal saal)
+        {
+            Vorstellung vorstellung = cnemaContext.Vorstellungen
+                .Where(c => c.DateTime.Equals(dateTime))
+                .Where(c => c.Saal.SaalName.Equals(saal.SaalName))
+                .SingleOrDefault();
+            return vorstellung;
+        }
+
+        public bool VorstellungExistiert(DateTime dateTime, Saal saal)
+        {
+            Vorstellung vorstellung = VorstellungLesen(dateTime, saal);
+            return vorstellung != null;
+        }
+
         public List<Vorstellung> AlleVorstellungenLesen()
         {
             return cnemaContext.Vorstellungen.ToList();
@@ -108,11 +125,18 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
-                cnemaContext.Vorstellungen.Add(vorstellung);
-                cnemaContext.SaveChanges();
-                return true;
+                Vorstellung vorstellungGleicherZeitpunktUndSaal = VorstellungLesen(vorstellung.DateTime, vorstellung.Saal);
+
+                if (vorstellungGleicherZeitpunktUndSaal == null)
+                {
+                    cnemaContext.Vorstellungen.Add(vorstellung);
+                    cnemaContext.SaveChanges();
+                    return true;
+                }
             }
-            catch { return false; }
+            catch (Exception ex) { Console.WriteLine(ex.InnerException.InnerException.Message); }
+
+            return false;
         }
 
         public bool VorstellungAendern()
@@ -392,6 +416,25 @@ namespace Komponenten.Datenbank.Impl
                 return true;
             }
             catch { return false; }
+        }
+
+
+        // Singleton
+
+        private static DatenbankManager instance;
+
+        private DatenbankManager() { }
+
+        public static DatenbankManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DatenbankManager();
+                }
+                return instance;
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Komponenten.Datenbank
         Film FilmLesen(int id);
         List<Film> AlleFilmeLesen();
         bool FilmHinzufuegen(Film film);
-        bool FilmAendern();
+        bool FilmAendern(Film film);
         bool FilmLoeschen(Film film);
 
         // Vorstellung

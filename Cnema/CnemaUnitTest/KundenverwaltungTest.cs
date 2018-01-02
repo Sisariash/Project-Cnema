@@ -15,9 +15,9 @@ namespace CnemaUnitTest
     [TestClass]
     public class KundenverwaltungTest
     {
-        static DatenbankManager dbm = new DatenbankManager();
+        static DatenbankManager dbm = DatenbankManager.Instance;
         Kundenverwaltung kv = new Kundenverwaltung(dbm);
-        Kinoprogrammverwaltung kpv = new Kinoprogrammverwaltung(dbm);
+        Kinoprogrammverwaltung kpv = new Kinoprogrammverwaltung();
 
 
         /*Kunde k1 = new Kunde(Utils.HashPassword("geheim"), "Herzog", "Charly", new DateTime(1986, 10, 6));

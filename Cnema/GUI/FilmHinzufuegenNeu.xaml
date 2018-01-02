@@ -1,0 +1,66 @@
+﻿<Window x:Class="GUI.FilmHinzufuegenNeu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d" Height="350" Width="525" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+    <Grid>
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="44"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.ColumnSpan="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TextBoxFilmTitel" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="1" Height="23" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="TextBoxFilmJahr" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="1" Height="23" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="TextBoxFilmSprache" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="1" Height="23" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="TextBoxFilmLaenge" Grid.ColumnSpan="1" Grid.Row="3" Grid.Column="1" Height="23" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="Titel" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                    <Label Content="Jahr" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                    <Label Content="Sprache" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                    <Label Content="Länge" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="ComboBoxFilmGenre" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="1" Height="23" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="TextBoxFilmFsk" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="1" Height="23" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="CheckBoxFilmIs3D" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Label Content="Genre" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                    <Label Content="FSK" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                    <Label Content="3D" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                </Grid>
+            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="8">
+                <Button x:Name="ButtonFilmHinzufuegenAbbrechen" Content="Abbrechen" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,8,0" Click="ButtonFilmHinzufuegenAbbrechen_Click"/>
+                <Button x:Name="ButtonFilmHinzufuegenSpeichern" Content="Speichern" Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,3" Click="ButtonFilmHinzufuegenSpeichern_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

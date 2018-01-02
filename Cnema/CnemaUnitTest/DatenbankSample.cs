@@ -13,7 +13,7 @@ namespace CnemaUnitTest
         [TestMethod]
         public void CreateSample()
         {
-            DatenbankManager db = new DatenbankManager();
+            DatenbankManager db = DatenbankManager.Instance;
 
             //Alles löschen
             foreach (Kunde k in db.AlleKundenLesen()) db.KundeLoeschen(k);
@@ -47,10 +47,13 @@ namespace CnemaUnitTest
             db.FilmHinzufuegen(film5);
             db.FilmHinzufuegen(film6);
             db.FilmHinzufuegen(film7);
-            Vorstellung v1 = new Vorstellung(film1, saal1, new DateTime(2017, 12, 29, 18, 0, 0));
-            Vorstellung v2 = new Vorstellung(film2, saal1, new DateTime(2017, 12, 29, 20, 30, 0));
-            Vorstellung v3 = new Vorstellung(film3, saal2, new DateTime(2017, 12, 28, 20, 30, 0));
-            Vorstellung v4 = new Vorstellung(film4, saal3, new DateTime(2017, 12, 29, 18, 0, 0));
+
+            // Test: Vorstellung hinzufuegen
+            Vorstellung v1 = new Vorstellung(film1, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
+            Vorstellung v2 = new Vorstellung(film2, saal1, new DateTime(2018, 01, 13, 20, 30, 0));
+            Vorstellung v3 = new Vorstellung(film3, saal2, new DateTime(2018, 01, 14, 20, 30, 0));
+            Vorstellung v4 = new Vorstellung(film4, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
+
             db.VorstellungHinzufuegen(v1);
             db.VorstellungHinzufuegen(v2);
             db.VorstellungHinzufuegen(v3);

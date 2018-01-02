@@ -13,7 +13,7 @@ namespace Komponenten.Kinoprogrammverwaltung
 
         public KinoprogrammverwaltungFactory(IDatenbankManager db)
         {
-            kpv = new Impl.Kinoprogrammverwaltung(db);
+            kpv = new Impl.Kinoprogrammverwaltung();
         }
 
         public IKinoprogrammverwaltung GetKinoprogrammverwaltung()

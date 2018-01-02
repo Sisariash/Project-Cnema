@@ -21,7 +21,7 @@ namespace Komponenten.Kundenverwaltung.Impl
         }
         public Kundenverwaltung()
         {
-            dbManager = new DatenbankManager();
+            dbManager = DatenbankManager.Instance;
         }
 
         public FilmBewertung FilmBewerten(int bewertung, Film film, Kunde kunde)

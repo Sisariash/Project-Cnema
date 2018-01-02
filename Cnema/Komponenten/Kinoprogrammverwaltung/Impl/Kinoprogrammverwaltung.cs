@@ -11,12 +11,7 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
 {
     public class Kinoprogrammverwaltung : IKinoprogrammverwaltung
     {
-        private IDatenbankManager datenbankManager = new DatenbankManager();
-
-        public Kinoprogrammverwaltung(IDatenbankManager datenbankManager)
-        {
-            this.datenbankManager = datenbankManager;
-        }
+        private IDatenbankManager datenbankManager = DatenbankManager.Instance;
 
         public Kinoprogrammverwaltung() { }
 
@@ -33,7 +28,7 @@ namespace Komponenten.Kinoprogrammverwaltung.Impl
 
         public bool FilmAendern()
         {
-            return datenbankManager.FilmAendern();
+            return datenbankManager.FilmAendern(null);
         }
 
         public bool FilmHinzufuegen(Film film)

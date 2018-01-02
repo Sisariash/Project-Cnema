@@ -16,8 +16,8 @@ namespace CnemaUnitTest
     {
 
         
-        static IDatenbankManager datenbankManager = new DatenbankManager();
-        IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung(datenbankManager);
+        static IDatenbankManager datenbankManager = DatenbankManager.Instance;
+        IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
 
         //FilmTests
         [TestMethod]
@@ -99,7 +99,7 @@ namespace CnemaUnitTest
             IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
 
             
-            Film film = kinoprogrammverwaltung.FilmLesen(2);
+            Film film = kinoprogrammverwaltung.FilmLesen(69);
             film.Titel = "Parry Hotter";
             film.Jahr = 1998;
             // Set other attributes
@@ -151,26 +151,34 @@ namespace CnemaUnitTest
         public void VorstellungHinzufuegenTest()
         {
 
-            // Klappt nicht immer wieso? Fügt manchmal hinzu beim laufen lassen manchmal nicht 
-            
-
             Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
             Film film2 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", true, 6);
             Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 6);
 
-            Saal saal1 = new Saal("Saal1", 150);
-            Saal saal2 = new Saal("Saal2", 100);
-            Saal saal3 = new Saal("Saal3", 75);
+            Saal saal1 = datenbankManager.SaalLesen("Saal1"); // new Saal("Saal1", 150);
+            Saal saal2 = datenbankManager.SaalLesen("Saal2"); // new Saal("Saal2", 100);
+            Saal saal3 = datenbankManager.SaalLesen("Saal3");  //new Saal("Saal3", 75);
 
-            
-            Vorstellung vorstellung1 = new Vorstellung(film1, saal1, DateTime.Now);
-            Vorstellung vorstellung2 = new Vorstellung(film2, saal2, DateTime.Now);
-            Vorstellung vorstellung3 = new Vorstellung(film3, saal3, DateTime.Now);
-           
+            Vorstellung vorstellung1 = new Vorstellung(film1, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
+            Vorstellung vorstellung2 = new Vorstellung(film2, saal2, new DateTime(2018, 01, 13, 18, 0, 0));
+            Vorstellung vorstellung3 = new Vorstellung(film3, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
 
-            datenbankManager.VorstellungHinzufuegen(vorstellung1);
-            datenbankManager.VorstellungHinzufuegen(vorstellung2);
-            datenbankManager.VorstellungHinzufuegen(vorstellung3);
+            bool vorstellungHinzufuegen1 = datenbankManager.VorstellungHinzufuegen(vorstellung1);
+            bool vorstellungHinzufuegen2 = datenbankManager.VorstellungHinzufuegen(vorstellung2);
+            bool vorstellungHinzufuegen3 = datenbankManager.VorstellungHinzufuegen(vorstellung3);
+
+            // Cleaning
+            datenbankManager.FilmLoeschen(film1);
+            datenbankManager.FilmLoeschen(film2);
+            datenbankManager.FilmLoeschen(film3);
+
+            datenbankManager.VorstellungLoeschen(vorstellung1);
+            datenbankManager.VorstellungLoeschen(vorstellung2);
+            datenbankManager.VorstellungLoeschen(vorstellung3);
+
+            Assert.IsTrue(vorstellungHinzufuegen1);
+            Assert.IsTrue(vorstellungHinzufuegen2);
+            Assert.IsFalse(vorstellungHinzufuegen3);
         }
     
 
@@ -180,7 +188,7 @@ namespace CnemaUnitTest
     {
 
         //Immer Aktuelle ID nehmen
-        Vorstellung vorstellung1 = datenbankManager.VorstellungLesen(10);
+        Vorstellung vorstellung1 = datenbankManager.VorstellungLesen(31);
         datenbankManager.VorstellungLoeschen(vorstellung1);
 
 

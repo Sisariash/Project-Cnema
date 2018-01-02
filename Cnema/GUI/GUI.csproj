@@ -67,6 +67,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="AdminBereichneu.xaml.cs">
+      <DependentUpon>AdminBereichneu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BestaetigungDerRegistrierung.xaml.cs">
       <DependentUpon>BestaetigungDerRegistrierung.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,9 @@
     <Compile Include="FilmHinzufuegen.xaml.cs">
       <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FilmHinzufuegenNeu.xaml.cs">
+      <DependentUpon>FilmHinzufuegenNeu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IhreBestellung.xaml.cs">
       <DependentUpon>IhreBestellung.xaml</DependentUpon>
     </Compile>
@@ -122,6 +128,10 @@
       <DependentUpon>Suchergebnis.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminBereich.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminBereichneu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmHinzufuegen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmHinzufuegenNeu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -251,6 +265,12 @@
       <Project>{c0dcb93e-474f-4874-b9cc-b11cf2f6f086}</Project>
       <Name>Komponenten</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icons\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icons\vorstellung.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

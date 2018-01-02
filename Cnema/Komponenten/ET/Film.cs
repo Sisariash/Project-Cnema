@@ -57,6 +57,23 @@ namespace Komponenten.ET
 
         }
 
-       
+
+        public static List<String> Genres()
+        {
+            return new List<string>( new string[] 
+                {
+                    "Animation",
+                    "Action",
+                    "Abenteuer",
+                    "Fantasy",
+                    "Drama",
+                    "Horror",
+                    "Komödie",                  
+                    "Krimi",
+                    "Liebe"
+                });
+        }
+
+
     }
 }

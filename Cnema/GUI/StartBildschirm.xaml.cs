@@ -31,8 +31,13 @@ namespace GUI
 
         private void Registrieren_Button(object sender, RoutedEventArgs e)
         {
-            KundenRegistrierung kundenRegistrierung = new KundenRegistrierung();
-            this.NavigationService.Navigate(kundenRegistrierung);
+
+
+            //AdminBereichneu adminBereichneu = new AdminBereichneu();
+            //this.NavigationService.Navigate(adminBereichneu);
+
+           KundenRegistrierung kundenRegistrierung = new KundenRegistrierung();
+           this.NavigationService.Navigate(kundenRegistrierung);
         }
 
 
@@ -61,8 +66,8 @@ namespace GUI
             else if (admin != null && isAdmin == true)
             {
                 Application.Current.Properties["aktuellerBenutzer"] = admin;
-                AdminBereich adminbereich = new AdminBereich();
-                this.NavigationService.Navigate(adminbereich);
+                AdminBereichneu adminBereichneu = new AdminBereichneu();
+                this.NavigationService.Navigate(adminBereichneu);
 
                 /*Nur zu Testzwecken
                 Admin a = (Admin)Application.Current.Properties["aktuellerBenutzer"];

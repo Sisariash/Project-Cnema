@@ -14,7 +14,7 @@ namespace CnemaUnitTest
         [TestMethod]
         public void TestReservierung()
         {
-            DatenbankManager dbm = new DatenbankManager();
+            DatenbankManager dbm = DatenbankManager.Instance;
             Bestellverwaltung bestellverwaltung = new Bestellverwaltung(dbm);
             Kundenverwaltung kundenverwaltung = new Kundenverwaltung(dbm);
             Kunde testKunde = dbm.KundeLesen(3);

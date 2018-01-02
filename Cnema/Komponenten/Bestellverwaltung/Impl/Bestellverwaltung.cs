@@ -21,7 +21,7 @@ namespace Komponenten.Bestellverwaltung.Impl
         }
         public Bestellverwaltung()
         {
-            datenbank = new DatenbankManager();
+            datenbank = DatenbankManager.Instance;
         }
         public IList<Vorstellung> ProgrammAnzeigen()
         {
