@@ -1,4 +1,4 @@
-﻿<Page x:Class="GUI.FilmfuerBewertungAuswaehlen"
+﻿<Page x:Class="GUI.FilmAuswaehlen"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="525"
       Title="FilmfuerBewertungAuswaehlen">
-
+    
     <Page.Background>
 
         <ImageBrush ImageSource="Image/Kino1.jpg" />
@@ -26,7 +26,7 @@
             </Label.Foreground>
         </Label>
         <Label Content="Film auswählen : " HorizontalAlignment="Left" Margin="208,111,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="Bewertung" Content="Zur Bewertung" HorizontalAlignment="Left" Margin="169,282,0,0" VerticalAlignment="Top" Width="95" Height="30" Click="Bewertung_Button"/>
+        <Button x:Name="Bewertung" Content="Zur Bewertung" HorizontalAlignment="Left" Margin="224,285,0,0" VerticalAlignment="Top" Width="95" Height="30" Click="Bewertung_Button"/>
         <ListView x:Name="Programm" HorizontalAlignment="Left" Height="117" Margin="138,143,0,0" VerticalAlignment="Top" Width="265" SelectionChanged="Programm_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -35,7 +35,6 @@
             </ListView.ItemTemplate>
         </ListView>
         <Label x:Name="Auswahlfehler" Content="" HorizontalAlignment="Left" Margin="329,287,0,0" VerticalAlignment="Top" Foreground="#FFF93131" FontWeight="Bold"/>
-        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="288,282,0,0" VerticalAlignment="Top" Width="95" Foreground="Red" Click="Abbrechen_Click" Height="30"/>
 
     </Grid>
 </Page>

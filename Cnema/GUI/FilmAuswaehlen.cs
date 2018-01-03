@@ -20,15 +20,20 @@ namespace GUI
     /// <summary>
     /// Interaktionslogik für FilmfuerBewertungAuswaehlen.xaml
     /// </summary>
-    public partial class FilmfuerBewertungAuswaehlen : Page
+    public partial class FilmAuswaehlen : Page
     {
         IKinoprogrammverwaltung kpv = (IKinoprogrammverwaltung)Application.Current.Properties["programm"];
 
-        public FilmfuerBewertungAuswaehlen()
+        public FilmAuswaehlen()
         {
             InitializeComponent();
             List<Film> filme = kpv.AlleFilmLesen();
             Programm.ItemsSource = filme;
+        }
+
+        private void Programm_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         private void Bewertung_Button(object sender, RoutedEventArgs e)
@@ -40,17 +45,6 @@ namespace GUI
             }
             else
                 Auswahlfehler.Content = "Bitte Film auswählen";
-        }
-
-        private void Programm_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Abbrechen_Click(object sender, RoutedEventArgs e)
-        {
-            Kinoprogramm kinoprogramm = new Kinoprogramm();
-            this.NavigationService.Navigate(kinoprogramm);
         }
     }
 }
