@@ -115,8 +115,8 @@ namespace CnemaUnitTest
 
             Film film = kpv.FilmLesen(1);
             Kunde kunde = kv.dbManager.KundeLesen(1);
-            FilmBewertung bewertung = kv.FilmBewerten(10, film, kunde);
-            Assert.IsNotNull(bewertung);
+            //FilmBewertung bewertung = kv.FilmBewerten(10, film, kunde);
+            //Assert.IsNotNull(bewertung);
             bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
             Assert.AreEqual(1, bewertungen.Count);
             Assert.AreEqual(kunde, bewertung.Kunde);

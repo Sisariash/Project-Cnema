@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Komponenten.ET;
+using Komponenten.Kundenverwaltung;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,53 +22,59 @@ namespace GUI
     /// </summary>
     public partial class FilmBewerten : Page
     {
-        public FilmBewerten()
+        private IKundenverwaltung kv = (IKundenverwaltung)Application.Current.Properties["kunde"];
+        private Kunde kunde = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
+        private Film film;
+
+        public FilmBewerten(Film filmAuswahl)
         {
             InitializeComponent();
+            film = filmAuswahl;
+            Filmtitel.Content = film.Titel;
+            kv.DurchschnittBerechnen(film);
+            Bewertung.Content = String.Format("{0:F1} von 5 Sternen", film.BewertungAvg);
         }
 
-       
-
-        private void Zwei_CheckBox(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Drei_CheckBox(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Vier_CheckBox(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void Bewertung_Button(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void BewertungButton_Click(object sender, RoutedEventArgs e)
         {
-            FilmBewertenabgeschlossen filmBewertenabgeschlossen = new FilmBewertenabgeschlossen();
-            this.NavigationService.Navigate(filmBewertenabgeschlossen);
-        }
+            bool bewertungOK = false;
+            int bewertung = 0;
 
+            if (Eins.IsChecked == true)
+                bewertung = 1;
+            else if (Zwei.IsChecked == true)
+                bewertung = 2;
+            else if (Drei.IsChecked == true)
+                bewertung = 3;
+            else if (Vier.IsChecked == true)
+                bewertung = 4;
+            else if (Fünf.IsChecked == true)
+                bewertung = 5;
 
+            if (bewertung == 0)
+                Fehlermeldung.Content = "Bitte Bewertung auswählen";
+            else
+            {
+                try
+                {
+                    bewertungOK = kv.FilmBewerten(bewertung, film, kunde);  // Falls false, existiert bereits Bewertung des aktuellen Kunden für diesen Film (Kunde darf pro Film nur einmal abstimmen)
+                }
+                catch (Exception)   // Exception, falls Hinzufügen zu Datenbank fehlschlug
+                {
+                    Fehlermeldung.Content = "Systemfehler beim Speichern";
+                }
 
-        private void Fuenf_CheckBox(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Eins_CheckBox(object sender, RoutedEventArgs e)
-        {
-
+                if (bewertungOK)
+                {
+                    kv.DurchschnittBerechnen(film);
+                    FilmBewertenabgeschlossen filmBewertenabgeschlossen = new FilmBewertenabgeschlossen();
+                    this.NavigationService.Navigate(filmBewertenabgeschlossen);
+                }
+                else
+                    Fehlermeldung.Content = "Diesen Film haben Sie bereits bewertet";
+            }
         }
     }
-
- 
-    }
+}
 

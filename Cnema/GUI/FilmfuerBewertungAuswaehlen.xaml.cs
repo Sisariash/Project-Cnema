@@ -22,24 +22,29 @@ namespace GUI
     /// </summary>
     public partial class FilmfuerBewertungAuswaehlen : Page
     {
-        IKinoprogrammverwaltung kv = (IKinoprogrammverwaltung)App.Current.Properties["programm"];
+        IKinoprogrammverwaltung kpv = (IKinoprogrammverwaltung)Application.Current.Properties["programm"];
 
         public FilmfuerBewertungAuswaehlen()
         {
             InitializeComponent();
-            List<Film> filme = new List<Film>();
-            Programm.ItemsSource = filme;        }
+            List<Film> filme = kpv.AlleFilmLesen();
+            Programm.ItemsSource = filme;
+        }
 
         private void Programm_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        
+
         }
 
         private void Bewertung_Button(object sender, RoutedEventArgs e)
         {
-            FilmBewerten filmBewerten = new FilmBewerten();
-            this.NavigationService.Navigate(filmBewerten);
+            if (Programm.SelectedItem != null)
+            {
+                FilmBewerten filmBewerten = new FilmBewerten((Film)Programm.SelectedItem);
+                this.NavigationService.Navigate(filmBewerten);
+            }
+            else
+                Auswahlfehler.Content = "Bitte Film auswählen";
         }
-
     }
 }

@@ -400,18 +400,25 @@ namespace Komponenten.Datenbank.Impl
 
         public List<FilmBewertung> AlleFilmBewertungenLesen()
         {
-            return cnemaContext.FilmBewertungen.ToList();
+            using (CnemaContext cnemaContext = new CnemaContext())
+            {
+                return cnemaContext.FilmBewertungen.ToList();
+            }
         }
+
 
         public bool FilmBewertungHinzufügen(FilmBewertung filmBewertung)
         {
-            try
+            using (CnemaContext cnemaContext = new CnemaContext())
             {
-                cnemaContext.FilmBewertungen.Add(filmBewertung);
-                cnemaContext.SaveChanges();
-                return true;
+                try
+                {
+                    cnemaContext.FilmBewertungen.Add(filmBewertung);
+                    cnemaContext.SaveChanges();
+                    return true;
+                }
+                catch { return false; }
             }
-            catch { return false; }
         }
 
         public bool FilmBewertungLöschen(FilmBewertung filmBewertung)
