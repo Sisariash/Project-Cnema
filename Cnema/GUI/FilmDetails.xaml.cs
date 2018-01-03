@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,24 @@ namespace GUI
     /// </summary>
     public partial class FilmDetails : Page
     {
-        public FilmDetails()
+        private Film film;
+
+        public FilmDetails(Film filmAuswahl)
         {
             InitializeComponent();
+            film = filmAuswahl;
+            Titel_Label.Content = film.Titel;
+            Jahr_Label.Content = film.Jahr;
+            Genre_Label.Content = film.Genre;
+            Länge_Label.Content = film.Laenge;
+            Sprache_Label.Content = film.Sprache;
+            if (film.Is3D)
+                Dimension_Label.Content = "3D";
+            else
+                Dimension_Label.Content = "2D";
+            FSK_Label.Content = film.Fsk;
+            Bewertung_Label.Content = String.Format("{0:F1} von 5 Sterne", film.BewertungAvg);
+
         }
 
         private void Zurueck_Button(object sender, RoutedEventArgs e)

@@ -94,8 +94,8 @@ namespace GUI
 
         private void FilmDetails_Button(object sender, RoutedEventArgs e)
         {
-            FilmDetails filmDetails = new FilmDetails();
-            this.NavigationService.Navigate(filmDetails);
+            FilmFuerDetailsAuswaehlen filmdetails = new FilmFuerDetailsAuswaehlen();
+            this.NavigationService.Navigate(filmdetails);
         }
 
         private void FilmeFiltern_Click(object sender, RoutedEventArgs e)

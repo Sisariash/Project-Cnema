@@ -103,6 +103,9 @@
     <Compile Include="FilmfuerBewertungAuswaehlen.xaml.cs">
       <DependentUpon>FilmfuerBewertungAuswaehlen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FilmFuerDetailsAuswaehlen.xaml.cs">
+      <DependentUpon>FilmFuerDetailsAuswaehlen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FilmHinzufuegen.xaml.cs">
       <DependentUpon>FilmHinzufuegen.xaml</DependentUpon>
     </Compile>
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmfuerBewertungAuswaehlen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilmFuerDetailsAuswaehlen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

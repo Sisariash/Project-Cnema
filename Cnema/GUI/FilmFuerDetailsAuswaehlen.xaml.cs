@@ -18,25 +18,25 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaktionslogik für FilmfuerBewertungAuswaehlen.xaml
+    /// Interaction logic for FilmFuerDetailsAuswaehlen.xaml
     /// </summary>
-    public partial class FilmfuerBewertungAuswaehlen : Page
+    public partial class FilmFuerDetailsAuswaehlen : Page
     {
         IKinoprogrammverwaltung kpv = (IKinoprogrammverwaltung)Application.Current.Properties["programm"];
 
-        public FilmfuerBewertungAuswaehlen()
+        public FilmFuerDetailsAuswaehlen()
         {
             InitializeComponent();
-            List<Film> filme = kpv.AlleFilmLesen();
-            Programm.ItemsSource = filme;
+            List<Film> alleFilme = kpv.AlleFilmLesen();
+            Programm.ItemsSource = alleFilme;
         }
 
         private void Bewertung_Button(object sender, RoutedEventArgs e)
         {
             if (Programm.SelectedItem != null)
             {
-                FilmBewerten filmBewerten = new FilmBewerten((Film)Programm.SelectedItem);
-                this.NavigationService.Navigate(filmBewerten);
+                FilmDetails filmdetails = new FilmDetails((Film)Programm.SelectedItem);
+                this.NavigationService.Navigate(filmdetails);
             }
             else
                 Auswahlfehler.Content = "Bitte Film auswählen";
