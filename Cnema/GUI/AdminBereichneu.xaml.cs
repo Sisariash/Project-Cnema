@@ -72,7 +72,7 @@ namespace GUI
             */
         }
 
-        private void ContextMenuListViewVorstellungRemove_OnClick(object sender, ExecutedRoutedEventArgs e)
+        private void ContextMenuListViewVorstellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
 
             // Wieso Löscht das nicht die Vorstellung????

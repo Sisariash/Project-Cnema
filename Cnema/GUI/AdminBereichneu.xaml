@@ -82,8 +82,8 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewVorstellungEdit"  Click="ContextMenuListViewBestellungEdit_OnClick"/>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewVorstellungRemove" Click="ContextMenuListViewBestellungRemove_OnClick"/>
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewVorstellungEdit"  Click="ContextMenuListViewVorstellungEdit_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewVorstellungRemove" Click="ContextMenuListViewVorstellungRemove_OnClick"/>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
