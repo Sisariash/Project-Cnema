@@ -35,6 +35,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Label x:Name="Auswahlfehler" Content="" HorizontalAlignment="Left" Margin="329,287,0,0" VerticalAlignment="Top" Foreground="#FFF93131" FontWeight="Bold"/>
+        <Button x:Name="Abbrechen" Content="Abbruch" HorizontalAlignment="Left" Margin="366,299,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Abbrechen_Click"/>
 
     </Grid>
 </Page>
