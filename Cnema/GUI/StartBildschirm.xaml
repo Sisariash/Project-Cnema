@@ -14,7 +14,12 @@
     </Page.Background>
 
     <Grid>
-        <Label Content="Willkommen bei C#nema" HorizontalAlignment="Left" Margin="119,45,0,0" VerticalAlignment="Top" FontSize="24" Height="39" Width="312" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Willkommen bei C#nema" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Height="39" Width="312" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -24,14 +29,39 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Benutzer-ID:" HorizontalAlignment="Left" Margin="231,142,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
-        <Label Content="Passwort:" HorizontalAlignment="Left" Margin="231,173,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
-        <TextBox x:Name="ID_Box" HorizontalAlignment="Left" Height="23" Margin="306,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ID_Box_TextBox"/>
-        <Label Content="Noch kein Kunde?" HorizontalAlignment="Left" Margin="202,231,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="111"/>
-        <Button  x:Name="Registrieren" Content="Registrieren" HorizontalAlignment="Left" Margin="318,233,0,0" VerticalAlignment="Top" Width="96" Click="Registrieren_Button"/>
-        <PasswordBox x:Name="Passwort_Box" HorizontalAlignment="Left" Margin="306,174,0,0" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
-        <Button x:Name="Benutzer_Login" Content="Benutzer-Login" HorizontalAlignment="Left" Height="42" Margin="103,149,0,0" VerticalAlignment="Top" Width="110" Click="Benutzer_Login_Click"/>
-        <Label x:Name="Login_Fehler" Content="" HorizontalAlignment="Left" Margin="307,204,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#FFF73E3E"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" HorizontalAlignment="Right">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Benutzer-ID:" Grid.Row="0" Margin="0,0,0,5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                <Label Content="Passwort:" Grid.Row="1" Margin="0,5,0,0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                <TextBox x:Name="ID_Box" Grid.Row="0" Margin="0,0,0,5" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" TextChanged="ID_Box_TextBox"/>
+                <PasswordBox x:Name="Passwort_Box" Grid.Row="1" Margin="0,5,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
+            </Grid>
+            <Button x:Name="Benutzer_Login" Grid.Column="1" Margin="20,0,0,0" Content="Benutzer-Login" HorizontalAlignment="Left" Height="42" VerticalAlignment="Center" Width="110" Click="Benutzer_Login_Click"/>
+            <Label x:Name="Login_Fehler" Grid.Column="1" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#FFF73E3E"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Noch kein Kunde?" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"  Width="111"/>
+            <Button  x:Name="Registrieren" Grid.Column="1" Margin="20,0,0,0" Content="Registrieren" HorizontalAlignment="Left" VerticalAlignment="Center" Width="96" Click="Registrieren_Button"/>
+        </Grid>
+        
+        
+        
 
 
     </Grid>

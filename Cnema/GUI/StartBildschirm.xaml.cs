@@ -74,7 +74,7 @@ namespace GUI
                 MessageBox.Show(a.Name); */
             }
             else
-                Login_Fehler.Content = "Anmeldedaten falsch";
+                Login_Fehler.Content = "Anmeldedaten sind fehlerhaft.";
         }
 
         private void ID_Box_TextBox(object sender, TextChangedEventArgs e)
