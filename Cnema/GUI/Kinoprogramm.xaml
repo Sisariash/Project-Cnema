@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GUI"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="525"
+      d:DesignHeight="400" d:DesignWidth="600"
       Title="Kinoprogramm">
     <Page.Background>
 
@@ -14,64 +14,96 @@
     </Page.Background>
 
     <Grid>
-        <Label Content="Kinoprogramm " HorizontalAlignment="Left" Margin="160,45,0,0" VerticalAlignment="Top" FontSize="24" Height="39" Width="215" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFB6B6B6"/>
-                    <GradientStop Color="#FFD8D8D8"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Label Content="Tag Auswählen: " HorizontalAlignment="Left" Margin="87,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-        <Label Content="Film Auswählen: " HorizontalAlignment="Left" Margin="207,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-        <Label Content="Uhrzeit Auswählen: " HorizontalAlignment="Left" Margin="330,95,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
-        <ListView x:Name="TagKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="87,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
-        </ListView>
-        <ListView x:Name="FilmKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="210,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Titel}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <ListView x:Name="UhrzeitKinoprogramm" HorizontalAlignment="Left" Height="100" Margin="337,120,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding DateTime, StringFormat='HH:mm'}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button x:Name="Buchung" Content="Buchung" HorizontalAlignment="Left" Margin="200,240,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="Buchung_Button"/>
-        <Label Content="Weitere Funktionen:" HorizontalAlignment="Left" Margin="67,310,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="125" FontWeight="Bold" Height="26"/>
-        <Button x:Name="FilmBewerten" Content="Filme &#xD;&#xA;bewerten" HorizontalAlignment="Left" Margin="195,305,0,0" VerticalAlignment="Top" Width="70" Click="FilmeBewerten_Button">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
-                    <GradientStop Color="#FFF0B156"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="FilmdetailsAnzeigen" Content="Filmdetails &#xD;&#xA;anzeigen" HorizontalAlignment="Left" Margin="280,303,0,0" VerticalAlignment="Top" Width="71" Click="FilmDetails_Button">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
-                    <GradientStop Color="#FFEBEBEB"/>
-                    <GradientStop Color="#FFDDDDDD"/>
-                    <GradientStop Color="#FFE8E152"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="FilmeFiltern" Content="Filme&#xA;filtern&#xD;&#xA;" HorizontalAlignment="Left" Margin="368,303,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="FilmeFiltern_Click">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF64FF00" Offset="1"/>
-                    <GradientStop Color="#FF9AFB5B" Offset="1"/>
-                    <GradientStop Color="#FF87D357"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Kinoprogramm " HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="24" Height="39" Width="215" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB6B6B6"/>
+                        <GradientStop Color="#FFD8D8D8"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Tag Auswählen: " Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
+                <Label Content="Film Auswählen: " Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
+                <Label Content="Uhrzeit Auswählen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
+                <ListView x:Name="TagKinoprogramm" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
+                </ListView>
+                <ListView x:Name="FilmKinoprogramm" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Titel}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="UhrzeitKinoprogramm" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DateTime, StringFormat='HH:mm'}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            
+            <Button x:Name="Buchung" Grid.Row="2" Content="Buchung" HorizontalAlignment="Center" VerticalAlignment="Center" Width="115" Height="35" Click="Buchung_Button"/>
+            
+            <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center">
+                <Label Content="Weitere Funktionen:" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="125" FontWeight="Bold" Height="26"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="FilmBewerten" Content="Filme &#xD;&#xA;bewerten" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Click="FilmeBewerten_Button" Margin="0,0,8,0" Height="40">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFF0B156"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="FilmdetailsAnzeigen" Content="Filmdetails &#xD;&#xA;anzeigen" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Click="FilmDetails_Button" Margin="0,0,8,0" Height="40">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB"/>
+                                <GradientStop Color="#FFDDDDDD"/>
+                                <GradientStop Color="#FFE8E152"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="FilmeFiltern" Content="Filme&#xA;filtern&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Click="FilmeFiltern_Click" Height="40">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FF64FF00" Offset="1"/>
+                                <GradientStop Color="#FF9AFB5B" Offset="1"/>
+                                <GradientStop Color="#FF87D357"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            
+            
+        </Grid>
+        
+        <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button" Margin="0"/>
     </Grid>
 </Page>
