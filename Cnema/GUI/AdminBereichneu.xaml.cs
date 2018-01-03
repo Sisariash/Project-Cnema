@@ -176,9 +176,10 @@ namespace GUI
         private void MenuItemVorstellungHinzufuegen_Click(object sender, RoutedEventArgs e)
 
         {
-            //FilmHinzufuegenNeu filmHinzufuegenNeu = new FilmHinzufuegenNeu(null, this);
-            //filmHinzufuegenNeu.ShowDialog();
+            VorstellungHinzufügen vorstellungHinzufügen = new VorstellungHinzufügen(null, this);
+            vorstellungHinzufügen.ShowDialog();
         }
+
         private void ListViewFilme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

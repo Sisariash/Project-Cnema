@@ -125,14 +125,21 @@ namespace Komponenten.Datenbank.Impl
         {
             try
             {
-                Vorstellung vorstellungGleicherZeitpunktUndSaal = VorstellungLesen(vorstellung.DateTime, vorstellung.Saal);
-
-                if (vorstellungGleicherZeitpunktUndSaal == null)
+                List<Vorstellung> vorstellungenSelberSaal = vorstellung.Saal.Vorstellungen;
+                
+                foreach (Vorstellung v in vorstellungenSelberSaal)
                 {
-                    cnemaContext.Vorstellungen.Add(vorstellung);
-                    cnemaContext.SaveChanges();
-                    return true;
+                    DateTime startFilm = v.DateTime;
+                    DateTime endeFilm = v.DateTime.AddMinutes(v.Film.Laenge);
+                    if (startFilm.Ticks <= vorstellung.DateTime.Ticks && endeFilm.Ticks >= vorstellung.DateTime.Ticks)
+                    {
+                        return false;
+                    }
                 }
+                cnemaContext.Vorstellungen.Add(vorstellung);
+                cnemaContext.SaveChanges();
+                return true;
+
             }
             catch (Exception ex) { Console.WriteLine(ex.InnerException.InnerException.Message); }
 

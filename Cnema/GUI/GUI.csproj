@@ -130,6 +130,9 @@
     <Compile Include="Suchergebnis.xaml.cs">
       <DependentUpon>Suchergebnis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VorstellungHinzufügen.xaml.cs">
+      <DependentUpon>VorstellungHinzufügen.xaml</DependentUpon>
+    </Compile>
     <Page Include="AdminBereich.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Suchergebnis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VorstellungHinzufügen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
