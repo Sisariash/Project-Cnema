@@ -13,6 +13,7 @@ namespace Komponenten.Kundenverwaltung
         bool AdminRegistrieren(Admin admin);
         bool KundeLogin(int id, String passwort, out Kunde k);
         bool AdminLogin(int id, String passwort, out Admin a);
-        FilmBewertung FilmBewerten(int bewertung, Film film, Kunde kunde);
+        bool FilmBewerten(int bewertung, Film film, Kunde kunde);
+        void DurchschnittBerechnen(Film film);
     }
 }
