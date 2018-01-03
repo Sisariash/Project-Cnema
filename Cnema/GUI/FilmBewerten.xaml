@@ -25,19 +25,17 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Bisherige Bewertung für:" HorizontalAlignment="Left" Margin="93,100,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="174" FontWeight="Bold" FontSize="12
-               "/>
-        <Button x:Name="BewertungButton" Content="Bewertung abgeben" HorizontalAlignment="Left" Margin="199,277,0,0" VerticalAlignment="Top" Width="146" Height="37" Click="BewertungButton_Click"/>
-        <Label x:Name="Filmtitel" Content="" HorizontalAlignment="Left" Margin="178,134,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" FontWeight="Bold" FontSize="14"/>
-        <Label x:Name="Bewertung" Content="" HorizontalAlignment="Left" Margin="217,175,0,0" VerticalAlignment="Top" Foreground="#FFE4D325" FontWeight="Bold" FontSize="16"/>
-        <RadioButton x:Name="Eins" Content="1 *" HorizontalAlignment="Left" Margin="118,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14"/>
-        <RadioButton x:Name="Zwei" Content="2 *" HorizontalAlignment="Left" Margin="180,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14"/>
-        <RadioButton x:Name="Drei" Content="3 *" HorizontalAlignment="Left" Margin="242,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14"/>
-        <RadioButton x:Name="Vier" Content="4 *" HorizontalAlignment="Left" Margin="307,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14"/>
-        <RadioButton x:Name="Fünf" Content="5 *" HorizontalAlignment="Left" Margin="378,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="BewertungButton" Content="Bewertung abgeben" HorizontalAlignment="Left" Margin="127,266,0,0" VerticalAlignment="Top" Width="126" Height="29" Click="BewertungButton_Click"/>
+        <Label x:Name="Filmtitel" Content="" HorizontalAlignment="Left" Margin="93,111,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-5.792,0.426" HorizontalContentAlignment="Center" Width="332" Height="39" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="Bewertung" Content="" HorizontalAlignment="Left" Margin="93,155,0,0" VerticalAlignment="Top" Foreground="#FFE4D325" FontWeight="Bold" FontSize="18" Width="332" HorizontalContentAlignment="Center"/>
+        <RadioButton x:Name="Eins" Content="1 *" HorizontalAlignment="Left" Margin="112,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <RadioButton x:Name="Zwei" Content="2 *" HorizontalAlignment="Left" Margin="174,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <RadioButton x:Name="Drei" Content="3 *" HorizontalAlignment="Left" Margin="236,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <RadioButton x:Name="Vier" Content="4 *" HorizontalAlignment="Left" Margin="301,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <RadioButton x:Name="Fünf" Content="5 *" HorizontalAlignment="Left" Margin="372,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="Mehrfachbewertung" Content="" HorizontalAlignment="Left" Margin="139,316,0,0" VerticalAlignment="Top" Foreground="#FFFB2525" FontWeight="Bold"/>
-        <RadioButton x:Name="test" Content="RadioButton" HorizontalAlignment="Left" Margin="93,193,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="162,316,0,0" VerticalAlignment="Top" Foreground="#FFFD1A1A" FontWeight="Bold"/>
+        <Button x:Name="Abbruch_Button" Content="Abbruch" HorizontalAlignment="Left" Margin="273,266,0,0" VerticalAlignment="Top" Width="126" Height="29" Foreground="#FFFD1E1E" Click="Abbruch_Button_Click"/>
 
     </Grid>
 </Page>

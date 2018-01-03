@@ -32,7 +32,7 @@ namespace GUI
             film = filmAuswahl;
             Filmtitel.Content = film.Titel;
             kv.DurchschnittBerechnen(film);
-            Bewertung.Content = String.Format("{0:F1} von 5 Sternen", film.BewertungAvg);
+            Bewertung.Content = String.Format("{0:F1} von 5 Sterne", film.BewertungAvg);
         }
 
 
@@ -74,6 +74,12 @@ namespace GUI
                 else
                     Fehlermeldung.Content = "Diesen Film haben Sie bereits bewertet";
             }
+        }
+
+        private void Abbruch_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
         }
     }
 }

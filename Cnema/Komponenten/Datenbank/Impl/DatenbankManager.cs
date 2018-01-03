@@ -126,7 +126,7 @@ namespace Komponenten.Datenbank.Impl
             try
             {
                 List<Vorstellung> vorstellungenSelberSaal = vorstellung.Saal.Vorstellungen;
-                
+
                 foreach (Vorstellung v in vorstellungenSelberSaal)
                 {
                     DateTime startFilm = v.DateTime;
@@ -400,25 +400,21 @@ namespace Komponenten.Datenbank.Impl
 
         public List<FilmBewertung> AlleFilmBewertungenLesen()
         {
-            using (CnemaContext cnemaContext = new CnemaContext())
-            {
                 return cnemaContext.FilmBewertungen.ToList();
-            }
         }
 
 
         public bool FilmBewertungHinzufügen(FilmBewertung filmBewertung)
         {
-            using (CnemaContext cnemaContext = new CnemaContext())
+
+            try
             {
-                try
-                {
-                    cnemaContext.FilmBewertungen.Add(filmBewertung);
-                    cnemaContext.SaveChanges();
-                    return true;
-                }
-                catch { return false; }
+                cnemaContext.FilmBewertungen.Add(filmBewertung);
+                cnemaContext.SaveChanges();
+                return true;
             }
+            catch { return false; }
+
         }
 
         public bool FilmBewertungLöschen(FilmBewertung filmBewertung)

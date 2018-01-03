@@ -49,7 +49,7 @@ namespace Komponenten.Kundenverwaltung.Impl
 
         public void DurchschnittBerechnen(Film film)
         {
-            int summe = 0;
+            double summe = 0;
             int counter = 0;
 
             List<FilmBewertung> alleBewertungenAktuell = dbManager.AlleFilmBewertungenLesen();
@@ -62,7 +62,10 @@ namespace Komponenten.Kundenverwaltung.Impl
                 }
             }
             if (counter != 0)
+            {
                 film.BewertungAvg = (summe / counter);
+                dbManager.Update();
+            }
         }
 
         public bool KundeLogin(int id, string passwort, out Kunde k)
