@@ -36,8 +36,12 @@ namespace GUI
 
         private void ButtonVorstellungHinzufuegenSpeichern_Click(object sender, RoutedEventArgs e)
         {
+            
+
             if (TagAuswahl.SelectedDate != null && UhrzeitAuswahl.SelectedIndex > -1 && SaalAuswahl.SelectedIndex > -1 && FilmAuswahl.SelectedIndex > -1)
             {
+                
+
                 StringBuilder datum = new StringBuilder(TagAuswahl.SelectedDate.Value.ToString("dd.MM.yyyy"));
                 datum.Append(".");
                 datum.Append(UhrzeitAuswahl.Text);
