@@ -46,5 +46,11 @@ namespace GUI
         {
 
         }
+
+        private void Abbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
+        }
     }
 }
