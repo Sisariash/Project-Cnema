@@ -66,6 +66,7 @@
                                     <GridViewColumn Header="Genre" Width="120" DisplayMemberBinding="{Binding Genre}" />
                                     <GridViewColumn Header="FSK" Width="120" DisplayMemberBinding="{Binding Fsk}" />
                                     <GridViewColumn Header="3D" Width="120" DisplayMemberBinding="{Binding Is3D}" />
+                                    <GridViewColumn Header="Ø Film Bewertung" Width="120" DisplayMemberBinding="{Binding BewertungAvg}" />
                                 </GridView>
                             </ListView.View>
 

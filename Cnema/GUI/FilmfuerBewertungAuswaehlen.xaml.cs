@@ -46,5 +46,11 @@ namespace GUI
             else
                 Auswahlfehler.Content = "Bitte Film auswählen";
         }
+
+        private void Abbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
+        }
     }
 }
