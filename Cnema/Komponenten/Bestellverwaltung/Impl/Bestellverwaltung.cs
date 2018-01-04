@@ -35,7 +35,20 @@ namespace Komponenten.Bestellverwaltung.Impl
             List<Vorstellung> gefiltert = new List<Vorstellung>();
             foreach (Vorstellung vorstellung in alle)
             {
-                if (vorstellung.Film.Titel.Contains(kriterium)) gefiltert.Add(vorstellung);
+                if (vorstellung.Film.Titel.ToLower().Contains(kriterium.ToLower())) gefiltert.Add(vorstellung);
+            }
+            return gefiltert;
+        }
+        public IList<Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen)
+        {
+            if (vorstellungen == null)
+            {
+                throw new ArgumentNullException("Keine Vorstellungen angegeben");
+            }
+            List<Vorstellung> gefiltert = new List<Vorstellung>();
+            foreach (Vorstellung vorstellung in vorstellungen)
+            {
+                if (vorstellung.Film.Titel.ToLower().Contains(titel.ToLower())) gefiltert.Add(vorstellung);
             }
             return gefiltert;
         }

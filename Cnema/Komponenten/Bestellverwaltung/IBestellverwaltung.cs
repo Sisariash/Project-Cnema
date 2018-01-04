@@ -19,6 +19,7 @@ namespace Komponenten.Bestellverwaltung
         int FreiePlaetzeAnzeigen(Vorstellung vorstellung);
         IList<ET.Vorstellung> ProgrammFilternTag(DayOfWeek tag);
         IList<ET.Vorstellung> ProgrammFilternTitel(String titel);
+        IList<ET.Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen);
         IList<ET.Vorstellung> ProgrammFilternGenre(String genre);
         IList<ET.Vorstellung> ProgrammFiltern3d(bool is3d);
     }

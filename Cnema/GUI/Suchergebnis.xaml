@@ -26,10 +26,13 @@
         </Label>
         <Label Content="Filterkriterium : " HorizontalAlignment="Left" Margin="85,109,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="105" FontWeight="Bold" Height="26"/>
         <Label Content="Passende Filme : " HorizontalAlignment="Left" Margin="85,180,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="105" FontWeight="Bold" Height="26"/>
-        <ListView x:Name="passendeFilme" HorizontalAlignment="Left" Height="100" Margin="225,190,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="passendeFilme_ListView">
+        <ListView x:Name="passendeFilme" HorizontalAlignment="Left" Height="100" Margin="225,190,0,0" VerticalAlignment="Top" Width="Auto" SelectionChanged="passendeFilme_ListView">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Film" DisplayMemberBinding="{Binding Film.Titel}"/>
+                    <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding DateTime.Date, StringFormat='dd.MM.yyyy'}"/>
+                    <GridViewColumn Header="Uhrzeit" DisplayMemberBinding="{Binding DateTime.TimeOfDay}"/>
+                    <GridViewColumn Header="Saal" DisplayMemberBinding="{Binding Saal.SaalName}"/>
                 </GridView>
             </ListView.View>
         </ListView>

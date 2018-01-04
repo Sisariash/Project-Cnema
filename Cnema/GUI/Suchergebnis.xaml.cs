@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace GUI
     /// </summary>
     public partial class Suchergebnis : Page
     {
-        public Suchergebnis()
+        IList<Vorstellung> vorstellungen;
+        public Suchergebnis(IList<Vorstellung> v)
         {
             InitializeComponent();
+            vorstellungen = v;
+            passendeFilme.ItemsSource = v;
         }
 
         private void passendeFilme_ListView(object sender, SelectionChangedEventArgs e)

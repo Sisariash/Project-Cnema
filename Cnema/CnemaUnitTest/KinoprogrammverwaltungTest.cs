@@ -28,7 +28,6 @@ namespace CnemaUnitTest
             Assert.IsTrue(kinoprogrammverwaltung.FilmHinzufuegen(film));
             Saal saal = new Saal("Testsaal", 80);
             Assert.IsTrue(datenbankManager.SaalHinzufügen(saal));
-            Vorstellung vorstellung = kinoprogrammverwaltung.VorstellungHinzufuegen(DateTime.Now, saal, film);
             Assert.IsTrue(kinoprogrammverwaltung.FilmLoeschen(film));
             Assert.IsTrue(datenbankManager.SaalLoeschen(saal));
         }
@@ -40,7 +39,7 @@ namespace CnemaUnitTest
         {
 
 
-            Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12, );
+            Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
             Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
             Film film4 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Deutsch", false, 12);

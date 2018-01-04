@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Komponenten.Bestellverwaltung;
+using Komponenten.ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -152,8 +154,111 @@ namespace GUI
 
         private void Suchen_Button(object sender, RoutedEventArgs e)
         {
-            Suchergebnis suchergebnis = new Suchergebnis();
-            this.NavigationService.Navigate(suchergebnis);
+            IBestellverwaltung bv = (IBestellverwaltung)App.Current.Properties["bestellung"];
+            IList<Vorstellung> ergebnis = null;
+            if (Montag.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Monday);
+            }
+            else if (Dienstag.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Tuesday);
+            }
+            else if (Mittwoch.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Wednesday);
+            }
+            else if (Donnerstag.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Thursday);
+            }
+            else if (Freitag.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Friday);
+            }
+            else if (Samstag.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Saturday);
+            }
+            else if (Sonntag.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternTag(DayOfWeek.Sunday);
+            }
+            else if (zweiD.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFiltern3d(false);
+            }
+            else if (dreiD.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFiltern3d(true);
+            }
+            else if (Animation.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Animation");
+            }
+            else if (Action.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Action");
+            }
+            else if (Abenteuer.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Abenteuer");
+            }
+            else if (Fantasy.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Fantasy");
+            }
+            else if (Drama.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Drama");
+            }
+            else if (Horror.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Horror");
+            }
+            else if (Komödie.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Komödie");
+            }
+            else if (Krimi.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Krimi");
+            }
+            else if (Romanze.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Romanze");
+            }
+            else if (Science_Fiction.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Science-Fiction");
+            }
+            else if (Thriller.IsChecked == true)
+            {
+                ergebnis = bv.ProgrammFilternGenre("Thriller");
+            }
+            if (ergebnis != null)
+            {
+                if (FilmName.Text != null && FilmName.Text != "")
+                {
+                    ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);
+                }
+            }
+            else if (FilmName.Text != null && FilmName.Text != "")
+            {
+                ergebnis = bv.ProgrammFilternTitel(FilmName.Text);
+            }
+
+            if (ergebnis != null)
+            {
+                Suchergebnis suchergebnis = new Suchergebnis(ergebnis);
+                this.NavigationService.Navigate(suchergebnis);
+            }
+            
+        }
+
+        private void Action_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
