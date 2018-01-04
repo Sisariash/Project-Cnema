@@ -22,11 +22,13 @@ namespace GUI
     public partial class Suchergebnis : Page
     {
         IList<Vorstellung> vorstellungen;
-        public Suchergebnis(IList<Vorstellung> v)
+        
+        public Suchergebnis(IList<Vorstellung> v, String kriterium)
         {
             InitializeComponent();
             vorstellungen = v;
             passendeFilme.ItemsSource = v;
+            Kriterium.Content = kriterium;
         }
 
         private void passendeFilme_ListView(object sender, SelectionChangedEventArgs e)
