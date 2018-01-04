@@ -24,15 +24,21 @@ namespace CnemaUnitTest
             foreach (Film f in db.AlleFilmeLesen()) db.FilmLoeschen(f);
             foreach (Saal s in db.AlleSaeleLesen()) db.SaalLoeschen(s);
 
-            //Beispieldaten hinzufügen
+            //Beispieldaten hinzufügen für Präsentation
+
+            // Admin
             Admin admin = new Admin(Komponenten.Util.Utils.HashPassword("admin"), "Admin");
             db.AdminHinzufuegen(admin);
+
+            // Säle
             Saal saal1 = new Saal("Saal 1", 80);
             Saal saal2 = new Saal("Saal 2", 100);
             Saal saal3 = new Saal("Hugo-Laue-Saal", 150);
             db.SaalHinzufügen(saal1);
             db.SaalHinzufügen(saal2);
             db.SaalHinzufügen(saal3);
+
+            // Filme
             Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
             Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
@@ -48,12 +54,11 @@ namespace CnemaUnitTest
             db.FilmHinzufuegen(film6);
             db.FilmHinzufuegen(film7);
 
-            // Test: Vorstellung hinzufuegen
+            // Vorstellung
             Vorstellung v1 = new Vorstellung(film1, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
             Vorstellung v2 = new Vorstellung(film2, saal1, new DateTime(2018, 01, 13, 20, 30, 0));
             Vorstellung v3 = new Vorstellung(film3, saal2, new DateTime(2018, 01, 14, 20, 30, 0));
             Vorstellung v4 = new Vorstellung(film4, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
-
             db.VorstellungHinzufuegen(v1);
             db.VorstellungHinzufuegen(v2);
             db.VorstellungHinzufuegen(v3);
