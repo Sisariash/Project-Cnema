@@ -38,8 +38,8 @@ namespace GUI
 
         private void zurueck_Button(object sender, RoutedEventArgs e)
         {
-            Kinoprogramm kinoprogramm = new Kinoprogramm();
-            this.NavigationService.Navigate(kinoprogramm);
+            FilmeFiltern filmeFiltern = new FilmeFiltern();
+            this.NavigationService.Navigate(filmeFiltern);
         }
 
         private void Vorstellung_Buchen_Click(object sender, RoutedEventArgs e)
