@@ -13,7 +13,7 @@
 
     </Page.Background>
 
-    <Grid x:Name="Samstag">
+    <Grid x:Name="Grid">
         <Label Content="Filme Filtern" HorizontalAlignment="Left" Margin="180,32,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="160" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -24,38 +24,32 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Wochentag :" HorizontalAlignment="Left" Margin="73,76,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <CheckBox x:Name="Montag" Content="Montag" HorizontalAlignment="Left" Margin="151,83,0,0" VerticalAlignment="Top" Foreground="White" Width="70" Checked="Montag_CheckBox"/>
-        <CheckBox x:Name="Dienstag" Content="Dienstag" HorizontalAlignment="Left" Margin="221,83,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Checked="Dienstag_CheckBox"/>
-        <CheckBox x:Name="Mittwoch" Content="Mittwoch" HorizontalAlignment="Left" Margin="294,83,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Checked="Mittwoch_CheckBox"/>
-        <CheckBox x:Name="Donnerstag" Content="Donnerstag" HorizontalAlignment="Left" Margin="367,83,0,0" VerticalAlignment="Top" Foreground="White" Width="82" RenderTransformOrigin="0.451,0.562" Checked="Donnerstag_CheckBox"/>
-        <CheckBox x:Name="Freitag" Content="Freitag" HorizontalAlignment="Left" Margin="151,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Checked="Freitag_CheckBox"/>
-        <CheckBox x:Name="Dienstag_Copy" Content="Samstag&#xD;&#xA;" HorizontalAlignment="Left" Margin="221,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Height="16" Checked="Samstag_CheckBox"/>
-        <CheckBox x:Name="Sonntag" Content="Sonntag" HorizontalAlignment="Left" Margin="294,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Checked="Sonntag_CheckBox"/>
-        <CheckBox x:Name="Wochenende" Content="Wochenende" HorizontalAlignment="Left" Margin="367,104,0,0" VerticalAlignment="Top" Foreground="White" Width="93" Checked="Wochenende_CheckBox"/>
-        <Label Content="Uhrzeit :" HorizontalAlignment="Left" Margin="73,132,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <CheckBox x:Name="Uhr1700" Content="17:00 Uhr" HorizontalAlignment="Left" Margin="151,137,0,0" VerticalAlignment="Top" Foreground="White" Width="75" Checked="Uhr1700_CheckBox"/>
-        <CheckBox x:Name="Uhr1930" Content="19:30 Uhr" HorizontalAlignment="Left" Margin="221,137,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Checked="Uhr1930_CheckBox"/>
-        <CheckBox x:Name="Uhr2000" Content="20:00 Uhr" HorizontalAlignment="Left" Margin="294,137,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <CheckBox x:Name="Uhr2200" Content="22:00 Uhr" HorizontalAlignment="Left" Margin="367,137,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Checked="Uhr2200_CheckBox"/>
-        <CheckBox x:Name="Uhr1100" Content="11:00 Uhr" HorizontalAlignment="Left" Margin="151,163,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Checked="Uhr1100_CheckBox"/>
-        <CheckBox x:Name="Uhr1300" Content="13:00 Uhr" HorizontalAlignment="Left" Margin="221,163,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Checked="Uhr1300_CheckBox"/>
-        <Label Content="Art :" HorizontalAlignment="Left" Margin="73,187,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <Label Content="Genre :" HorizontalAlignment="Left" Margin="73,226,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <Label Content="Filmname : " HorizontalAlignment="Left" Margin="73,297,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <CheckBox x:Name="zweiD" Content="2D" HorizontalAlignment="Left" Margin="151,192,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="42" Checked="zweiD_CheckBox"/>
-        <CheckBox x:Name="dreiD" Content="3D" HorizontalAlignment="Left" Margin="221,192,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="42" Checked="dreiD_CheckBox"/>
-        <CheckBox x:Name="Action" Content="Action" HorizontalAlignment="Left" Margin="151,231,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="54" Checked="Action_CheckBox"/>
-        <CheckBox x:Name="Abenteuer" Content="Abenteuer" HorizontalAlignment="Left" Margin="367,231,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="79" Checked="Abenteuer_CheckBox"/>
-        <CheckBox x:Name="Fantasy" Content="Fantasy" HorizontalAlignment="Left" Margin="221,231,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="62" Height="21" Checked="Fantasy_CheckBox"/>
-        <CheckBox x:Name="Drama" Content="Drama" HorizontalAlignment="Left" Margin="294,231,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="54" Checked="Drama_CheckBox"/>
-        <CheckBox x:Name="Horror" Content="Horror" HorizontalAlignment="Left" Margin="151,252,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="54" Checked="Horror_CheckBox"/>
-        <CheckBox x:Name="Komoedie" Content="Komödie" HorizontalAlignment="Left" Margin="221,252,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="68" Checked="Komoedie_CheckBox"/>
-        <CheckBox x:Name="Krimi" Content="Krimi" HorizontalAlignment="Left" Margin="294,252,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="54" Checked="Krimi_CheckBox"/>
-        <CheckBox x:Name="Liebe" Content="Liebe" HorizontalAlignment="Left" Margin="367,252,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="54" Checked="Liebe_CheckBox"/>
-        <CheckBox x:Name="Animiert" Content="Animiert" HorizontalAlignment="Left" Margin="151,273,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="68" Checked="Animiert_CheckBox"/>
-        <TextBox x:Name="FilmName" HorizontalAlignment="Left" Height="23" Margin="151,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="FilmName_TextBox"/>
-        <Button x:Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Margin="339,297,0,0" VerticalAlignment="Top" Width="96" Height="33" Click="Suchen_Button"/>
+        <Label Content="Wochentag :" HorizontalAlignment="Left" Margin="63,76,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
+        <RadioButton x:Name="Montag" Content="Montag" HorizontalAlignment="Left" Margin="151,83,0,0" VerticalAlignment="Top" Foreground="White" Width="70" />
+        <RadioButton x:Name="Dienstag" Content="Dienstag" HorizontalAlignment="Left" Margin="221,83,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
+        <RadioButton x:Name="Mittwoch" Content="Mittwoch" HorizontalAlignment="Left" Margin="294,83,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
+        <RadioButton x:Name="Donnerstag" Content="Donnerstag" HorizontalAlignment="Left" Margin="367,83,0,0" VerticalAlignment="Top" Foreground="White" Width="82" RenderTransformOrigin="0.451,0.562" />
+        <RadioButton x:Name="Freitag" Content="Freitag" HorizontalAlignment="Left" Margin="151,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
+        <RadioButton x:Name="Samstag" Content="Samstag" HorizontalAlignment="Left" Margin="221,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Height="16" />
+        <RadioButton x:Name="Sonntag" Content="Sonntag" HorizontalAlignment="Left" Margin="294,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
+        <Label Content="Art :" HorizontalAlignment="Left" Margin="63,143,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
+        <Label Content="Genre :" HorizontalAlignment="Left" Margin="63,191,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
+        <Label Content="Filmname : " HorizontalAlignment="Left" Margin="63,285,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold"/>
+        <RadioButton x:Name="zweiD" Content="2D" HorizontalAlignment="Left" Margin="151,149,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="42" />
+        <RadioButton x:Name="dreiD" Content="3D" HorizontalAlignment="Left" Margin="221,149,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="42" />
+        <RadioButton x:Name="Animation" Content="Animation" HorizontalAlignment="Left" Margin="151,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Action" Content="Action" HorizontalAlignment="Left" Margin="235,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Fantasy" Content="Fantasy" HorizontalAlignment="Left" Margin="387,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Height="21" />
+        <RadioButton x:Name="Abenteuer" Content="Abenteuer" HorizontalAlignment="Left" Margin="302,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Drama" Content="Drama" HorizontalAlignment="Left" Margin="151,222,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Horror" Content="Horror" HorizontalAlignment="Left" Margin="235,221,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Krimi" Content="Krimi" HorizontalAlignment="Left" Margin="387,221,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Romanze" Content="Romanze" HorizontalAlignment="Left" Margin="151,242,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Komödie" Content="Komödie" HorizontalAlignment="Left" Margin="302,222,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <TextBox x:Name="FilmName" HorizontalAlignment="Left" Height="30" Margin="151,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" TextChanged="FilmName_TextBox" VerticalContentAlignment="Center"/>
+        <Button x:Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Margin="346,285,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Suchen_Button"/>
+        <RadioButton x:Name="Science_Fiction" Content="Science-Fiction" HorizontalAlignment="Left" Margin="235,243,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <RadioButton x:Name="Thriller" Content="Thriller" HorizontalAlignment="Left" Margin="387,243,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
 
     </Grid>
 </Page>
