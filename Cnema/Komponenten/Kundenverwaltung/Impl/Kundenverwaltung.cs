@@ -7,7 +7,7 @@ using Komponenten.ET;
 using Komponenten.Datenbank;
 using Komponenten.Datenbank.Impl;
 using Komponenten.Util;
-
+using System.Data.SqlTypes;
 
 namespace Komponenten.Kundenverwaltung.Impl
 {
@@ -94,8 +94,15 @@ namespace Komponenten.Kundenverwaltung.Impl
 
         public bool KundeRegistrieren(String passwort, String name, String vorname, DateTime geburtsdatum, out Kunde k)
         {
-            k = new Kunde(passwort, name, vorname, geburtsdatum);
-            return dbManager.KundeHinzufuegen(k);
+            if (geburtsdatum < SqlDateTime.MinValue)
+            {
+                throw new SqlTypeException();
+            }
+            else
+            {
+                k = new Kunde(passwort, name, vorname, geburtsdatum);
+                return dbManager.KundeHinzufuegen(k);
+            }
         }
 
         public bool AdminRegistrieren(Admin admin)

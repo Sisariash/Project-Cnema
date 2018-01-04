@@ -35,9 +35,9 @@
         <TextBox x:Name="Geburtsdatum" HorizontalAlignment="Left" Height="23" Margin="240,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Geburtstag_TextBox"/>
         <PasswordBox x:Name="Passwort" HorizontalAlignment="Left" Margin="240,202,0,0" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="PasswortWiederholt" HorizontalAlignment="Left" Margin="240,232,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Registrieren" HorizontalAlignment="Left" Margin="211,285,0,0" VerticalAlignment="Top" Width="130" Height="40" Click="Registrieren_Button"/>
-        <TextBlock x:Name="Fehlermeldung" HorizontalAlignment="Left" Height="19" Margin="240,261,0,0" TextWrapping="Wrap" Text="Daten sind Fehlerhaft." VerticalAlignment="Top" Width="150" Visibility="Hidden" Foreground="#FFFF3B3B" FontWeight="Bold"/>
+        <Button Content="Registrieren" HorizontalAlignment="Left" Margin="240,269,0,0" VerticalAlignment="Top" Width="120" Height="41" Click="Registrieren_Button"/>
         <Label Content="z.B. 11.08.1991" HorizontalAlignment="Left" Margin="365,169,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="95"/>
+        <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="240,315,0,0" VerticalAlignment="Top" Foreground="#FFF51414" FontWeight="Bold"/>
 
 
 
