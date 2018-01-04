@@ -14,33 +14,44 @@
 
     </Page.Background>
 
-    <Grid Height="350" VerticalAlignment="Top">
-        <Label Content="Kunden Registrierung " HorizontalAlignment="Left" Margin="110,46,0,0" VerticalAlignment="Top" FontSize="24" Height="39" Width="315" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFB6B6B6"/>
-                    <GradientStop Color="#FFD8D8D8"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Label Content="Name: " HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
-        <Label Content="Vorname:" HorizontalAlignment="Left" Margin="110,140,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
-        <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="95"/>
-        <Label Content="Wähle Passwort:" HorizontalAlignment="Left" Margin="110,200,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="105"/>
-        <Label Content="Wiederhole Passwort:" HorizontalAlignment="Left" Margin="110,230,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="135"/>
-        <TextBox x:Name="Nachname" HorizontalAlignment="Left" Height="23" Margin="240,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Vorname_TextBox"/>
-        <TextBox x:Name="Vorname" HorizontalAlignment="Left" Height="23" Margin="240,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Vorname_TextBox"/>
-        <TextBox x:Name="Geburtsdatum" HorizontalAlignment="Left" Height="23" Margin="240,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Geburtstag_TextBox"/>
-        <PasswordBox x:Name="Passwort" HorizontalAlignment="Left" Margin="240,202,0,0" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="PasswortWiederholt" HorizontalAlignment="Left" Margin="240,232,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Registrieren" HorizontalAlignment="Left" Margin="240,269,0,0" VerticalAlignment="Top" Width="120" Height="41" Click="Registrieren_Button"/>
-        <Label Content="z.B. 11.08.1991" HorizontalAlignment="Left" Margin="365,169,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="95"/>
-        <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="240,315,0,0" VerticalAlignment="Top" Foreground="#FFF51414" FontWeight="Bold"/>
-        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="449,0,0,0" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
-
-
-
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="53"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="41" Margin="116,0" Width="293">
+                <Label Content="Kunden Registrierung"  VerticalAlignment="Center" FontSize="24" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,0,0,7" >
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFB6B6B6"/>
+                            <GradientStop Color="#FFD8D8D8"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-15,0,80,89" Height="178" Width="460" Grid.Row="1">
+                <Label Content="Name:" HorizontalAlignment="Left" Margin="110,24.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75"/>
+                <Label Content="Vorname:" HorizontalAlignment="Left" Margin="110,54.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="75" />
+                <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="110,84.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="95" />
+                <Label Content="Wähle Passwort:" HorizontalAlignment="Left" Margin="110,114.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="105" />
+                <Label Content="Wiederhole Passwort:" HorizontalAlignment="Left" Margin="110,144.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="135" />
+                <TextBox x:Name="Nachname" HorizontalAlignment="Left" Height="23" Margin="240,26.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Vorname_TextBox" />
+                <TextBox x:Name="Vorname" HorizontalAlignment="Left" Height="23" Margin="240,56.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Vorname_TextBox" />
+                <TextBox x:Name="Geburtsdatum" HorizontalAlignment="Left" Height="23" Margin="240,86.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Geburtstag_TextBox" />
+                <PasswordBox x:Name="Passwort" HorizontalAlignment="Left" Margin="240,116,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+                <PasswordBox x:Name="PasswortWiederholt" HorizontalAlignment="Left" Margin="240,146,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                <Button Content="Registrieren" HorizontalAlignment="Left" Margin="240,183.253,0,-70" VerticalAlignment="Top" Width="120" Height="41" Click="Registrieren_Button" />
+                <Label Content="z.B. 11.08.1991" HorizontalAlignment="Left" Margin="365,83.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="95" />
+                <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="240,229.253,0,-75" VerticalAlignment="Top" Foreground="#FFF51414" FontWeight="Bold" />
+            </Grid>
+        </Grid>
+        <Button x:Name="Abbrechen" Content="Abbrechen" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
     </Grid>
 </Page>
