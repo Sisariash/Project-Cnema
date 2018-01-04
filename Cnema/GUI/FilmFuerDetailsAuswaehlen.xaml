@@ -24,9 +24,9 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Film auswählen : " HorizontalAlignment="Left" Margin="208,101,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="Bewertung" Content="Details anzeigen" HorizontalAlignment="Left" Margin="224,268,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Bewertung_Button"/>
-        <ListView x:Name="Programm" HorizontalAlignment="Left" Height="117" Margin="138,133,0,0" VerticalAlignment="Top" Width="265" SelectionChanged="Programm_SelectionChanged">
+        <Label Content="Film auswählen : " HorizontalAlignment="Left" Margin="206,101,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="Bewertung" Content="Details anzeigen" HorizontalAlignment="Left" Margin="222,268,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Bewertung_Button"/>
+        <ListView x:Name="Programm" HorizontalAlignment="Left" Height="117" Margin="136,133,0,0" VerticalAlignment="Top" Width="265" SelectionChanged="Programm_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Titel}"/>
