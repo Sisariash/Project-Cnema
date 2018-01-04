@@ -39,5 +39,21 @@ namespace GUI
             Kinoprogramm kinoprogramm = new Kinoprogramm();
             this.NavigationService.Navigate(kinoprogramm);
         }
+
+        private void Vorstellung_Buchen_Click(object sender, RoutedEventArgs e)
+        {
+            Vorstellung v = (Vorstellung)passendeFilme.SelectedItem;
+            if (v != null)
+            {
+                BestellungSeite bestellungSeite = new BestellungSeite(v);
+                this.NavigationService.Navigate(bestellungSeite);
+            }
+        }
+
+        private void Logout_Button(object sender, RoutedEventArgs e)
+        {
+            StartBildschirm startBildschirm = new StartBildschirm();
+            this.NavigationService.Navigate(startBildschirm);
+        }
     }
 }

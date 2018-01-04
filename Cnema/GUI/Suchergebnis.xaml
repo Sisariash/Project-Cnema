@@ -14,29 +14,43 @@
     </Page.Background>
 
     <Grid>
-        <Label Content="Suchergebnis &#xD;&#xA;" HorizontalAlignment="Left" Margin="190,46,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="162" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFB6B6B6"/>
-                    <GradientStop Color="#FFD8D8D8"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Label Content="Filterkriterium : " HorizontalAlignment="Left" Margin="85,109,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="105" FontWeight="Bold" Height="26"/>
-        <Label Content="Passende Filme : " HorizontalAlignment="Left" Margin="85,180,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="105" FontWeight="Bold" Height="26"/>
-        <ListView x:Name="passendeFilme" HorizontalAlignment="Left" Height="100" Margin="225,190,0,0" VerticalAlignment="Top" Width="Auto" SelectionChanged="passendeFilme_ListView">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Film" DisplayMemberBinding="{Binding Film.Titel}"/>
-                    <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding DateTime.Date, StringFormat='dd.MM.yyyy'}"/>
-                    <GridViewColumn Header="Uhrzeit" DisplayMemberBinding="{Binding DateTime.TimeOfDay}"/>
-                    <GridViewColumn Header="Saal" DisplayMemberBinding="{Binding Saal.SaalName}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="zurueck" Content="Zurück" HorizontalAlignment="Left" Margin="345,298,0,0" VerticalAlignment="Top" Width="95" Height="27" Click="zurueck_Button"/>
-
+        <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button" Margin="0"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Suchergebnis &#xD;&#xA;" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Height="39" Width="162" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB6B6B6"/>
+                        <GradientStop Color="#FFD8D8D8"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Folgende Vorstellungen passen zu ihrer Suche:" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" Height="26"/>
+            <ListView x:Name="passendeFilme" Grid.Row="2" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="Auto" SelectionChanged="passendeFilme_ListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Film" DisplayMemberBinding="{Binding Film.Titel}"/>
+                        <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding DateTime.Date, StringFormat='dd.MM.yyyy'}"/>
+                        <GridViewColumn Header="Uhrzeit" DisplayMemberBinding="{Binding DateTime.TimeOfDay}"/>
+                        <GridViewColumn Header="Saal" DisplayMemberBinding="{Binding Saal.SaalName}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+                <Button x:Name="zurueck" Content="Zurück" VerticalAlignment="Center" Width="95" Height="30" Click="zurueck_Button" Margin="0,0,5,0"/>
+                <Button x:Name="Vorstellung_Buchen" Content="Buchen" Width="95" Height="30" VerticalAlignment="Center" Margin="5,0,0,0" Click="Vorstellung_Buchen_Click"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
