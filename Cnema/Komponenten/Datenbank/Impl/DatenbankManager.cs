@@ -126,14 +126,16 @@ namespace Komponenten.Datenbank.Impl
             try
             {
                 List<Vorstellung> vorstellungenSelberSaal = vorstellung.Saal.Vorstellungen;
-
-                foreach (Vorstellung v in vorstellungenSelberSaal)
+                if (vorstellungenSelberSaal != null)
                 {
-                    DateTime startFilm = v.DateTime;
-                    DateTime endeFilm = v.DateTime.AddMinutes(v.Film.Laenge);
-                    if (startFilm.Ticks <= vorstellung.DateTime.Ticks && endeFilm.Ticks >= vorstellung.DateTime.Ticks)
+                    foreach (Vorstellung v in vorstellungenSelberSaal)
                     {
-                        return false;
+                        DateTime startFilm = v.DateTime;
+                        DateTime endeFilm = v.DateTime.AddMinutes(v.Film.Laenge);
+                        if (startFilm.Ticks <= vorstellung.DateTime.Ticks && endeFilm.Ticks >= vorstellung.DateTime.Ticks)
+                        {
+                            return false;
+                        }
                     }
                 }
                 cnemaContext.Vorstellungen.Add(vorstellung);

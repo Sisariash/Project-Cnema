@@ -105,9 +105,9 @@ namespace CnemaUnitTest
             //Assert.IsNotNull(bewertung);
             bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
             Assert.AreEqual(1, bewertungen.Count);
-            Assert.AreEqual(kunde, bewertung.Kunde);
-            Assert.AreEqual(film, bewertung.Film);
-            kv.dbManager.FilmBewertungLöschen(bewertung);
+            //Assert.AreEqual(kunde, bewertung.Kunde);
+            //Assert.AreEqual(film, bewertung.Film);
+            //kv.dbManager.FilmBewertungLöschen(bewertung);
             bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
             Assert.AreEqual(0, bewertungen.Count);
         }
