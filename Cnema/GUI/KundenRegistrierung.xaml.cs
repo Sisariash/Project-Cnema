@@ -91,5 +91,11 @@ namespace GUI
                 }
             }
         }
+
+        private void Abbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            StartBildschirm start = new StartBildschirm();
+            this.NavigationService.Navigate(start);
+        }
     }
 }

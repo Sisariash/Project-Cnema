@@ -66,10 +66,15 @@ namespace CnemaUnitTest
             Film film25 = new Film("Interstellar", 2014, "Abenteuer", 169, "Deutsch", false, 12);
             Film film26 = new Film("Mad Max: Fury Road (3D)", 2015, "Thriller", 121, "Deutsch", true, 16);
             Film film27 = new Film("Life of Pi: Schiffbruch mit Tiger (3D)", 2012, "Abenteuer", 127, "Deutsch", true, 12);
-            Film film28 = new Film("Der Hobbit: Smaugs Einöde (3D) ", 2013, "Fantasy", 161, "Deutsch", true, 12);
-            Film film29 = new Film("La La Land ", 2017, "Romanze", 128, "Deutsch", false, 12);
-            Film film30 = new Film("Walk the Line) ", 2006, "Romanze", 136, "Deutsch", false, 12);
-
+            Film film28 = new Film("Der Hobbit: Smaugs Einöde (3D)", 2013, "Fantasy", 161, "Deutsch", true, 12);
+            Film film29 = new Film("La La Land", 2017, "Romanze", 128, "Deutsch", false, 12);
+            Film film30 = new Film("Walk the Line", 2006, "Romanze", 136, "Deutsch", false, 12);
+            Film film31 = new Film("Gladiator", 2000, "Action", 171, "Deutsch", false, 16);
+            Film film32 = new Film("The Last Samurai (Englisch)", 2003, "Abenteuer", 154, "Englisch", false, 16);
+            Film film33 = new Film("Es (3D)", 2017, "Horror", 135, "Deutsch", true, 16);
+            Film film34 = new Film("Sherlock Holmes", 2009, "Krimi", 128, "Deutsch", false, 12);
+            Film film35 = new Film("Die Passion Christi", 2004, "Drama", 127, "Deutsch", false, 16);
+ 
             db.FilmHinzufuegen(film1);
             db.FilmHinzufuegen(film2);
             db.FilmHinzufuegen(film3);
@@ -100,7 +105,12 @@ namespace CnemaUnitTest
             db.FilmHinzufuegen(film28);
             db.FilmHinzufuegen(film29);
             db.FilmHinzufuegen(film30);
-          
+            db.FilmHinzufuegen(film31);
+            db.FilmHinzufuegen(film32);
+            db.FilmHinzufuegen(film33);
+            db.FilmHinzufuegen(film34);
+            db.FilmHinzufuegen(film35);
+
 
 
 
