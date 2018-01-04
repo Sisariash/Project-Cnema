@@ -240,7 +240,8 @@ namespace GUI
             {
                 if (FilmName.Text != null && FilmName.Text != "")
                 {
-                    ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);
+                    // Suche nach Titel UND einer Kategorie möglich
+                    ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);  
                 }
             }
             else if (FilmName.Text != null && FilmName.Text != "")
@@ -259,6 +260,12 @@ namespace GUI
         private void Action_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Abbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            Kinoprogramm programm = new Kinoprogramm();
+            this.NavigationService.Navigate(programm);
         }
     }
 }

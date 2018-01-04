@@ -24,18 +24,18 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Vielen Dank für Ihre Bestellung!" HorizontalAlignment="Left" Margin="105,82,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="205" FontWeight="Bold" Height="26"/>
-        <Label Content="Ihre Bestellübersicht :" HorizontalAlignment="Left" Margin="105,121,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="150" FontWeight="Bold" Height="26"/>
-        <TextBlock x:Name="Erwachsene_Copy1" HorizontalAlignment="Left" Margin="105,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="60" FontWeight="Bold" Text="Sie haben"/>
-        <TextBlock x:Name="Erwachsene_Copy" HorizontalAlignment="Left" Margin="250,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="140" FontWeight="Bold"><Run Text="Karten für Erwachsene"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="Erwachsene_Copy2" HorizontalAlignment="Left" Margin="105,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="30" FontWeight="Bold" Text="und"/>
-        <TextBlock x:Name="Erwachsene_Copy3" HorizontalAlignment="Left" Margin="250,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="185" FontWeight="Bold"><Run Text="Kinder/Azubi/Student/"/><Run Text="Senioren"/></TextBlock>
-        <TextBlock x:Name="Erwachsene_Copy4" HorizontalAlignment="Left" Margin="105,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="170" FontWeight="Bold" Text="Ihre Bestellnummern lauten:"/>
-        <TextBlock x:Name="Erwachsene_Copy5" HorizontalAlignment="Center" Margin="0,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="205" FontWeight="Bold" Text="Bitte stets bei Abholung angeben!"/>
-        <TextBlock x:Name="txtNumKinder" x:FieldModifier="private" Margin="191,188,304,142" Text="0" Foreground="White" Height="20" />
-        <TextBlock x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="191,158,304,172" Text="0" Foreground="White" Height="20"/>
-        <Button x:Name="ZumProgramm" Content="Zum Kinoprogramm" HorizontalAlignment="Center" Margin="0,289,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="ZumProgramm_Button"/>
-        <TextBlock x:Name="BestellnrTxt" HorizontalAlignment="Left" Height="15" Margin="105,253,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="Auto" Foreground="White"/>
+        <Label Content="Vielen Dank für Ihre Bestellung!" HorizontalAlignment="Left" Margin="100,77,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="205" FontWeight="Bold" Height="26"/>
+        <Label Content="Ihre Bestellübersicht :" HorizontalAlignment="Left" Margin="100,116,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="150" FontWeight="Bold" Height="26"/>
+        <TextBlock x:Name="Erwachsene_Copy1" HorizontalAlignment="Left" Margin="105,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="60" FontWeight="Bold" Text="Sie haben"/>
+        <TextBlock x:Name="Erwachsene_Copy" HorizontalAlignment="Left" Margin="250,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="140" FontWeight="Bold"><Run Text="Karten für Erwachsene"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="Erwachsene_Copy2" HorizontalAlignment="Left" Margin="105,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="30" FontWeight="Bold" Text="und"/>
+        <TextBlock x:Name="Erwachsene_Copy3" HorizontalAlignment="Left" Margin="250,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="185" FontWeight="Bold"><Run Text="Kinder/Azubi/Student/"/><Run Text="Senioren"/></TextBlock>
+        <TextBlock x:Name="Erwachsene_Copy4" HorizontalAlignment="Left" Margin="105,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="170" FontWeight="Bold" Text="Ihre Bestellnummern lauten:"/>
+        <TextBlock x:Name="Erwachsene_Copy5" HorizontalAlignment="Center" Margin="167,275,158,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFFB2020" Width="200" FontWeight="Bold" Text="Bitte stets bei Abholung angeben!"/>
+        <TextBlock x:Name="txtNumKinder" x:FieldModifier="private" Margin="191,183,304,147" Text="0" Foreground="White" Height="20" />
+        <TextBlock x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="191,153,304,177" Text="0" Foreground="White" Height="20"/>
+        <Button x:Name="ZumProgramm" Content="Zum Kinoprogramm" HorizontalAlignment="Center" Margin="204,302,203,0" VerticalAlignment="Top" Width="118" Height="30" Click="ZumProgramm_Button"/>
+        <TextBlock x:Name="BestellnrTxt" HorizontalAlignment="Left" Margin="105,244,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Foreground="#FFFB2020" FontWeight="Bold" FontSize="16"/>
 
     </Grid>
 

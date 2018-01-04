@@ -27,7 +27,7 @@
         <Label Content="Tickets kaufen :" HorizontalAlignment="Left" Margin="90,104,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="105" FontWeight="Bold" Height="26"/>
         <TextBlock x:Name="Erwachsene" HorizontalAlignment="Left" Margin="245,140,0,0" TextWrapping="Wrap" Text="Erwachsene" VerticalAlignment="Top" Foreground="White" Width="70" FontWeight="Bold"/>
         <TextBlock x:Name="Erwachsene_Copy" HorizontalAlignment="Left" Margin="245,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="185" FontWeight="Bold"><Run Text="Kinder/Azubi/Student/"/><Run Text="Senioren"/></TextBlock>
-        <Button x:Name="Bestaetigen" Content="Bestätigen" HorizontalAlignment="Left" Margin="183,217,0,0" VerticalAlignment="Top" Width="110" Height="43" Click="BestellungBestaetigen_Button"/>
+        <Button x:Name="Bestaetigen" Content="Bestätigen" HorizontalAlignment="Left" Margin="210,217,0,0" VerticalAlignment="Top" Width="110" Height="43" Click="BestellungBestaetigen_Button"/>
 
         <StackPanel Orientation="Horizontal" Margin="155,-25,-155,25">
             <TextBox x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="5,5,0,5" Width="30" Text="0" TextChanged="TxtNumErwachsene_TextChanged"  Height="20"/>
@@ -40,7 +40,7 @@
             <Button x:Name="cmdUpKinder" x:FieldModifier="private" Margin="5,5,0,5" Content="˄" Width="20" Click="CmdUpKinder_Click" Height="20" />
             <Button x:Name="cmdDownKinder" x:FieldModifier="private" Margin="0,5,0,5"  Content="˅" Width="20" Click="CmdDownKinder_Click" Height="20" />
         </StackPanel>
-        <Button x:Name="Abbruch" Content="Bestellung Abbrechen" HorizontalAlignment="Left" Margin="325,279,0,0" VerticalAlignment="Top" Width="131" Height="32" Click="Abbruch_Click" Foreground="Red"/>
+        <Button x:Name="Abbruch" Content="Bestellung abbrechen" HorizontalAlignment="Left" Margin="398,-1,-1,0" VerticalAlignment="Top" Width="128" Height="28" Click="Abbruch_Click" Foreground="Red"/>
 
     </Grid>
 </Page>

@@ -15,9 +15,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button" Margin="0"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -36,7 +36,8 @@
                     </LinearGradientBrush>
                 </Label.Foreground>
             </Label>
-            <Label Content="Folgende Vorstellungen passen zu ihrer Suche:" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" Height="26"/>
+            <Label Content="Folgende Vorstellungen passen zu ihrer Suche:" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" Height="26" Margin="127,0,127,27" Grid.Row="1"/>
+            <Label Content="Label" Margin="238,23,247,5" Grid.Row="1" HorizontalAlignment="Center" Foreground="#FFF3F30B" FontWeight="Bold"/>
             <ListView x:Name="passendeFilme" Grid.Row="2" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="Auto" SelectionChanged="passendeFilme_ListView">
                 <ListView.View>
                     <GridView>

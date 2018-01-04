@@ -27,14 +27,14 @@
         <Label Content="Sie wollen" HorizontalAlignment="Left" Margin="90,115,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="70" FontWeight="Bold" Height="26"/>
         <TextBlock x:Name="Erwachsene" HorizontalAlignment="Left" Margin="230,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="155" FontWeight="Bold" Height="20"><Run Text="Karten für Erwachsene"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="Erwachsene_Copy" HorizontalAlignment="Left" Margin="230,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="185" FontWeight="Bold"><Run Text="Kinder/Azubi/Student/"/><Run Text="Senioren"/></TextBlock>
-        <Button x:Name="BestellungBestaetigen" Content="Bestellung Bestätigen" HorizontalAlignment="Left" Margin="205,242,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="Bestaetigen_Button"/>
+        <Button x:Name="BestellungBestaetigen" Content="Bestellung bestätigen" HorizontalAlignment="Left" Margin="210,253,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="Bestaetigen_Button"/>
         <Label Content="und" HorizontalAlignment="Left" Margin="90,159,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="35" FontWeight="Bold" Height="26"/>
         <TextBlock x:Name="Erwachsene_Copy1" HorizontalAlignment="Left" Margin="90,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="150" FontWeight="Bold" Text="Die Kosten dafür betragen"/>
         <TextBlock x:Name="Erwachsene_Copy2" HorizontalAlignment="Left" Margin="300,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="35" FontWeight="Bold" Text="Euro"/>
-        <TextBlock x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="175,121,320,209" Text="0" Foreground="White" Height="20"/>
-        <TextBlock x:Name="txtNumKinder" x:FieldModifier="private" Margin="175,159,320,171" Text="0" Foreground="White" Height="20" />
-        <TextBlock x:Name="PreisTxt" HorizontalAlignment="Left" Height="16" Margin="245,210,0,0" TextWrapping="Wrap" Text="0" Foreground="White" VerticalAlignment="Top" Width="50" TextAlignment="Center"/>
-        <Button x:Name="Abbruch" Content="Bestellung Abbrechen" HorizontalAlignment="Left" Margin="320,295,0,0" VerticalAlignment="Top" Width="128" Height="33" Click="Abbruch_Click" Foreground="#FFFD0000"/>
+        <TextBlock x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="175,121,320,209" Text="0" Foreground="White" Height="20" FontWeight="Bold"/>
+        <TextBlock x:Name="txtNumKinder" x:FieldModifier="private" Margin="175,159,320,171" Text="0" Foreground="White" Height="20" FontWeight="Bold" />
+        <TextBlock x:Name="PreisTxt" HorizontalAlignment="Left" Height="16" Margin="245,210,0,0" TextWrapping="Wrap" Text="0" Foreground="White" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontWeight="Bold"/>
+        <Button x:Name="Abbruch" Content="Bestellung abbrechen" HorizontalAlignment="Left" Margin="397,0,0,0" VerticalAlignment="Top" Width="128" Height="28" Click="Abbruch_Click" Foreground="#FFFD0000"/>
 
     </Grid>
 </Page>

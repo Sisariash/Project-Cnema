@@ -50,6 +50,7 @@
         <Button x:Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Margin="346,285,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Suchen_Button"/>
         <RadioButton x:Name="Science_Fiction" Content="Science-Fiction" HorizontalAlignment="Left" Margin="235,243,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
         <RadioButton x:Name="Thriller" Content="Thriller" HorizontalAlignment="Left" Margin="387,243,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
+        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="449,0,0,0" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
 
     </Grid>
 </Page>
