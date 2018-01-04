@@ -70,7 +70,9 @@ namespace Komponenten.ET
                     "Horror",
                     "Komödie",                  
                     "Krimi",
-                    "Liebe"
+                    "Romanze",
+                    "Science-Fiction",
+                    "Thriller"
                 });
         }
 

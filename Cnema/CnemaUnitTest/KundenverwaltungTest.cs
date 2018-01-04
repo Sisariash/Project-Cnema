@@ -83,23 +83,9 @@ namespace CnemaUnitTest
         public void PasswortHashingTest()
         {
             // Hashwert ist immer unterschiedlich, die Prüfung auf Korrektheit stimmt trotzdem immer überein
-            // User user = new User();
-            // user.username = "max.mustermann@web.de"
-            // user.password = Utils.HashPassword("password123");
-            // datenbankManager.UserHinzufuegen(user);
-            //
-            string passwordOfUserInDB = Utils.HashPassword("password123"); // === user.UserId Beim Registireren brauchen wir das
+             string passwordOfUserInDB = Utils.HashPassword("password123"); // === user.UserId Beim Registireren brauchen wir das
 
-            // Correct Password
-            // login(string username, string password) {
-            //  User user = datenbankManager.UserLesen("max.mustermann@web.de")
-            //  if (user == null) { 
-            //      // User mit Benutzername existiert nicht 
-            // } else if (Utils.VerifyPassword(user.password, "password123")) {
-            //        // User Login successful
-            //  } else {
-            //       // Wrong passwords
-            // }
+
             Assert.IsTrue(Utils.VerifyPassword(passwordOfUserInDB, "password123"));
 
             // Wrong password
