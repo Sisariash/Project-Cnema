@@ -2,6 +2,7 @@
 using Komponenten.Kundenverwaltung;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,14 +43,14 @@ namespace GUI
 
         }
 
-        
+
         private void WaehlePasswort_PasswortBox(object sender, TextChangedEventArgs e)
         {
 
 
         }
 
-        
+
         private void WiederholePasswort_PasswortBox(object sender, TextChangedEventArgs e)
         {
 
@@ -63,17 +64,26 @@ namespace GUI
             DateTime geburtsdatum;
             bool geburtsdatumKorrekt = DateTime.TryParse(this.Geburtsdatum.Text, out geburtsdatum);
 
-            if (this.Passwort.Password == null || this.Passwort.Password.Length == 0 || !this.Passwort.Password.Equals(this.PasswortWiederholt.Password) || nachname == null || nachname.Length == 0 || vorname == null || vorname.Length == 0 || !geburtsdatumKorrekt )
+            if (this.Passwort.Password == null || this.Passwort.Password.Length == 0 || !this.Passwort.Password.Equals(this.PasswortWiederholt.Password) || nachname == null || nachname.Length == 0 || vorname == null || vorname.Length == 0 || !geburtsdatumKorrekt)
             {
-                Fehlermeldung.Visibility = Visibility.Visible;
+                Fehlermeldung.Content = "Angaben sind fehlerhaft";
             }
             else
             {
                 String passwort = Komponenten.Util.Utils.HashPassword(this.Passwort.Password);
                 IKundenverwaltung kv = (IKundenverwaltung)Application.Current.Properties["kunde"];
 
-                Kunde kunde;
-                if (kv.KundeRegistrieren(passwort, nachname, vorname, geburtsdatum, out kunde))
+                Kunde kunde = null;
+                bool check = false;
+                try
+                {
+                    check = kv.KundeRegistrieren(passwort, nachname, vorname, geburtsdatum, out kunde);
+                }
+                catch (SqlTypeException)
+                {
+                    Fehlermeldung.Content = "Geburtsdatum ungültig";
+                }
+                if (check)
                 {
                     Application.Current.Properties["neuRegistriert"] = kunde;
                     BestaetigungDerRegistrierung bestaetigungDerRegistrierung = new BestaetigungDerRegistrierung();
