@@ -28,14 +28,50 @@ namespace Komponenten.Bestellverwaltung.Impl
             return datenbank.AlleVorstellungenLesen();
         }
 
-        //Filtern derzeit nur nach Name möglich
-        public IList<Vorstellung> ProgrammFiltern(string kriterium)
+        //Filtern nach Titel
+        public IList<Vorstellung> ProgrammFilternTitel(String kriterium)
         {
             List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
             List<Vorstellung> gefiltert = new List<Vorstellung>();
             foreach (Vorstellung vorstellung in alle)
             {
                 if (vorstellung.Film.Titel.Contains(kriterium)) gefiltert.Add(vorstellung);
+            }
+            return gefiltert;
+        }
+
+        //Filtern nach Genre
+        public IList<Vorstellung> ProgrammFilternGenre(String genre)
+        {
+            List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
+            List<Vorstellung> gefiltert = new List<Vorstellung>();
+            foreach (Vorstellung vorstellung in alle)
+            {
+                if (vorstellung.Film.Genre.Equals(genre)) gefiltert.Add(vorstellung);
+            }
+            return gefiltert;
+        }
+
+        //Filtern nach 3d
+        public IList<Vorstellung> ProgrammFiltern3d(bool is3d)
+        {
+            List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
+            List<Vorstellung> gefiltert = new List<Vorstellung>();
+            foreach (Vorstellung vorstellung in alle)
+            {
+                if (vorstellung.Film.Is3D == is3d) gefiltert.Add(vorstellung);
+            }
+            return gefiltert;
+        }
+
+        //Filtern nach Wochentag
+        public IList<Vorstellung> ProgrammFilternTag(DayOfWeek tag)
+        {
+            List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
+            List<Vorstellung> gefiltert = new List<Vorstellung>();
+            foreach (Vorstellung vorstellung in alle)
+            {
+                if (vorstellung.DateTime.DayOfWeek.Equals(tag)) gefiltert.Add(vorstellung);
             }
             return gefiltert;
         }
