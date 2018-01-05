@@ -18,7 +18,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button" Margin="0"/>
+        <Button x:Name="Logout" Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Abbruch_Button" Margin="0"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>

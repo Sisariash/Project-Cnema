@@ -75,7 +75,7 @@ namespace GUI
         private void ContextMenuListViewVorstellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
 
-            // Wieso Löscht das nicht die Vorstellung????
+            
             if (listViewVorstellung.SelectedIndex > -1)
             {
                 Vorstellung selectedvorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 

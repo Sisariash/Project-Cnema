@@ -52,10 +52,10 @@ namespace GUI
             }
         }
 
-        private void Logout_Button(object sender, RoutedEventArgs e)
+        private void Abbruch_Button(object sender, RoutedEventArgs e)
         {
-            StartBildschirm startBildschirm = new StartBildschirm();
-            this.NavigationService.Navigate(startBildschirm);
+            Kinoprogramm kinoprogramm = new Kinoprogramm();
+            this.NavigationService.Navigate(kinoprogramm);
         }
     }
 }
