@@ -25,7 +25,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="41" Margin="116,0" Width="293">
-                <Label Content="Kunden Registrierung"  VerticalAlignment="Center" FontSize="24" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,0,0,7" >
+                <Label Content="Kunden Registrierung "  VerticalAlignment="Center" FontSize="24" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" Margin="-2,1,-13,6" Width="308" >
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>

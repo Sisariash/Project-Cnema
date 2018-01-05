@@ -18,98 +18,129 @@ namespace CnemaUnitTest
         static DatenbankManager dbm = DatenbankManager.Instance;
         Kundenverwaltung kv = new Kundenverwaltung(dbm);
         Kinoprogrammverwaltung kpv = new Kinoprogrammverwaltung();
-
-
-        /*Kunde k1 = new Kunde(Utils.HashPassword("geheim"), "Herzog", "Charly", new DateTime(1986, 10, 6));
-        Kunde k2 = new Kunde(Utils.HashPassword("hall1"), "Ketchum", "Ash", new DateTime(1996, 4, 2));
-        Kunde k3 = new Kunde(Utils.HashPassword("123qwe"), "Stallone", "Silvester", new DateTime(1950, 5, 12));
-        Admin a1 = new Admin(Utils.HashPassword("test"), "Kapo");
-        Admin a2 = new Admin(Utils.HashPassword("secret"), "Junior");
-        Assert.IsTrue(kv.KundeRegistrieren(k1));
-        Assert.IsTrue(kv.KundeRegistrieren(k2));
-        Assert.IsTrue(kv.KundeRegistrieren(k3));
-        Assert.IsTrue(kv.AdminRegistrieren(a1));
-        Assert.IsTrue(kv.AdminRegistrieren(a2)); */
+        
 
         [TestMethod]
-        public void PersonenAnlegenTest()
+        public void PersonenAnlegenUndLoeschenTest()
         {
-            // Admins anlegen für Testzwecke
+            // Kunden anlegen
+            Kunde k1;
+            Kunde k2;
+            Kunde k3;
+            Assert.IsTrue(kv.KundeRegistrieren(Utils.HashPassword("geheim"), "Herzog", "Charly", new DateTime(1986, 10, 6), out k1));
+            Assert.IsTrue(kv.KundeRegistrieren(Utils.HashPassword("hall1"), "Ketchum", "Ash", new DateTime(1996, 4, 2), out k2));
+            Assert.IsTrue(kv.KundeRegistrieren(Utils.HashPassword("123qwe"), "Stallone", "Silvester", new DateTime(1950, 5, 12), out k3));
 
-            Admin a1 = new Admin(Utils.HashPassword("geheim"), "A1");
-            Admin a2 = new Admin(Utils.HashPassword("secret"), "A2");
-            kv.AdminRegistrieren(a1);
-            kv.AdminRegistrieren(a2);
-          
+            // Admins anlegen
+            Admin a1 = new Admin(Utils.HashPassword("geheim"), "Admin1");
+            Admin a2 = new Admin(Utils.HashPassword("secret"), "Admin2");
+            Assert.IsTrue(kv.AdminRegistrieren(a1));
+            Assert.IsTrue(kv.AdminRegistrieren(a2));
+
+            // Kunden loeschen
+            Assert.IsTrue(kv.dbManager.KundeLoeschen(k1));
+            Assert.IsTrue(kv.dbManager.KundeLoeschen(k2));
+            Assert.IsTrue(kv.dbManager.KundeLoeschen(k3));
+
+            //Admins löschen
+            Assert.IsTrue(kv.dbManager.AdminLoeschen(a1));
+            Assert.IsTrue(kv.dbManager.AdminLoeschen(a2));
+
+            // Versehentliches erneutes Löschen verhindern
+            Assert.IsFalse(kv.dbManager.AdminLoeschen(a1));
         } 
 
-        [TestMethod]
-        public void FilmAnlegenTest()
-        {
-
-            /*Film f1 = new Film ("Pokémon - I choose you", 2017, "Anime", 100, "Englisch", false, 5, 12);
-            Film f2 = new Film ("Rambo III", 1994, "Action", 120, "Deutsch", false, 4, 18);
-            Film f3 = new Film("Gladiator", 2002, "Abenteuer", 130, "Deutsch", true, 3, 16); 
-
-            Assert.IsTrue(kpv.FilmHinzufuegen(f1));
-            Assert.IsTrue(kpv.FilmHinzufuegen(f2));
-            Assert.IsTrue(kpv.FilmHinzufuegen(f3));
-
-            kv.FilmBewerten(5, kpv.FilmLesen(9), kv.dbManager.KundeLesen(15));
-            kv.FilmBewerten(5, kpv.FilmLesen(9), kv.dbManager.KundeLesen(16));
-            kv.FilmBewerten(3, kpv.FilmLesen(10), kv.dbManager.KundeLesen(17));
-            kv.FilmBewerten(4, kpv.FilmLesen(11), kv.dbManager.KundeLesen(15));
-            kv.FilmBewerten(4, kpv.FilmLesen(11), kv.dbManager.KundeLesen(16)); */
-        }
 
         [TestMethod]
         public void LoginTest()
         {
-            // WICHTIG: Immer aktuelle, von Datenbank generierte ID eintragen!!
+            // Kunden und Admin zu Testzwecken anlegen
+            Kunde k1 = null;
+            Kunde k2 = null;
+            kv.KundeRegistrieren(Utils.HashPassword("geheim"), "Herzog", "Charly", new DateTime(1986, 10, 6), out k1);
+            Admin a1 = null;
+            Admin a2 = null;
+            a1 = new Admin(Utils.HashPassword("secret"), "Admin1");
+            kv.AdminRegistrieren(a1);
+
 
             // Korrekte ID und Passwörter
-            //Assert.IsTrue(kv.KundeLogin(15,"geheim"));
-            //Assert.IsTrue(kv.AdminLogin("secret"));
+            Assert.IsTrue(kv.KundeLogin(k1.BenutzerId, "geheim", out k2));
+            Assert.AreEqual(k1, k2); // Selber Kunde wie zuvor?
 
-            // Falsches Passwort
-            //Assert.IsFalse(kv.KundeLogin(16, "superduper"));
-            //Assert.IsFalse(kv.AdminLogin("secr3t"));
-            // ID nicht vorhanden
-            //Assert.IsFalse(kv.KundeLogin(1000, "geheim"));
+            Assert.IsTrue(kv.AdminLogin(a1.BenutzerId, "secret", out a2));
+            Assert.AreEqual(a1, a2); // Selber Admin wie zuvor?
+
+            // Falsches Passwort, ID Korrekt
+            k2 = null;
+            a2 = null;
+            Assert.IsFalse(kv.KundeLogin(k1.BenutzerId, "superduper", out k2));
+            Assert.IsFalse(kv.AdminLogin(a1.BenutzerId, "s3kr3t", out a2));
+
+            // ID nicht vorhanden, Passwort korrekt
+            k2 = null;
+            a2 = null;
+            Assert.IsFalse(kv.KundeLogin(k1.BenutzerId * 123456789, "geheim", out k2));
+            Assert.IsFalse(kv.AdminLogin(a1.BenutzerId * 123456789, "secret", out a2));
+
+
+            // Datenbank bereinigen
+            kv.dbManager.KundeLoeschen(k1);
+            kv.dbManager.AdminLoeschen(a1);        
         }
 
 
         [TestMethod]
         public void PasswortHashingTest()
         {
-            // Hashwert ist immer unterschiedlich, die Prüfung auf Korrektheit stimmt trotzdem immer überein
-             string passwordOfUserInDB = Utils.HashPassword("password123"); // === user.UserId Beim Registireren brauchen wir das
-
-
-            Assert.IsTrue(Utils.VerifyPassword(passwordOfUserInDB, "password123"));
-
-            // Wrong password
-            Assert.IsFalse(Utils.VerifyPassword(passwordOfUserInDB, "password345"));
+            String passwort = Utils.HashPassword("password123");
+            
+            // Korrektes Passwort
+            Assert.IsTrue(Utils.VerifyPassword(passwort, "password123"));
+            // Falsches Passwort
+            Assert.IsFalse(Utils.VerifyPassword(passwort, "pAsswoRd345"));
         }
+
 
         [TestMethod]
         public void FilmBewertenTest()
-        {
-            //Alle bestehenden Bewertungen löschen
-            List<FilmBewertung> bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
-            foreach (FilmBewertung fb in bewertungen) { kv.dbManager.FilmBewertungLöschen(fb); }
+        { 
+            // Film und Kunden zu Testzwecken anlegen
+            Film f1 = new Film("Rambo III", 1994, "Action", 120, "Deutsch", false, 18);
+            kpv.FilmHinzufuegen(f1);
+            Kunde k1;
+            Kunde k2;
+            Kunde k3;
+            kv.KundeRegistrieren(Utils.HashPassword("geheim"), "Herzog", "Charly", new DateTime(1986, 10, 6), out k1);
+            kv.KundeRegistrieren(Utils.HashPassword("hall1"), "Ketchum", "Ash", new DateTime(1996, 4, 2), out k2);
+            kv.KundeRegistrieren(Utils.HashPassword("123qwe"), "Stallone", "Silvester", new DateTime(1950, 5, 12), out k3);
 
-            Film film = kpv.FilmLesen(1);
-            Kunde kunde = kv.dbManager.KundeLesen(1);
-            //FilmBewertung bewertung = kv.FilmBewerten(10, film, kunde);
-            //Assert.IsNotNull(bewertung);
-            bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
-            Assert.AreEqual(1, bewertungen.Count);
-            //Assert.AreEqual(kunde, bewertung.Kunde);
-            //Assert.AreEqual(film, bewertung.Film);
-            //kv.dbManager.FilmBewertungLöschen(bewertung);
-            bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
-            Assert.AreEqual(0, bewertungen.Count);
+            // Bewertungen abgeben
+            Assert.IsTrue(kv.FilmBewerten(5, f1, k1));
+            Assert.IsTrue(kv.FilmBewerten(4, f1, k2));
+            Assert.IsTrue(kv.FilmBewerten(3, f1, k3));
+
+            // Prüfen, ob pro Kunde und Film nur 1 Bewertung zugelassen wird
+            Assert.IsFalse(kv.FilmBewerten(5, f1, k1));
+            Assert.IsFalse(kv.FilmBewerten(4, f1, k2));
+
+            // Prüfen ob Durschnittsbewertung korrekt berechnet und gespeichert wurde: (5+4+3)/3 = 4
+            kv.DurchschnittBerechnen(f1);
+            Assert.AreEqual(4, (int) f1.BewertungAvg);
+
+            
+            // Datenbank wieder bereinigen 
+            List <FilmBewertung> bewertungen = kv.dbManager.AlleFilmBewertungenLesen();
+            foreach (FilmBewertung fb in bewertungen)
+            {
+                if (fb.Kunde.BenutzerId == k1.BenutzerId || fb.Kunde.BenutzerId == k2.BenutzerId || fb.Kunde.BenutzerId == k3.BenutzerId)
+                    kv.dbManager.FilmBewertungLöschen(fb);
+            } 
+
+            kv.dbManager.FilmLoeschen(f1);
+            kv.dbManager.KundeLoeschen(k1);
+            kv.dbManager.KundeLoeschen(k2);
+            kv.dbManager.KundeLoeschen(k3);
         }
     }
 }
