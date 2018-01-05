@@ -41,16 +41,16 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="191*"/>
+                    <ColumnDefinition Width="214*"/>
+                    <ColumnDefinition Width="195*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Tag Auswählen: " Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-                <Label Content="Film Auswählen: " Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26"/>
-                <Label Content="Uhrzeit Auswählen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26"/>
+                <Label Content="Tag Auswählen: " Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26" Margin="0,-6,0,0"/>
+                <Label Content="Film Auswählen: " Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="102" FontWeight="Bold" Height="26" Margin="57,-6,55,0"/>
+                <Label Content="Uhrzeit Auswählen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26" Margin="0,-6,0,0"/>
                 <ListView x:Name="TagKinoprogramm" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
                 </ListView>
-                <ListView x:Name="FilmKinoprogramm" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Film_ListView">
+                <ListView x:Name="FilmKinoprogramm" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="204" SelectionChanged="Film_ListView" Margin="5,0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Titel}"/>
@@ -65,9 +65,9 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
-            
+
             <Button x:Name="Buchung" Grid.Row="2" Content="Buchung" HorizontalAlignment="Center" VerticalAlignment="Center" Width="115" Height="35" Click="Buchung_Button"/>
-            
+
             <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center">
                 <Label Content="Weitere Funktionen:" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="125" FontWeight="Bold" Height="26"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -100,10 +100,10 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-            
-            
+
+
         </Grid>
-        
+
         <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button" Margin="0"/>
     </Grid>
 </Page>
