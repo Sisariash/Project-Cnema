@@ -28,11 +28,10 @@ namespace GUI
         public Kinoprogramm()
         {
             InitializeComponent();
-            List<String> tage = new List<string>();
+            DateTime[] tage = new DateTime[14];
             for (int i=0; i<14; i++)
             {
-                String day = DateTime.Today.AddDays(i).ToString("dd. MM. yyyy");
-                tage.Add(day);
+                tage[i] = DateTime.Today.AddDays(i);
             }
             TagKinoprogramm.ItemsSource = tage;
         }
@@ -42,46 +41,46 @@ namespace GUI
         private void Tag_ListView(object sender, SelectionChangedEventArgs e)
         {
             FilmKinoprogramm.UnselectAll();
-            String tagAuswahl = (String)TagKinoprogramm.SelectedItem;
+            DateTime tagAuswahl = (DateTime)TagKinoprogramm.SelectedItem;
             if (tagAuswahl != null)
             {
-                tag = DateTime.ParseExact(tagAuswahl, "dd. MM. yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                tag = tagAuswahl;
             }
-            List<Film> filme = new List<Film>();
-            foreach (Vorstellung v in kv.AlleVorstellungenLesen())
-            {
-                if (v != null && v.DateTime.Date.Equals(tag.Date) && !filme.Contains(v.Film))
-                {
-                    filme.Add(v.Film);
-                }
-            }
-            FilmKinoprogramm.ItemsSource = filme;
-        }
-
-        private void Film_ListView(object sender, SelectionChangedEventArgs e)
-        {
-            UhrzeitKinoprogramm.UnselectAll();
             List<Vorstellung> vorstellungen = new List<Vorstellung>();
             foreach (Vorstellung v in kv.AlleVorstellungenLesen())
             {
-                if (v != null && FilmKinoprogramm.SelectedItem != null && v.Film != null && FilmKinoprogramm.SelectedItem.Equals(v.Film))
+                if (v != null && v.DateTime.Date.Equals(tag.Date))
                 {
                     vorstellungen.Add(v);
                 }
             }
-            UhrzeitKinoprogramm.ItemsSource = vorstellungen;
+            FilmKinoprogramm.ItemsSource = vorstellungen;
         }
 
-        private void Uhrzeit_ListView(object sender, SelectionChangedEventArgs e)
+        private void Film_ListView(object sender, SelectionChangedEventArgs e)
         {
-
+            //UhrzeitKinoprogramm.UnselectAll();
+            //List<Vorstellung> vorstellungen = new List<Vorstellung>();
+            //foreach (Vorstellung v in kv.AlleVorstellungenLesen())
+            //{
+            //    if (v != null && FilmKinoprogramm.SelectedItem != null && v.Film != null && FilmKinoprogramm.SelectedItem.Equals(v.Film))
+            //    {
+            //        vorstellungen.Add(v);
+            //    }
+            //}
+            //UhrzeitKinoprogramm.ItemsSource = vorstellungen;
         }
+
+        //private void Uhrzeit_ListView(object sender, SelectionChangedEventArgs e)
+        //{
+
+        //}
 
         private void Buchung_Button(object sender, RoutedEventArgs e)
         {
-            if (UhrzeitKinoprogramm.SelectedItem != null)
+            if (FilmKinoprogramm.SelectedItem != null)
             {
-                BestellungSeite bestellung = new BestellungSeite((Vorstellung)UhrzeitKinoprogramm.SelectedItem);
+                BestellungSeite bestellung = new BestellungSeite((Vorstellung)FilmKinoprogramm.SelectedItem);
                 this.NavigationService.Navigate(bestellung);
             }
         }

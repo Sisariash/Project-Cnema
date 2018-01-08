@@ -22,7 +22,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="45"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content="Kinoprogramm " HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="24" Height="39" Width="215" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
@@ -35,36 +35,47 @@
                     </LinearGradientBrush>
                 </Label.Foreground>
             </Label>
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="191*"/>
-                    <ColumnDefinition Width="214*"/>
-                    <ColumnDefinition Width="195*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Tag Auswählen: " Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="103" FontWeight="Bold" Height="26" Margin="0,-6,0,0"/>
-                <Label Content="Film Auswählen: " Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="102" FontWeight="Bold" Height="26" Margin="57,-6,55,0"/>
-                <Label Content="Uhrzeit Auswählen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="120" FontWeight="Bold" Height="26" Margin="0,-6,0,0"/>
-                <ListView x:Name="TagKinoprogramm" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
-                </ListView>
-                <ListView x:Name="FilmKinoprogramm" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="204" SelectionChanged="Film_ListView" Margin="5,0">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Titel}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <ListView x:Name="UhrzeitKinoprogramm" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" SelectionChanged="Uhrzeit_ListView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding DateTime, StringFormat='HH:mm'}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Tag Auswählen: " HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="Auto" FontWeight="Bold" Height="26"/>
+                    <ListView x:Name="TagKinoprogramm" HorizontalAlignment="Right" Height="150" VerticalAlignment="Top" Width="100" SelectionChanged="Tag_ListView">
+                        <ListView.Resources>
+                            <Style TargetType="GridViewColumnHeader">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Date, StringFormat='dd.MM.yyyy'}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Film Auswählen: " HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="Auto" FontWeight="Bold" Height="26"/>
+
+                    <ListView x:Name="FilmKinoprogramm" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="450" SelectionChanged="Film_ListView" Margin="5,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Film" Width="250" DisplayMemberBinding="{Binding Film.Titel}"/>
+                                <GridViewColumn Header="Uhrzeit" Width="100" DisplayMemberBinding="{Binding DateTime.TimeOfDay}"/>
+                                <GridViewColumn Header="Saal" Width="100" DisplayMemberBinding="{Binding Saal.SaalName}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+
+            <!--<DataGrid x:Name="FilmKinoprogramm" Grid.Row="1" Grid.Column="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Film" Binding="{Binding Film.Titel}"/>
+                        <DataGridTextColumn Header="Datum" Binding="{Binding DateTime.Date, StringFormat='dd.MM.yyyy'}"/>
+                        <DataGridTextColumn Header="Uhrzeit" Binding="{Binding DateTime.TimeOfDay}"/>
+                        <DataGridTextColumn Header="Saal" Binding="{Binding Saal.SaalName}"/>
+                    </DataGrid.Columns>
+                </DataGrid>-->
+
+
 
             <Button x:Name="Buchung" Grid.Row="2" Content="Buchung" HorizontalAlignment="Center" VerticalAlignment="Center" Width="115" Height="35" Click="Buchung_Button"/>
 
@@ -100,10 +111,7 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-
-
         </Grid>
-
         <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Foreground="Red" Click="Logout_Button" Margin="0"/>
     </Grid>
 </Page>
