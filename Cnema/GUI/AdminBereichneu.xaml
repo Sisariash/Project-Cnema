@@ -200,7 +200,7 @@
 
                 <TabItem Header="Admins">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewAdmins" SelectionChanged="ListViewAdmin_SelectionChanged">
+                        <ListView x:Name="listViewAdmins" SelectionChanged="ListViewBewertungen_SelectionChanged">
 
                             <!--context  Menu-->
                             <ListView.ContextMenu>
@@ -220,6 +220,23 @@
                                 <GridView>
                                     <GridViewColumn Header="BenutzerId" Width="120" DisplayMemberBinding="{Binding BenutzerId}" />
                                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Filmbewertungen">
+                    <Grid Background="#FFE5E5E5">
+                        <ListView x:Name="listViewBewertungen" SelectionChanged="ListViewBewertungen_SelectionChanged">
+                            <!--Nur lesender Zugriff für Admin auf Bewertungen, daher kein Kontextmenü: Durch Admin darf keine Manipulation der Bewertung möglich sein -->
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="FilmBewertungID" Width="120" DisplayMemberBinding="{Binding FilmBewertungId}" />
+                                    <GridViewColumn Header="Bewertung" Width="120" DisplayMemberBinding="{Binding Bewertung}" />
+                                    <GridViewColumn Header="KundeId" Width="120" DisplayMemberBinding="{Binding Kunde.BenutzerId}" />
+                                    <GridViewColumn Header="FilmId" Width="120" DisplayMemberBinding="{Binding Film.FilmId}" />
+
                                 </GridView>
                             </ListView.View>
                         </ListView>

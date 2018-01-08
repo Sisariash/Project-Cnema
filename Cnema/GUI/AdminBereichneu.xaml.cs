@@ -32,7 +32,9 @@ namespace GUI
             LadeVorstellungen();
             LadeBestellungen();
             LadeKunden();
-            LadeAdmins();        }
+            LadeAdmins();
+            LadeBewertungen();
+        }
 
  
 
@@ -56,6 +58,10 @@ namespace GUI
         public void LadeFilme()
         {
             listViewFilme.ItemsSource = DatenbankManager.Instance.AlleFilmeLesen();
+        }
+        public void LadeBewertungen()
+        {
+            listViewBewertungen.ItemsSource = DatenbankManager.Instance.AlleFilmBewertungenLesen();
         }
 
         // Context Menu
@@ -187,7 +193,6 @@ namespace GUI
 
         }
 
-       
 
         private void ListViewVorstellung_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -205,6 +210,11 @@ namespace GUI
         }
 
         private void ListViewAdmin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListViewBewertungen_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
