@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Komponenten.ET
 {
@@ -38,6 +39,11 @@ namespace Komponenten.ET
         public override int GetHashCode()
         {
             return VorstellungId;
+        }
+
+        public override string ToString()
+        {
+            return Film.Titel + " " + DateTime.ToString("f", new CultureInfo("de-DE")) + " " + Saal.SaalName;
         }
     }
 }

@@ -28,6 +28,7 @@ namespace GUI
         {
             InitializeComponent();
             vorstellung = v;
+            VorstellungAnzeige.Content = v.ToString();
             txtNumErwachsene.Text = _anzahlErwachsen.ToString();
             txtNumKinder.Text = _anzahlKinder.ToString();
         }
