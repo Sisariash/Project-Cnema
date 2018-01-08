@@ -229,7 +229,7 @@
                 <TabItem Header="Filmbewertungen">
                     <Grid Background="#FFE5E5E5">
                         <ListView x:Name="listViewBewertungen" SelectionChanged="ListViewBewertungen_SelectionChanged">
-
+                            <!--Nur lesender Zugriff für Admin auf Bewertungen; keine Manipulation sinnvollerweise möglich-->
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="FilmBewertungID" Width="120" DisplayMemberBinding="{Binding FilmBewertungId}" />
