@@ -25,7 +25,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="Bestellung" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Height="Auto" Width="Auto" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+            <Label Content="Bestellung" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Height="Auto" Width="Auto" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
                 <Label.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
