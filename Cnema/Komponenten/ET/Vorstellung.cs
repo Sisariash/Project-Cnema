@@ -43,7 +43,11 @@ namespace Komponenten.ET
 
         public override string ToString()
         {
-            return Film.Titel + " " + DateTime.ToString("f", new CultureInfo("de-DE")) + " " + Saal.SaalName;
+            if (this.Film == null) return "";
+            else
+            {
+                return Film.Titel + " " + DateTime.ToString("f", new CultureInfo("de-DE")) + " " + Saal.SaalName;
+            }
         }
     }
 }

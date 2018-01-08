@@ -162,6 +162,8 @@ namespace GUI
                 DatenbankManager.Instance.FilmLoeschen(selectedFilm);
 
                 LadeFilme();
+                LadeVorstellungen();
+                LadeBestellungen();
             }
         }
 
