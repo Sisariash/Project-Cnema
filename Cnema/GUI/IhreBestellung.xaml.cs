@@ -24,19 +24,22 @@ namespace GUI
         private int standard;
         private int ermaessigt;
         private List<Bestellung> bestellungen;
+        private Vorstellung vorstellung;
 
-        public IhreBestellung(int st, int er, List<Bestellung> best)
+        public IhreBestellung(int st, int er, List<Bestellung> best, Vorstellung vorst)
         {
             standard = st;
             ermaessigt = er;
             bestellungen = best;
+            vorstellung = vorst;
+            InitializeComponent();
+            VorstellungAnzeige.Content = vorstellung.ToString();
             StringBuilder nummern = new StringBuilder();
             foreach (Bestellung b in bestellungen)
             {
                 nummern.Append(b.BestellId.ToString() + ", ");
             }
             nummern.Remove(nummern.Length - 2, 2);
-            InitializeComponent();
             txtNumErwachsene.Text = standard.ToString();
             txtNumKinder.Text = ermaessigt.ToString();
             BestellnrTxt.Text = nummern.ToString();

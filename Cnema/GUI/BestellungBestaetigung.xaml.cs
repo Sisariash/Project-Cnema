@@ -60,7 +60,7 @@ namespace GUI
             {
                 bestellungen.Add((Bestellung)bv.ReservierenErmaessigt(kunde, vorstellung));
             }
-            IhreBestellung ihrebestellung = new IhreBestellung(Standard, Ermaessigt, bestellungen);
+            IhreBestellung ihrebestellung = new IhreBestellung(Standard, Ermaessigt, bestellungen, vorstellung);
             this.NavigationService.Navigate(ihrebestellung);
         }
 
