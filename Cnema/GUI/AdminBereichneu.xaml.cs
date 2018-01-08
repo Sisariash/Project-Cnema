@@ -66,18 +66,6 @@ namespace GUI
 
         // Context Menu
 
-
-            private void ContextMenuListViewVorstellungEdit_OnClick(object sender, RoutedEventArgs e)
-        {
-            /**if (listViewVorstellung.SelectedIndex > -1)
-            {
-                Vorstellung selectedVorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
-                FilmHinzufuegenNeu filmHinzufuegenNeu = new FilmHinzufuegenNeu(selectedVorstellung, this);
-                filmHinzufuegenNeu.ShowDialog();
-            }
-            */
-        }
-
         private void ContextMenuListViewVorstellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
 
@@ -89,13 +77,6 @@ namespace GUI
 
                 LadeVorstellungen();
             }
-
-        }
-
-  
-        private void ContextMenuListViewBestellungEdit_OnClick(object sender, RoutedEventArgs e)
-        {
-
 
         }
 
@@ -132,10 +113,7 @@ namespace GUI
 
         }
 
-        private void ContextMenuListViewAdminEdit_OnClick(object sender, RoutedEventArgs e)
-        {
-
-        }
+    
 
         private void ContextMenuListViewAdminRemove_OnClick(object sender, RoutedEventArgs e)
         {

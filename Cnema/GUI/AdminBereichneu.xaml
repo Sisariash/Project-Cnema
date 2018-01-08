@@ -117,6 +117,7 @@
                                     <GridViewColumn Header="VorstellungId" Width="120" DisplayMemberBinding="{Binding VorstellungId}" />
                                     <GridViewColumn Header="DateTime" Width="240" DisplayMemberBinding="{Binding DateTime}" />
                                     <GridViewColumn Header="FilmId" Width="120" DisplayMemberBinding="{Binding Film.FilmId}" />
+                                    <GridViewColumn Header="Titel" Width="240" DisplayMemberBinding="{Binding Film.Titel}" />
                                     <GridViewColumn Header="Saal" Width="120" DisplayMemberBinding="{Binding Saal.SaalName}" />
 
                                 </GridView>
