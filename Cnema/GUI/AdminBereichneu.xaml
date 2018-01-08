@@ -18,6 +18,10 @@
                 <Menu DockPanel.Dock="Top">
                     <MenuItem Header="_Datei">
                         <MenuItem Header="_Neu">
+                            <MenuItem.Icon>
+                                <Image Source="Image\Icons\neu.png" MaxWidth="16" MaxHeight="16" />
+                            </MenuItem.Icon>
+
                             <MenuItem Header="Film" Click="MenuItemFilmHinzufuegen_Click">
                                 <MenuItem.Icon>
                                     <Image Source="Image\Icons\film.png" MaxWidth="16" MaxHeight="16" />
@@ -35,7 +39,14 @@
 
                         </MenuItem>
                         <Separator />
-                        <MenuItem Header="_Abmelden" Click="MenuItemAdminLogout_Click" />
+
+                        <MenuItem Header="_Abmelden" Click="MenuItemAdminLogout_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Image\Icons\abmelden.png" MaxWidth="20" MaxHeight="20" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+
                     </MenuItem>
                 </Menu>
                 <StackPanel></StackPanel>
@@ -51,8 +62,18 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewFilmeEdit"  Click="ContextMenuListViewFilmeEdit_OnClick"/>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewFilmeRemove" Click="ContextMenuListViewFilmeRemove_OnClick"/>
+
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewFilmeEdit"  Click="ContextMenuListViewFilmeEdit_OnClick">
+                                        <MenuItem.Icon>
+                                            <Image Source="Image\Icons\bearbeiten.png" MaxWidth="20" MaxHeight="20" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewFilmeRemove" Click="ContextMenuListViewFilmeRemove_OnClick">
+                                        <MenuItem.Icon>
+                                            <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -83,8 +104,11 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewVorstellungEdit"  Click="ContextMenuListViewVorstellungEdit_OnClick"/>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewVorstellungRemove" Click="ContextMenuListViewVorstellungRemove_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewVorstellungRemove" Click="ContextMenuListViewVorstellungRemove_OnClick">
+                                        <MenuItem.Icon>
+                                            <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -111,8 +135,12 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewBestellungEdit"  Click="ContextMenuListViewBestellungEdit_OnClick"/>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewBestellungRemove" Click="ContextMenuListViewBestellungRemove_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewBestellungRemove" Click="ContextMenuListViewBestellungRemove_OnClick">
+
+                                        <MenuItem.Icon>
+                                            <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
+                                        </MenuItem.Icon>
+                                        </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -139,8 +167,21 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewKundeEdit"  Click="ContextMenuListViewKundeEdit_OnClick"/>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewKundeRemove" Click="ContextMenuListViewKundeRemove_OnClick"/>
+                                    
+                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewKundeEdit"  Click="ContextMenuListViewKundeEdit_OnClick">
+                                       
+                                        <MenuItem.Icon>
+                                            <Image Source="Image\Icons\bearbeiten.png" MaxWidth="20" MaxHeight="20" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewKundeRemove" Click="ContextMenuListViewKundeRemove_OnClick">
+                                            
+                                        <MenuItem.Icon>
+                                                <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
+                                            </MenuItem.Icon>
+                                        
+                                        
+                                        </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -167,8 +208,11 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewAdminEdit"  Click="ContextMenuListViewAdminEdit_OnClick"/>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewAdminRemove" Click="ContextMenuListViewAdminRemove_OnClick"/>
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewAdminRemove" Click="ContextMenuListViewAdminRemove_OnClick">
+                                        <MenuItem.Icon>
+                                            <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
+                                        </MenuItem.Icon>
+                                        </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 

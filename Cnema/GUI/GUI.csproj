@@ -244,5 +244,17 @@
   <ItemGroup>
     <Resource Include="Image\Icons\vorstellung.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icons\bearbeiten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icons\loeschen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icons\neu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icons\abmelden.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
