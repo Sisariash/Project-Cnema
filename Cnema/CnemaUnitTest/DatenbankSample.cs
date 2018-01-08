@@ -31,9 +31,9 @@ namespace CnemaUnitTest
             db.AdminHinzufuegen(admin);
 
             // Säle
-            Saal saal1 = new Saal("Saal 1", 80);
+            Saal saal1 = new Saal("Saal 1", 150);
             Saal saal2 = new Saal("Saal 2", 100);
-            Saal saal3 = new Saal("Hugo-Laue-Saal", 150);
+            Saal saal3 = new Saal("Saal 3", 80);
             db.SaalHinzufügen(saal1);
             db.SaalHinzufügen(saal2);
             db.SaalHinzufügen(saal3);
@@ -276,21 +276,21 @@ namespace CnemaUnitTest
             Vorstellung v135 = new Vorstellung(film30, saal3, new DateTime(2018, 01, 31, 11, 0, 0));
 
             //01.02
-            Vorstellung v136 = new Vorstellung(film1, saal1, new DateTime(2018, 02, 25, 15, 30, 0));
-            Vorstellung v137 = new Vorstellung(film2, saal1, new DateTime(2018, 02, 25, 17, 0, 0));
-            Vorstellung v138 = new Vorstellung(film3, saal1, new DateTime(2018, 02, 25, 20, 0, 0));
-            Vorstellung v139 = new Vorstellung(film4, saal1, new DateTime(2018, 02, 25, 22, 0, 0));
-            Vorstellung v140 = new Vorstellung(film5, saal1, new DateTime(2018, 02, 25, 11, 0, 0));
-            Vorstellung v141 = new Vorstellung(film6, saal2, new DateTime(2018, 02, 25, 15, 30, 0));
-            Vorstellung v142 = new Vorstellung(film7, saal2, new DateTime(2018, 02, 25, 17, 0, 0));
-            Vorstellung v143 = new Vorstellung(film8, saal2, new DateTime(2018, 02, 25, 20, 0, 0));
-            Vorstellung v144 = new Vorstellung(film9, saal2, new DateTime(2018, 02, 25, 22, 0, 0));
-            Vorstellung v145 = new Vorstellung(film10, saal2, new DateTime(2018, 02, 25, 11, 0, 0));
-            Vorstellung v146 = new Vorstellung(film11, saal3, new DateTime(2018, 02, 25, 15, 30, 0));
-            Vorstellung v147 = new Vorstellung(film12, saal3, new DateTime(2018, 02, 25, 17, 0, 0));
-            Vorstellung v148 = new Vorstellung(film13, saal3, new DateTime(2018, 02, 25, 20, 0, 0));
-            Vorstellung v149 = new Vorstellung(film14, saal3, new DateTime(2018, 02, 25, 22, 0, 0));
-            Vorstellung v150 = new Vorstellung(film15, saal3, new DateTime(2018, 02, 25, 11, 0, 0));
+            Vorstellung v136 = new Vorstellung(film1, saal1, new DateTime(2018, 02, 01, 15, 30, 0));
+            Vorstellung v137 = new Vorstellung(film2, saal1, new DateTime(2018, 02, 01, 17, 0, 0));
+            Vorstellung v138 = new Vorstellung(film3, saal1, new DateTime(2018, 02, 01, 20, 0, 0));
+            Vorstellung v139 = new Vorstellung(film4, saal1, new DateTime(2018, 02, 01, 22, 0, 0));
+            Vorstellung v140 = new Vorstellung(film5, saal1, new DateTime(2018, 02, 01, 11, 0, 0));
+            Vorstellung v141 = new Vorstellung(film6, saal2, new DateTime(2018, 02, 01, 15, 30, 0));
+            Vorstellung v142 = new Vorstellung(film7, saal2, new DateTime(2018, 02, 01, 17, 0, 0));
+            Vorstellung v143 = new Vorstellung(film8, saal2, new DateTime(2018, 02, 01, 20, 0, 0));
+            Vorstellung v144 = new Vorstellung(film9, saal2, new DateTime(2018, 02, 01, 22, 0, 0));
+            Vorstellung v145 = new Vorstellung(film10, saal2, new DateTime(2018, 02, 01, 11, 0, 0));
+            Vorstellung v146 = new Vorstellung(film11, saal3, new DateTime(2018, 02, 01, 15, 30, 0));
+            Vorstellung v147 = new Vorstellung(film12, saal3, new DateTime(2018, 02, 01, 17, 0, 0));
+            Vorstellung v148 = new Vorstellung(film13, saal3, new DateTime(2018, 02, 01, 20, 0, 0));
+            Vorstellung v149 = new Vorstellung(film14, saal3, new DateTime(2018, 02, 01, 22, 0, 0));
+            Vorstellung v150 = new Vorstellung(film15, saal3, new DateTime(2018, 02, 01, 11, 0, 0));
 
 
             db.VorstellungHinzufuegen(v1);
