@@ -33,6 +33,7 @@ namespace GUI
             vorstellung = vorst;
             Standard = standard;
             Ermaessigt = ermaessigt;
+            VorstellungAnzeige.Content = vorstellung.ToString();
             txtNumErwachsene.Text = Standard.ToString();
             txtNumKinder.Text = Ermaessigt.ToString();
             double preis = 0;

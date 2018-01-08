@@ -40,12 +40,16 @@
                     <Label Content="Sie wollen" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="70" FontWeight="Bold" Height="Auto"/>
                     <TextBlock x:Name="txtNumErwachsene" x:FieldModifier="private" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Height="Auto" FontWeight="Bold"/>
                     <Label x:Name="Erwachsene" Content="Karten für Erwachsene" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold" Height="Auto"></Label>
-
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
                     <Label Content="und" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="35" FontWeight="Bold" Height="Auto"/>
                     <TextBlock x:Name="txtNumKinder" x:FieldModifier="private" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" Foreground="White" Height="Auto" FontWeight="Bold" />
-                    <Label x:Name="Erwachsene_Copy" Content="Karten für Kinder/Azubis/Studenten/Senioren kaufen." HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"></Label>
+                    <Label x:Name="Erwachsene_Copy" Content="Karten für Kinder/Azubis/Studenten/Senioren" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"></Label>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="für die Vorstellung" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="VorstellungAnzeige" Content="Vorstellung" Foreground="White" FontWeight="Bold"/>
+                    <Label Content="kaufen." Foreground="White" FontWeight="Bold"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
