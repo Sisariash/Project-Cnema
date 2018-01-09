@@ -130,15 +130,12 @@ namespace CnemaUnitTest
 
         public void SaalLoeschenTest()
         {
-
-
             Saal saal1 = new Saal("Saal1", 150);
+            datenbankManager.SaalHinzufügen(saal1);
             datenbankManager.SaalLoeschen(saal1);
-
 
             Saal saalFromDb1 = datenbankManager.SaalLesen("Saal1");
             Assert.IsNull(saalFromDb1);
-
 
         }
         //VorstellungTests
