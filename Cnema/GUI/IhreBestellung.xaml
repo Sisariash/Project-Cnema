@@ -47,13 +47,13 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="Auto" Content="und"/>
                     <TextBlock x:Name="txtNumKinder" x:FieldModifier="private" Text="0" Foreground="White" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
-                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="Auto" Content="Karten für KInder/Azubis/Studenten/Senioren gekauft."></Label>
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="Auto" Content="Karten für KInder/Azubis/Studenten/Senioren"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Content="für die Vorstellung" Foreground="White"/>
                         <Label x:Name="VorstellungAnzeige" Content="Vorstellung" Foreground="White" FontWeight="Bold"/>
-                        <Label Content="kaufen." Foreground="White"/>
+                        <Label Content="gekauft." Foreground="White"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
