@@ -9,10 +9,30 @@ using System.Xml.Linq;
 
 namespace Komponenten.Datenbank.Impl
 {
+
+    // Datenbank-Manager dient als Schutz-Proxy, der den direkten Zugriff auf DBContext verhindert
+
     public class DatenbankManager : IDatenbankManager
     {
-
         private CnemaContext cnemaContext = new CnemaContext();
+
+        // Singleton - Muster
+
+        private static DatenbankManager instance;
+
+        private DatenbankManager() { }
+
+        public static DatenbankManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DatenbankManager();
+                }
+                return instance;
+            }
+        }
 
         public bool Update()
         {
@@ -402,7 +422,7 @@ namespace Komponenten.Datenbank.Impl
 
         public List<FilmBewertung> AlleFilmBewertungenLesen()
         {
-                return cnemaContext.FilmBewertungen.ToList();
+            return cnemaContext.FilmBewertungen.ToList();
         }
 
 
@@ -428,25 +448,6 @@ namespace Komponenten.Datenbank.Impl
                 return true;
             }
             catch { return false; }
-        }
-
-
-        // Singleton
-
-        private static DatenbankManager instance;
-
-        private DatenbankManager() { }
-
-        public static DatenbankManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new DatenbankManager();
-                }
-                return instance;
-            }
         }
     }
 }

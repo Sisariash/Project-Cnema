@@ -2,8 +2,8 @@
 Eine Kinoverwaltung von Jonathan Hamberger, Osman Güloglu und Karl Herzog.
 
 
---> Bevor Sie das Programm starten, bitte "DatenBankSampl.cs" ausführen, damit
-    die Datenbank befüllt wird.
+--> Bevor Sie das Programm starten, bitte "DatenbankSample.cs" unter CinemaUnitTest ausführen, damit
+    die Datenbank mit Beispieldaten befüllt wird.
 
 --> Projekt-Spezifikation unter "Dokumente".
 

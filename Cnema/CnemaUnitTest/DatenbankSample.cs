@@ -26,11 +26,12 @@ namespace CnemaUnitTest
 
             //Beispieldaten hinzufügen für Präsentation
 
-            // Admin
+            // Admins
+            // Admins müssen bereits vor Programmstart angelegt werden; würden in einer reale Anwendung nach dem ersten Start gelöscht und neu erstellt werden
             Admin admin = new Admin(Komponenten.Util.Utils.HashPassword("admin"), "Admin");
             db.AdminHinzufuegen(admin);
 
-            Admin admin2 = new Admin(Komponenten.Util.Utils.HashPassword("admin"), "Admin2");
+            Admin admin2 = new Admin(Komponenten.Util.Utils.HashPassword("admin2"), "Admin2");
             db.AdminHinzufuegen(admin2);
 
             //Kunden
@@ -38,10 +39,10 @@ namespace CnemaUnitTest
             Kunde kunde1 = new Kunde(Komponenten.Util.Utils.HashPassword("123"), "Güloglu", "Osman", new DateTime(1991,08,11));
             db.KundeHinzufuegen(kunde1);
 
-            Kunde kunde2 = new Kunde(Komponenten.Util.Utils.HashPassword("123"), "Herzog", "Karl", new DateTime(1993, 10, 15));
+            Kunde kunde2 = new Kunde(Komponenten.Util.Utils.HashPassword("456"), "Herzog", "Karl", new DateTime(1986, 06, 10));
             db.KundeHinzufuegen(kunde2);
 
-            Kunde kunde3 = new Kunde(Komponenten.Util.Utils.HashPassword("123"), "Hamberger", "Jonathan", new DateTime(1996, 04, 27));
+            Kunde kunde3 = new Kunde(Komponenten.Util.Utils.HashPassword("789"), "Hamberger", "Jonathan", new DateTime(1996, 04, 27));
             db.KundeHinzufuegen(kunde3);
 
             // Säle
