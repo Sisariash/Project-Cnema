@@ -27,11 +27,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void FilmName_TextBox(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Suchen_Button(object sender, RoutedEventArgs e)
         {
             IBestellverwaltung bv = (IBestellverwaltung)App.Current.Properties["bestellung"];
@@ -170,11 +165,6 @@ namespace GUI
                 this.NavigationService.Navigate(suchergebnis);
             }
             
-        }
-
-        private void Action_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Abbrechen_Click(object sender, RoutedEventArgs e)

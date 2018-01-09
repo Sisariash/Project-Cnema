@@ -45,16 +45,6 @@ namespace GUI
             BestellnrTxt.Text = nummern.ToString();
         }
 
-        private void TxtNumErwachsene_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtNumKinder_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void ZumProgramm_Button(object sender, RoutedEventArgs e)
         {
             Kinoprogramm kinoprogramm = new Kinoprogramm();

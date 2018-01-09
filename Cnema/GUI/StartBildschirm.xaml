@@ -45,7 +45,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Content="Benutzer-ID:" Grid.Row="0" Margin="0,0,0,5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
                 <Label Content="Passwort:" Grid.Row="1" Margin="0,5,0,0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-                <TextBox x:Name="ID_Box" Grid.Row="0" Margin="0,0,0,5" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" TextChanged="ID_Box_TextBox"/>
+                <TextBox x:Name="ID_Box" Grid.Row="0" Margin="0,0,0,5" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" />
                 <PasswordBox x:Name="Passwort_Box" Grid.Row="1" Margin="0,5,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
             </Grid>
             <Button x:Name="Benutzer_Login" Grid.Column="1" Margin="20,0,0,0" Content="Benutzer-Login" HorizontalAlignment="Left" Height="42" VerticalAlignment="Center" Width="110" Click="Benutzer_Login_Click"/>

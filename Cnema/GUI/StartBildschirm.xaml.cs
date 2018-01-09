@@ -28,14 +28,8 @@ namespace GUI
             InitializeComponent();
         }
 
-
         private void Registrieren_Button(object sender, RoutedEventArgs e)
         {
-
-
-            //AdminBereichneu adminBereichneu = new AdminBereichneu();
-            //this.NavigationService.Navigate(adminBereichneu);
-
            KundenRegistrierung kundenRegistrierung = new KundenRegistrierung();
            this.NavigationService.Navigate(kundenRegistrierung);
         }
@@ -58,28 +52,16 @@ namespace GUI
                 Application.Current.Properties["aktuellerBenutzer"] = kunde;
                 Kinoprogramm kinoprogramm = new Kinoprogramm();
                 this.NavigationService.Navigate(kinoprogramm);
-                
-                /* Nur zu Testzwecken
-                Kunde k = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
-                MessageBox.Show(k.Name); */
+
             }
             else if (admin != null && isAdmin == true)
             {
                 Application.Current.Properties["aktuellerBenutzer"] = admin;
                 AdminBereichneu adminBereichneu = new AdminBereichneu();
                 this.NavigationService.Navigate(adminBereichneu);
-
-                /*Nur zu Testzwecken
-                Admin a = (Admin)Application.Current.Properties["aktuellerBenutzer"];
-                MessageBox.Show(a.Name); */
             }
             else
                 Login_Fehler.Content = "Anmeldedaten sind fehlerhaft.";
-        }
-
-        private void ID_Box_TextBox(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

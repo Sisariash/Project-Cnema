@@ -34,8 +34,8 @@
                                 </MenuItem.Icon>
 
                             </MenuItem>
-                            
-                            
+
+
 
                         </MenuItem>
                         <Separator />
@@ -54,7 +54,7 @@
             <TabControl Grid.Row="1">
                 <TabItem Header="Filme">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewFilme" SelectionChanged="ListViewFilme_SelectionChanged">
+                        <ListView x:Name="listViewFilme">
 
                             <!--context  Menu-->
                             <ListView.ContextMenu>
@@ -96,7 +96,7 @@
                 </TabItem>
                 <TabItem Header="Vorstellungen">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewVorstellung" SelectionChanged="ListViewVorstellung_SelectionChanged">
+                        <ListView x:Name="listViewVorstellung">
 
                             <!--context  Menu-->
                             <ListView.ContextMenu>
@@ -121,14 +121,14 @@
                                     <GridViewColumn Header="Saal" Width="120" DisplayMemberBinding="{Binding Saal.SaalName}" />
 
                                 </GridView>
-                                </ListView.View>
-                            </ListView>
+                            </ListView.View>
+                        </ListView>
                     </Grid>
                 </TabItem>
 
                 <TabItem Header="Bestellungen">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewBestellungen" SelectionChanged="ListViewBestellungen_SelectionChanged">
+                        <ListView x:Name="listViewBestellungen">
 
                             <!--context  Menu-->
                             <ListView.ContextMenu>
@@ -141,7 +141,7 @@
                                         <MenuItem.Icon>
                                             <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
                                         </MenuItem.Icon>
-                                        </MenuItem>
+                                    </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -160,7 +160,7 @@
 
                 <TabItem Header="Kunden">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewKunden" SelectionChanged="ListViewKunden_SelectionChanged">
+                        <ListView x:Name="listViewKunden">
 
                             <!--context  Menu-->
                             <ListView.ContextMenu>
@@ -168,21 +168,12 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-                                    
-                                    <MenuItem Header="Bearbeiten" Name="ContextMenuListViewKundeEdit"  Click="ContextMenuListViewKundeEdit_OnClick">
-                                       
+
+                                    <MenuItem Header="Löschen" Name="ContextMenuListViewKundeRemove" Click="ContextMenuListViewKundeRemove_OnClick">
                                         <MenuItem.Icon>
-                                            <Image Source="Image\Icons\bearbeiten.png" MaxWidth="20" MaxHeight="20" />
+                                            <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
                                         </MenuItem.Icon>
                                     </MenuItem>
-                                    <MenuItem Header="Löschen" Name="ContextMenuListViewKundeRemove" Click="ContextMenuListViewKundeRemove_OnClick">
-                                            
-                                        <MenuItem.Icon>
-                                                <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
-                                            </MenuItem.Icon>
-                                        
-                                        
-                                        </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -201,7 +192,7 @@
 
                 <TabItem Header="Admins">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewAdmins" SelectionChanged="ListViewBewertungen_SelectionChanged">
+                        <ListView x:Name="listViewAdmins">
 
                             <!--context  Menu-->
                             <ListView.ContextMenu>
@@ -213,7 +204,7 @@
                                         <MenuItem.Icon>
                                             <Image Source="Image\Icons\loeschen.png" MaxWidth="20" MaxHeight="20" />
                                         </MenuItem.Icon>
-                                        </MenuItem>
+                                    </MenuItem>
                                 </ContextMenu>
                             </ListView.ContextMenu>
 
@@ -229,7 +220,7 @@
 
                 <TabItem Header="Filmbewertungen">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="listViewBewertungen" SelectionChanged="ListViewBewertungen_SelectionChanged">
+                        <ListView x:Name="listViewBewertungen" >
                             <!--Nur lesender Zugriff für Admin auf Bewertungen, daher kein Kontextmenü: Durch Admin darf keine Manipulation der Bewertung möglich sein -->
                             <ListView.View>
                                 <GridView>
@@ -257,7 +248,7 @@
             </TabControl>
         </Grid>
     </Grid>
-    </Page>
+</Page>
         
                         
                    

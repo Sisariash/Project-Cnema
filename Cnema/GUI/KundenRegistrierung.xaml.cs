@@ -28,7 +28,6 @@ namespace GUI
             InitializeComponent();
         }
 
-
         private void Registrieren_Button(object sender, RoutedEventArgs e)
         {
             String nachname = this.Nachname.Text;
@@ -63,7 +62,6 @@ namespace GUI
                 }
             }
         }
-
         private void Abbrechen_Click(object sender, RoutedEventArgs e)
         {
             StartBildschirm start = new StartBildschirm();

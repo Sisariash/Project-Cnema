@@ -36,7 +36,7 @@ namespace GUI
             LadeBewertungen();
         }
 
- 
+
 
         public void LadeVorstellungen()
         {
@@ -69,7 +69,7 @@ namespace GUI
         private void ContextMenuListViewVorstellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
 
-            
+
             if (listViewVorstellung.SelectedIndex > -1)
             {
                 Vorstellung selectedvorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
@@ -82,7 +82,7 @@ namespace GUI
 
         private void ContextMenuListViewBestellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
-            
+
             if (listViewBestellungen.SelectedIndex > -1)
             {
                 Bestellung selectedbestellung = (Bestellung)listViewBestellungen.SelectedItem; // casting the list view 
@@ -90,16 +90,11 @@ namespace GUI
 
                 LadeBestellungen();
             }
-            
-        }
-
-        private void ContextMenuListViewKundeEdit_OnClick(object sender, RoutedEventArgs e)
-        {
-
 
         }
 
-      private void ContextMenuListViewKundeRemove_OnClick(object sender, RoutedEventArgs e)
+
+        private void ContextMenuListViewKundeRemove_OnClick(object sender, RoutedEventArgs e)
         {
 
             if (listViewKunden.SelectedIndex > -1)
@@ -112,8 +107,6 @@ namespace GUI
 
 
         }
-
-    
 
         private void ContextMenuListViewAdminRemove_OnClick(object sender, RoutedEventArgs e)
         {
@@ -132,7 +125,7 @@ namespace GUI
         {
             if (listViewFilme.SelectedIndex > -1)
             {
-                Film selectedFilm = (Film) listViewFilme.SelectedItem; // casting the list view 
+                Film selectedFilm = (Film)listViewFilme.SelectedItem; // casting the list view 
                 FilmHinzufuegenNeu filmHinzufuegenNeu = new FilmHinzufuegenNeu(selectedFilm, this);
                 filmHinzufuegenNeu.ShowDialog();
             }
@@ -166,43 +159,10 @@ namespace GUI
             vorstellungHinzufügen.ShowDialog();
         }
 
-        private void ListViewFilme_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
-        private void ListViewVorstellung_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListViewBestellungen_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListViewKunden_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListViewAdmin_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListViewBewertungen_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void MenuItemAdminLogout_Click(object sender, RoutedEventArgs e)
         {
             StartBildschirm startBildschirm = new StartBildschirm();
             this.NavigationService.Navigate(startBildschirm);
         }
-
-
     }
 }

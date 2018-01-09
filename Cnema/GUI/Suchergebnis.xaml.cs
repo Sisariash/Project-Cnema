@@ -31,11 +31,6 @@ namespace GUI
             Kriterium.Content = kriterium;
         }
 
-        private void passendeFilme_ListView(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void zurueck_Button(object sender, RoutedEventArgs e)
         {
             FilmeFiltern filmeFiltern = new FilmeFiltern();

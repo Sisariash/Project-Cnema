@@ -42,10 +42,6 @@ namespace GUI
                 Auswahlfehler.Content = "Bitte Film auswählen";
         }
 
-        private void Programm_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void Abbrechen_Click(object sender, RoutedEventArgs e)
         {

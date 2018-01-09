@@ -36,8 +36,6 @@ namespace GUI
             TagKinoprogramm.ItemsSource = tage;
         }
 
-        
-
         private void Tag_ListView(object sender, SelectionChangedEventArgs e)
         {
             FilmKinoprogramm.UnselectAll();
