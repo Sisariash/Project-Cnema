@@ -150,6 +150,8 @@
                                     <GridViewColumn Header="BestellId" Width="120" DisplayMemberBinding="{Binding BestellId}" />
                                     <GridViewColumn Header="Preis" Width="120" DisplayMemberBinding="{Binding Preis}" />
                                     <GridViewColumn Header="BenutzerId" Width="120" DisplayMemberBinding="{Binding Kunde.BenutzerId}" />
+                                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Kunde.Name}" />
+                                    <GridViewColumn Header="Vorname" Width="120" DisplayMemberBinding="{Binding Kunde.Vorname}" />
                                     <GridViewColumn Header="VorstellungId" Width="120" DisplayMemberBinding="{Binding Vorstellung.VorstellungId}" />
 
                                 </GridView>

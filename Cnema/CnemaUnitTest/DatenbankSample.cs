@@ -30,6 +30,20 @@ namespace CnemaUnitTest
             Admin admin = new Admin(Komponenten.Util.Utils.HashPassword("admin"), "Admin");
             db.AdminHinzufuegen(admin);
 
+            Admin admin2 = new Admin(Komponenten.Util.Utils.HashPassword("admin"), "Admin2");
+            db.AdminHinzufuegen(admin2);
+
+            //Kunden
+
+            Kunde kunde1 = new Kunde(Komponenten.Util.Utils.HashPassword("123"), "Güloglu", "Osman", new DateTime(1991,08,11));
+            db.KundeHinzufuegen(kunde1);
+
+            Kunde kunde2 = new Kunde(Komponenten.Util.Utils.HashPassword("123"), "Herzog", "Karl", new DateTime(1993, 10, 15));
+            db.KundeHinzufuegen(kunde2);
+
+            Kunde kunde3 = new Kunde(Komponenten.Util.Utils.HashPassword("123"), "Hamberger", "Jonathan", new DateTime(1996, 04, 27));
+            db.KundeHinzufuegen(kunde3);
+
             // Säle
             Saal saal1 = new Saal("Saal 1", 150);
             Saal saal2 = new Saal("Saal 2", 100);
