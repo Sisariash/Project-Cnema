@@ -28,34 +28,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void Name_Textbox(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Vorname_TextBox(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Geburtstag_TextBox(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-
-        private void WaehlePasswort_PasswortBox(object sender, TextChangedEventArgs e)
-        {
-
-
-        }
-
-
-        private void WiederholePasswort_PasswortBox(object sender, TextChangedEventArgs e)
-        {
-
-
-        }
 
         private void Registrieren_Button(object sender, RoutedEventArgs e)
         {

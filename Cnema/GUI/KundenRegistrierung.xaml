@@ -40,9 +40,9 @@
                 <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="110,84.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="95" />
                 <Label Content="Wähle Passwort:" HorizontalAlignment="Left" Margin="110,114.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="105" />
                 <Label Content="Wiederhole Passwort:" HorizontalAlignment="Left" Margin="110,144.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="135" />
-                <TextBox x:Name="Nachname" HorizontalAlignment="Left" Height="23" Margin="240,26.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Vorname_TextBox" />
-                <TextBox x:Name="Vorname" HorizontalAlignment="Left" Height="23" Margin="240,56.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Vorname_TextBox" />
-                <TextBox x:Name="Geburtsdatum" HorizontalAlignment="Left" Height="23" Margin="240,86.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Geburtstag_TextBox" />
+                <TextBox x:Name="Nachname" HorizontalAlignment="Left" Height="23" Margin="240,26.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                <TextBox x:Name="Vorname" HorizontalAlignment="Left" Height="23" Margin="240,56.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                <TextBox x:Name="Geburtsdatum" HorizontalAlignment="Left" Height="23" Margin="240,86.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 <PasswordBox x:Name="Passwort" HorizontalAlignment="Left" Margin="240,116,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
                 <PasswordBox x:Name="PasswortWiederholt" HorizontalAlignment="Left" Margin="240,146,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
                 <Button Content="Registrieren" HorizontalAlignment="Left" Margin="240,183.253,0,-70" VerticalAlignment="Top" Width="120" Height="41" Click="Registrieren_Button" />
