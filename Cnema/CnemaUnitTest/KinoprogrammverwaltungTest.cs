@@ -15,7 +15,7 @@ namespace CnemaUnitTest
     public class KinoprogrammverwaltungTest
     {
 
-        
+
         static IDatenbankManager datenbankManager = DatenbankManager.Instance;
         IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
 
@@ -42,7 +42,7 @@ namespace CnemaUnitTest
             Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
             Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
-       
+
 
             Assert.IsTrue(datenbankManager.FilmHinzufuegen(film1));
             Assert.IsTrue(datenbankManager.FilmHinzufuegen(film2));
@@ -70,14 +70,14 @@ namespace CnemaUnitTest
         public void FilmLoeschenTest()
         {
 
-            
+
             Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             datenbankManager.FilmHinzufuegen(film1);
 
             Assert.AreEqual(film1, datenbankManager.FilmLesen(film1.FilmId));
             Assert.IsTrue(datenbankManager.FilmLoeschen(film1));
 
-            
+
 
 
 
@@ -95,7 +95,7 @@ namespace CnemaUnitTest
             film0.Titel = "Test";
             film0.Jahr = 2012;
 
-            kinoprogrammverwaltung.FilmAendern();
+            kinoprogrammverwaltung.FilmAendern(film0);
 
             Film Testfilm = kinoprogrammverwaltung.FilmLesen(film0.FilmId);
             Assert.AreEqual("Test", Testfilm.Titel);
@@ -132,14 +132,14 @@ namespace CnemaUnitTest
         {
 
 
-            Saal saal1 = datenbankManager.SaalLesen("saal1");
+            Saal saal1 = new Saal("Saal1", 150);
             datenbankManager.SaalLoeschen(saal1);
 
-        
-            Saal saalFromDb1 = datenbankManager.SaalLesen("saal1");
+
+            Saal saalFromDb1 = datenbankManager.SaalLesen("Saal1");
             Assert.IsNull(saalFromDb1);
 
-        
+
         }
         //VorstellungTests
         [TestMethod]
@@ -150,9 +150,13 @@ namespace CnemaUnitTest
             Film film2 = new Film("Star Wars 7 (3D)", 2017, "Action", 287, "Deutsch", true, 6);
             Film film3 = new Film("Star Wars 7", 2017, "Action", 287, "Deutsch", false, 6);
 
-            Saal saal1 = datenbankManager.SaalLesen("Saal1"); 
-            Saal saal2 = datenbankManager.SaalLesen("Saal2"); 
-            Saal saal3 = datenbankManager.SaalLesen("Saal3");  
+            datenbankManager.FilmHinzufuegen(film1);
+            datenbankManager.FilmHinzufuegen(film2);
+            datenbankManager.FilmHinzufuegen(film3);
+
+            Saal saal1 = new Saal("Saal1", 150);
+            Saal saal2 = new Saal("Saal2", 100);
+            Saal saal3 = new Saal("Saal3", 75);
 
             Vorstellung vorstellung1 = new Vorstellung(film1, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
             Vorstellung vorstellung2 = new Vorstellung(film2, saal2, new DateTime(2018, 01, 13, 18, 0, 0));
@@ -161,6 +165,10 @@ namespace CnemaUnitTest
             bool vorstellungHinzufuegen1 = datenbankManager.VorstellungHinzufuegen(vorstellung1);
             bool vorstellungHinzufuegen2 = datenbankManager.VorstellungHinzufuegen(vorstellung2);
             bool vorstellungHinzufuegen3 = datenbankManager.VorstellungHinzufuegen(vorstellung3);
+
+            Assert.IsTrue(vorstellungHinzufuegen1);
+            Assert.IsTrue(vorstellungHinzufuegen2);
+            Assert.IsFalse(vorstellungHinzufuegen3);
 
             // Cleaning
             datenbankManager.FilmLoeschen(film1);
@@ -171,43 +179,29 @@ namespace CnemaUnitTest
             datenbankManager.VorstellungLoeschen(vorstellung2);
             datenbankManager.VorstellungLoeschen(vorstellung3);
 
-            Assert.IsTrue(vorstellungHinzufuegen1);
-            Assert.IsTrue(vorstellungHinzufuegen2);
-            Assert.IsFalse(vorstellungHinzufuegen3);
+            datenbankManager.SaalLoeschen(saal1);
+            datenbankManager.SaalLoeschen(saal2);
+            datenbankManager.SaalLoeschen(saal3);
+
         }
-    
 
-    [TestMethod]
-
-    public void VorstellungLoeschenTest()
-    {
-
-        //Immer Aktuelle Vorstellung ID nehmen
-        Vorstellung vorstellung1 = datenbankManager.VorstellungLesen(67);
-        datenbankManager.VorstellungLoeschen(vorstellung1);
-
-
-        Vorstellung saalFromDb1 = datenbankManager.VorstellungLesen(67);
-        Assert.IsNull(saalFromDb1);
-
-     
-
-    }
 
         [TestMethod]
-        public void VorstellungAendernTest()
+
+        public void VorstellungLoeschenTest()
         {
+            Film film1 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
+            Saal saal1 = new Saal("Saal1", 150);
 
+            Vorstellung vorstellung1 = new Vorstellung(film1, saal1, new DateTime(2018, 01, 13, 18, 0, 0));
+            datenbankManager.VorstellungHinzufuegen(vorstellung1);
+            datenbankManager.VorstellungLoeschen(vorstellung1);
 
-            Saal saal1 = new Saal("MegaSaal", 150);
-            
+            Assert.IsNull(datenbankManager.VorstellungLesen(vorstellung1.VorstellungId));
 
-            Vorstellung vorstellung1 = datenbankManager.VorstellungLesen(61);
-            vorstellung1.DateTime = DateTime.Now;
-            vorstellung1.Saal = saal1;
-            
-        
-    
+            datenbankManager.SaalLoeschen(saal1);
+            datenbankManager.FilmLoeschen(film1);
+
         }
     }
 }

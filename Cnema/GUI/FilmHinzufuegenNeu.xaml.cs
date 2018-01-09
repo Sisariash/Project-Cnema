@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 using Komponenten.ET;
 using Komponenten.Datenbank.Impl;
+using Komponenten.Kinoprogrammverwaltung;
 
 namespace GUI
 {
@@ -63,6 +64,7 @@ namespace GUI
 
         private void ButtonFilmHinzufuegenSpeichern_Click(object sender, RoutedEventArgs e)
         {
+            IKinoprogrammverwaltung kinoprogrammverwaltung = (IKinoprogrammverwaltung)App.Current.Properties["programm"];
             // Validate Input
             if(!ValidiereInput())
             {
@@ -89,10 +91,10 @@ namespace GUI
             // Speichern
             if (this.film == null)
             {
-                DatenbankManager.Instance.FilmHinzufuegen(film);
+                kinoprogrammverwaltung.FilmHinzufuegen(film);
             } else
             {
-                DatenbankManager.Instance.FilmAendern(film);
+                kinoprogrammverwaltung.FilmAendern(film);
             }
 
             Close();

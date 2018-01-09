@@ -14,7 +14,7 @@ namespace Komponenten.Kinoprogrammverwaltung
         ET.Film FilmLesen(int id);
         List<ET.Film> AlleFilmLesen();
         bool FilmHinzufuegen(ET.Film film);
-        bool FilmAendern();
+        bool FilmAendern(Film film);
         bool FilmLoeschen(ET.Film film);
 
         // Vorstellung
