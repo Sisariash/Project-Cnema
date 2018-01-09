@@ -42,64 +42,22 @@ namespace CnemaUnitTest
             Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
             Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
-            Film film4 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Deutsch", false, 12);
-            Film film5 = new Film("Star Wars: The Last Jedi", 2017, "Science-Fiction", 152, "Englisch", false, 12);
-            Film film6 = new Film("Jigsaw", 2017, "Horror", 92, "Deutsch", false, 18);
-            Film film7 = new Film("Pokemon - Der Film", 1998, "Animation", 110, "Deutsch", false, 12);
-            Film film8 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
-            Film film9 = new Film("Cars3", 2017, "Animation", 110, "Deutsch", false, 0);
-            Film film10 = new Film("Bad Moms 2", 2017, "Komödie", 105, "Deutsch", false, 12);
-            Film film11 = new Film("Der Pate", 1972, "Krimi", 175, "Deutsch", false, 16);
-            Film film12 = new Film("Pulp Fiction", 1994, "Drama", 154, "Deutsch", false, 16);
-            Film film13 = new Film("Yol Arkadasim (Türkisch)", 2017, "Komödie", 115, "Türkisch", false, 6);
-            Film film14 = new Film("Paddington 2", 2017, "Animation", 104, "Deutsch", false, 0);
-            Film film15 = new Film("The Commuter", 2017, "Thriller", 105, "Deutsch", false, 12);
-            Film film16 = new Film("Greatest Showman", 2017, "Drama", 105, "Deutsch", false, 6);
-            Film film17 = new Film("Greatest Showman (Englisch)", 2017, "Drama", 105, "Englisch", false, 6);
-            Film film18 = new Film("Insidious: The Last Key", 2017, "Thriller", 104, "Deutsch", false, 16);
-            Film film19 = new Film("Ayla (Türkisch)", 2017, "Drama", 124, "Türkisch", false, 12);
-            Film film20 = new Film("Titanic", 1997, "Romanze", 104, "Deutsch", false, 12);
-            Film film21 = new Film("Coco - Lebendiger als das Leben!", 2017, "Abenteuer", 10, "Deutsch", false, 0);
-            Film film22 = new Film("Happy Deathday", 2017, "Horror", 97, "Deutsch", false, 12);
-            Film film23 = new Film("Die Verurteilten", 1994, "Krimi", 144, "Deutsch", false, 12);
-            Film film24 = new Film("Avatar - Aufbruch nach Pandora (3D)", 2009, "Fantasy", 162, "Deutsch", true, 12);
-            Film film25 = new Film("Interstellar", 2014, "Abenteuer", 169, "Deutsch", false, 12);
-            Film film26 = new Film("Mad Max: Fury Road (3D)", 2015, "Thriller", 121, "Deutsch", true, 16);
-            Film film27 = new Film("Life of Pi: Schiffbruch mit Tiger (3D)", 2012, "Abenteuer", 127, "Deutsch", true, 12);
-            Film film28 = new Film("Der Hobbit: Smaugs Einöde (3D) ", 2013, "Fantasy", 161, "Deutsch", true, 12);
-            Film film29 = new Film("La La Land ", 2017, "Romanze", 128, "Deutsch", false, 12);
-            Film film30 = new Film("Walk the Line) ", 2006, "Romanze", 136, "Deutsch", false, 12);
+       
 
-            kinoprogrammverwaltung.FilmHinzufuegen(film1);
-            kinoprogrammverwaltung.FilmHinzufuegen(film2);
-            kinoprogrammverwaltung.FilmHinzufuegen(film3);
-            kinoprogrammverwaltung.FilmHinzufuegen(film4);
-            kinoprogrammverwaltung.FilmHinzufuegen(film5);
-            kinoprogrammverwaltung.FilmHinzufuegen(film6);
-            kinoprogrammverwaltung.FilmHinzufuegen(film7);
-            kinoprogrammverwaltung.FilmHinzufuegen(film8);
-            kinoprogrammverwaltung.FilmHinzufuegen(film9);
-            kinoprogrammverwaltung.FilmHinzufuegen(film10);
-            kinoprogrammverwaltung.FilmHinzufuegen(film11);
-            kinoprogrammverwaltung.FilmHinzufuegen(film12);
-            kinoprogrammverwaltung.FilmHinzufuegen(film13);
-            kinoprogrammverwaltung.FilmHinzufuegen(film14);
-            kinoprogrammverwaltung.FilmHinzufuegen(film15);
-            kinoprogrammverwaltung.FilmHinzufuegen(film16);
-            kinoprogrammverwaltung.FilmHinzufuegen(film17);
-            kinoprogrammverwaltung.FilmHinzufuegen(film18);
-            kinoprogrammverwaltung.FilmHinzufuegen(film19);
-            kinoprogrammverwaltung.FilmHinzufuegen(film20);
-            kinoprogrammverwaltung.FilmHinzufuegen(film21);
-            kinoprogrammverwaltung.FilmHinzufuegen(film22);
-            kinoprogrammverwaltung.FilmHinzufuegen(film23);
-            kinoprogrammverwaltung.FilmHinzufuegen(film24);
-            kinoprogrammverwaltung.FilmHinzufuegen(film25);
-            kinoprogrammverwaltung.FilmHinzufuegen(film26);
-            kinoprogrammverwaltung.FilmHinzufuegen(film27);
-            kinoprogrammverwaltung.FilmHinzufuegen(film28);
-            kinoprogrammverwaltung.FilmHinzufuegen(film29);
-            kinoprogrammverwaltung.FilmHinzufuegen(film30);
+            Assert.IsTrue(datenbankManager.FilmHinzufuegen(film1));
+            Assert.IsTrue(datenbankManager.FilmHinzufuegen(film2));
+            Assert.IsTrue(datenbankManager.FilmHinzufuegen(film3));
+
+
+
+            Assert.IsTrue(datenbankManager.FilmLoeschen(film1));
+            Assert.IsTrue(datenbankManager.FilmLoeschen(film2));
+            Assert.IsTrue(datenbankManager.FilmLoeschen(film3));
+
+            // Ein Film der nicht existiert, kann nicht gelöscht werden
+
+            Film film4 = null;
+            Assert.IsFalse(datenbankManager.FilmLoeschen(film4));
 
 
 
@@ -112,28 +70,36 @@ namespace CnemaUnitTest
         public void FilmLoeschenTest()
         {
 
-            //Immer Aktuelle ID zum Löschen nehmen
-            Film film1 = kinoprogrammverwaltung.FilmLesen(1);
-            kinoprogrammverwaltung.FilmLoeschen(film1);
+            
+            Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
+            datenbankManager.FilmHinzufuegen(film1);
 
-
-            Film filmFromDb1 = kinoprogrammverwaltung.FilmLesen(1);
-            Assert.IsNull(filmFromDb1);
+            Assert.AreEqual(film1, datenbankManager.FilmLesen(film1.FilmId));
+            Assert.IsTrue(datenbankManager.FilmLoeschen(film1));
 
             
+
+
+
+
         }
 
         [TestMethod]
         public void FilmAendernTest()
         {
-
-            //Immer Aktuelle ID nehmen
             IKinoprogrammverwaltung kinoprogrammverwaltung = new Kinoprogrammverwaltung();
 
-            
-            Film film = kinoprogrammverwaltung.FilmLesen(69);
-            film.Titel = "Parry Hotter";
-            film.Jahr = 1998;
+            Film film0 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
+            kinoprogrammverwaltung.FilmHinzufuegen(film0);
+
+            film0.Titel = "Test";
+            film0.Jahr = 2012;
+
+            kinoprogrammverwaltung.FilmAendern();
+
+            Film Testfilm = kinoprogrammverwaltung.FilmLesen(film0.FilmId);
+            Assert.AreEqual("Test", Testfilm.Titel);
+            Assert.AreEqual(2012, Testfilm.Jahr);
 
         }
 
@@ -148,9 +114,15 @@ namespace CnemaUnitTest
             Saal saal2 = new Saal("Saal2", 100);
             Saal saal3 = new Saal("Saal3", 75);
 
-            datenbankManager.SaalHinzufügen(saal1);
-            datenbankManager.SaalHinzufügen(saal2);
-            datenbankManager.SaalHinzufügen(saal3);
+
+            Assert.IsTrue(datenbankManager.SaalHinzufügen(saal1));
+            Assert.IsTrue(datenbankManager.SaalHinzufügen(saal2));
+            Assert.IsTrue(datenbankManager.SaalHinzufügen(saal3));
+
+
+            datenbankManager.SaalLoeschen(saal1);
+            datenbankManager.SaalLoeschen(saal2);
+            datenbankManager.SaalLoeschen(saal3);
 
         }
 
