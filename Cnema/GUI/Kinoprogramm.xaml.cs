@@ -57,25 +57,6 @@ namespace GUI
             FilmKinoprogramm.ItemsSource = vorstellungen;
         }
 
-        private void Film_ListView(object sender, SelectionChangedEventArgs e)
-        {
-            //UhrzeitKinoprogramm.UnselectAll();
-            //List<Vorstellung> vorstellungen = new List<Vorstellung>();
-            //foreach (Vorstellung v in kv.AlleVorstellungenLesen())
-            //{
-            //    if (v != null && FilmKinoprogramm.SelectedItem != null && v.Film != null && FilmKinoprogramm.SelectedItem.Equals(v.Film))
-            //    {
-            //        vorstellungen.Add(v);
-            //    }
-            //}
-            //UhrzeitKinoprogramm.ItemsSource = vorstellungen;
-        }
-
-        //private void Uhrzeit_ListView(object sender, SelectionChangedEventArgs e)
-        //{
-
-        //}
-
         private void Buchung_Button(object sender, RoutedEventArgs e)
         {
             if (FilmKinoprogramm.SelectedItem != null)
