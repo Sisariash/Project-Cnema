@@ -23,6 +23,7 @@ namespace GUI
     public partial class Kinoprogramm : Page
     {
         IKinoprogrammverwaltung kv = (IKinoprogrammverwaltung)App.Current.Properties["programm"];
+        Kunde kundeAngemeldet = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
         private DateTime tag = DateTime.Today;
 
         public Kinoprogramm()
@@ -34,6 +35,8 @@ namespace GUI
                 tage[i] = DateTime.Today.AddDays(i);
             }
             TagKinoprogramm.ItemsSource = tage;
+
+            Gruss.Content = "Grüß Gott, " + kundeAngemeldet.Vorname + " " + kundeAngemeldet.Name + " !";
         }
 
         private void Tag_ListView(object sender, SelectionChangedEventArgs e)
