@@ -15,27 +15,39 @@
     </Page.Background>
 
     <Grid>
-        <Label Content="Film Bewerten" HorizontalAlignment="Left" Margin="180,46,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="175" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFB6B6B6"/>
-                    <GradientStop Color="#FFD8D8D8"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Label Content="Film auswählen : " HorizontalAlignment="Left" Margin="206,101,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="Bewertung" Content="Zur Bewertung" HorizontalAlignment="Left" Margin="221,267,0,0" VerticalAlignment="Top" Width="95" Height="30" Click="Bewertung_Button"/>
-        <ListView x:Name="Programm" HorizontalAlignment="Left" Height="117" Margin="136,133,0,0" VerticalAlignment="Top" Width="265">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Titel}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Label x:Name="Auswahlfehler" Content="" HorizontalAlignment="Left" Margin="138,304,0,0" VerticalAlignment="Top" Foreground="#FFF93131" FontWeight="Bold" Width="265" HorizontalContentAlignment="Center"/>
-        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="449,0,0,0" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2.5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label Content="Film Bewerten" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="20" Height="39" Width="175" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB6B6B6"/>
+                        <GradientStop Color="#FFD8D8D8"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Film auswählen : " HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
+            <ListView x:Name="Programm" HorizontalAlignment="Center" Grid.Row="2" Height="117"  VerticalAlignment="Center" Width="265">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Titel}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="Bewertung" Content="Zur Bewertung" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="95" Height="30" Click="Bewertung_Button"/>
+            <Label x:Name="Auswahlfehler" Content="" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" Foreground="#FFF93131" FontWeight="Bold" Width="265" HorizontalContentAlignment="Center"/>
+        </Grid>
     </Grid>
 </Page>
