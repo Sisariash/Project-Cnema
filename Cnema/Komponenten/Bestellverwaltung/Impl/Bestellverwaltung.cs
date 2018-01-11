@@ -92,32 +92,26 @@ namespace Komponenten.Bestellverwaltung.Impl
         //Bestellung mit Standardpreis 10
         public Bestellung Reservieren(Kunde kunde, Vorstellung vorstellung)
         {
-            Bestellung bestellung = new Bestellung(vorstellung, kunde, standardpreis);
-            if (datenbank.BestellungHinzufügen(bestellung))
-            {
-                return bestellung;
-            }
-            else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
+            return Reservieren(kunde, vorstellung, standardpreis);
         }
         //Bestellung mit übergebenem Preis
         public Bestellung Reservieren(Kunde kunde, Vorstellung vorstellung, double preis)
         {
             Bestellung bestellung = new Bestellung(vorstellung, kunde, preis);
-            if (datenbank.BestellungHinzufügen(bestellung))
+            if (FreiePlaetzeAnzeigen(vorstellung) >= 1)
             {
-                return bestellung;
+                if (datenbank.BestellungHinzufügen(bestellung))
+                {
+                    return bestellung;
+                }
+                else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
             }
-            else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
+            else throw new Exception("Nicht genug freie Plätze in dieser Vorstellung.");
         }
         //Bestellung mit ermäßigtem Standardpreis
         public Bestellung ReservierenErmaessigt(Kunde kunde, Vorstellung vorstellung)
         {
-            Bestellung bestellung = new Bestellung(vorstellung, kunde, ermaessigtpreis);
-            if (datenbank.BestellungHinzufügen(bestellung))
-            {
-                return bestellung;
-            }
-            else throw new Exception("Bestellung konnte nicht hinzugefügt werden.");
+            return Reservieren(kunde, vorstellung, ermaessigtpreis);
         }
 
         public void BestellungStornieren(Bestellung bestellung)
@@ -128,9 +122,13 @@ namespace Komponenten.Bestellverwaltung.Impl
         public int FreiePlaetzeAnzeigen(Vorstellung vorstellung)
         {
             int plaetzeBelegt = 0;
-            if (vorstellung.Bestellungen != null) plaetzeBelegt = vorstellung.Bestellungen.Count;
-            int plaetzeFrei = vorstellung.Saal.AnzahlSitze - plaetzeBelegt;
-            return plaetzeFrei;
+            if (vorstellung !=null && vorstellung.Bestellungen != null)
+            {
+                plaetzeBelegt = vorstellung.Bestellungen.Count;
+                int plaetzeFrei = vorstellung.Saal.AnzahlSitze - plaetzeBelegt;
+                return plaetzeFrei;
+            }
+            return -1;
         }
 
         public int getStandardPreis()

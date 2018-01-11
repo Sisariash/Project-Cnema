@@ -52,8 +52,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="Erwachsene" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Erwachsene" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"/>
-                <TextBlock x:Name="Erwachsene_Copy" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"><Run Text="Kinder/Azubis/Studenten/Senioren"/></TextBlock>
+                <TextBlock x:Name="Erwachsene" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Erwachsene(10€)" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"/>
+                <TextBlock x:Name="Erwachsene_Copy" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"><Run Text="Kinder/Azubis/Studenten/Senioren(7€)"/></TextBlock>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
                     <TextBox x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="5,5,0,5" Width="30" Text="0" TextChanged="TxtNumErwachsene_TextChanged"  Height="20"/>
