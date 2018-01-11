@@ -47,7 +47,7 @@
                 <PasswordBox x:Name="PasswortWiederholt" HorizontalAlignment="Left" Margin="240,146,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
                 <Button Content="Registrieren" HorizontalAlignment="Left" Margin="240,183.253,0,-70" VerticalAlignment="Top" Width="120" Height="41" Click="Registrieren_Button" />
                 <Label Content="z.B. 11.08.1991" HorizontalAlignment="Left" Margin="365,83.253,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="95" />
-                <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="240,229.253,0,-75" VerticalAlignment="Top" Foreground="#FFF51414" FontWeight="Bold" />
+                <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="240,229,0,-75" VerticalAlignment="Top" Foreground="#FFF51414" FontWeight="Bold" />
             </Grid>
         </Grid>
         <Button x:Name="Abbrechen" Content="Abbrechen" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
