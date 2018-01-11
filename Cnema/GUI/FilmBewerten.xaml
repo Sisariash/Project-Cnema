@@ -15,7 +15,16 @@
     </Page.Background>
 
     <Grid>
-        <Label Content="Film Bewerten" HorizontalAlignment="Left" Margin="172,42,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="178" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Film Bewerten" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="39" Width="178" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -25,17 +34,19 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="BewertungButton" Content="Bewertung abgeben" HorizontalAlignment="Left" Margin="127,266,0,0" VerticalAlignment="Top" Width="126" Height="29" Click="BewertungButton_Click"/>
-        <Label x:Name="Filmtitel" Content="" HorizontalAlignment="Left" Margin="93,111,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-5.792,0.426" HorizontalContentAlignment="Center" Width="332" Height="39" VerticalContentAlignment="Bottom"/>
-        <Label x:Name="Bewertung" Content="" HorizontalAlignment="Left" Margin="93,155,0,0" VerticalAlignment="Top" Foreground="#FFE4D325" FontWeight="Bold" FontSize="18" Width="332" HorizontalContentAlignment="Center"/>
-        <RadioButton x:Name="Eins" Content="1 *" HorizontalAlignment="Left" Margin="112,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
-        <RadioButton x:Name="Zwei" Content="2 *" HorizontalAlignment="Left" Margin="174,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
-        <RadioButton x:Name="Drei" Content="3 *" HorizontalAlignment="Left" Margin="236,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
-        <RadioButton x:Name="Vier" Content="4 *" HorizontalAlignment="Left" Margin="301,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
-        <RadioButton x:Name="Fünf" Content="5 *" HorizontalAlignment="Left" Margin="372,217,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
-        <Label x:Name="Mehrfachbewertung" Content="" HorizontalAlignment="Left" Margin="139,316,0,0" VerticalAlignment="Top" Foreground="#FFFB2525" FontWeight="Bold"/>
-        <Label x:Name="Fehlermeldung" Content="" HorizontalAlignment="Left" Margin="162,316,0,0" VerticalAlignment="Top" Foreground="#FFFD1A1A" FontWeight="Bold"/>
-        <Button x:Name="Abbruch_Button" Content="Abbruch" HorizontalAlignment="Left" Margin="273,266,0,0" VerticalAlignment="Top" Width="126" Height="29" Foreground="#FFFD1E1E" Click="Abbruch_Button_Click"/>
-
+        <Label x:Name="Filmtitel" Content="" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Bottom" Foreground="#FFFDFDFD" FontWeight="Bold" FontSize="18"  HorizontalContentAlignment="Center" Width="360" Height="39" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="Bewertung" Content="" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="#FFE4D325" FontWeight="Bold" FontSize="18" Width="332" HorizontalContentAlignment="Center"/>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="Eins" Content="1 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,0,25,0"/>
+            <RadioButton x:Name="Zwei" Content="2 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,0,25,0"/>
+            <RadioButton x:Name="Drei" Content="3 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,0,25,0"/>
+            <RadioButton x:Name="Vier" Content="4 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,0,25,0"/>
+            <RadioButton x:Name="Fünf" Content="5 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="BewertungButton" Content="Bewertung abgeben" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="126" Height="29" Click="BewertungButton_Click" Margin="0,0,30,0"/>
+            <Button x:Name="Abbruch_Button" Content="Abbruch" HorizontalAlignment="Center" VerticalAlignment="Center" Width="126" Height="29" Foreground="#FFFD1E1E" Click="Abbruch_Button_Click"/>
+        </StackPanel>
+        <Label x:Name="Fehlermeldung" Content="" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFD1A1A" FontWeight="Bold"/>
     </Grid>
 </Page>

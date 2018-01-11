@@ -14,7 +14,15 @@
     </Page.Background>
 
     <Grid>
-        <Label Content="Film Bewerten" HorizontalAlignment="Left" Margin="180,46,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="175" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Label Content="Film Bewerten" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="39" Width="175" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -24,9 +32,11 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Vielen Dank!" HorizontalAlignment="Left" Margin="199,121,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="ZumKinoprogramm" Content="Zum Kinoprogramm" HorizontalAlignment="Left" Margin="190,245,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="ZumKinoprogramm_Button"/>
-        <Label Content="Ihre Bewertung wurde erfolgreich registriert" HorizontalAlignment="Left" Margin="99,171,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="316" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Vielen Dank!" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="121" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Ihre Bewertung wurde erfolgreich registriert" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="316" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="ZumKinoprogramm" Content="Zum Kinoprogramm" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Bottom" Width="130" Height="35" Click="ZumKinoprogramm_Button"/>
 
     </Grid>
+
+
 </Page>

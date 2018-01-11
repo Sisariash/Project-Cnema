@@ -31,10 +31,10 @@
         </Label>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="269*"/>
+                <ColumnDefinition Width="256*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Right">
+            <Grid Grid.Column="0" HorizontalAlignment="Right" Width="196">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -43,25 +43,25 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Benutzer-ID:" Grid.Row="0" Margin="0,0,0,5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-                <Label Content="Passwort:" Grid.Row="1" Margin="0,5,0,0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                <Label Content="Benutzer-ID:" Grid.Row="0" Margin="0,0,2,5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                <Label Content="Passwort:" Grid.Row="1" Margin="0,5,2,0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
                 <TextBox x:Name="ID_Box" Grid.Row="0" Margin="0,0,0,5" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" />
                 <PasswordBox x:Name="Passwort_Box" Grid.Row="1" Margin="0,5,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="23" MaxLength="15" PasswordChar="*" />
             </Grid>
-            <Button x:Name="Benutzer_Login" Grid.Column="1" Margin="20,0,0,0" Content="Benutzer-Login" HorizontalAlignment="Left" Height="42" VerticalAlignment="Center" Width="110" Click="Benutzer_Login_Click"/>
-            <Label x:Name="Login_Fehler" Grid.Column="1" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#FFF73E3E"/>
+            <Button x:Name="Benutzer_Login" Grid.Column="1" Margin="28,37,0,37" Content="Benutzer-Login" HorizontalAlignment="Left" Height="42" VerticalAlignment="Center" Width="110" Click="Benutzer_Login_Click"/>
+            <Label x:Name="Login_Fehler" Grid.Column="1" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#FFF73E3E" Height="26" Width="10"/>
         </Grid>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Margin="5,0,-5,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="269*"/>
+                <ColumnDefinition Width="256*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Noch kein Kunde?" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"  Width="111"/>
-            <Button  x:Name="Registrieren" Grid.Column="1" Margin="20,0,0,0" Content="Registrieren" HorizontalAlignment="Left" VerticalAlignment="Center" Width="96" Click="Registrieren_Button"/>
+            <Label Content="Noch kein Kunde?" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Height="26" Width="106" />
+            <Button  x:Name="Registrieren" Grid.Column="1" Content="Registrieren" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Click="Registrieren_Button" Height="20" Margin="24,0,0,0"/>
         </Grid>
-        
-        
-        
+
+
+
 
 
     </Grid>
