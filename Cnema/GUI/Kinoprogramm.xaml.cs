@@ -55,6 +55,7 @@ namespace GUI
                     vorstellungen.Add(v);
                 }
             }
+            vorstellungen.Sort();
             FilmKinoprogramm.ItemsSource = vorstellungen;
         }
 

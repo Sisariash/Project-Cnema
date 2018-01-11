@@ -23,13 +23,13 @@ namespace Komponenten.Bestellverwaltung.Impl
         {
             datenbank = DatenbankManager.Instance;
         }
-        public IList<Vorstellung> ProgrammAnzeigen()
+        public List<Vorstellung> ProgrammAnzeigen()
         {
             return datenbank.AlleVorstellungenLesen();
         }
 
         //Filtern nach Titel
-        public IList<Vorstellung> ProgrammFilternTitel(String kriterium)
+        public List<Vorstellung> ProgrammFilternTitel(String kriterium)
         {
             List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
             List<Vorstellung> gefiltert = new List<Vorstellung>();
@@ -39,7 +39,7 @@ namespace Komponenten.Bestellverwaltung.Impl
             }
             return gefiltert;
         }
-        public IList<Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen)
+        public List<Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen)
         {
             if (vorstellungen == null)
             {
@@ -54,7 +54,7 @@ namespace Komponenten.Bestellverwaltung.Impl
         }
 
         //Filtern nach Genre
-        public IList<Vorstellung> ProgrammFilternGenre(String genre)
+        public List<Vorstellung> ProgrammFilternGenre(String genre)
         {
             List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
             List<Vorstellung> gefiltert = new List<Vorstellung>();
@@ -66,7 +66,7 @@ namespace Komponenten.Bestellverwaltung.Impl
         }
 
         //Filtern nach 3d
-        public IList<Vorstellung> ProgrammFiltern3d(bool is3d)
+        public List<Vorstellung> ProgrammFiltern3d(bool is3d)
         {
             List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
             List<Vorstellung> gefiltert = new List<Vorstellung>();
@@ -78,7 +78,7 @@ namespace Komponenten.Bestellverwaltung.Impl
         }
 
         //Filtern nach Wochentag
-        public IList<Vorstellung> ProgrammFilternTag(DayOfWeek tag)
+        public List<Vorstellung> ProgrammFilternTag(DayOfWeek tag)
         {
             List<Vorstellung> alle = datenbank.AlleVorstellungenLesen();
             List<Vorstellung> gefiltert = new List<Vorstellung>();

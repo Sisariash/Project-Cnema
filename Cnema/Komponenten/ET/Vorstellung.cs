@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace Komponenten.ET
 {
-    public class Vorstellung
+    public class Vorstellung : IComparable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -48,6 +48,12 @@ namespace Komponenten.ET
             {
                 return Film.Titel + " " + DateTime.ToString("f", new CultureInfo("de-DE")) + " " + Saal.SaalName;
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            Vorstellung other = (Vorstellung)obj;
+            return this.DateTime.CompareTo(other.DateTime);
         }
     }
 }

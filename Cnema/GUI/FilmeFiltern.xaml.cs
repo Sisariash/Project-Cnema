@@ -30,7 +30,7 @@ namespace GUI
         private void Suchen_Button(object sender, RoutedEventArgs e)
         {
             IBestellverwaltung bv = (IBestellverwaltung)App.Current.Properties["bestellung"];
-            IList<Vorstellung> ergebnis = null;
+            List<Vorstellung> ergebnis = null;
             String kriteriumRadionButton = null;
             String kriteriumTitelsuche = null;
 

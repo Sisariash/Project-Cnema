@@ -11,16 +11,16 @@ namespace Komponenten.Bestellverwaltung
     {
         int getStandardPreis();
         int getErmaessigtPreis();
-        IList<ET.Vorstellung> ProgrammAnzeigen();
+        List<ET.Vorstellung> ProgrammAnzeigen();
         Bestellung Reservieren(Kunde kunde, ET.Vorstellung vorstellung);
         Bestellung Reservieren(Kunde kunde, ET.Vorstellung vorstellung, double preis);
         Bestellung ReservierenErmaessigt(Kunde kunde, ET.Vorstellung vorstellung);
         void BestellungStornieren(Bestellung bestellung);
         int FreiePlaetzeAnzeigen(Vorstellung vorstellung);
-        IList<ET.Vorstellung> ProgrammFilternTag(DayOfWeek tag);
-        IList<ET.Vorstellung> ProgrammFilternTitel(String titel);
-        IList<ET.Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen);
-        IList<ET.Vorstellung> ProgrammFilternGenre(String genre);
-        IList<ET.Vorstellung> ProgrammFiltern3d(bool is3d);
+        List<ET.Vorstellung> ProgrammFilternTag(DayOfWeek tag);
+        List<ET.Vorstellung> ProgrammFilternTitel(String titel);
+        List<ET.Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen);
+        List<ET.Vorstellung> ProgrammFilternGenre(String genre);
+        List<ET.Vorstellung> ProgrammFiltern3d(bool is3d);
     }
 }
