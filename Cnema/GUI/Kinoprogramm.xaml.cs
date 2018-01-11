@@ -36,7 +36,7 @@ namespace GUI
             }
             TagKinoprogramm.ItemsSource = tage;
 
-            Gruss.Content = "Grüß Gott, " + kundeAngemeldet.Vorname + " " + kundeAngemeldet.Name + " !";
+            Gruss.Content = "Grüß Gott, " + kundeAngemeldet.Vorname + " " + kundeAngemeldet.Name + "!";
         }
 
         private void Tag_ListView(object sender, SelectionChangedEventArgs e)
