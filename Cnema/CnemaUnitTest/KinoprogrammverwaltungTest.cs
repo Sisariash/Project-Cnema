@@ -38,17 +38,13 @@ namespace CnemaUnitTest
         public void FilmHinzufuegenTest()
         {
 
-
             Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
             Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
 
-
             Assert.IsTrue(datenbankManager.FilmHinzufuegen(film1));
             Assert.IsTrue(datenbankManager.FilmHinzufuegen(film2));
             Assert.IsTrue(datenbankManager.FilmHinzufuegen(film3));
-
-
 
             Assert.IsTrue(datenbankManager.FilmLoeschen(film1));
             Assert.IsTrue(datenbankManager.FilmLoeschen(film2));
@@ -58,11 +54,6 @@ namespace CnemaUnitTest
 
             Film film4 = null;
             Assert.IsFalse(datenbankManager.FilmLoeschen(film4));
-
-
-
-
-
         }
 
         [TestMethod]
@@ -70,18 +61,11 @@ namespace CnemaUnitTest
         public void FilmLoeschenTest()
         {
 
-
             Film film1 = new Film("The Big Lebowski", 1998, "Komödie", 117, "Deutsch", false, 12);
             datenbankManager.FilmHinzufuegen(film1);
 
             Assert.AreEqual(film1, datenbankManager.FilmLesen(film1.FilmId));
             Assert.IsTrue(datenbankManager.FilmLoeschen(film1));
-
-
-
-
-
-
         }
 
         [TestMethod]
@@ -109,16 +93,13 @@ namespace CnemaUnitTest
         public void SaalHinzufuegenTest()
         {
 
-
             Saal saal1 = new Saal("Saal1", 150);
             Saal saal2 = new Saal("Saal2", 100);
             Saal saal3 = new Saal("Saal3", 75);
 
-
             Assert.IsTrue(datenbankManager.SaalHinzufügen(saal1));
             Assert.IsTrue(datenbankManager.SaalHinzufügen(saal2));
             Assert.IsTrue(datenbankManager.SaalHinzufügen(saal3));
-
 
             datenbankManager.SaalLoeschen(saal1);
             datenbankManager.SaalLoeschen(saal2);

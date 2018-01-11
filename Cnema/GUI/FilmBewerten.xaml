@@ -34,8 +34,8 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="Filmtitel" Content="" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Bottom" Foreground="#FFFDFDFD" FontWeight="Bold" FontSize="18"  HorizontalContentAlignment="Center" Width="360" Height="39" VerticalContentAlignment="Bottom"/>
-        <Label x:Name="Bewertung" Content="" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="#FFE4D325" FontWeight="Bold" FontSize="18" Width="332" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Filmtitel" Content="" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Bottom" Foreground="#FFFDFDFD" FontWeight="Bold" FontSize="16"  HorizontalContentAlignment="Center" Width="360" Height="39" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="Bewertung" Content="" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="#FFE4D325" FontWeight="Bold" FontSize="16" Width="332" HorizontalContentAlignment="Center"/>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <RadioButton x:Name="Eins" Content="1 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,0,25,0"/>
             <RadioButton x:Name="Zwei" Content="2 *" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,0,25,0"/>

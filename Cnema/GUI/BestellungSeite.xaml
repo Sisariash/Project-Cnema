@@ -54,7 +54,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="Erwachsene" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Erwachsene" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"/>
                 <TextBlock x:Name="Erwachsene_Copy" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="White" Width="Auto" FontWeight="Bold"><Run Text="Kinder/Azubis/Studenten/Senioren"/></TextBlock>
-                
+
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
                     <TextBox x:Name="txtNumErwachsene" x:FieldModifier="private" Margin="5,5,0,5" Width="30" Text="0" TextChanged="TxtNumErwachsene_TextChanged"  Height="20"/>
                     <Button x:Name="cmdUpErwachsene" x:FieldModifier="private" Margin="5,5,0,5" Content="˄" Width="20" Click="CmdUpErwachsene_Click" Height="20" />
@@ -68,10 +68,7 @@
                 </StackPanel>
             </Grid>
             <Button x:Name="Bestaetigen" Grid.Row="3" Content="Bestätigen" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" Height="43" Click="BestellungBestaetigen_Button"/>
-
         </Grid>
-        
         <Button x:Name="Abbruch" Content="Bestellung abbrechen" HorizontalAlignment="Right" VerticalAlignment="Top" Width="128" Height="30" Click="Abbruch_Click" Foreground="Red"/>
-
     </Grid>
 </Page>

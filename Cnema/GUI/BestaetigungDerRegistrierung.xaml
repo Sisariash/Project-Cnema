@@ -23,7 +23,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -38,16 +38,11 @@
                     </LinearGradientBrush>
                 </Label.Foreground>
             </Label>
-            <Label Content="Vielen Dank!" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="115" FontWeight="Bold" FontSize="14"/>
+            <Label Content="Vielen Dank!" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="115" FontWeight="Bold" FontSize="14"/>
             <Label Content="Sie wurden erfolgreich registriert!" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="240" FontWeight="Bold" FontSize="14"/>
-            <Label Content="Ihre Kunden-ID lautet:" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="175" FontWeight="Bold" FontSize="14"/>
-            <Label x:Name="Ausgabe" Content="" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="60" Width="91" Foreground="#FFF74040" FontSize="22" HorizontalContentAlignment="Center"/>
+            <Label Content="Ihre Kunden-ID lautet:" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="Black" Width="175" FontWeight="Bold" FontSize="14"/>
+            <Label x:Name="Ausgabe" Content="" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" Height="60" Width="91" Foreground="#FFF74040" FontSize="22" HorizontalContentAlignment="Center" FontWeight="Bold"/>
             <Button x:Name="ZumLogin" Content="Zum Login" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="91" Height="32" Click="ZumLogin_Click"/>
-
-
         </Grid>
-        
     </Grid>
-
-
 </Page>
