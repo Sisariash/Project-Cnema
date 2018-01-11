@@ -31,6 +31,7 @@ namespace GUI
             VorstellungAnzeige.Content = v.ToString();
             txtNumErwachsene.Text = _anzahlErwachsen.ToString();
             txtNumKinder.Text = _anzahlKinder.ToString();
+            FreiePlaetze.Content = bv.FreiePlaetzeAnzeigen(vorstellung);
         }
 
         private int _anzahlErwachsen = 0;
