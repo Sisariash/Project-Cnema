@@ -38,6 +38,10 @@
             <StackPanel Orientation="Vertical" Grid.Row="1">
                 <Label Content="Tickets kaufen :" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="Auto" FontWeight="Bold" Height="Auto"/>
                 <Label x:Name="VorstellungAnzeige" Content="vorstellung" HorizontalAlignment="Center" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Freie Plätze:" HorizontalAlignment="Center" Foreground="White"/>
+                    <Label x:Name="FreiePlaetze" Content="0" HorizontalAlignment="Center" Foreground="White"/>
+                </StackPanel>
             </StackPanel>
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
