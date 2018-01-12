@@ -70,7 +70,6 @@ namespace CnemaUnitTest
             Assert.IsTrue(check);
 
             // 21. Buchung muss fehlschlagen, da Saal dann ausgebucht
-            bool checkBuchung21 = true;
             try
             {
                 bestellverwaltung.Reservieren(testKunde, testVorstellung);
@@ -78,9 +77,9 @@ namespace CnemaUnitTest
             }
             catch (Exception)
             {
-                checkBuchung21 = false;
+                check = false;
             }
-            Assert.IsFalse(checkBuchung21);
+            Assert.IsFalse(check);
 
             // Testdaten wieder löschen
             dbm.FilmLoeschen(testFilm);
