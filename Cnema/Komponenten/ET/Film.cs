@@ -57,7 +57,7 @@ namespace Komponenten.ET
 
         }
 
-
+        //Genren
         public static List<String> Genres()
         {
             return new List<string>( new string[] 

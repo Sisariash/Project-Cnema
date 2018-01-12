@@ -120,7 +120,7 @@ namespace GUI
         }
 
 
-
+        // Rechtsklick Film Bearbeiten
         private void ContextMenuListViewFilmeEdit_OnClick(object sender, RoutedEventArgs e)
         {
             if (listViewFilme.SelectedIndex > -1)
@@ -130,7 +130,7 @@ namespace GUI
                 filmHinzufuegenNeu.ShowDialog();
             }
         }
-
+        // Rechtsklick Film Löschen
         private void ContextMenuListViewFilmeRemove_OnClick(object sender, RoutedEventArgs e)
         {
             if (listViewFilme.SelectedIndex > -1)
@@ -138,6 +138,7 @@ namespace GUI
                 Film selectedFilm = (Film)listViewFilme.SelectedItem; // casting the list view 
                 DatenbankManager.Instance.FilmLoeschen(selectedFilm);
 
+                // Zur Aktualisierung der Liste = Das der Admin direkt die Änderung sieht
                 LadeFilme();
                 LadeVorstellungen();
                 LadeBestellungen();

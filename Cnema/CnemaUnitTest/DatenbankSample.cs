@@ -58,7 +58,7 @@ namespace CnemaUnitTest
             Film film2 = new Film("Djumanji: Willkommen im Djungel (3D)", 2017, "Abenteuer", 119, "Deutsch", true, 12);
             Film film3 = new Film("Djumanji: Willkommen im Djungel", 2017, "Abenteuer", 119, "Deutsch", false, 12);
             Film film4 = new Film("Star Wars: Die letzen Jedi", 2017, "Science-Fiction", 152, "Deutsch", false, 12);
-            Film film5 = new Film("Star Wars: The Last Jedi", 2017, "Science-Fiction", 152, "Englisch", false, 12);
+            Film film5 = new Film("Star Wars: The Last Jedi(Englisch)", 2017, "Science-Fiction", 152, "Englisch", false, 12);
             Film film6 = new Film("Jigsaw", 2017, "Horror", 92, "Deutsch", false, 18);
             Film film7 = new Film("Pokemon - Der Film", 1998, "Animation", 110, "Deutsch", false, 12);
             Film film8 = new Film("The Dark Knight", 2008, "Action", 152, "Deutsch", false, 16);
