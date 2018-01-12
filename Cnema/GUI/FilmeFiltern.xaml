@@ -13,44 +13,75 @@
 
     </Page.Background>
 
-    <Grid x:Name="Grid">
-        <Label Content="Filme Filtern" HorizontalAlignment="Left" Margin="180,32,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="160" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFB6B6B6"/>
-                    <GradientStop Color="#FFD8D8D8"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Label Content="Wochentag :" HorizontalAlignment="Left" Margin="63,76,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <RadioButton x:Name="Montag" Content="Montag" HorizontalAlignment="Left" Margin="151,83,0,0" VerticalAlignment="Top" Foreground="White" Width="70" />
-        <RadioButton x:Name="Dienstag" Content="Dienstag" HorizontalAlignment="Left" Margin="221,83,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
-        <RadioButton x:Name="Mittwoch" Content="Mittwoch" HorizontalAlignment="Left" Margin="294,83,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
-        <RadioButton x:Name="Donnerstag" Content="Donnerstag" HorizontalAlignment="Left" Margin="367,83,0,0" VerticalAlignment="Top" Foreground="White" Width="82" RenderTransformOrigin="0.451,0.562" />
-        <RadioButton x:Name="Freitag" Content="Freitag" HorizontalAlignment="Left" Margin="151,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
-        <RadioButton x:Name="Samstag" Content="Samstag" HorizontalAlignment="Left" Margin="221,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" Height="16" />
-        <RadioButton x:Name="Sonntag" Content="Sonntag" HorizontalAlignment="Left" Margin="294,104,0,0" VerticalAlignment="Top" Foreground="White" Width="68" />
-        <Label Content="Art :" HorizontalAlignment="Left" Margin="63,143,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <Label Content="Genre :" HorizontalAlignment="Left" Margin="63,191,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="85" FontWeight="Bold" Height="26"/>
-        <Label Content="Filmname : " HorizontalAlignment="Left" Margin="63,285,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold"/>
-        <RadioButton x:Name="zweiD" Content="2D" HorizontalAlignment="Left" Margin="151,149,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="42" />
-        <RadioButton x:Name="dreiD" Content="3D" HorizontalAlignment="Left" Margin="221,149,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Width="42" />
-        <RadioButton x:Name="Animation" Content="Animation" HorizontalAlignment="Left" Margin="151,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Action" Content="Action" HorizontalAlignment="Left" Margin="235,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Fantasy" Content="Fantasy" HorizontalAlignment="Left" Margin="387,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" Height="21" />
-        <RadioButton x:Name="Abenteuer" Content="Abenteuer" HorizontalAlignment="Left" Margin="302,200,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Drama" Content="Drama" HorizontalAlignment="Left" Margin="151,222,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Horror" Content="Horror" HorizontalAlignment="Left" Margin="235,221,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Krimi" Content="Krimi" HorizontalAlignment="Left" Margin="387,221,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Romanze" Content="Romanze" HorizontalAlignment="Left" Margin="151,242,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Komödie" Content="Komödie" HorizontalAlignment="Left" Margin="302,222,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <TextBox x:Name="FilmName" HorizontalAlignment="Left" Height="30" Margin="151,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" VerticalContentAlignment="Center"/>
-        <Button x:Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Margin="346,285,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Suchen_Button"/>
-        <RadioButton x:Name="Science_Fiction" Content="Science-Fiction" HorizontalAlignment="Left" Margin="235,243,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <RadioButton x:Name="Thriller" Content="Thriller" HorizontalAlignment="Left" Margin="387,243,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD" />
-        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="449,0,0,0" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button x:Name="Abbrechen" Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Top" Width="76" Foreground="Red" Click="Abbrechen_Click" Height="27"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label Content="Filme Filtern" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20" Height="39" Width="160" FontFamily="Algerian" FontWeight="Bold" FontStyle="Italic" >
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFB6B6B6"/>
+                        <GradientStop Color="#FFD8D8D8"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Wochentag :" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" HorizontalContentAlignment="Right" Margin="0,0,5,0"/>
+                <Label Content="Art :" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" HorizontalContentAlignment="Right" Margin="0,0,5,0"/>
+                <Label Content="Genre :" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" HorizontalContentAlignment="Right" Margin="0,0,5,0"/>
+                <Label Content="Filmname :" HorizontalAlignment="Right" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" FontWeight="Bold" HorizontalContentAlignment="Right" Margin="0,0,5,0"/>
+                <RadioButton x:Name="Montag" Content="Montag" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Foreground="White" Width="70" />
+                <RadioButton x:Name="Dienstag" Content="Dienstag" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center" Foreground="White" Width="68" />
+                <RadioButton x:Name="Mittwoch" Content="Mittwoch" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="3"  VerticalAlignment="Center" Foreground="White" Width="68" />
+                <RadioButton x:Name="Donnerstag" Content="Donnerstag" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="4"  VerticalAlignment="Center" Foreground="White" Width="82" RenderTransformOrigin="0.451,0.562" />
+                <RadioButton x:Name="Freitag" Content="Freitag" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Foreground="White" Width="68" />
+                <RadioButton x:Name="Samstag" Content="Samstag" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Foreground="White" Width="68" Height="16" />
+                <RadioButton x:Name="Sonntag" Content="Sonntag" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" Foreground="White" Width="68" />
+                <RadioButton x:Name="zweiD" Content="2D" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="dreiD" Content="3D" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Abenteuer" Content="Abenteuer" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Action" Content="Action" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Animation" Content="Animation" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Fantasy" Content="Fantasy" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Drama" Content="Drama" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Horror" Content="Horror" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Krimi" Content="Krimi" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Komödie" Content="Komödie" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Romanze" Content="Romanze" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Science_Fiction" Content="Science-Fiction" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <RadioButton x:Name="Thriller" Content="Thriller" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center" Foreground="#FFFDFDFD" />
+                <TextBox x:Name="FilmName" HorizontalAlignment="Left" Height="30" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="138" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
+                <Button x:Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="3" VerticalAlignment="Bottom" Width="96" Height="30" Click="Suchen_Button"/>
 
+
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
