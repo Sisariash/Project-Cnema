@@ -122,10 +122,15 @@ namespace Komponenten.Bestellverwaltung.Impl
         public int FreiePlaetzeAnzeigen(Vorstellung vorstellung)
         {
             int plaetzeBelegt = 0;
-            if (vorstellung !=null && vorstellung.Bestellungen != null)
+            int plaetzeFrei;
+            if (vorstellung != null)
             {
-                plaetzeBelegt = vorstellung.Bestellungen.Count;
-                int plaetzeFrei = vorstellung.Saal.AnzahlSitze - plaetzeBelegt;
+                plaetzeFrei = vorstellung.Saal.AnzahlSitze;
+                if (vorstellung.Bestellungen != null)
+                {
+                    plaetzeBelegt = vorstellung.Bestellungen.Count;
+                    plaetzeFrei = vorstellung.Saal.AnzahlSitze - plaetzeBelegt;
+                }
                 return plaetzeFrei;
             }
             return -1;
