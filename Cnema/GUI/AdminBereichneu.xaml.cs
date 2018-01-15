@@ -76,6 +76,7 @@ namespace GUI
                 DatenbankManager.Instance.VorstellungLoeschen(selectedvorstellung);
 
                 LadeVorstellungen();
+                LadeBestellungen();
             }
 
         }
