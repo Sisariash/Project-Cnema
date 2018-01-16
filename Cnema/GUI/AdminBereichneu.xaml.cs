@@ -27,13 +27,22 @@ namespace GUI
 
         public AdminBereichneu()
         {
-            InitializeComponent();
-            LadeFilme();
-            LadeVorstellungen();
-            LadeBestellungen();
-            LadeKunden();
-            LadeAdmins();
-            LadeBewertungen();
+            Benutzer user = (Benutzer)App.Current.Properties["aktuellerBenutzer"];
+            if (user != null && user.GetType().Equals(typeof(Admin)))
+            {
+                InitializeComponent();
+                LadeFilme();
+                LadeVorstellungen();
+                LadeBestellungen();
+                LadeKunden();
+                LadeAdmins();
+                LadeBewertungen();
+            }
+            else
+            {
+                StartBildschirm startBildschirm = new StartBildschirm();
+                this.NavigationService.Navigate(startBildschirm);
+            }
         }
 
 
@@ -161,6 +170,7 @@ namespace GUI
 
         private void MenuItemAdminLogout_Click(object sender, RoutedEventArgs e)
         {
+            App.Current.Properties["aktuellerBenutzer"] = null;
             StartBildschirm startBildschirm = new StartBildschirm();
             this.NavigationService.Navigate(startBildschirm);
         }
