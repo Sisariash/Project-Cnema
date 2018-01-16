@@ -22,6 +22,7 @@
                                 <Image Source="Image\Icons\neu.png" MaxWidth="16" MaxHeight="16" />
                             </MenuItem.Icon>
 
+                            <!--Filme und Vorstellung erstellen -->
                             <MenuItem Header="Film" Click="MenuItemFilmHinzufuegen_Click">
                                 <MenuItem.Icon>
                                     <Image Source="Image\Icons\film.png" MaxWidth="16" MaxHeight="16" />
@@ -62,7 +63,8 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup/>
                                     </ContextMenu.BitmapEffect>
-
+                                    
+                                    <!--Rechtsklick-->
                                     <MenuItem Header="Bearbeiten" Name="ContextMenuListViewFilmeEdit"  Click="ContextMenuListViewFilmeEdit_OnClick">
                                         <MenuItem.Icon>
                                             <Image Source="Image\Icons\bearbeiten.png" MaxWidth="20" MaxHeight="20" />
@@ -79,6 +81,7 @@
 
                             <ListView.View>
                                 <GridView>
+                                    <!--Zugriff auf die einzelnen Elemente-->
                                     <GridViewColumn Header="FilmId" Width="120" DisplayMemberBinding="{Binding FilmId}" />
                                     <GridViewColumn Header="Titel" Width="240" DisplayMemberBinding="{Binding Titel}" />
                                     <GridViewColumn Header="Jahr" Width="120" DisplayMemberBinding="{Binding Jahr}" />
@@ -113,6 +116,7 @@
                             </ListView.ContextMenu>
 
                             <ListView.View>
+                                <!--Vorstellungen-->
                                 <GridView>
                                     <GridViewColumn Header="VorstellungId" Width="120" DisplayMemberBinding="{Binding VorstellungId}" />
                                     <GridViewColumn Header="DateTime" Width="240" DisplayMemberBinding="{Binding DateTime}" />
