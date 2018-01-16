@@ -1,5 +1,6 @@
 ﻿using Komponenten.ET;
 using Komponenten.Kundenverwaltung;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,8 @@ namespace GUI
     /// </summary>
     public partial class StartBildschirm : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(StartBildschirm));
+
         public StartBildschirm()
         {
             InitializeComponent();
@@ -30,8 +33,8 @@ namespace GUI
 
         private void Registrieren_Button(object sender, RoutedEventArgs e)
         {
-           KundenRegistrierung kundenRegistrierung = new KundenRegistrierung();
-           this.NavigationService.Navigate(kundenRegistrierung);
+            KundenRegistrierung kundenRegistrierung = new KundenRegistrierung();
+            this.NavigationService.Navigate(kundenRegistrierung);
         }
 
 
@@ -50,6 +53,7 @@ namespace GUI
             if (kunde != null && isKunde == true)
             {
                 Application.Current.Properties["aktuellerBenutzer"] = kunde;
+                log.Info("Kunde " + kunde.Vorname + " " + kunde.Name + " hat sich angemeldet.");
                 Kinoprogramm kinoprogramm = new Kinoprogramm();
                 this.NavigationService.Navigate(kinoprogramm);
 
@@ -57,11 +61,15 @@ namespace GUI
             else if (admin != null && isAdmin == true)
             {
                 Application.Current.Properties["aktuellerBenutzer"] = admin;
+                log.Info("Admin " + admin.Name + " hat sich angemeldet.");
                 AdminBereichneu adminBereichneu = new AdminBereichneu();
                 this.NavigationService.Navigate(adminBereichneu);
             }
             else
+            {
                 Login_Fehler.Content = "Anmeldedaten sind fehlerhaft.";
+                log.Error("Fehlgeschlagene Anmeldung mit ID: " + id);
+            }
         }
     }
 }

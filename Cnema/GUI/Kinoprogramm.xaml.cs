@@ -1,5 +1,6 @@
 ﻿using Komponenten.ET;
 using Komponenten.Kinoprogrammverwaltung;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace GUI
     /// </summary>
     public partial class Kinoprogramm : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Kinoprogramm));
         IKinoprogrammverwaltung kv = (IKinoprogrammverwaltung)App.Current.Properties["programm"];
         Kunde kundeAngemeldet = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
         private DateTime tag = DateTime.Today;
@@ -88,6 +90,8 @@ namespace GUI
 
         private void Logout_Button(object sender, RoutedEventArgs e)
         {
+            Kunde kunde = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
+            log.Info("Kunde " + kunde.Vorname + " " + kunde.Name + " hat sich abgemeldet.");
             StartBildschirm startBildschirm = new StartBildschirm();
             this.NavigationService.Navigate(startBildschirm);
         }

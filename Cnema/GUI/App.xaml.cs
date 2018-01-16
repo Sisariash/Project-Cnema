@@ -3,6 +3,8 @@ using Komponenten.Datenbank;
 using Komponenten.Datenbank.Impl;
 using Komponenten.Kinoprogrammverwaltung;
 using Komponenten.Kundenverwaltung;
+using log4net;
+using log4net.Config;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,6 +20,7 @@ namespace GUI
     /// </summary>
     public partial class App : Application
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(App));
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             IDatenbankManager datenbankManager = DatenbankManager.Instance;
@@ -27,6 +30,8 @@ namespace GUI
             Application.Current.Properties["programm"] = kpvFactory.GetKinoprogrammverwaltung();
             Application.Current.Properties["bestellung"] = bvFactory.GetBestellverwaltung();
             Application.Current.Properties["kunde"] = kvFactory.GetKundenverwaltung();
+            XmlConfigurator.Configure();
+            log.Info("Programm startet");
         }
     }
 }
