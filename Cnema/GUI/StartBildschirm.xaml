@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:GUI"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="525"
-      Title="StartBildschirm">
+      Title="StartBildschirm"
+      ShowsNavigationUI="False">
     <Page.Background>
 
         <ImageBrush ImageSource="Image/Kino1.jpg" />
