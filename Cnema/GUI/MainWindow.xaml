@@ -6,12 +6,4 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
                   Source="StartBildschirm.xaml"
-        Title="MainWindow" Height="500" Width="750" >
-
-
-
-
-
-
-
-</NavigationWindow>
+        Title="C#nema" Height="500" Width="750" />
