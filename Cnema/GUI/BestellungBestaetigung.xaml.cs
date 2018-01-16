@@ -52,16 +52,36 @@ namespace GUI
         {
             Kunde kunde = (Kunde)App.Current.Properties["aktuellerBenutzer"];
             List<Bestellung> bestellungen = new List<Bestellung>();
+            bool fehlerAufgetreten = false;
             for (int erwachsen = 0; erwachsen < Standard; erwachsen++)
             {
-                bestellungen.Add((Bestellung)bv.Reservieren(kunde, vorstellung));
+                try
+                {
+                    bestellungen.Add((Bestellung)bv.Reservieren(kunde, vorstellung));
+                }
+                catch (Exception ex)
+                {
+                    Fehlermeldung.Content = ex.Message;
+                    fehlerAufgetreten = true;
+                }
             }
             for (int ermaessigt = 0; ermaessigt < Ermaessigt; ermaessigt++)
             {
-                bestellungen.Add((Bestellung)bv.ReservierenErmaessigt(kunde, vorstellung));
+                try
+                {
+                    bestellungen.Add((Bestellung)bv.ReservierenErmaessigt(kunde, vorstellung));
+                }
+                catch (Exception ex)
+                {
+                    Fehlermeldung.Content = ex.Message;
+                    fehlerAufgetreten = true;
+                }
             }
-            IhreBestellung ihrebestellung = new IhreBestellung(Standard, Ermaessigt, bestellungen, vorstellung);
-            this.NavigationService.Navigate(ihrebestellung);
+            if (!fehlerAufgetreten)
+            {
+                IhreBestellung ihrebestellung = new IhreBestellung(Standard, Ermaessigt, bestellungen, vorstellung);
+                this.NavigationService.Navigate(ihrebestellung);
+            }
         }
 
         private void Abbruch_Click(object sender, RoutedEventArgs e)

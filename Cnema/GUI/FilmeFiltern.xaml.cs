@@ -140,7 +140,14 @@ namespace GUI
                 if (FilmName.Text != null && FilmName.Text != "")
                 {
                     // Suche nach Titel UND einer Kategorie möglich
-                    ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);
+                    try
+                    {
+                        ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        ergebnis = bv.ProgrammFilternTitel(FilmName.Text);
+                    }
                     kriteriumTitelsuche = FilmName.Text;
                 }
             }

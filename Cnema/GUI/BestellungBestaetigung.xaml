@@ -57,7 +57,10 @@
                 <TextBlock x:Name="PreisTxt" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="0" Foreground="White" VerticalAlignment="Center" Width="Auto" TextAlignment="Center" FontWeight="Bold"/>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Width="Auto" Content="Euro."/>
             </StackPanel>
-            <Button x:Name="BestellungBestaetigen" Grid.Row="3" Content="Bestellung bestätigen" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="40" Click="Bestaetigen_Button"/>
+            <StackPanel Orientation="Vertical" Grid.Row="3">
+                <Button x:Name="BestellungBestaetigen" Grid.Row="3" Content="Bestellung bestätigen" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="40" Click="Bestaetigen_Button"/>
+                <Label x:Name="Fehlermeldung" HorizontalAlignment="Center" Content="" Foreground="Red"/>
+            </StackPanel>
         </Grid>
         <Button x:Name="Abbruch" Content="Bestellung abbrechen" HorizontalAlignment="Right" VerticalAlignment="Top" Width="128" Height="30" Click="Abbruch_Click" Foreground="#FFFD0000"/>
     </Grid>
