@@ -1,5 +1,6 @@
 ﻿using Komponenten.ET;
 using Komponenten.Kundenverwaltung;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -23,6 +24,7 @@ namespace GUI
     /// </summary>
     public partial class KundenRegistrierung : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(KundenRegistrierung));
         public KundenRegistrierung()
         {
             InitializeComponent();
@@ -57,6 +59,7 @@ namespace GUI
                 if (check)
                 {
                     Application.Current.Properties["neuRegistriert"] = kunde;
+                    log.Info("Kunde " + kunde.Vorname + " " + kunde.Name + " hat sich neu registriert.");
                     BestaetigungDerRegistrierung bestaetigungDerRegistrierung = new BestaetigungDerRegistrierung();
                     this.NavigationService.Navigate(bestaetigungDerRegistrierung);
                 }

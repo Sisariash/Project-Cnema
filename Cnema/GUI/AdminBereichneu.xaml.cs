@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Komponenten.Datenbank;
 using Komponenten.ET;
 using Komponenten.Datenbank.Impl;
+using log4net;
 
 namespace GUI
 {
@@ -24,6 +25,7 @@ namespace GUI
     /// </summary>
     public partial class AdminBereichneu : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(AdminBereichneu));
 
         public AdminBereichneu()
         {
@@ -44,8 +46,6 @@ namespace GUI
                 this.NavigationService.Navigate(startBildschirm);
             }
         }
-
-
 
         public void LadeVorstellungen()
         {
@@ -77,8 +77,6 @@ namespace GUI
 
         private void ContextMenuListViewVorstellungRemove_OnClick(object sender, RoutedEventArgs e)
         {
-
-
             if (listViewVorstellung.SelectedIndex > -1)
             {
                 Vorstellung selectedvorstellung = (Vorstellung)listViewVorstellung.SelectedItem; // casting the list view 
@@ -87,7 +85,6 @@ namespace GUI
                 LadeVorstellungen();
                 LadeBestellungen();
             }
-
         }
 
         private void ContextMenuListViewBestellungRemove_OnClick(object sender, RoutedEventArgs e)
@@ -100,7 +97,6 @@ namespace GUI
 
                 LadeBestellungen();
             }
-
         }
 
 
@@ -172,6 +168,8 @@ namespace GUI
 
         private void MenuItemAdminLogout_Click(object sender, RoutedEventArgs e)
         {
+            Admin admin = (Admin) App.Current.Properties["aktuellerBenutzer"];
+            log.Info("Admin " + admin.Name + " hat sich abgemeldet.");
             App.Current.Properties["aktuellerBenutzer"] = null;
             StartBildschirm startBildschirm = new StartBildschirm();
             this.NavigationService.Navigate(startBildschirm);

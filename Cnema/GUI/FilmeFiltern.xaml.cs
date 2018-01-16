@@ -170,8 +170,7 @@ namespace GUI
 
                 Suchergebnis suchergebnis = new Suchergebnis(ergebnis, suchwort);
                 this.NavigationService.Navigate(suchergebnis);
-            }
-            
+            }       
         }
 
         private void Abbrechen_Click(object sender, RoutedEventArgs e)

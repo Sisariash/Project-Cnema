@@ -1,5 +1,6 @@
 ﻿using Komponenten.ET;
 using Komponenten.Kundenverwaltung;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace GUI
     /// </summary>
     public partial class FilmBewerten : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(FilmBewerten));
         private IKundenverwaltung kv = (IKundenverwaltung)Application.Current.Properties["kunde"];
         private Kunde kunde = (Kunde)Application.Current.Properties["aktuellerBenutzer"];
         private Film film;
@@ -34,7 +36,6 @@ namespace GUI
             kv.DurchschnittBerechnen(film);
             Bewertung.Content = String.Format("{0:F1} von 5 Sterne", film.BewertungAvg);
         }
-
 
         private void BewertungButton_Click(object sender, RoutedEventArgs e)
         {
@@ -63,6 +64,7 @@ namespace GUI
                 catch (Exception)   // Exception, falls Hinzufügen zu Datenbank fehlschlug
                 {
                     Fehlermeldung.Content = "Systemfehler beim Speichern";
+                    log.Error("Systemfehler beim Speichern der Bewertung.");
                 }
 
                 if (bewertungOK)
@@ -72,7 +74,10 @@ namespace GUI
                     this.NavigationService.Navigate(filmBewertenabgeschlossen);
                 }
                 else
+                {
                     Fehlermeldung.Content = "Diesen Film haben Sie bereits bewertet";
+                    log.Info("Kunde " + kunde.Vorname + " " + kunde.Name + " versuchte, " + film.Titel + " mehrfach zu bewerten.");
+                }
             }
         }
 
