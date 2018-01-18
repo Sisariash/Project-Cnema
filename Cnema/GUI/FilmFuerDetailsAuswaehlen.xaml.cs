@@ -28,6 +28,7 @@ namespace GUI
         {
             InitializeComponent();
             List<Film> alleFilme = kpv.AlleFilmLesen();
+            alleFilme.Sort();
             Programm.ItemsSource = alleFilme;
         }
 

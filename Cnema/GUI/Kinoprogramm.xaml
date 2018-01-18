@@ -90,7 +90,7 @@
             <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center">
                 <Label Content="Weitere Funktionen:" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Width="125" FontWeight="Bold" Height="26"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="FilmBewerten" Content="Filme &#xD;&#xA;bewerten" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Click="FilmeBewerten_Button" Margin="0,0,8,0" Height="40">
+                    <Button x:Name="FilmBewerten" Content="Filme &#xD;&#xA;bewerten" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Click="FilmeBewerten_Button" Margin="0,0,8,0" Height="40">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                 <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -98,7 +98,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="FilmdetailsAnzeigen" Content="Filmdetails &#xD;&#xA;anzeigen" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Click="FilmDetails_Button" Margin="0,0,8,0" Height="40">
+                    <Button x:Name="FilmdetailsAnzeigen" Content="Filmdetails &#xD;&#xA;anzeigen" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Click="FilmDetails_Button" Margin="0,0,8,0" Height="40">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                 <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -108,7 +108,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="FilmeFiltern" Content=" Vorstellungen&#xA; suchen" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Click="FilmeFiltern_Click" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                    <Button x:Name="FilmeFiltern" Content=" Vorstellungen&#xA; suchen" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" Click="FilmeFiltern_Click" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                 <GradientStop Color="#FF64FF00" Offset="1"/>

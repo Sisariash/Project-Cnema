@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Komponenten.ET
 {
-    public class Film
+    public class Film : IComparable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -55,6 +55,12 @@ namespace Komponenten.ET
         {
             return FilmId;
 
+        }
+
+        public int CompareTo(object obj)
+        {
+            Film other = (Film)obj;
+            return this.Titel.CompareTo(other.Titel);
         }
 
         //Genren
