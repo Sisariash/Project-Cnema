@@ -64,7 +64,6 @@ namespace Komponenten.Datenbank.Impl
             try
             {
                 cnemaContext.Entry(film).State = System.Data.Entity.EntityState.Modified;
-                //cnemaContext.Filme.Attach(film);
                 cnemaContext.SaveChanges();
                 return true;
             }
@@ -163,9 +162,7 @@ namespace Komponenten.Datenbank.Impl
                 return true;
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.InnerException.InnerException.Message); }
-
-            return false;
+            catch  { return false; }
         }
 
         public bool VorstellungAendern()

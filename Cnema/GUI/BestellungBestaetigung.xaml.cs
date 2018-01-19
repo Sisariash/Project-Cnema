@@ -1,5 +1,6 @@
 ﻿using Komponenten.Bestellverwaltung;
 using Komponenten.ET;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,8 @@ namespace GUI
         private int Ermaessigt;
         private Vorstellung vorstellung;
         private IBestellverwaltung bv = (IBestellverwaltung)App.Current.Properties["bestellung"];
-        
+        private static readonly ILog log = LogManager.GetLogger(typeof(BestellungBestaetigung));
+
         public BestellungBestaetigung(int standard, int ermaessigt, Vorstellung vorst)
         {
             InitializeComponent();
@@ -53,30 +55,24 @@ namespace GUI
             Kunde kunde = (Kunde)App.Current.Properties["aktuellerBenutzer"];
             List<Bestellung> bestellungen = new List<Bestellung>();
             bool fehlerAufgetreten = false;
-            for (int erwachsen = 0; erwachsen < Standard; erwachsen++)
+            try
             {
-                try
+                for (int erwachsen = 0; erwachsen < Standard; erwachsen++)
                 {
                     bestellungen.Add((Bestellung)bv.Reservieren(kunde, vorstellung));
                 }
-                catch (Exception ex)
-                {
-                    Fehlermeldung.Content = ex.Message;
-                    fehlerAufgetreten = true;
-                }
-            }
-            for (int ermaessigt = 0; ermaessigt < Ermaessigt; ermaessigt++)
-            {
-                try
+                for (int ermaessigt = 0; ermaessigt < Ermaessigt; ermaessigt++)
                 {
                     bestellungen.Add((Bestellung)bv.ReservierenErmaessigt(kunde, vorstellung));
                 }
-                catch (Exception ex)
-                {
-                    Fehlermeldung.Content = ex.Message;
-                    fehlerAufgetreten = true;
-                }
             }
+            catch (Exception ex)
+            {
+                Fehlermeldung.Content = "Beim Bearbeiten Ihrer Bestellung ist ein Fehler aufgetreten.";
+                fehlerAufgetreten = true;
+                log.Error(String.Format("Ausnahme beim Hinzufügen der Bestellung: {0}", ex.Message));
+            }
+
             if (!fehlerAufgetreten)
             {
                 IhreBestellung ihrebestellung = new IhreBestellung(Standard, Ermaessigt, bestellungen, vorstellung);

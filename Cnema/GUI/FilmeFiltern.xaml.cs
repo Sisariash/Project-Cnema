@@ -1,5 +1,6 @@
 ﻿using Komponenten.Bestellverwaltung;
 using Komponenten.ET;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace GUI
     /// </summary>
     public partial class FilmeFiltern : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(FilmeFiltern));
         public FilmeFiltern()
         {
             InitializeComponent();
@@ -144,9 +146,9 @@ namespace GUI
                     {
                         ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);
                     }
-                    catch (ArgumentNullException)
+                    catch (Exception ex)
                     {
-                        ergebnis = bv.ProgrammFilternTitel(FilmName.Text);
+                        log.Error(String.Format("Ausnahme beim Filtern der Vorstellungen: {0}", ex.Message));
                     }
                     kriteriumTitelsuche = FilmName.Text;
                 }
