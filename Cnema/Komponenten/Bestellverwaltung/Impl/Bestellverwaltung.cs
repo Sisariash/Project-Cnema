@@ -39,6 +39,9 @@ namespace Komponenten.Bestellverwaltung.Impl
             }
             return gefiltert;
         }
+
+        //Übergebene Liste nach Titel filtern
+        //Wird benötigt, um eine gefilterte Liste erneut nach Titel zu filtern
         public List<Vorstellung> ProgrammFilternTitel(String titel, IList<Vorstellung> vorstellungen)
         {
             if (vorstellungen == null)
