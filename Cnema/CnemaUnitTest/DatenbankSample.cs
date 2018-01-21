@@ -127,8 +127,6 @@ namespace CnemaUnitTest
             db.FilmHinzufuegen(film35);
 
 
-
-
             // Vorstellung
 
             //23.01
@@ -458,7 +456,41 @@ namespace CnemaUnitTest
             db.VorstellungHinzufuegen(v148);
             db.VorstellungHinzufuegen(v149);
             db.VorstellungHinzufuegen(v150);
-            
+
+
+            // Filmbewertungen
+
+            FilmBewertung fbw1 = new FilmBewertung(4);
+            fbw1.Kunde = kunde1;
+            fbw1.Film = film7;
+
+            FilmBewertung fbw2 = new FilmBewertung(5);
+            fbw2.Kunde = kunde2;
+            fbw2.Film = film7;
+
+            FilmBewertung fbw3 = new FilmBewertung(3);
+            fbw3.Kunde = kunde3;
+            fbw3.Film = film7;
+
+            FilmBewertung fbw4 = new FilmBewertung(2);
+            fbw4.Kunde = kunde1;
+            fbw4.Film = film11;
+
+            FilmBewertung fbw5 = new FilmBewertung(5);
+            fbw5.Kunde = kunde3;
+            fbw5.Film = film11;
+
+            db.FilmBewertungHinzufügen(fbw1);
+            db.FilmBewertungHinzufügen(fbw2);
+            db.FilmBewertungHinzufügen(fbw3);
+            db.FilmBewertungHinzufügen(fbw4);
+            db.FilmBewertungHinzufügen(fbw5);
+
+            // Nur für Testzwecke, um neuen Durchschnitt berechnen und in DB eintragen zu können
+            Kundenverwaltung kv = new Kundenverwaltung();
+            kv.DurchschnittBerechnen(film7);
+            kv.DurchschnittBerechnen(film11);
+
         }
     }
 }

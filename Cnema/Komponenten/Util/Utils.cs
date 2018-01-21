@@ -22,7 +22,5 @@ namespace Komponenten.Util
             PasswordVerificationResult result = passwordHasher.VerifyHashedPassword(hashedPassword, passwordToCompare);
             return result == PasswordVerificationResult.Success;
         }
-
-
     }
 }
