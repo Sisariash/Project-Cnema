@@ -66,7 +66,7 @@ namespace GUI
                     bestellungen.Add((Bestellung)bv.ReservierenErmaessigt(kunde, vorstellung));
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 Fehlermeldung.Content = "Beim Bearbeiten Ihrer Bestellung ist ein Fehler aufgetreten.";
                 fehlerAufgetreten = true;

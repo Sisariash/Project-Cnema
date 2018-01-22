@@ -146,7 +146,7 @@ namespace GUI
                     {
                         ergebnis = bv.ProgrammFilternTitel(FilmName.Text, ergebnis);
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         log.Error("Ausnahme beim Filtern der Vorstellungen.");
                     }
