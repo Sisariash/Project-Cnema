@@ -70,7 +70,7 @@ namespace GUI
             {
                 Fehlermeldung.Content = "Beim Bearbeiten Ihrer Bestellung ist ein Fehler aufgetreten.";
                 fehlerAufgetreten = true;
-                log.Error(String.Format("Ausnahme beim Hinzufügen der Bestellung: {0}", ex.Message));
+                log.Error("Ausnahme beim Hinzufügen der Bestellung.");
             }
 
             if (!fehlerAufgetreten)

@@ -148,7 +148,7 @@ namespace GUI
                     }
                     catch (Exception ex)
                     {
-                        log.Error(String.Format("Ausnahme beim Filtern der Vorstellungen: {0}", ex.Message));
+                        log.Error("Ausnahme beim Filtern der Vorstellungen.");
                     }
                     kriteriumTitelsuche = FilmName.Text;
                 }
