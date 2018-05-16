@@ -1,6 +1,6 @@
 ﻿# Projekt C#nema 
 
-# Kinoverwaltungsanwendung mit Steuerlogik, GUI und Datenbankanbindung.
+Kinoverwaltungsanwendung mit Steuerlogik, GUI und Datenbankanbindung.
 
 Projekt C#nema - ein studentisches C#-Projekt im Fach Programmieren 3 von Osman Güloglu, Jonathan Hamberger und Karl Herzog
 
