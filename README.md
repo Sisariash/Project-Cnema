@@ -1,6 +1,5 @@
 ﻿# Projekt C#nema
-Eine Kinoverwaltung von Jonathan Hamberger, Osman Güloglu und Karl Herzog.
-
+Projekt C#nema - ein studentisches C#-Projekt im Fach Programmieren 3 von Osman Güloglu, Jonathan Hamberger und Karl Herzog
 
 --> Bevor Sie das Programm starten, bitte "DatenbankSample.cs" unter CinemaUnitTest ausführen, damit
     die Datenbank mit Beispieldaten befüllt wird.
